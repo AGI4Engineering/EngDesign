@@ -1,0 +1,6 @@
+{"index": 5, "analyses": false, "uniqueName": "PM", "name": "PM", "convertedExpression": "value((180 + phase(VF(\"vout_ol\"))) fUGF)", "signalNames": false}
+{"index": 6, "analyses": false, "uniqueName": "GBW", "name": "GBW", "convertedExpression": "((10**(A0_OL / 20)) * cross(A_OL (A0_OL - 3)))", "signalNames": false}
+{"index": 4, "analyses": false, "uniqueName": "A0_OL", "name": "A0_OL", "convertedExpression": "value(A_OL 1)", "signalNames": false}
+{"index": 3, "analyses": false, "uniqueName": "gain_error", "name": "gain_error", "convertedExpression": "(VDC(\"vin_cl\") - VDC(\"vout_cl\"))", "signalNames": false}
+{"index": 7, "analyses": false, "uniqueName": "fUGF", "name": "fUGF", "convertedExpression": "cross(A_OL 0)", "signalNames": false}
+{"index": 1, "analyses": false, "uniqueName": "A_OL", "name": "A_OL", "convertedExpression": "dB20(VF(\"vout_ol\"))", "signalNames": false}

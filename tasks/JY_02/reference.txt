@@ -1,0 +1,6 @@
+@InProceedings{soria2020dexined,
+    title={Dense Extreme Inception Network: Towards a Robust CNN Model for Edge Detection},
+    author={Xavier Soria and Edgar Riba and Angel Sappa},
+    booktitle={The IEEE Winter Conference on Applications of Computer Vision (WACV '20)},
+    year={2020}
+}

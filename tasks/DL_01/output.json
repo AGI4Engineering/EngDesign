@@ -1,0 +1,5 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step",
+  "workloads": "The results of the tuning. The tuned parameter and the final value for each target workload category.",
+  "workload_names": "The name of the target workload category, correspinding to workloads"
+}

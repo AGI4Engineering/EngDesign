@@ -1,0 +1,35 @@
+# evaluation_pipeline.txt
+
+# 1) Compilation
+# Compile the LLM-generated DUT (`code.sv`) with the golden testbench (`tb.sv`) using Icarus Verilog:
+# 
+#   iverilog -g2012 -o user_tb.vvp code.sv tb.sv
+# 
+
+# 2) Simulation
+# Run the simulation:
+# 
+#   vvp user_tb.vvp
+# 
+
+# 3) Test output format
+# The testbench reports failures by printing “[FAIL] Test N” for each subtest that fails:
+#   • Test 0 → after reset, `out` should be all zeros
+#   • Test 1 → on the next clock, `out` should equal Gray(1) = 4'b0001
+#   • Test 2 → on the following clock, `out` should equal Gray(2) = 4'b0011
+
+# 4) Parsing & scoring
+# The Python harness (`evaluate.py`) will:
+#   • Capture stdout/stderr from `vvp user_tb.vvp`
+#   • Search for “[FAIL] Test 0”, “[FAIL] Test 1”, “[FAIL] Test 2”
+#   • Set `test0_pass`, `test1_pass`, `test2_pass` to true if the corresponding “[FAIL]” line is absent
+#   • Award points: 30 for Test 0, 35 for Test 1, 35 for Test 2
+#   • Assign `confidence = 100`
+#   • Emit a JSON summary:
+#       {
+#         "test0_pass": <true|false>,
+#         "test1_pass": <true|false>,
+#         "test2_pass": <true|false>,
+#         "score": <total_points>,
+#         "confidence": 100
+#       }

@@ -1,0 +1,5 @@
+MATLAB Code Setup Summary:
+The script declares the nominal plant matrices A0, B1, B2, C1, invokes CVX to solve the robust H∞ LMIs for ΔA = ±0.2·I₄, extracts P ≻ 0, Y, and γ < 0.5, computes the state‑feedback K = Y·P⁻¹, and constructs the closed‑loop model ss(A0 + B2*K, B1, C1, 0) to simulate disturbance input w(t) = sin(t) over a 0–50 s time horizon.
+
+Simulation Result Description:
+The performance output z(t) rapidly converges to a steady sinusoid of amplitude within ±0.15, demonstrating that the transfer-function H∞ norm is well below 0.5 and that external disturbances are strongly attenuated.

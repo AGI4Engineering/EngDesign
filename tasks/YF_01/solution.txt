@@ -1,0 +1,16 @@
+## Proposed Design
+
+- Th (thickness): 10 mm
+
+## Reasoning
+
+A thickness of 10 mm is selected to ensure that the L-shaped steel beam has sufficient structural rigidity to resist the applied horizontal surface traction of [10, -20, 0] N/mm². Given the fixed geometric parameters (Lh = 50 mm, Lv = 80 mm, Rf = 20 mm, Height = 50 mm), and considering the relatively large applied loads and beam dimensions, a 10 mm thickness provides a balanced design that ensures stiffness without excessive material use.
+
+Increasing the thickness improves the cross-sectional moment of inertia and reduces bending and shear deformation, especially under horizontal loading. A thinner design (e.g., 2–4 mm) may fail to meet the displacement limit, while 10 mm offers a conservative and manufacturable solution.
+
+## Simulation Result (MATLAB eval)
+
+- Max displacement in z-direction (uz): 0.07 mm
+- Threshold: 0.1 mm
+- Result: ✅ Passed
+- Score: 100

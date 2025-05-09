@@ -1,0 +1,2 @@
+Digital Logic / Sequential Circuits
+Gray Code Sequence Generator in Verilog

@@ -1,0 +1,4 @@
+Attempt 1:
+{'F_op': [2, 8, 16], 'f_t_A_m': 1, 'f_t_A_k': 1, 'f_t_B_k': 4, 'f_t_B_n': 1, 'f_t_C_m': 1, 'f_t_C_n': 1, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}
+Attempt 2:
+{'F_op': [4, 32, 8], 'f_t_A_m': 1, 'f_t_A_k': 1, 'f_t_B_k': 1, 'f_t_B_n': 2, 'f_t_C_m': 1, 'f_t_C_n': 1, 'score': np.float64(60.60148180669485), 't10_time': 28672, 'ai_time': np.float64(243200.0), 'passed': np.True_}

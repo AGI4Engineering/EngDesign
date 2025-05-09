@@ -1,0 +1,20 @@
+Attempt 1:
+{'error': 'Grid.check_obstacle_collision() takes 1 positional argument but 2 were given'}
+Attempt 2:
+{'error': 'Grid.check_obstacle_collision() takes 1 positional argument but 2 were given'}
+Attempt 3:
+{'error': 'Grid.check_obstacle_collision() takes 1 positional argument but 2 were given'}
+Attempt 4:
+{'error': 'Grid.check_obstacle_collision() takes 1 positional argument but 2 were given'}
+Attempt 5:
+{'error': 'Grid.check_obstacle_collision() takes 1 positional argument but 2 were given'}
+Attempt 6:
+{'error': 'Grid.check_obstacle_collision() takes 1 positional argument but 2 were given'}
+Attempt 7:
+{'error': 'Grid.check_obstacle_collision() takes 1 positional argument but 2 were given'}
+Attempt 8:
+{'error': 'Grid.check_obstacle_collision() takes 1 positional argument but 2 were given'}
+Attempt 9:
+{'error': 'Grid.check_obstacle_collision() takes 1 positional argument but 2 were given'}
+Attempt 10:
+{'error': 'Grid.check_obstacle_collision() takes 1 positional argument but 2 were given'}

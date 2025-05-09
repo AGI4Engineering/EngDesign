@@ -1,0 +1,7 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step",
+  "K1_num": "numerator coefficients of the PI controller",
+  "K1_den": "denominator coefficients of the PI controller",
+  "omega_r": "parameter of the roll-off filter",
+  "beta_r": "parameter of the roll-off filter"
+}

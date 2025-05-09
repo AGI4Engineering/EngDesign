@@ -1,0 +1,19 @@
+We use exact code judgment via our batch autograder:
+
+1. `evaluate.py` runs `run_autograder.sh mp4` to produce  
+   `~/cadence/simulation/ece483_AG/tb_mp4/spec_data_tb_mp4.csv`  
+   with headers: Av0_dB, fUGF_MHz, PM_deg, ICMR_mV, VERR_mV, I_DC_uA.
+
+2. Parse the CSV into a dict of floats.
+
+3. For each metric, award **only** the highest tier met:
+   - AV0: ≥55 dB → 20 pts; ≥60 dB → 35 pts  
+   - fUGF: ≥40 MHz → 5 pts; ≥50 MHz → 15 pts  
+   - PM: ≥50° → 5 pts; ≥60° → 15 pts  
+   - ICMR: ≥500 mV → 5 pts; ≥600 mV → 15 pts  
+   - VERR: ≤1.8 mV → 5 pts; ≤0.6 mV → 10 pts  
+   - I_DC: ≤250 µA → 5 pts; ≤150 µA → 10 pts  
+
+4. **Score** = sum of all six metrics (0–100).  
+5. **Passed** = true if every Tier 1 threshold is met; otherwise false.  
+6. **Confidence** = 100.  

@@ -1,0 +1,12 @@
+## Proposed Design
+
+- Th (thickness): 42 mm
+
+## Reasoning
+A convenient way to size the shaft is to use the classic torsion formula for angle of twist φ = (T·L)/(G·J), where G = E/[2(1+ν)] and J = π·d⁴/32 for a solid circular cross section. For this problem, E = 210,000 MPa, ν = 0.3, T = 1×10⁶ N·mm, and L = 1,000 mm. Solving for d so that the resulting φ is between 70% and 90% of the 0.05\u202frad limit gives a bore between about 41\u202fmm and 43\u202fmm. Taking d = 42\u202fmm keeps the maximum twist angle around 80% of the 0.05\u202frad threshold, producing a suitably stiff shaft while maintaining full scoring in the simulation.' config=ConfigFile(Th=42.0)
+## Simulation Result (MATLAB eval)
+
+- Max displacement in z-direction (uz): 0.040528170291472015 rad
+- Threshold: 0.05 mm
+- Result: ✅ Passed
+- Score: 100.0

@@ -1,0 +1,5 @@
+
+// Library name: ece483_sp23
+// Cell name: fc_ota
+// View name: schematic
+subckt fc_ota vout ibn10u VDD vin vip VSS

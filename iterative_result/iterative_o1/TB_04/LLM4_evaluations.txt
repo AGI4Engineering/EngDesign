@@ -1,0 +1,20 @@
+Attempt 1:
+{'metrics': {'dc_gain_db': 25.329, 'ugf_mhz': 0.015, 'cmrr_db': 51.287, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 2:
+{'metrics': {'dc_gain_db': 36.423, 'ugf_mhz': 0.022, 'cmrr_db': 62.316, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 3:
+{'metrics': {'dc_gain_db': 38.531, 'ugf_mhz': 0.02, 'cmrr_db': 65.048, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 4:
+{'metrics': {'dc_gain_db': 31.267, 'ugf_mhz': 0.03, 'cmrr_db': 57.409, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 5:
+{'metrics': {'dc_gain_db': 31.127, 'ugf_mhz': 0.023, 'cmrr_db': 58.08, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 6:
+{'metrics': {'dc_gain_db': 40.447, 'ugf_mhz': 0.097, 'cmrr_db': 66.204, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 20, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 20, 'passed': False}
+Attempt 7:
+{'metrics': {'dc_gain_db': 31.978, 'ugf_mhz': 0.01, 'cmrr_db': 58.546, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 8:
+{'metrics': {'dc_gain_db': 31.773, 'ugf_mhz': 0.013, 'cmrr_db': 57.994, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 9:
+{'metrics': {'dc_gain_db': 31.205, 'ugf_mhz': 0.035, 'cmrr_db': 57.68, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 10:
+{'metrics': {'dc_gain_db': 31.959, 'ugf_mhz': 0.046, 'cmrr_db': 57.805, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}

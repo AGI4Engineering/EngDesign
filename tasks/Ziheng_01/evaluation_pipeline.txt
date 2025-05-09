@@ -1,0 +1,4 @@
+A script would be implemented to evaluate:
+1. The closed-loop system's stability with LLM-designed controllers, including gain margin and phase margin.
+2. The rise time of the acceleration of the system.
+We will use another script to compute the exact score based on the stability and the rise time.

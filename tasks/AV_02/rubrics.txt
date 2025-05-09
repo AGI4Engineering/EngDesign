@@ -1,0 +1,6 @@
+## Evaluation Rubric
+- reasonable order (below 60): 10
+- number of numerator and denominator coefficients (each) = order + 1: 10
+- target frequency attenuation appropriate: 40
+- frequency attenuation below (target frequency - 5) appropriate: 20
+- frequency attenuation above (target frequency + 5) appropriate: 20

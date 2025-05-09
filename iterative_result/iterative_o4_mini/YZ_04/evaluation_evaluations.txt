@@ -1,0 +1,20 @@
+Attempt 1:
+{'numCells_p': 3.0, 'numCells_s': 120.0, 'NumChannel': 10.0, 'Flowrate': 14.0, 'ChannelDia': 0.005, 'MaxModuleTgrad': 4.258927737543502, 'MaxCellTempInc': 5.8701476230705225, 'MaxPressureDrop': 847264.3455495154, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': True, 'check_5': False}
+Attempt 2:
+{'numCells_p': 3.0, 'numCells_s': 125.0, 'NumChannel': 12.0, 'Flowrate': 6.0, 'ChannelDia': 0.008, 'MaxModuleTgrad': 4.366758820171242, 'MaxCellTempInc': 9.924341597728642, 'MaxPressureDrop': 159681.18340091762, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': True, 'check_5': False}
+Attempt 3:
+{'numCells_p': 3.0, 'numCells_s': 125.0, 'NumChannel': 20.0, 'Flowrate': 6.0, 'ChannelDia': 0.01, 'MaxModuleTgrad': 4.278868366719109, 'MaxCellTempInc': 10.70788272085025, 'MaxPressureDrop': 159078.80550125576, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': False, 'check_5': False}
+Attempt 4:
+{'numCells_p': 3.0, 'numCells_s': 125.0, 'NumChannel': 16.0, 'Flowrate': 10.0, 'ChannelDia': 0.008, 'MaxModuleTgrad': 4.46656151301363, 'MaxCellTempInc': 8.071570535036926, 'MaxPressureDrop': 424009.4699535596, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': True, 'check_5': False}
+Attempt 5:
+{'numCells_p': 3.0, 'numCells_s': 125.0, 'NumChannel': 40.0, 'Flowrate': 7.0, 'ChannelDia': 0.01, 'MaxModuleTgrad': 4.299855427413263, 'MaxCellTempInc': 9.92330707339795, 'MaxPressureDrop': 213221.7075618995, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': True, 'check_5': False}
+Attempt 6:
+{'numCells_p': 3.0, 'numCells_s': 125.0, 'NumChannel': 15.0, 'Flowrate': 6.0, 'ChannelDia': 0.015, 'MaxModuleTgrad': 4.037124269291439, 'MaxCellTempInc': 12.654332899777614, 'MaxPressureDrop': 158781.19873795877, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': False, 'check_5': False}
+Attempt 7:
+{'numCells_p': 3.0, 'numCells_s': 125.0, 'NumChannel': 40.0, 'Flowrate': 7.0, 'ChannelDia': 0.02, 'MaxModuleTgrad': 3.4589651283042713, 'MaxCellTempInc': 11.77454431503645, 'MaxPressureDrop': 212781.02963920718, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': False, 'check_5': False}
+Attempt 8:
+{'numCells_p': 3.0, 'numCells_s': 125.0, 'NumChannel': 30.0, 'Flowrate': 8.0, 'ChannelDia': 0.01, 'MaxModuleTgrad': 4.351951358825488, 'MaxCellTempInc': 9.452317950245913, 'MaxPressureDrop': 275156.34901905275, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': True, 'check_5': False}
+Attempt 9:
+{'numCells_p': 3.0, 'numCells_s': 125.0, 'NumChannel': 20.0, 'Flowrate': 6.0, 'ChannelDia': 0.009, 'MaxModuleTgrad': 4.329131897661512, 'MaxCellTempInc': 10.324397594249888, 'MaxPressureDrop': 159294.21765016348, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': False, 'check_5': False}
+Attempt 10:
+{'numCells_p': 3.0, 'numCells_s': 125.0, 'NumChannel': 20.0, 'Flowrate': 8.0, 'ChannelDia': 0.01, 'MaxModuleTgrad': 4.349277097340348, 'MaxCellTempInc': 9.465076866245454, 'MaxPressureDrop': 275156.34901905275, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': True, 'check_5': False}

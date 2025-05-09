@@ -1,0 +1,11 @@
+In this rubric three values are being tested.
+
+The interpolated Degree0 image 
+The AoLP
+The DoLP 
+
+Two different metrics were used, SSIM and PSNR. 
+For each component Score = PSNR/40 *50 + SSIM*50 
+If the Score of each component is higher than threshold, the respective points will be accumulated 
+If the score is less than 50 for any section, the passed will be false. 
+In the end the final score will be averaged as there are three values that are tested. 

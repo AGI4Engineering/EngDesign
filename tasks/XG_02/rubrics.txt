@@ -1,0 +1,9 @@
+## Rubric for Evaluating Controller Design Response
+
+Assess how well the returned controller meets the frequency-domain requirements.
+
+| Criterion | Points | Description |
+|----------|--------|-------------|
+| Bandwidth Match | 40 | Closed-loop bandwidth is near 85 Hz (±10 Hz acceptable). |
+| Gain Margin | 30 | Controller provides gain margin > 1.5 dB. |
+| Phase Margin | 30 | Controller provides phase margin > 60°. |

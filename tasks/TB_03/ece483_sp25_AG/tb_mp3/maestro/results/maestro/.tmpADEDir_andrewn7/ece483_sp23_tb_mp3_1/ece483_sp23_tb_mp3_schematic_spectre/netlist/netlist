@@ -1,0 +1,30 @@
+
+// Library name: ece483_sp23
+// Cell name: ota
+// View name: schematic
+subckt ota VDD VSS ibp10u vin vip vout
+    N3 (ibp10u ibp10u VSS VSS) tsmc18dN w=9.675u l=4.32u as=4.35375e-12 \
+        ad=4.35375e-12 ps=20.25u pd=20.25u m=1 region=sat
+    N2 (net3 ibp10u VSS VSS) tsmc18dN w=9.675u l=4.32u as=4.35375e-12 \
+        ad=4.35375e-12 ps=20.25u pd=20.25u m=12 region=sat
+    N1 (vout vin net3 VSS) tsmc18dN w=16.29u l=3.96u as=7.3305e-12 \
+        ad=7.3305e-12 ps=33.48u pd=33.48u m=6 region=sat
+    N0 (net4 vip net3 VSS) tsmc18dN w=16.29u l=3.96u as=7.3305e-12 \
+        ad=7.3305e-12 ps=33.48u pd=33.48u m=6 region=sat
+    P1 (net4 net4 VDD VDD) tsmc18dP w=18.18u l=1.08u as=8.181e-12 \
+        ad=8.181e-12 ps=37.26u pd=37.26u m=6 region=sat
+    P0 (vout net4 VDD VDD) tsmc18dP w=18.18u l=1.08u as=8.181e-12 \
+        ad=8.181e-12 ps=37.26u pd=37.26u m=6 region=sat
+ends ota
+// End of subcircuit definition.
+
+// Library name: ece483_sp23
+// Cell name: tb_mp3
+// View name: schematic
+__ECE483_SP23_OTA (VDD VSS ibp10u vin vip vout) ota
+V3 (vin VSS) vsource dc=VCM mag=cmrr_sim type=dc
+V2 (vip vin) vsource dc=0 mag=(1-cmrr_sim) type=dc
+V1 (VDD VSS) vsource dc=VDD type=dc
+V0 (VSS 0) vsource dc=VSS type=dc
+C0 (vout VSS) capacitor c=2p
+I2 (VDD ibp10u) isource dc=10u type=dc

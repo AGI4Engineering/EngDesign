@@ -1,0 +1,4 @@
+## Required Current: 
+The following is the optimal solution: 
+
+bar_alpha = 1, underline_alpha = 1, bar_beta = 1, underline_beta = 0.5.

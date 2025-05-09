@@ -1,0 +1,20 @@
+Attempt 1:
+{'num_passed': False, 'den_passed': False, 'stability_passed': False, 'phase_margin_passed': False, 'gain_margin_passed': False, 'score': 0.0, 'passed': False}
+Attempt 2:
+{'num_passed': True, 'den_passed': False, 'stability_passed': False, 'phase_margin_passed': False, 'gain_margin_passed': False, 'score': 20.0, 'passed': False}
+Attempt 3:
+{'num_passed': True, 'den_passed': False, 'stability_passed': False, 'phase_margin_passed': False, 'gain_margin_passed': False, 'score': 20.0, 'passed': False}
+Attempt 4:
+{'num_passed': True, 'den_passed': False, 'stability_passed': False, 'phase_margin_passed': False, 'gain_margin_passed': False, 'score': 20.0, 'passed': False}
+Attempt 5:
+{'num_passed': True, 'den_passed': False, 'stability_passed': False, 'phase_margin_passed': False, 'gain_margin_passed': False, 'score': 20.0, 'passed': False}
+Attempt 6:
+{'num_passed': True, 'den_passed': False, 'stability_passed': False, 'phase_margin_passed': False, 'gain_margin_passed': False, 'score': 20.0, 'passed': False}
+Attempt 7:
+{'num_passed': True, 'den_passed': False, 'stability_passed': False, 'phase_margin_passed': False, 'gain_margin_passed': False, 'score': 20.0, 'passed': False}
+Attempt 8:
+{'num_passed': True, 'den_passed': False, 'stability_passed': False, 'phase_margin_passed': False, 'gain_margin_passed': False, 'score': 20.0, 'passed': False}
+Attempt 9:
+{'num_passed': True, 'den_passed': False, 'stability_passed': False, 'phase_margin_passed': False, 'gain_margin_passed': False, 'score': 20.0, 'passed': False}
+Attempt 10:
+{'num_passed': True, 'den_passed': False, 'stability_passed': False, 'phase_margin_passed': False, 'gain_margin_passed': False, 'score': 20.0, 'passed': False}

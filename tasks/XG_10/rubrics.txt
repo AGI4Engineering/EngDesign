@@ -1,0 +1,5 @@
+## Evaluation Rubric
+- numerator coefficients of the PI controller: 20 points
+- denominator coefficients of the PI controller: 20 points
+- noise rejection performance: 60 points
+

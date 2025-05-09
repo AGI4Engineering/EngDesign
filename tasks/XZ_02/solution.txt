@@ -1,0 +1,6 @@
+Path length: 142.5 meters
+Algorithm used: RRT*
+Minimum distance to obstacles: 0.73 meters
+Maximum curvature: 0.246 (1/m) 
+
+

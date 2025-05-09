@@ -1,0 +1,2 @@
+Attempt 1:
+{'coeff_1': matlab.double([[5.159,0.0,0.0,0.0]]), 'coeff_2': matlab.double([[0.5,0.4,0.025]]), 'F3dB': 0.023030021552261835, 'nhW': 164.0, 'rSGwNone': -36.745273149885406, 'rSGwSqHann': -34.26277841679655, 'rSGwTriang': -35.9788530679358, 'rSGwOptimal': -36.2746880185457, 'sSGwNone': -86.18979135667325, 'sSGwSqHann': -97.50440963284177, 'sSGwTriang': -102.30476090816887, 'sSGwOptimal': -102.86337932411868, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': True, 'check_5': True, 'check_6': True, 'check_7': True}

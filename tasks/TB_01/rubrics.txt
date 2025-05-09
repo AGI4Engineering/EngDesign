@@ -1,0 +1,21 @@
+## Evaluation Rubric (100 points total)
+
+General policy
+--------------
+1. A submission must be syntactically valid and simulate without error; otherwise it receives 0.
+2. For each specification below, credit is given for the **highest satisfied tier only** (no double-counting).
+3. If the lower tier is not met, the score for that item is 0.
+4. All measurements are taken with the official testbench (VDD = 1.4 V, CL = 1 pF, VCM = 600 mV), unless the
+   ICMR sweep is specified.
+
+Scoring table
+-------------
+| Metric | Tier 1 (partial) | Pts | Tier 2 (full) | Pts |
+|--------|------------------|-----|---------------|-----|
+| DC gain AV0 | ≥ 55 dB | **20** | ≥ 60 dB | **35** |
+| Unity-gain frequency fUGF | ≥ 40 MHz | **5** | ≥ 50 MHz | **15** |
+| Phase margin PM | ≥ 50° | **5** | ≥ 60° | **15** |
+| Input common-mode range (ICMR)\* | ≥ 500 mV | **5** | ≥ 600 mV | **15** |
+| DC input-to-output error \|vip,dc − vin,dc\| | ≤ 1.8 mV | **5** | ≤ 0.6 mV | **10** |
+| Total DC current consumption | ≤ 250 µA | **5** | ≤ 150 µA | **10** |
+| **Maximum possible** |   | **100** |   | **100** |

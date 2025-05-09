@@ -1,0 +1,5 @@
+## Rubric for evaluating the theta list to reach the destination
+| Criterion | Points | Description |
+|------------|---------|--------------|
+| Position | 50 | Compute the Euclidean translation error (in millimeters) between the true and LLM‐computed end‐effector positions and award 50 points if it is less than 1mm (otherwise 0 points) |
+| Orientation | 50 | Compute the rotational error by converting the relative rotation to an equivalent arc‑length in millimeters and award 50 points if it is less than 1mm (otherwise 0 points) |

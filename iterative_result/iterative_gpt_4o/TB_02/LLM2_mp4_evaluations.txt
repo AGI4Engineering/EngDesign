@@ -1,0 +1,20 @@
+Attempt 1:
+{'metrics': {'dc_gain_db': 50.45, 'ugf_mhz': 12.744, 'pm_deg': 76.882, 'icmr_v': 0.0, 'io_err_mv': 32.209, 'idc_ua': 30.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 2:
+{'metrics': {'dc_gain_db': 50.45, 'ugf_mhz': 12.744, 'pm_deg': 76.882, 'icmr_v': 0.0, 'io_err_mv': 32.209, 'idc_ua': 30.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 3:
+{'metrics': {'dc_gain_db': 50.45, 'ugf_mhz': 12.744, 'pm_deg': 76.882, 'icmr_v': 0.0, 'io_err_mv': 32.209, 'idc_ua': 30.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 4:
+{'metrics': {'dc_gain_db': 50.45, 'ugf_mhz': 12.744, 'pm_deg': 76.882, 'icmr_v': 0.0, 'io_err_mv': 32.209, 'idc_ua': 30.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 5:
+{'metrics': {'dc_gain_db': 50.45, 'ugf_mhz': 12.744, 'pm_deg': 76.882, 'icmr_v': 0.0, 'io_err_mv': 32.209, 'idc_ua': 30.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 6:
+{'metrics': {'dc_gain_db': 50.45, 'ugf_mhz': 12.744, 'pm_deg': 76.882, 'icmr_v': 0.0, 'io_err_mv': 32.209, 'idc_ua': 30.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 7:
+{'metrics': {'dc_gain_db': 50.45, 'ugf_mhz': 12.744, 'pm_deg': 76.882, 'icmr_v': 0.0, 'io_err_mv': 32.209, 'idc_ua': 30.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 8:
+{'metrics': {'dc_gain_db': 50.45, 'ugf_mhz': 12.744, 'pm_deg': 76.882, 'icmr_v': 0.0, 'io_err_mv': 32.209, 'idc_ua': 30.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 9:
+{'metrics': {'dc_gain_db': 50.45, 'ugf_mhz': 12.744, 'pm_deg': 76.882, 'icmr_v': 0.0, 'io_err_mv': 32.209, 'idc_ua': 30.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 10:
+{'metrics': {'dc_gain_db': 50.45, 'ugf_mhz': 12.744, 'pm_deg': 76.882, 'icmr_v': 0.0, 'io_err_mv': 32.209, 'idc_ua': 30.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}

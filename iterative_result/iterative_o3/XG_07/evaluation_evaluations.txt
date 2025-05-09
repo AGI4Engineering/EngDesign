@@ -1,0 +1,6 @@
+Attempt 1:
+{'A_correct': True, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.013996352751759781, 'peak': 0.030857444904568328, 'attenuation': 0.571693781068779}
+Attempt 2:
+{'A_correct': True, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.013995335786348451, 'peak': 0.030854972144823595, 'attenuation': 0.5716107166561605}
+Attempt 3:
+{'A_correct': True, 'B_correct': True, 'rms_correct': True, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.011194035029122026, 'peak': 0.03147927738939283, 'attenuation': 0.36568875348143737}

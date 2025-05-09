@@ -1,0 +1,20 @@
+Attempt 1:
+{'error': "'str' object has no attribute 'config'"}
+Attempt 2:
+{'error': "'str' object has no attribute 'config'"}
+Attempt 3:
+{'Can handle no device': 'passed', 'Can handle no write buf': 'passed', 'Can handle pos out of capacity': 'failed', 'Can handle write range out of capacity': 'failed', 'Successfully read characters of the specified length': 'Failed', 'Correctly reads the data': 'Failed', 'other tests': "name 'vioblk_read' is not defined"}
+Attempt 4:
+{'error': "'str' object has no attribute 'config'"}
+Attempt 5:
+{'error': "'str' object has no attribute 'config'"}
+Attempt 6:
+{'Can handle no device': 'passed', 'Can handle no write buf': 'passed', 'Can handle pos out of capacity': 'failed', 'Can handle write range out of capacity': 'failed', 'Successfully read characters of the specified length': 'Failed', 'Correctly reads the data': 'Failed', 'Successfully write characters of the specified length': 'Failed', 'Correctly acquires and releases the lock': 'Failed', 'Correctly disables and restores the interrupt': 'Passed', 'Correctly set up the virtqueue request header': 'Passed', 'Correctly set up the available virtqueue': 'Failed', 'Correctly set up the used virtqueue': 'Passed', 'Correctly notifies the device': 'Failed', 'Correctly waits for the condition variable': 'Failed', 'Correctly writes the data': 'Failed'}
+Attempt 7:
+{'Can handle no device': 'passed', 'Can handle no write buf': 'passed', 'Can handle pos out of capacity': 'failed', 'Can handle write range out of capacity': 'failed', 'Successfully read characters of the specified length': 'Failed', 'Correctly reads the data': 'Failed', 'Successfully write characters of the specified length': 'Failed', 'Correctly acquires and releases the lock': 'Failed', 'Correctly disables and restores the interrupt': 'Passed', 'Correctly set up the virtqueue request header': 'Passed', 'Setting of direct desc[0]': 'Failed', 'Setting of direct desc[1]': 'Passed', 'Setting of direct desc[2]': 'Passed', 'Correctly set up the available virtqueue': 'Failed', 'Correctly set up the used virtqueue': 'Passed', 'Correctly notifies the device': 'Failed', 'Correctly waits for the condition variable': 'Failed', 'Correctly writes the data': 'Failed'}
+Attempt 8:
+{'error': "'str' object has no attribute 'config'"}
+Attempt 9:
+{'error': "'str' object has no attribute 'config'"}
+Attempt 10:
+{'error': "'str' object has no attribute 'config'"}

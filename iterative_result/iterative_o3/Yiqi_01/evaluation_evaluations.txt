@@ -1,0 +1,2 @@
+Attempt 1:
+{'F_op': [1, 10, 96], 'f_t_A_m': 1, 'f_t_A_k': 1, 'f_t_B_k': 1, 'f_t_B_n': 1, 'f_t_C_m': 1, 'f_t_C_n': 1, 'score': np.float64(75.4964786985977), 't10_time': 28672, 'ai_time': np.float64(81920.0), 'passed': np.True_}

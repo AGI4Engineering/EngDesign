@@ -1,0 +1,37 @@
+You are a hardware‐design expert. Write synthesizable SystemVerilog for a target‐sequence detector that pulses a 1 on `seen` whenever a specified 5-bit pattern appears in a serial bitstream, according to the following spec:
+
+1. Parameterization  
+   - parameter TARGET_WIDTH = 5;  
+
+2. Ports  
+```verilog
+module model #(
+    parameter TARGET_WIDTH = 5
+) (
+    input  logic               clk,     // clock signal
+    input  logic               resetn,  // synchronous, active-low reset
+    input  logic [TARGET_WIDTH-1:0] init,// target sequence, loaded on reset
+    input  logic               din,     // serial input bit
+    output logic               seen     // pulses high for one cycle on match
+);
+Behavior
+
+Target loading: On each rising edge when resetn==0, latch init into an internal target register.
+
+Shift register: Maintain a TARGET_WIDTH-bit shift register of the last received bits. On each rising edge when resetn==1, shift in din.
+
+Detection: Compare the internal shift register to target. If they match, assert seen=1 for one clock cycle; otherwise seen=0.
+
+Sequence reset: When resetn==0, clear the shift register (so previous bits are forgotten) and drive seen=0.
+
+Padding: Treat shorter init values as zero-padded on the high side (e.g. 3'b11 → 5'b00011).
+
+Implementation notes
+
+Fully synchronous logic.
+
+Use a generate or loop to build the comparator if desired.
+
+seen should be a one-cycle pulse on each detection, overlapping matches allowed (i.e. detect overlapping patterns).
+
+Produce clean, commented, synthesizable SystemVerilog that meets this specification.``

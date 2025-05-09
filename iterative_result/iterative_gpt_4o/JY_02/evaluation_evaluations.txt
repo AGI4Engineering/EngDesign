@@ -1,0 +1,4 @@
+Attempt 1:
+{'edge_density': np.float64(0.0), 'num_features': 0, 'entropy': np.float64(0.0), 'total_loss': np.float64(84.04746922929009)}
+Attempt 2:
+{'edge_density': np.float64(0.0), 'num_features': 0, 'entropy': np.float64(0.0), 'total_loss': np.float64(68.06050498271534)}

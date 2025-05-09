@@ -1,0 +1,26 @@
+## Task Description
+
+In this task, you need to design a proper cluster size in a file system. You and required to handle a great amount of files, and should use the space as effectively as possible. 
+The following informatiion is given:
+- Partition size: 1 TB
+- Total number of files: 1 000 000  
+
+### 1. Continuous function for the proportion of small files
+P_small(T) = 0.8 × (1 − exp(− T / 4.1))  
+
+where  
+- T is the “small‑file threshold”, in KB (see the candidate values below)  
+- P_small(T) ∈ [0, 0.8] represents the fraction of files whose size ≤ T KB  
+- The remaining 1 − P_small(T) is treated as “large files” (> T KB)
+
+### 2. Average file sizes
+avg_small_kb(T)  = 2   + 0.05 × T   // in KB  
+avg_large_kb(T)  = 512 + 0.50 × T   // in KB  
+
+## Design requirements:
+1. Fragmentation overhead ≤ 0.5 % 
+   - Average wasted space for small files: W_small = cluster_size B − 2 KB  
+   - Average wasted space for large files: W_large = cluster_size B / 2  
+
+2. Metadata (cluster mapping table) overhead ≤ 0.05 %
+   - Each cluster requires 4 B of mapping information

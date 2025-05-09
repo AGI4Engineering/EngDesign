@@ -1,0 +1,5 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step",
+  "C_y_hat": "Compliance of the optimized material layout.",
+  "VF_y_hat": "Volume fraction of the optimized material layout (i.e., the proportion of material used)."
+}

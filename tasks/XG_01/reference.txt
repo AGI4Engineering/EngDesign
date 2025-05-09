@@ -1,0 +1,3 @@
+[1] Safonov, M., A. Laub, and G. Hartmann. “Feedback Properties of Multivariable Systems: The Role and Use of the Return Difference Matrix.” IEEE Transactions on Automatic Control 26, no. 1 (February 1981): 47–65.
+
+

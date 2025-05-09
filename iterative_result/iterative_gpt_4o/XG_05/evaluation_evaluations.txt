@@ -1,0 +1,20 @@
+Attempt 1:
+{'theta': 18.67, 'tau': 13.0, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}
+Attempt 2:
+{'theta': 18.67, 'tau': 13.0, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}
+Attempt 3:
+{'theta': 23.0, 'tau': 13.0, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}
+Attempt 4:
+{'theta': 18.67, 'tau': 13.0, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}
+Attempt 5:
+{'theta': 23.0, 'tau': 13.0, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}
+Attempt 6:
+{'theta': 23.0, 'tau': 13.0, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}
+Attempt 7:
+{'theta': 23.0, 'tau': 13.0, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}
+Attempt 8:
+{'theta': 23.0, 'tau': 13.0, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}
+Attempt 9:
+{'theta': 23.0, 'tau': 13.0, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}
+Attempt 10:
+{'theta': 18.67, 'tau': 13.0, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}

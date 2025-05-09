@@ -1,0 +1,5 @@
+The following controller parameters provides a satisfactory response to the given requirements:
+num = [1.4493e+03, 5.0291e+05, 8.1368e+09, 2.5012e+12]
+den = [1, 1.8372e+03, 6.8929e+06, 2.4391e+09, -7.0209e+11]
+
+

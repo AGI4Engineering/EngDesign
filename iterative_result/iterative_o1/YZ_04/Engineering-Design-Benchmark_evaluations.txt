@@ -1,0 +1,20 @@
+Attempt 1:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 814.202424, one or more assertions are triggered. See causes for specific information."}
+Attempt 2:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 895.429305, one or more assertions are triggered. See causes for specific information."}
+Attempt 3:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 932.072419, one or more assertions are triggered. See causes for specific information."}
+Attempt 4:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 1032.831536, one or more assertions are triggered. See causes for specific information."}
+Attempt 5:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 1079.525317, one or more assertions are triggered. See causes for specific information."}
+Attempt 6:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 1125.686733, one or more assertions are triggered. See causes for specific information."}
+Attempt 7:
+{'numCells_p': 10.0, 'numCells_s': 96.0, 'NumChannel': 20.0, 'Flowrate': 0.25, 'ChannelDia': 0.01, 'MaxModuleTgrad': 1.8573678193006344, 'MaxCellTempInc': 68.32900337500007, 'MaxPressureDrop': 484.73746097621444, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': False, 'check_5': True}
+Attempt 8:
+{'numCells_p': 60.0, 'numCells_s': 96.0, 'NumChannel': 100.0, 'Flowrate': 0.25, 'ChannelDia': 0.01, 'MaxModuleTgrad': 0.7139418886404769, 'MaxCellTempInc': 33.679829260848294, 'MaxPressureDrop': 484.73746097621444, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': False, 'check_5': True}
+Attempt 9:
+{'numCells_p': 220.0, 'numCells_s': 96.0, 'NumChannel': 500.0, 'Flowrate': 0.25, 'ChannelDia': 0.01, 'MaxModuleTgrad': 4.228264526720864, 'MaxCellTempInc': 13.516349955024396, 'MaxPressureDrop': 484.73746097621444, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': False, 'check_5': True}
+Attempt 10:
+{'error': 'cannot unpack non-iterable NoneType object'}

@@ -1,0 +1,9 @@
+## Evaluation Rubric
+- tau: 10 points
+- theta: 10 points
+- gain margin: 20 points
+- phase margin: 20 points
+- overshoot: 20 points
+- settling time: 20 points
+
+

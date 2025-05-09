@@ -1,0 +1,8 @@
+## Evaluation Rubric
+- Slack > 0: 
+    - Frequency(mhz): 30 points
+    - DSP: 40 points
+    - FF: 20 points
+    - LUT: 10 points
+- Slack <= 0:
+    - 0

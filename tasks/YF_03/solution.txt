@@ -1,0 +1,12 @@
+## Proposed Design
+
+- Th (thickness): 58 mm
+
+## Reasoning
+'Step-by-step sizing\n1.  Loading translation\n   • Pressure = 1000 /(L/2·w)=0.05 N/mm²  → line load w₀ = p·w = 2 N/mm acting on last 500 mm.\n   • Total downward force = 1000 N.\n\n2.  Elastic-beam estimate of tip deflection\n   • For a cantilever with uniform load w₀ acting over the region a≤x≤L (a=L/2):\n     v(L)= w₀/(EI)[ dL³/3 – d²L²/4 + d⁴/24 ] with d=L–a.\n   • Substituting L=1000 mm, d=500 mm gives v(L)=3.049×10⁵ / h³ (mm).\n\n3.  Thickness for target deflection window\n   • Allowable deflection = 2 mm, full-score window 0.7–0.9 → target 1.4–1.8 mm.\n   • h giving 1.6 mm (mid-window):  h³≈1.906×10⁵ → h≈57 mm.\n\n4.  Safety factors & 3-D effects\n   • 3-D FE model adds shear deformation (neglected above) which slightly increases the displacement.\n   • Adding ~2 mm extra thickness covers this and round-off ⇒ choose 58 mm.\n\n5.  Performance check (theoretical)\n   • Predicted v_max ≈ 3.049×10⁵ / 58³ = 1.56 mm.\n   • Ratio v_max / 2 mm ≈ 0.78 (within 0.7–0.9 window ⇒ full score expected).\n\nConclusion: a 58 mm thick beam meets stiffness criterion with a comfortable margin while staying in the optimal scoring band.' config=ConfigFile(Th=58.0)
+## Simulation Result (MATLAB eval)
+
+- Max displacement in z-direction (uz): 1.5611299874035474 mm
+- Threshold: 2 mm
+- Result: ✅ Passed
+- Score: 100.0

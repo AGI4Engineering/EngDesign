@@ -1,0 +1,34 @@
+## rubric.txt (Updated)
+
+Total Points: 100
+
+### Color Mapping Correctness (20 points)
+(10 pts) All color values must be valid RGB444 format.
+(5 pts) Number of active color mappings must be between 1 and 10.
+(5 pts) Color keys must include only predefined names: playfield, background, next_piece_preview, score_display, ui_panels, game_over_screen.
+
+### Display Region Completeness (15 points)
+(5 pts) Regions defined: playfield, next_piece_preview, score_display.
+(5 pts) Each region must have top_left and bottom_right coordinates.
+(5 pts) No invalid/missing coordinates assumed valid (no overlap checking required).
+
+### Tetromino Color Scheme Completeness (15 points)
+(5 pts) All 7 Tetromino types (I, J, L, O, S, T, Z) defined.
+(5 pts) Each Tetromino must have both "default" and "night" colors.
+(5 pts) Night mode colors must be darker than corresponding normal colors.
+
+### Dynamic Modes Coverage (20 points)
+(10 pts) A dynamic mode (night_mode or night_mode_adjustment) must exist.
+(10 pts) Night mode must redefine key elements: playfield and background at minimum.
+
+### Bit Slicing Completeness (10 points)
+(10 pts) All four fields must exist: position_x, position_y, block_x, block_y.
+
+### Resource Constraint Compliance (10 points)
+(10 pts) Must declare a "resource_constraints" section; active color count must match declaration.
+
+### Task Report Reasoning Depth (10 points)
+(5 pts) Discussion must mention "trade-off" or "optimization" clearly.
+(5 pts) Conclusion must mention "future" or "innovation" clearly.
+
+Passing Score: 80 points minimum.

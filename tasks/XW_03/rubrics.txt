@@ -1,0 +1,6 @@
+## Evaluation Rubric
+- Create a valid file correctness: 20 points
+- Create a valid directory correctness: 20 points
+- Create with an invalid directory: 20 points
+- Create a directory under a file: 20 points
+- Create an existing file: 20 points

@@ -1,0 +1,84 @@
+## Task Description
+In this task, you are required to design a H-infinity controller for an active suspension system using hinfsyn command in MATLAB in robust control toolbox. Conventional passive suspensions use a spring and damper between the car body and wheel assembly. The spring-damper characteristics are selected to emphasize one of several conflicting objectives such as passenger comfort, road handling, and suspension deflection. Active suspensions allow the designer to balance these objectives using a feedback-controller hydraulic actuator between the chassis and wheel assembly. In this task, we use a quarter-car model of the active suspension system (see in the attached figure). The mass m_b (in kilograms) represents the car chassis (body) and the mass m_w (in kilograms) represents the wheel assembly. The spring k_s and damper b_s represent the passive spring and shock absorber placed between the car body and the wheel assembly. The spring k_t models the compressibility of the pneumatic tire. The variables x_b, x_w, and r (all in meters) are the body travel, wheel travel, and road disturbance, respectively. The force f_s (in kiloNewtons) applied between the body and wheel assembly is controlled by feedback and represents the active component of the suspension system.
+
+### Task 1
+With the state vector: (x_1, x_2, x_3, x_4) = (x_b, \dot{x}_b, x_w, \dot{x}_w), the linearlized state-space model of the quarter-car active suspension system is given by:
+\begin{equation}
+\dot{x}_1 &= x_2
+\dot{x}_2 &= -(1/m_b)(k_s(x_1-x_3)+b_s(x_2-x_4)-10^3f_s)
+\dot{x}_3 &= x_4
+\dot{x}_4 &= (1/m_w)(k_s(x_1-x_3)+b_s(x_2-x_4)-k_t(x_3-r)-10^3f_s)
+\end{equation}
+Your first task is to derive the numerical values of the state space matrices (A, B) using the above equations with the following parameters:
+- m_b = 300 kg
+- m_w = 60 kg
+- k_s = 16000 N/m
+- b_s = 1000 N/m/s
+- k_t = 190000 N/m
+
+### Task 2
+Your second task is to design a H-infinity controller for the active suspension system using hinfsyn command in MATLAB in robust control toolbox. Consider that the state space matrices are given as (A, B, C, D) with A and B defined in Task 1 and C and D defiend as:
+C = [1 0 0 0; 1 0 -1 0; A(2,:)];
+D = [0 0; 0 0; B(2,:)]; 
+The following MATLAB code is given to you as a baseline assuming the correct state space matrices:
+<code_block>
+qcar = ss(A,B,C,D);
+qcar.StateName = {'body travel (m)';'body vel (m/s)';...
+          'wheel travel (m)';'wheel vel (m/s)'};
+qcar.InputName = {'r';'fs'};
+qcar.OutputName = {'xb';'sd';'ab'};
+% Nominal Actuator dynamics
+ActNom = tf(1,[1/60 1]);
+ActNom.InputName = 'u';
+ActNom.OutputName = 'fs';
+%% Design Setup
+Wroad = ss(0.07);  
+Wroad.u = 'd';   
+Wroad.y = 'r';
+Wact = 0.8*tf([1 50],[1 500]);  
+Wact.u = 'u';  
+Wact.y = 'e1';
+HandlingTarget = 0.04 * tf([1/8 1],[1/80 1]);
+ComfortTarget = 0.4 * tf([1/0.45 1],[1/150 1]);
+beta = 0.01;
+Wsd = beta/HandlingTarget;
+Wsd.u = 'sd';  
+Wsd.y = 'e3';
+Wab = (1-beta)/ ComfortTarget;
+Wab.u = 'ab';  
+Wab.y = 'e2';
+%% Apply Design using hinfsyn
+sdmeas  = sumblk('y1 = sd');
+abmeas = sumblk('y2 = ab');
+ICinputs = {'d';'u'};
+ICoutputs = {'e1';'e2';'e3';'y1';'y2'};
+qcaric = connect(qcar,ActNom,Wroad,Wact,Wab,Wsd,sdmeas,abmeas,ICinputs,ICoutputs);
+ncont = 1; % one control signal, u
+nmeas = 2; % two measurement signals, sd and ab
+K = ss(zeros(ncont,nmeas));
+[K,~,gamma] = hinfsyn(qcaric,nmeas,ncont);
+K.u = {'sd','ab'};  K.y = 'u';
+CL = connect(qcar,ActNom,K,'r',{'xb';'sd';'ab'});
+% Road disturbance
+t = 0:0.0025:1;
+roaddist = zeros(size(t));
+roaddist(1:101) = 0.025*(1-cos(8*pi*t(1:101)));
+% Simulate
+p1 = lsim(qcar(:,1),roaddist,t);
+y1 = lsim(CL,roaddist,t);
+% Performance Metrics
+rms_closed = rms(y1(:,1));
+peak_closed = max(abs(y1(:,1)));
+energy_open = trapz(t, p1(:,1).^2);
+energy_closed = trapz(t, y1(:,1).^2);
+attenuation_ratio = energy_closed / energy_open;
+</code_block>
+With correct A and B matrices, it achieves the following performance:
+- RMS of the body travel: 0.014 m
+- Peak of the body travel: 0.0309 m
+- Energy Attenuation: 57.23%
+
+Please choose another beta parameter between 0 and 1 in the Design Setup section of the baseline MATLAB code to achieve the following performance requirements:
+   - RMS body travel ≤ 0.012m 
+   - Peak body travel ≤ 0.035m
+   - Energy attenuation ≤ 35%

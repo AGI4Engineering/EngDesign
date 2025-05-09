@@ -1,0 +1,20 @@
+Attempt 1:
+{'p1': 'p1 is wrong', 'p2': 'p2 is wrong', 'ts': 'ts is wrong', 'N': 'N is correct', 'pm': 'pm is wrong', 'dcgain': 'DC gain is not met', 'critical': 'critically damped closed-loop response is not met', 'settlingTime': 'settling time is not met', 'bottomOut': 'no bottom out is met'}
+Attempt 2:
+{'p1': 'p1 is wrong', 'p2': 'p2 is wrong', 'ts': 'ts is wrong', 'N': 'N is wrong', 'pm': 'pm is wrong', 'dcgain': 'DC gain is not met', 'critical': 'critically damped closed-loop response is not met', 'settlingTime': 'settling time is not met', 'bottomOut': 'no bottom out is met'}
+Attempt 3:
+{'p1': 'p1 is wrong', 'p2': 'p2 is wrong', 'ts': 'ts is wrong', 'N': 'N is wrong', 'pm': 'pm is wrong', 'dcgain': 'DC gain is not met', 'critical': 'critically damped closed-loop response is not met', 'settlingTime': 'settling time is not met', 'bottomOut': 'no bottom out is met'}
+Attempt 4:
+{'p1': 'p1 is wrong', 'p2': 'p2 is wrong', 'ts': 'ts is wrong', 'N': 'N is wrong', 'pm': 'pm is wrong', 'dcgain': 'DC gain is not met', 'critical': 'critically damped closed-loop response is not met', 'settlingTime': 'settling time is not met', 'bottomOut': 'no bottom out is met'}
+Attempt 5:
+{'p1': 'p1 is wrong', 'p2': 'p2 is wrong', 'ts': 'ts is wrong', 'N': 'N is wrong', 'pm': 'pm is correct', 'dcgain': 'DC gain is not met', 'critical': 'critically damped closed-loop response is not met', 'settlingTime': 'settling time is not met', 'bottomOut': 'no bottom out is met'}
+Attempt 6:
+{'p1': 'p1 is wrong', 'p2': 'p2 is wrong', 'ts': 'ts is wrong', 'N': 'N is wrong', 'pm': 'pm is wrong', 'dcgain': 'DC gain is not met', 'critical': 'critically damped closed-loop response is not met', 'settlingTime': 'settling time is not met', 'bottomOut': 'no bottom out is met'}
+Attempt 7:
+{'p1': 'p1 is wrong', 'p2': 'p2 is wrong', 'ts': 'ts is wrong', 'N': 'N is wrong', 'pm': 'pm is correct', 'dcgain': 'DC gain is not met', 'critical': 'critically damped closed-loop response is not met', 'settlingTime': 'settling time is not met', 'bottomOut': 'no bottom out is met'}
+Attempt 8:
+{'p1': 'p1 is wrong', 'p2': 'p2 is wrong', 'ts': 'ts is wrong', 'N': 'N is wrong', 'pm': 'pm is wrong', 'dcgain': 'DC gain is not met', 'critical': 'critically damped closed-loop response is not met', 'settlingTime': 'settling time is not met', 'bottomOut': 'no bottom out is met'}
+Attempt 9:
+{'p1': 'p1 is wrong', 'p2': 'p2 is wrong', 'ts': 'ts is wrong', 'N': 'N is wrong', 'pm': 'pm is wrong', 'dcgain': 'DC gain is not met', 'critical': 'critically damped closed-loop response is not met', 'settlingTime': 'settling time is not met', 'bottomOut': 'no bottom out is met'}
+Attempt 10:
+{'p1': 'p1 is wrong', 'p2': 'p2 is wrong', 'ts': 'ts is wrong', 'N': 'N is wrong', 'pm': 'pm is wrong', 'dcgain': 'DC gain is not met', 'critical': 'critically damped closed-loop response is not met', 'settlingTime': 'settling time is not met', 'bottomOut': 'no bottom out is met'}

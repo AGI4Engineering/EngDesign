@@ -1,0 +1,20 @@
+Attempt 1:
+{'num_passed': False, 'den_passed': False, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,4.439467202999952]]), 'phase_margin': matlab.double([[65.72483121933062,-40.28631356671776,-179.25485267037362]]), 'score': 60.0, 'passed': False}
+Attempt 2:
+{'num_passed': False, 'den_passed': False, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,4.439467202999952]]), 'phase_margin': matlab.double([[65.72483121933062,-40.28631356671776,-179.25485267037362]]), 'score': 60.0, 'passed': False}
+Attempt 3:
+{'num_passed': False, 'den_passed': False, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,4.439467202999952]]), 'phase_margin': matlab.double([[65.72483121933062,-40.28631356671776,-179.25485267037362]]), 'score': 60.0, 'passed': False}
+Attempt 4:
+{'num_passed': False, 'den_passed': False, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,4.439467202999952]]), 'phase_margin': matlab.double([[65.72483121933062,-40.28631356671776,-179.25485267037362]]), 'score': 60.0, 'passed': False}
+Attempt 5:
+{'num_passed': False, 'den_passed': False, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,4.439467202999952]]), 'phase_margin': matlab.double([[65.72483121933062,-40.28631356671776,-179.25485267037362]]), 'score': 60.0, 'passed': False}
+Attempt 6:
+{'num_passed': False, 'den_passed': False, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,4.439467202999952]]), 'phase_margin': matlab.double([[65.72483121933062,-40.28631356671776,-179.25485267037362]]), 'score': 60.0, 'passed': False}
+Attempt 7:
+{'num_passed': False, 'den_passed': False, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,4.439467202999952]]), 'phase_margin': matlab.double([[65.72483121933062,-40.28631356671776,-179.25485267037362]]), 'score': 60.0, 'passed': False}
+Attempt 8:
+{'num_passed': False, 'den_passed': False, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,4.439467202999952]]), 'phase_margin': matlab.double([[65.72483121933062,-40.28631356671776,-179.25485267037362]]), 'score': 60.0, 'passed': False}
+Attempt 9:
+{'num_passed': False, 'den_passed': False, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,4.439467202999952]]), 'phase_margin': matlab.double([[65.72483121933062,-40.28631356671776,-179.25485267037362]]), 'score': 60.0, 'passed': False}
+Attempt 10:
+{'num_passed': False, 'den_passed': False, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,4.439467202999952]]), 'phase_margin': matlab.double([[65.72483121933062,-40.28631356671776,-179.25485267037362]]), 'score': 60.0, 'passed': False}

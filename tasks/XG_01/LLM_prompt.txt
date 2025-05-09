@@ -1,0 +1,43 @@
+In this task, you will use MATLAB’s Robust Control Toolbox, specifically the loopsyn function, to design a stabilizing controller for an aircraft system. 
+## Aircraft Model
+The aircraft is modeled by the following state-space system:
+A = \begin{bmatrix}
+-2.2567 \times 10^{-2} & -3.6617 \times 10^{1} & -1.8897 \times 10^{1} & -3.2090 \times 10^{1} & 3.2509 & -7.6257 \times 10^{-1} \\
+9.2572 \times 10^{-5} & -1.8997 & 9.8312 \times 10^{-1} & -7.2562 \times 10^{-4} & -1.7080 \times 10^{-1} & -4.9652 \times 10^{-3} \\
+1.2338 \times 10^{-2} & 1.1720 \times 10^{1} & -2.6316 & 8.7582 \times 10^{-4} & -3.1604 \times 10^{1} & 2.2396 \times 10^{1} \\
+0 & 0 & 1.0000 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & -3.0000 \times 10^{1} & 0 \\
+0 & 0 & 0 & 0 & 0 & -3.0000 \times 10^{1}
+\end{bmatrix}
+B = \begin{bmatrix}
+0 & 0 \\
+0 & 0 \\
+0 & 0 \\
+0 & 0 \\
+30 & 0 \\
+0 & 30
+\end{bmatrix}
+C = \begin{bmatrix}
+0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0
+\end{bmatrix}
+D = \begin{bmatrix}
+0 & 0 \\
+0 & 0
+\end{bmatrix}
+
+## Instructions
+### Step 1: Design a target loop shape
+To use loopsyn design a stabilizing controller, you will first need to provide a target loop shape. Consider a desired loop shape with:
+- crossover frequency of 8 rad/s
+- has low gain at high frequencies for robustness, and high gain at low frequencies for performance
+- consider the transfer function 8/s as an example of a target loop shape
+Your first task is to specify the transfer function of the desired loop shape by providing its numerator and denominator coefficients.
+### Step 2: Use *loopsyn* to Design a Controller
+Using the target loop shape, design a stabilizing controller K via loopsyn. Your design must ensure the **closed-loop system achieves at least a 0.05 disk margin** and **has a performance gamma less than 1**. Here gamma is a performance measure of how well the loop shape with proposed controller matches the desired loop shape. Values of gamma near or below 1 indicate that G*K is close to Gd.
+The loopsyn function requires the following inputs:
+- G: dynamical system to be controlled (this will be the aircraft model)
+- Gd: desired loop shape (this will be determined by the num and den provided in the previous step)
+- alpha: a factor (0 < alpha < 1) to balance between performance and robustness
+There will be an evaluation step to check if the closed-loop system achieves at least 0.05 disk margin.
+

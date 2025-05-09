@@ -1,0 +1,46 @@
+Testbench Evaluation Methodology for Divisible-by-5 Detector
+
+This document describes how the testbench (`tb.sv`) evaluates the `model` (divisible-by-5) module:
+
+1. Clock and Reset
+
+   * A 10 ns clock (`clk`) toggles indefinitely.
+   * Before each test, `resetn` is held low for one cycle and then released high to clear previous state.
+
+2. Monitored Signals
+
+   * `din` (1-bit): serial input bit stream representing the binary value, MSB first.
+   * `dout` (1-bit): output signal asserted when the cumulative input value mod 5 == 0.
+
+3. Test Cases
+
+   **Test 0: Value = 5 (binary 101)**
+
+   * Reset sequence, then feed bits `1`, `0`, `1` over three clock cycles.
+   * Expected: `dout == 1` after the third bit, since 5 mod 5 == 0.
+   * Pass criterion: `dout` is high on that cycle.
+
+   **Test 1: Value = 6 (binary 110)**
+
+   * Reset, then feed bits `1`, `1`, `0`.
+   * Expected: `dout == 0` after the third bit, since 6 mod 5 == 1.
+   * Pass if `dout` remains low.
+
+   **Test 2: Value = 10 (binary 1010)**
+
+   * Reset, then feed bits `1`, `0`, `1`, `0`.
+   * Expected: `dout == 1` after the fourth bit, since 10 mod 5 == 0.
+   * Pass if `dout` pulses high on that cycle.
+
+4. Result Reporting
+
+   * Each test prints `[PASS] Test X` or `[FAIL] Test X: dout=<observed>, expected <value>`.
+   * The external Python harness (`evaluate_llm_response`) scans stdout for `[FAIL] Test X` to determine pass/fail for each test.
+
+5. Scoring
+
+   * Test 0: 30 points
+   * Test 1: 35 points
+   * Test 2: 35 points
+
+A fully passing suite produces no `[FAIL]` messages, yielding a perfect score.

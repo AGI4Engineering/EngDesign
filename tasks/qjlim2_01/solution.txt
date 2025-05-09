@@ -1,0 +1,12 @@
+## parameters of designed patch antenna
+length = 61.3           # Length in mm
+width = 85              # Width in mm
+height = 7.3            # Substrate height in mm
+epsilon_r = 2.2         # Relative permittivity
+feed_offset_x = 22.3    # Feed offset in mm
+
+# Performance
+f_resonant = 1.537      # Resonant frequency in GHz (with S11 below -10 dB)
+s11_dB = -25.18         # Return loss (dB)
+bandwidth_MHz = 81      # Bandwidth in MHz
+max_gain_dBi = 7.83     # Maximum gain in dBi

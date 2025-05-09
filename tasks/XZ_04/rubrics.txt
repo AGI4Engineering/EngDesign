@@ -1,0 +1,17 @@
+## Evaluation Rubric (100 points total)
+
+- Path_validity: 40 points
+  - Start point correct (0,0,0): 10 points
+  - End point correct (19,24,0): 10 points
+  - No obstacle collisions: 20 points
+- Speed_constraints: 30 points
+  - WHITE_ZONE: speed ≤ 1m/s: 10 points
+  - RED_ZONE: speed ≤ 2m/s: 10 points
+  - GREEN_ZONE: speed ≤ 0.5m/s: 10 points
+- Path_within_allowed_zone: 20 points
+  - Entire trajectory stays within WHITE_ZONE, RED_ZONE, and GREEN_ZONE: 20 points
+  - Any point outside allowed zones: 0 points
+- Implementation_details: 10 points
+  - Complete ordered list of coordinates: 4 points
+  - Total travel time reported: 3 points
+  - Total path length reported: 3 points

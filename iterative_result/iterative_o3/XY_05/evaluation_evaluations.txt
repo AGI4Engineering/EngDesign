@@ -1,0 +1,20 @@
+Attempt 1:
+{'ports_assignment': '58/60', 'state_transitions': '16.0/25', 'formatting': '9/15'}
+Attempt 2:
+{'ports_assignment': '58/60', 'state_transitions': '16.0/25', 'formatting': '9/15'}
+Attempt 3:
+{'ports_assignment': '58/60', 'state_transitions': '16.0/25', 'formatting': '9/15'}
+Attempt 4:
+{'ports_assignment': '57/60', 'state_transitions': '12/25', 'formatting': '9/15'}
+Attempt 5:
+{'ports_assignment': '20/60', 'state_transitions': '6/25', 'formatting': '3/15'}
+Attempt 6:
+{'ports_assignment': '58/60', 'state_transitions': '16.0/25', 'formatting': '9/15'}
+Attempt 7:
+{'ports_assignment': '58/60', 'state_transitions': '8/25', 'formatting': '9/15'}
+Attempt 8:
+{'ports_assignment': '58/60', 'state_transitions': '12/25', 'formatting': '9/15'}
+Attempt 9:
+{'ports_assignment': '58/60', 'state_transitions': '16.0/25', 'formatting': '9/15'}
+Attempt 10:
+{'ports_assignment': '58/60', 'state_transitions': '16.0/25', 'formatting': '9/15'}

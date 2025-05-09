@@ -1,0 +1,14 @@
+Attempt 1:
+{'diskmargin': 0.19653461463192093, 'gamma': 1.8007821950732399, 'info': {'W': <matlab.object object at 0x106174e90>, 'Gs': <matlab.object object at 0x1061744d0>, 'Ks': <matlab.object object at 0x106174e30>, 'emax': 0.21771377501462572, 'W1': <matlab.object object at 0x106174070>, 'W3': <matlab.object object at 0x1061749f0>, 'K2dof': <matlab.object object at 0x1061748b0>}}
+Attempt 2:
+{'diskmargin': 0.17839381889279216, 'gamma': 1.5927523108846378, 'info': {'W': <matlab.object object at 0x1061745d0>, 'Gs': <matlab.object object at 0x106174610>, 'Ks': <matlab.object object at 0x1061741b0>, 'emax': 0.21771377501462572, 'W1': <matlab.object object at 0x106174eb0>, 'W3': <matlab.object object at 0x106174af0>, 'K2dof': <matlab.object object at 0x106174030>}}
+Attempt 3:
+{'diskmargin': 0.14879102074679873, 'gamma': 1.4212814411746033, 'info': {'W': <matlab.object object at 0x106175210>, 'Gs': <matlab.object object at 0x106174b10>, 'Ks': <matlab.object object at 0x106175330>, 'emax': 0.21771377501462572, 'W1': <matlab.object object at 0x106175170>, 'W3': <matlab.object object at 0x106175310>, 'K2dof': <matlab.object object at 0x106175370>}}
+Attempt 4:
+{'diskmargin': 0.1262962080357924, 'gamma': 1.2864479830208597, 'info': {'W': <matlab.object object at 0x106175150>, 'Gs': <matlab.object object at 0x1061753f0>, 'Ks': <matlab.object object at 0x106175390>, 'emax': 0.21771377501462572, 'W1': <matlab.object object at 0x106175410>, 'W3': <matlab.object object at 0x1061751b0>, 'K2dof': <matlab.object object at 0x106174530>}}
+Attempt 5:
+{'diskmargin': 0.11491945661073442, 'gamma': 1.1693863760476992, 'info': {'W': <matlab.object object at 0x1061755f0>, 'Gs': <matlab.object object at 0x106175570>, 'Ks': <matlab.object object at 0x1061756b0>, 'emax': 0.21771377501462572, 'W1': <matlab.object object at 0x106175690>, 'W3': <matlab.object object at 0x106175030>, 'K2dof': <matlab.object object at 0x106175670>}}
+Attempt 6:
+{'diskmargin': 0.09770558482195142, 'gamma': 1.061734990220784, 'info': {'W': <matlab.object object at 0x106175270>, 'Gs': <matlab.object object at 0x106175730>, 'Ks': <matlab.object object at 0x1061755b0>, 'emax': 0.21771377501462572, 'W1': <matlab.object object at 0x106175750>, 'W3': <matlab.object object at 0x106174310>, 'K2dof': <matlab.object object at 0x1061756f0>}}
+Attempt 7:
+{'diskmargin': 0.10124125818558496, 'gamma': 0.9633867954352293, 'info': {'W': <matlab.object object at 0x1061758b0>, 'Gs': <matlab.object object at 0x106175110>, 'Ks': <matlab.object object at 0x106175470>, 'emax': 0.21771377501462572, 'W1': <matlab.object object at 0x106175430>, 'W3': <matlab.object object at 0x106175970>, 'K2dof': <matlab.object object at 0x106175990>}}

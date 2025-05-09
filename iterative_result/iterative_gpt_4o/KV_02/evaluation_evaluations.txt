@@ -1,0 +1,20 @@
+Attempt 1:
+{'lowest_current': 0.1, 'highest_current': 2.0, 'on_threshold': 0.78, 'off_threshold': 0.73, 'score_breakdown': {'lowest_current_valid': 20, 'highest_current_safe': 0, 'current_ordering_valid': 20, 'threshold_range_valid': 20, 'threshold_ordering_valid': 20}}
+Attempt 2:
+{'lowest_current': 0.1, 'highest_current': 1.5, 'on_threshold': 0.78, 'off_threshold': 0.73, 'score_breakdown': {'lowest_current_valid': 20, 'highest_current_safe': 0, 'current_ordering_valid': 20, 'threshold_range_valid': 20, 'threshold_ordering_valid': 20}}
+Attempt 3:
+{'lowest_current': 0.1, 'highest_current': 1.0, 'on_threshold': 0.78, 'off_threshold': 0.73, 'score_breakdown': {'lowest_current_valid': 20, 'highest_current_safe': 0, 'current_ordering_valid': 20, 'threshold_range_valid': 20, 'threshold_ordering_valid': 20}}
+Attempt 4:
+{'lowest_current': 0.1, 'highest_current': 0.5, 'on_threshold': 0.78, 'off_threshold': 0.73, 'score_breakdown': {'lowest_current_valid': 20, 'highest_current_safe': 0, 'current_ordering_valid': 20, 'threshold_range_valid': 20, 'threshold_ordering_valid': 20}}
+Attempt 5:
+{'lowest_current': 0.1, 'highest_current': 0.3, 'on_threshold': 0.78, 'off_threshold': 0.73, 'score_breakdown': {'lowest_current_valid': 20, 'highest_current_safe': 0, 'current_ordering_valid': 20, 'threshold_range_valid': 20, 'threshold_ordering_valid': 20}}
+Attempt 6:
+{'lowest_current': 0.1, 'highest_current': 0.2, 'on_threshold': 0.78, 'off_threshold': 0.73, 'score_breakdown': {'lowest_current_valid': 20, 'highest_current_safe': 0, 'current_ordering_valid': 20, 'threshold_range_valid': 20, 'threshold_ordering_valid': 20}}
+Attempt 7:
+{'lowest_current': 0.1, 'highest_current': 0.1, 'on_threshold': 0.78, 'off_threshold': 0.73, 'score_breakdown': {'lowest_current_valid': 20, 'highest_current_safe': 0, 'current_ordering_valid': 0, 'threshold_range_valid': 20, 'threshold_ordering_valid': 20}}
+Attempt 8:
+{'lowest_current': 0.1, 'highest_current': 0.15, 'on_threshold': 0.78, 'off_threshold': 0.73, 'score_breakdown': {'lowest_current_valid': 20, 'highest_current_safe': 0, 'current_ordering_valid': 20, 'threshold_range_valid': 20, 'threshold_ordering_valid': 20}}
+Attempt 9:
+{'lowest_current': 0.1, 'highest_current': 0.1, 'on_threshold': 0.78, 'off_threshold': 0.73, 'score_breakdown': {'lowest_current_valid': 20, 'highest_current_safe': 0, 'current_ordering_valid': 0, 'threshold_range_valid': 20, 'threshold_ordering_valid': 20}}
+Attempt 10:
+{'lowest_current': 0.1, 'highest_current': 0.1, 'on_threshold': 0.78, 'off_threshold': 0.73, 'score_breakdown': {'lowest_current_valid': 20, 'highest_current_safe': 0, 'current_ordering_valid': 0, 'threshold_range_valid': 20, 'threshold_ordering_valid': 20}}

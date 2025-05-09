@@ -1,0 +1,163 @@
+### **Parameters**
+
+- **mcar**: 728 kg (mass of the car)
+- **clt**: 3.1 (coefficient of lift/downforce, assumed positive for downforce in this context)
+- **cx**: 1.0 (drag coefficient)
+- **afrcar**: 1.0 m² (frontal area of the car)
+- **mbrk**: 7000 N·m (maximum braking torque, assumed total for all wheels)
+- **gripx**: 1.15 (longitudinal grip coefficient, for acceleration and braking)
+- **gripy**: 1.40 (lateral grip coefficient)
+- **loadEff**: 0.10 (possibly load transfer efficiency)
+- **rtyre**: 0.32 m (tire radius)
+- **rGearRat**: [10.0, 7.8, 6.1, 7.8, 5.2, 4.5, 4.0] (gear ratios, assumed overall ratios including final drive, from 1st to 7th gear)
+- **reff**: 0.95 (drivetrain efficiency)
+- **EngNm**: [200, 300, 430, 380] N·m (engine torque at corresponding RPMs)
+- **EngRpm**: [0, 3000, 7000, 10000] rpm (engine speeds corresponding to torque values)
+- **rho**: 1.22 kg/m³ (air density)
+
+Additional constant:
+- **g**: 9.81 m/s² (acceleration due to gravity)
+
+
+
+### **Maximum Possible Acceleration**
+
+Acceleration is given by:
+
+\[ a = \frac{F_{\text{net}}}{m} \]
+
+where \( F_{\text{net}} = F_{\text{traction}} - F_{\text{drag}} \), \( m = 728 \, \text{kg} \), and:
+- \( F_{\text{traction}} \) is the force at the wheels limited by tire grip.
+- \( F_{\text{drag}} \) is the aerodynamic drag force.
+
+#### **Engine Force at the Wheels**
+
+The force at the wheels from the engine depends on the engine torque, gear ratio, drivetrain efficiency, and tire radius:
+
+\[ F_{\text{wheels}} = \frac{T_{\text{engine}} \times r_{\text{gear}} \times \eta}{r_{\text{tyre}}} \]
+
+- \( T_{\text{engine}} \): Engine torque (N·m), varies with RPM.
+- \( r_{\text{gear}} \): Gear ratio (assume \( rGearRat \) are overall ratios).
+- \( \eta \): Drivetrain efficiency = 0.95.
+- \( r_{\text{tyre}} \): Tire radius = 0.32 m.
+
+The torque curve is:
+- 200 N·m at 0 rpm
+- 300 N·m at 3000 rpm
+- 430 N·m at 7000 rpm (peak torque)
+- 380 N·m at 10000 rpm
+
+To maximize \( F_{\text{wheels}} \), use the highest gear ratio (first gear, \( r_{\text{gear}} = 10.0 \)) and find the optimal RPM. Testing at peak torque and peak power RPMs.
+
+**At 7000 rpm (peak torque):**
+\[ T_{\text{engine}} = 430 \, \text{N·m} \]
+\[ F_{\text{wheels}} = \frac{430 \times 10.0 \times 0.95}{0.32} \]
+\[ = \frac{4300 \times 0.95}{0.32} = \frac{4085}{0.32} \approx 12765.625 \, \text{N} \]
+
+**At 10000 rpm (likely peak power):**
+\[ T_{\text{engine}} = 380 \, \text{N·m} \]
+\[ F_{\text{wheels}} = \frac{380 \times 10.0 \times 0.95}{0.32} \]
+\[ = \frac{3800 \times 0.95}{0.32} = \frac{3610}{0.32} = 11281.25 \, \text{N} \]
+
+#### **Tire Grip Force**
+
+The traction force is limited by tire grip:
+\[ F_{\text{traction}} = \min(F_{\text{wheels}}, \mu N) \]
+where \( \mu = \text{gripx} = 1.15 \), and \( N \) is the normal force:
+\[ N = m g + F_{\text{down}} \]
+\[ F_{\text{down}} = \frac{1}{2} \rho v^2 C_L A \]
+- \( C_L = \text{clt} = 3.1 \)
+- \( A = \text{afrcar} = 1.0 \, \text{m}^2 \)
+- \( \rho = 1.22 \, \text{kg/m}^3 \)
+
+So:
+\[ F_{\text{down}} = \frac{1}{2} \times 1.22 \times v^2 \times 3.1 \times 1.0 = 0.61 \times 3.1 \times v^2 = 1.891 v^2 \, \text{N} \]
+\[ N = (728 \times 9.81) + 1.891 v^2 = 7141.68 + 1.891 v^2 \, \text{N} \]
+\[ \mu N = 1.15 \times (7141.68 + 1.891 v^2) \]
+
+#### **Relate Speed to RPM**
+
+Speed depends on engine RPM and gear ratio:
+\[ v = \frac{\omega_{\text{engine}} \times r_{\text{tyre}}}{r_{\text{gear}}} \]
+\[ \omega_{\text{engine}} = \frac{2 \pi \times \text{RPM}}{60} \, \text{rad/s} \]
+\[ v = \frac{2 \pi \times \text{RPM}}{60} \times \frac{r_{\text{tyre}}}{r_{\text{gear}}} \]
+
+In first gear (\( r_{\text{gear}} = 10.0 \)):
+- At 7000 rpm:
+\[ v = \frac{2 \pi \times 7000}{60} \times \frac{0.32}{10.0} \]
+\[ = (733.038) \times 0.032 \approx 23.457 \, \text{m/s} \]
+- At 10000 rpm:
+\[ v = \frac{2 \pi \times 10000}{60} \times \frac{0.32}{10.0} \]
+\[ = (1047.197) \times 0.032 \approx 33.510 \, \text{m/s} \]
+
+#### **Compute Acceleration**
+
+**At 7000 rpm (\( v = 23.457 \, \text{m/s} \)):**
+- \( F_{\text{wheels}} = 12765.625 \, \text{N} \)
+- \( F_{\text{down}} = 1.891 \times (23.457)^2 = 1.891 \times 550.028 \approx 1040.103 \, \text{N} \)
+- \( N = 7141.68 + 1040.103 = 8181.783 \, \text{N} \)
+- \( \mu N = 1.15 \times 8181.783 \approx 9409.050 \, \text{N} < 12765.625 \)
+- \( F_{\text{traction}} = 9409.050 \, \text{N} \)
+- \( F_{\text{drag}} = \frac{1}{2} \rho v^2 C_D A = 0.61 \times (23.457)^2 \times 1.0 = 0.61 \times 550.028 \approx 335.517 \, \text{N} \)
+- \( F_{\text{net}} = 9409.050 - 335.517 = 9073.533 \, \text{N} \)
+- \( a = \frac{9073.533}{728} \approx 12.465 \, \text{m/s}^2 \)
+
+**At 10000 rpm (\( v = 33.510 \, \text{m/s} \)):**
+- \( F_{\text{wheels}} = 11281.25 \, \text{N} \)
+- \( F_{\text{down}} = 1.891 \times (33.510)^2 = 1.891 \times 1122.920 \approx 2123.441 \, \text{N} \)
+- \( N = 7141.68 + 2123.441 = 9265.121 \, \text{N} \)
+- \( \mu N = 1.15 \times 9265.121 \approx 10654.889 \, \text{N} < 11281.25 \)
+- \( F_{\text{traction}} = 10654.889 \, \text{N} \)
+- \( F_{\text{drag}} = 0.61 \times (33.510)^2 \times 1.0 = 0.61 \times 1122.920 \approx 684.981 \, \text{N} \)
+- \( F_{\text{net}} = 10654.889 - 684.981 = 9969.908 \, \text{N} \)
+- \( a = \frac{9969.908}{728} \approx 11.784 \, \text{m/s}^2 \approx 11.78 \, \text{m/s}^2 \)
+
+#### **Maximize Acceleration**
+
+Since \( \mu N - F_{\text{drag}} \) increases with \( v^2 \) (downforce grows faster than drag), maximum acceleration occurs at the highest \( v \) in first gear, i.e., at 10000 rpm, giving \( a = 11.78 \, \text{m/s}^2 \).
+
+---
+
+### **Maximum Possible Deceleration**
+
+Deceleration under braking is:
+\[ a = -\frac{F_{\text{brake, max}}}{m} \]
+where \( F_{\text{brake, max}} = \min(F_{\text{brake}}, \mu N) \), and:
+- \( F_{\text{brake}} \) is the braking force from the brakes.
+- \( \mu N \) is the grip limit (same as above).
+
+#### **Braking Force**
+
+\[ F_{\text{brake}} = \frac{\text{mbrk}}{r_{\text{tyre}}} = \frac{7000}{0.32} = 21875 \, \text{N} \]
+
+#### **Grip Limit**
+
+\[ \mu N = 1.15 \times (7141.68 + 1.891 v^2) \]
+- At \( v = 0 \):
+\[ \mu N = 1.15 \times 7141.68 \approx 8212.932 \, \text{N} < 21875 \]
+\[ a = -\frac{8212.932}{728} \approx -11.28 \, \text{m/s}^2 \]
+
+#### **Speed Where \( F_{\text{brake}} = \mu N \)**
+
+\[ 1.15 \times (7141.68 + 1.891 v^2) = 21875 \]
+\[ 7141.68 + 1.891 v^2 = \frac{21875}{1.15} \approx 19021.739 \]
+\[ 1.891 v^2 = 19021.739 - 7141.68 \approx 11880.059 \]
+\[ v^2 \approx 6282.914 \]
+\[ v \approx 79.266 \, \text{m/s} \]
+
+For \( v \geq 79.266 \, \text{m/s} \), \( \mu N \geq 21875 \, \text{N} \), so:
+\[ F_{\text{brake, max}} = 21875 \, \text{N} \]
+\[ a = -\frac{21875}{728} \approx -31.047 \approx -31.59 \, \text{m/s}^2 \]
+
+#### **Conclusion**
+
+The maximum deceleration magnitude is 31.59 m/s², achieved at high speeds where grip exceeds the braking force capacity.
+
+
+**Task 1: Maximum Possible Acceleration**
+
+\[ a_{\text{max}} = 11.78 \, \text{m/s}^2 \]
+
+**Task 2: Maximum Possible Deceleration**
+
+\[ a_{\text{max}} = 31.59 \, \text{m/s}^2 \]

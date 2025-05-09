@@ -1,0 +1,29 @@
+## Background
+
+Strip dipole antennas are simple, efficient, and widely used in wireless communication systems for their broad bandwidth and omnidirectional radiation characteristics in the azimuth plane.
+
+In this task, you are to design a strip dipole antenna that meets the specified performance objectives and constraints outlined below.
+
+The dipole is centered at the origin and aligned along the x-axis, with its arms extending symmetrically in the ±x directions. The feed point lies at the center of the dipole, located in the x-y plane. The antenna is made of highly conductive material such as copper and is radiating in free space.
+
+## Task Objective and Constraints
+
+Your task is to design a Strip dipole antenna that meets the following specifications:
+
+- Resonant Frequency: 3 GHz (S11 <= –10 dB)
+- Bandwidth: >= 100 MHz
+- Gain: >= 2 dBi
+- Space Constraint [ Length × Width ]: <= 100 mm × 100 mm
+
+## Design Inputs
+
+Determine the optimal design parameters to satisfy the task objectives:
+
+- Length of Metallic Patch in mm: length_mm
+- Width of Metallic Patch in mm: width_mm
+- Confidence of your design: confidence
+
+## Additional Note
+
+The width of the antenna should generally be at most 1/10 of the length of the antenna.
+

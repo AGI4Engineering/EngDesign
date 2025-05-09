@@ -1,0 +1,9 @@
+Write a synthesizable C function for matrix multiplication (GEMM) using Vitis HLS, with the following specifications:
+	•	Function signature: void gemm(float A[M_SIZE][K_SIZE], float B[K_SIZE][N_SIZE], float C[M_SIZE][N_SIZE])
+	•	Use #define for M_SIZE, N_SIZE, and K_SIZE as 1024.
+	•	Perform the matrix multiplication: C = A \times B
+	•	Apply the following interface pragmas for HLS:
+	•	Use AXI4 master interfaces (m_axi) for matrices A, B, and C (with separate bundles for each).
+	•	Use an AXI4-Lite slave interface (s_axilite) for function control and return.
+	•	Add #pragma HLS PIPELINE II=1 to pipeline the innermost loop for high throughput.
+	•	Ensure the code is synthesizable with Vitis HLS and suitable for implementation on the VCK5000 board

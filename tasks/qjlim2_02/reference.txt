@@ -1,0 +1,5 @@
+[1] Antenna-Theory.com, “The Dipole Antenna,” 2011–2021. [Online]. Available: https://www.antenna-theory.com/antennas/dipole.php. [Accessed: Apr. 22, 2025].
+
+[2] Antenna Toolbox, MATLAB, MathWorks, Natick, MA, USA. [Online]. Available: https://www.mathworks.com/products/antenna.html. [Accessed: Apr. 22, 2025].
+
+

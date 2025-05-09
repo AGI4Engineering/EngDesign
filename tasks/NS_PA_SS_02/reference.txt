@@ -1,0 +1,3 @@
+https://chipdev.io/question/4 — Question 4: Gray Code Counter  
+https://en.wikipedia.org/wiki/Gray_code — Gray code background and standard reflected encoding  
+IEEE Std 1364-2005, IEEE Standard for Verilog Hardware Description Language  

@@ -1,0 +1,15 @@
+// Library name: ece483_mp1
+// Cell name: cs_amp
+// View name: schematic
+subckt cs_amp VDD VSS vin_a vin_b vout
+    N0 (vout vin_a VSS VSS) tsmc18dN w=2u l=180.0n as=9e-13 ad=9e-13 \
+        ps=4.9u pd=4.9u m=1 region=sat
+    R0 (VDD vout) resistor r=8K m=1
+    V0 (vin_b VSS) vsource type=dc dc=725m
+ends cs_amp
+// End of subcircuit definition.
+
+// Library name: ece483_mp1
+// Cell name: dut
+// View name: schematic
+I0 (net2 net3 net1 net5 net4) cs_amp

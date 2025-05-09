@@ -1,0 +1,20 @@
+Attempt 1:
+{'ResonantFrequencyGHz': 2.7348, 'S11_resonant_dB': -15.477532141434242, 'BandwidthMHz': 381.6, 'MaxGaindBi': 2.0996028668838447}
+Attempt 2:
+{'ResonantFrequencyGHz': 3.0684, 'S11_resonant_dB': -15.791809388215546, 'BandwidthMHz': 448.8, 'MaxGaindBi': 2.107769991600387}
+Attempt 3:
+{'ResonantFrequencyGHz': 3.144, 'S11_resonant_dB': -15.792582834606494, 'BandwidthMHz': 459.6, 'MaxGaindBi': 2.1093536270336184}
+Attempt 4:
+{'ResonantFrequencyGHz': 3.0072, 'S11_resonant_dB': -15.79247586804799, 'BandwidthMHz': 439.2, 'MaxGaindBi': 2.1093251097681187}
+Attempt 5:
+{'ResonantFrequencyGHz': 3.0384, 'S11_resonant_dB': -15.794676137467867, 'BandwidthMHz': 445.2, 'MaxGaindBi': 2.1088069768086837}
+Attempt 6:
+{'ResonantFrequencyGHz': 3.0684, 'S11_resonant_dB': -15.791809388215546, 'BandwidthMHz': 448.8, 'MaxGaindBi': 2.107769991600387}
+Attempt 7:
+{'ResonantFrequencyGHz': 3.0996, 'S11_resonant_dB': -15.780481271639426, 'BandwidthMHz': 453.6, 'MaxGaindBi': 2.10687277783496}
+Attempt 8:
+{'ResonantFrequencyGHz': 3.144, 'S11_resonant_dB': -15.792582834606494, 'BandwidthMHz': 459.6, 'MaxGaindBi': 2.1093536270336184}
+Attempt 9:
+{'ResonantFrequencyGHz': 3.1752, 'S11_resonant_dB': -15.792641640954502, 'BandwidthMHz': 465.6, 'MaxGaindBi': 2.1080332077757835}
+Attempt 10:
+{'ResonantFrequencyGHz': 3.0996, 'S11_resonant_dB': -15.780481271639426, 'BandwidthMHz': 453.6, 'MaxGaindBi': 2.10687277783496}

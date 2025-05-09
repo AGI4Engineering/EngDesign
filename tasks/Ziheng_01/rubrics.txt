@@ -1,0 +1,7 @@
+## Rubric for Evaluating RSLQR Controller Design Response
+Assess how good the controller is at tracking the step input and the performance.
+| Criterion | Points | Description |
+|------------|---------|--------------|
+| Stability | 50 | The output of the system (Acceleration) is stable with the step input |
+| Rise time | 30 | The output of the system (Acceleration) has a rise time faster than 0.2s |
+| Gain margin and Phase margin | 20 | The system has a good gain margin ( bigger than 3dB, 10 points) and phase margin (bigger than 30 degrees, 10 points) |

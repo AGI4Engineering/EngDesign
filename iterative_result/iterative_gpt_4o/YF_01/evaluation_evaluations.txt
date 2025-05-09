@@ -1,0 +1,2 @@
+Attempt 1:
+{'max_displacement_z': 0.006136281310277706, 'threshold': 0.1}

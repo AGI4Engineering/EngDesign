@@ -1,0 +1,14 @@
+CADENCE IHNL11140
+$model
+ece483_sp23/ota/schematic ota
+ece483_sp23/tb_mp3/schematic tb_mp3
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+VDD VDD
+VCM VCM
+VSS VSS
+cmrr_sim cmrr_sim
+$endparam

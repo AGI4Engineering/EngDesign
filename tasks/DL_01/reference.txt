@@ -1,0 +1,9 @@
+## Task Resources
+
+[Preemptible i/o scheduling of garbage collection for solid state drives.](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6416101)
+
+[Samsung 983 DCT SSD](https://semiconductor.samsung.com/consumer-storage/datacenter-ssd/983dct/)
+
+[MQSim: A framework for enabling realistic studies of modern Multi-Queue SSD devices](https://www.usenix.org/system/files/conference/fast18/fast18-tavakkol.pdf)
+
+[Performance evaluation of dynamic page allocation strategies in ssds.](https://tavakkol.ch/downloads/papers/A.Tavakkol-TOMPECS2016.pdf)

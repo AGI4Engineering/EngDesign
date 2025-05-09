@@ -1,0 +1,8 @@
+## Evaluation Rubric
+- check_1 (approximation to desired cutoff frequency $F_{3dB}$): 25 points
+- check_2 (appropriate choice approximation of half-magnitude interval $n_{hW}$): 25 points
+- check_3 (output vs. input noise ratio for SG filters): 10 points
+- check_4 (smoothness for SG filters): 10 points
+- check_5 (relation of output vs. input noise for SG filters): 10 points
+- check_6 (relation of smoothness for SG filters): 10 points
+- check_7 (SG filter with optimal weighting): 10 points

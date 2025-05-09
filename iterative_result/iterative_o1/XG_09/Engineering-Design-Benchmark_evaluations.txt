@@ -1,0 +1,20 @@
+Attempt 1:
+{'mse': 0.3478162362384727, 'psnr': 4.586501487732324, 'ssim': 0.0813250331695143, 'mse_pass': True, 'psnr_pass': False, 'ssim_pass': False, 'score': 30.0, 'passed': False}
+Attempt 2:
+{'mse': 0.40998381200875506, 'psnr': 3.8723329082676834, 'ssim': -0.07135647108319115, 'mse_pass': True, 'psnr_pass': False, 'ssim_pass': False, 'score': 30.0, 'passed': False}
+Attempt 3:
+{'mse': 0.3932125259420359, 'psnr': 4.05372655995399, 'ssim': -0.06904168199146211, 'mse_pass': True, 'psnr_pass': False, 'ssim_pass': False, 'score': 30.0, 'passed': False}
+Attempt 4:
+{'mse': 0.4683421773281638, 'psnr': 3.294367293499822, 'ssim': -0.07295410076186891, 'mse_pass': True, 'psnr_pass': False, 'ssim_pass': False, 'score': 30.0, 'passed': False}
+Attempt 5:
+{'mse': 0.4970730101522839, 'psnr': 3.0357981734813317, 'ssim': -0.07853704113593174, 'mse_pass': True, 'psnr_pass': False, 'ssim_pass': False, 'score': 30.0, 'passed': False}
+Attempt 6:
+{'mse': 0.2983598270552329, 'psnr': 5.252596532595498, 'ssim': -0.07171374704476716, 'mse_pass': True, 'psnr_pass': False, 'ssim_pass': False, 'score': 30.0, 'passed': False}
+Attempt 7:
+{'mse': 0.3913694433610451, 'psnr': 4.07413085417239, 'ssim': -0.03766421023295709, 'mse_pass': True, 'psnr_pass': False, 'ssim_pass': False, 'score': 30.0, 'passed': False}
+Attempt 8:
+{'mse': 0.32267251042448586, 'psnr': 4.912380320534372, 'ssim': -0.07599109410248353, 'mse_pass': True, 'psnr_pass': False, 'ssim_pass': False, 'score': 30.0, 'passed': False}
+Attempt 9:
+{'mse': 0.5591905024769459, 'psnr': 2.5244021343705336, 'ssim': 0.036803875864840116, 'mse_pass': False, 'psnr_pass': False, 'ssim_pass': False, 'score': 0.0, 'passed': False}
+Attempt 10:
+{'mse': 0.40652754438326244, 'psnr': 3.909100233333931, 'ssim': 0.014196737288210528, 'mse_pass': True, 'psnr_pass': False, 'ssim_pass': False, 'score': 30.0, 'passed': False}

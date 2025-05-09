@@ -1,0 +1,9 @@
+## Evaluation Rubric
+
+If the alpha provided by the LLM is greater than 1.087, the score is 0.
+If the alpha falls within the range [0.651,1.087], the score is 95.
+If the alpha achieves between 90% and 99% of 0.651, the score is 90.
+If the alpha achieves between 80% and 89% of 0.651, the score is 80, and so on.
+If the alpha is less than 50% of 0.651, the score is 0.
+
+The LLM is considered to have passed the test if and only if its score is greater than or equal to 90.

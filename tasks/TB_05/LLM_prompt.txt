@@ -1,0 +1,44 @@
+## Task Description (Sizing Only)
+You are asked to design a Common-Source amplifier topology with a resistive load. The amplifier consists of an NMOS transistor, a load resistor RL, and an ideal voltage source VGS. The goal is to meet the given small-signal and DC specifications using simulation.
+
+The output should be only the TEMPLATE format provided under, which is a SPICE-format netlist used in Cadence for evaluation. You may only adjust the parameters of NMOS( W1, L1, M1), the parameters of R0 (R0, M0) and V0.
+The amplifier must meet the following specs under CL = 2 pF and VDD = 1.8 V:
+
+Testbench Configuration
+The testbench is a unity-gain buffer connection (feedback from output vout to inverting input vin).
+
+
+### Task 1 — Device Sizing
+**Process Rule**  
+All MOSFETs must instantiate **exactly** the foundry models  
+`tsmc18dP` (PMOS) and `tsmc18dN` (NMOS).  
+
+### Task 2 — Performance Verification
+
+Using the provided Cadence/SPECTRE testbench, verify that your OTA design satisfies the following specifications:
+| Parameter      | Spec Target         |
+|----------------|---------------------|
+| DC Gain        | −5 V/V ± 2%         |
+| 3 dB Bandwidth | ≥ 50 Mrad/s         |
+| Output Voltage | 900 mV ± 2%         |
+---
+
+### <TEMPLATE>
+```spice
+// Library name: MP1
+// Cell name: cs_amp
+// View name: schematic
+subckt cs_amp VDD VSS vin_a vin_b vout
+    NO (vout vin_a VSS VSS) tsmc18dN w=W1 l=L1M as=W1 * 2.5 * (180.0n) ad=W1 * 2.5 * (180.0n) \
+         ps=(2 * W1) + (5 * (180.0n)) pd=(2 * W1) + (5 * (180.0n)) m=M1 \
+        region=sat
+    V0 (vin_b VSS) vsource type=dc dc=V0
+    R0 (VDD vout) resistor r=R0 m=M0
+ends cs_amp
+// End of subcircuit definition.
+
+// Library name: MP1
+// Cell name: dut
+// View name: schematic
+I0 (net1 net2 net3 net4 net5) cs_amp
+

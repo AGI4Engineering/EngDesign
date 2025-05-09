@@ -1,0 +1,8 @@
+Attempt 1:
+{'path_validity': 0, 'path_optimality': 30, 'algorithm_implementation': 10, 'path_format': 10}
+Attempt 2:
+{'path_validity': 0, 'path_optimality': 30, 'algorithm_implementation': 10, 'path_format': 10}
+Attempt 3:
+{'path_validity': 0, 'path_optimality': 30, 'algorithm_implementation': 10, 'path_format': 10}
+Attempt 4:
+{'path_validity': 30, 'path_optimality': 30, 'algorithm_implementation': 10, 'path_format': 10}

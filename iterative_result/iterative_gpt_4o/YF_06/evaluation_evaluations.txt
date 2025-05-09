@@ -1,0 +1,2 @@
+Attempt 1:
+{'max_disp': 0.4072243055266115, 'disp_thresh': 0.5, 'max_stress': 143.16780976969193}

@@ -1,0 +1,4 @@
+Attempt 1:
+{'A': 'A is correct', 'B': 'B is correct', 'K': 'K is correct', 'L': 'L is correct', 'Stability': 'i.c.(1) is wrong    i.c.(2) is correct    i.c.(3) is correct    i.c.(4) is wrong'}
+Attempt 2:
+{'A': 'A is correct', 'B': 'B is correct', 'K': 'K is correct', 'L': 'L is correct', 'Stability': 'i.c.(1) is correct    i.c.(2) is correct    i.c.(3) is correct    i.c.(4) is correct'}

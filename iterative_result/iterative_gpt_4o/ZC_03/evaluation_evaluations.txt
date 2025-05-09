@@ -1,0 +1,20 @@
+Attempt 1:
+{'bar_alpha': 0.5, 'bar_beta': 0.5, 'underline_alpha': 1.0, 'underline_beta': 1.0}
+Attempt 2:
+{'bar_alpha': 0.5, 'bar_beta': 0.5, 'underline_alpha': 1.0, 'underline_beta': 1.0}
+Attempt 3:
+{'bar_alpha': 0.5, 'bar_beta': 0.5, 'underline_alpha': 1.0, 'underline_beta': 1.0}
+Attempt 4:
+{'bar_alpha': 0.5, 'bar_beta': 0.5, 'underline_alpha': 1.0, 'underline_beta': 1.0}
+Attempt 5:
+{'bar_alpha': 1.0, 'bar_beta': 1.0, 'underline_alpha': 0.5, 'underline_beta': 0.5}
+Attempt 6:
+{'bar_alpha': 1.0, 'bar_beta': 1.0, 'underline_alpha': 0.5, 'underline_beta': 0.5}
+Attempt 7:
+{'bar_alpha': 1.0, 'bar_beta': 1.0, 'underline_alpha': 0.5, 'underline_beta': 0.5}
+Attempt 8:
+{'bar_alpha': 1.0, 'bar_beta': 1.0, 'underline_alpha': 0.5, 'underline_beta': 0.5}
+Attempt 9:
+{'bar_alpha': 0.5, 'bar_beta': 0.5, 'underline_alpha': 1.0, 'underline_beta': 1.0}
+Attempt 10:
+{'bar_alpha': 1.0, 'bar_beta': 1.0, 'underline_alpha': 0.5, 'underline_beta': 0.5}

@@ -1,0 +1,50 @@
+
+// Library name: ece483_sp23
+// Cell name: folded_amp
+// View name: schematic
+subckt fc_ota vout ibn10u VDD vin vip VSS
+    P7 (vcas_mirr_n ibn10u net8 VDD) tsmc18dP w=1.8u l=540.0n as=8.1e-13 \
+        ad=8.1e-13 ps=4.5u pd=4.5u m=8 region=sat
+    P6 (vbp_mirror ibn10u net6 VDD) tsmc18dP w=1.8u l=540.0n as=8.1e-13 \
+        ad=8.1e-13 ps=4.5u pd=4.5u m=8 region=sat
+    P27 (net6 vbp_mirror VDD VDD) tsmc18dP w=1.8u l=540.0n as=8.1e-13 \
+        ad=8.1e-13 ps=4.5u pd=4.5u m=4 region=sat
+    P18 (vs_p2 vip vsource VSS) tsmc18dP w=1.8u l=270.0n as=8.1e-13 \
+        ad=8.1e-13 ps=4.5u pd=4.5u m=24 region=sat
+    P5 (net7 vbp_mirror VDD VDD) tsmc18dP w=1.8u l=540.0n as=8.1e-13 \
+        ad=8.1e-13 ps=4.5u pd=4.5u m=24 region=sat
+    P17 (vs_p1 vin vsource VSS) tsmc18dP w=1.8u l=270.0n as=8.1e-13 \
+        ad=8.1e-13 ps=4.5u pd=4.5u m=24 region=sat
+    P4 (net8 vbp_mirror VDD VDD) tsmc18dP w=1.8u l=540.0n as=8.1e-13 \
+        ad=8.1e-13 ps=4.5u pd=4.5u m=4 region=sat
+    P8 (vsource ibn10u net7 VDD) tsmc18dP w=1.8u l=540.0n as=8.1e-13 \
+        ad=8.1e-13 ps=4.5u pd=4.5u m=48 region=sat
+    P13 (vg_p ibn10u net4 VDD) tsmc18dP w=1.8u l=540.0n as=8.1e-13 \
+        ad=8.1e-13 ps=4.5u pd=4.5u m=8 region=sat
+    P12 (vout ibn10u net1 VDD) tsmc18dP w=1.8u l=540.0n as=8.1e-13 \
+        ad=8.1e-13 ps=4.5u pd=4.5u m=8 region=sat
+    P11 (net1 vg_p VDD VDD) tsmc18dP w=1.8u l=180.0n as=8.1e-13 ad=8.1e-13 \
+        ps=4.5u pd=4.5u m=2 region=sat
+    P14 (net4 vg_p VDD VDD) tsmc18dP w=1.8u l=180.0n as=8.1e-13 ad=8.1e-13 \
+        ps=4.5u pd=4.5u m=2 region=sat
+    N4 (vout vcas_mirr_n vs_p1 VSS) tsmc18dN w=720.0n l=810.0n as=3.24e-13 \
+        ad=3.24e-13 ps=2.34u pd=2.34u m=6 region=sat
+    N7 (vs_p2 vmirr_n VSS VSS) tsmc18dN w=360.0n l=540.0n as=1.62e-13 \
+        ad=1.62e-13 ps=1.62u pd=1.62u m=16 region=sat
+    N8 (vs_p1 vmirr_n VSS VSS) tsmc18dN w=360.0n l=540.0n as=1.62e-13 \
+        ad=1.62e-13 ps=1.62u pd=1.62u m=16 region=sat
+    N3 (net9 vmirr_n VSS VSS) tsmc18dN w=360.0n l=540.0n as=1.62e-13 \
+        ad=1.62e-13 ps=1.62u pd=1.62u m=4 region=sat
+    N2 (vg_p vcas_mirr_n vs_p2 VSS) tsmc18dN w=720.0n l=810.0n as=3.24e-13 \
+        ad=3.24e-13 ps=2.34u pd=2.34u m=6 region=sat
+    N1 (vmirr_n vcas_mirr_n net9 VSS) tsmc18dN w=720.0n l=810.0n \
+        as=3.24e-13 ad=3.24e-13 ps=2.34u pd=2.34u m=6 region=sat
+    R1 (vbp_mirror ibn10u) resistor r=21K m=1
+    R0 (vcas_mirr_n vmirr_n) resistor r=21K m=1
+ends folded_amp
+// End of subcircuit definition.
+
+// Library name: ece483_sp23
+// Cell name: dut
+// View name: schematic
+I4 (net3 net4 net5 net2 net1 net6) folded_amp

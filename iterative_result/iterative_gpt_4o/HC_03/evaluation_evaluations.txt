@@ -1,0 +1,20 @@
+Attempt 1:
+{'Coefficient a is correct': np.False_, 'Coefficient b is correct': np.False_, 'Coefficient c is correct': np.False_, 'Errors in the fit are within acceptable limits': np.False_}
+Attempt 2:
+{'Coefficient a is correct': np.False_, 'Coefficient b is correct': np.False_, 'Coefficient c is correct': np.False_, 'Errors in the fit are within acceptable limits': np.False_}
+Attempt 3:
+{'Coefficient a is correct': np.False_, 'Coefficient b is correct': np.False_, 'Coefficient c is correct': np.False_, 'Errors in the fit are within acceptable limits': np.False_}
+Attempt 4:
+{'Coefficient a is correct': np.False_, 'Coefficient b is correct': np.False_, 'Coefficient c is correct': np.False_, 'Errors in the fit are within acceptable limits': np.False_}
+Attempt 5:
+{'Coefficient a is correct': np.False_, 'Coefficient b is correct': np.False_, 'Coefficient c is correct': np.False_, 'Errors in the fit are within acceptable limits': np.False_}
+Attempt 6:
+{'Coefficient a is correct': np.False_, 'Coefficient b is correct': np.False_, 'Coefficient c is correct': np.False_, 'Errors in the fit are within acceptable limits': np.False_}
+Attempt 7:
+{'Coefficient a is correct': np.False_, 'Coefficient b is correct': np.False_, 'Coefficient c is correct': np.False_, 'Errors in the fit are within acceptable limits': np.False_}
+Attempt 8:
+{'Coefficient a is correct': np.False_, 'Coefficient b is correct': np.False_, 'Coefficient c is correct': np.False_, 'Errors in the fit are within acceptable limits': np.False_}
+Attempt 9:
+{'Coefficient a is correct': np.False_, 'Coefficient b is correct': np.False_, 'Coefficient c is correct': np.False_, 'Errors in the fit are within acceptable limits': np.False_}
+Attempt 10:
+{'Coefficient a is correct': np.False_, 'Coefficient b is correct': np.False_, 'Coefficient c is correct': np.False_, 'Errors in the fit are within acceptable limits': np.False_}

@@ -1,0 +1,10 @@
+We will use exact code judgment to evaluate the correctness of LLM responses.
+
+The evaluation will verify:
+1. The accuracy of the counter bit calculations including division ratio
+2. The correctness of the maximum delay calculations
+3. The mathematical reasoning and formulas used
+4, The Maximum delay calculation accuracy: 10 points
+5. The Correct flicker assessment: 10 points
+
+The evaluation will use a Python script to compare the LLM's calculated values against the correct solutions and award points according to the rubric.

@@ -1,0 +1,11 @@
+## Rubric for Evaluating RSLQR Controller Design Response
+Assess how good the controller is at tracking the step input and the performance.
+| Criterion | Points | Description |
+|------------|---------|--------------|
+| Settling time | 30 | The 5% settling time of the system is faster than 5s |
+| Overshoot | 20 | The overshoot of the system is smaller than 20% |
+| Error | 30 | The error of the final value is 0 |
+| Gain margin | 10 | The gain margin should be bigger than 10 dB |
+| Phase margin | 10 |The phase margin should be bigger than 45 degrees |
+
+Note: If the system is unstable, the score will be 0, no matter how good the performance is. 

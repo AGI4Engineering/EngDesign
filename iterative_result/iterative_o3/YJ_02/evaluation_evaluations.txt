@@ -1,0 +1,10 @@
+Attempt 1:
+{'y_hat_shape': 'Fail', 'compliance_error': 'Fail (CE=1.4730)'}
+Attempt 2:
+{'y_hat_shape': 'Pass', 'compliance_error': 'Fail (CE=0.7326)'}
+Attempt 3:
+{'y_hat_shape': 'Pass', 'compliance_error': 'Fail (CE=0.0943)'}
+Attempt 4:
+{'y_hat_shape': 'Fail', 'compliance_error': 'Fail (CE=0.1854)'}
+Attempt 5:
+{'y_hat_shape': 'Fail', 'compliance_error': 'Pass (CE=0.0213)'}

@@ -1,0 +1,39 @@
+## Task Description
+
+You are an expert Python programmer specializing in Computer Vision using the OpenCV library. Your task is to process the image located at 'images/test_shape.png' to find the largest contour and then compute its approximate polygon and convex hull representations.
+
+**Constraint: You MUST use the OpenCV functions `cv2.findContours`, `cv2.contourArea`, `cv2.arcLength`, `cv2.approxPolyDP`, and `cv2.convexHull` as appropriate to solve this task.**
+
+## Implementation Steps
+
+The implementation should follow this specific logic:
+
+1.  **Load Image:** Load the image directly from the hardcoded path 'images/test_shape.png'. Handle potential loading errors.
+2.  **Preprocess:** Convert the loaded image to grayscale. Apply binary thresholding (e.g., `cv2.threshold` with `cv2.THRESH_BINARY`) to create a binary image where the object is white and the background is black.
+3.  **Find Contours:** Find all external contours in the binary image using `cv2.findContours`. Use the retrieval mode `cv2.RETR_EXTERNAL` and the approximation method `cv2.CHAIN_APPROX_SIMPLE`. Handle the case where no contours are found.
+4.  **Identify Largest Contour:** Iterate through the found contours and identify the one with the largest area using `cv2.contourArea`. If no contours were found, proceed to return `(None, None)`.
+5.  **Calculate Approximate Polygon:** For the largest contour found (`cnt`):
+    * Calculate its perimeter (arc length) using `cv2.arcLength(cnt, True)`.
+    * Calculate the epsilon value for approximation using the formula: `epsilon = 0.01 * arc_length`.
+    * Compute the approximate polygon vertices using `cv2.approxPolyDP(cnt, epsilon, True)`.
+6.  **Calculate Convex Hull:** For the *same* largest contour (`cnt`), compute the convex hull vertices using `cv2.convexHull(cnt)`.
+7.  **Return Results:** Return the computed vertices as a tuple: `(approx_vertices, hull_vertices)`.
+
+## Input Specification
+
+The solution code's main function must internally use the hardcoded path 'images/test_shape.png' for image loading. It should **not** accept any arguments.
+
+## Output Specification
+
+Your response must be structured according to the `CodeSolutionOutput` Pydantic model, containing the following fields:
+
+1.  **`reasoning`**: Provide a clear, step-by-step explanation of how the code follows the Implementation Steps above to find the largest contour and compute its simplified representations.
+2.  **`solution_code`**: Provide the complete Python code.
+    * The code must include necessary imports (e.g., `numpy`, `cv2`).
+    * The core logic must be encapsulated within a function named `get_simplified_contours` that takes **no arguments**.
+    * This function must load the image using the hardcoded path 'images/test_shape.png'.
+    * This function must **return** a tuple containing two elements: `(approx_vertices, hull_vertices)`.
+        * `approx_vertices`: The NumPy array of vertices returned by `cv2.approxPolyDP`.
+        * `hull_vertices`: The NumPy array of vertices returned by `cv2.convexHull`.
+    * If the image cannot be loaded or no contours are found, the function should return `(None, None)`.
+    * The code should **not** include any code for displaying images (`cv2.imshow`) or saving files (`cv2.imwrite`).

@@ -1,0 +1,4 @@
+Attempt 1:
+{'diskmargin': 0.1262962080357924, 'gamma': 1.2864479830208597, 'info': {'W': <matlab.object object at 0x108e49590>, 'Gs': <matlab.object object at 0x108e495b0>, 'Ks': <matlab.object object at 0x108e49490>, 'emax': 0.21771377501462572, 'W1': <matlab.object object at 0x108e49370>, 'W3': <matlab.object object at 0x108e49230>, 'K2dof': <matlab.object object at 0x108e486d0>}}
+Attempt 2:
+{'diskmargin': 0.13483762053592607, 'gamma': 0.8934758436513172, 'info': {'W': <matlab.object object at 0x108e495d0>, 'Gs': <matlab.object object at 0x108e49550>, 'Ks': <matlab.object object at 0x108e49650>, 'emax': 0.21771377501462572, 'W1': <matlab.object object at 0x108e49010>, 'W3': <matlab.object object at 0x108e493f0>, 'K2dof': <matlab.object object at 0x108e49050>}}

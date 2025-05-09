@@ -1,0 +1,22 @@
+## Task Description
+In this task, you are required to design a multi-stage sample rate converter for an LTE receiver. The converter must reduce various input sample rates (for example, 125, 140, or 150 Msps) down to a lower baseband rate while meeting specific passband and stopband requirements. The converter is implemented as a three-stage filter chain. In the first stage, a Farrow rate converter makes a fine adjustment to the sample rate by a predefined factor. The signal is then processed by two decimating FIR filters in the subsequent stages. Your goal is to determine the appropriate parameters for each stage to satisfy the LTE signal integrity constraints.
+
+### Task 1
+Your first task is to specify the top level parameters given the input rate FsADC = 150 MHz and the output rate FsLTERx = 30.72 MHz. The parameters and their requirements are as follows:
+#### Parameters:
+- Fpass, the passband cutoff frequency that accommodates the maximum possible LTE bandwidth of 10 MHz.
+- Fstop, typically the Nyquist rate $\frac{FsLTERx}{2}$, can be adjusted if more out-of-band signal rejection is required.
+- Ast, the stopband attenuation in dBs.
+- Ap, the desired passband ripple. 
+
+### Task 2
+Your second task is to determine the reduction factors(Factor_1 and Factor_2, both of which are integers greater than one) for the last two decimating FIR filters. First, the Farrow rate converter should be placed as far from the Nyquist bandwidth as possible. Next, verify that the converter meets the LTE requirements by confirming that the Error Vector Magnitude (EVM) remains within acceptable limits. The MATLAB code below calculates the EVM:
+<code_block>
+results.floatPointSRCEVM = SRCTestUtils.MeasureEVM(sigInfo,floatResamplerOut,FsLTERx);
+disp(['    floating point SRC RMS EVM: '  num2str(results.floatPointSRCEVM.RMS*100,3) ' %']);
+disp(['   floating point SRC Peak EVM: ' num2str(results.floatPointSRCEVM.Peak*100,3) ' %']);
+</code_block>
+the following requirements need to be satisfied:
+- floating point SRC RMS EVM: <= 0.03%
+- floating point SRC Peak EVM: <= 0.07%
+- Factor_2 * FsLTERx - 2 * Fpass: > 0 MHz

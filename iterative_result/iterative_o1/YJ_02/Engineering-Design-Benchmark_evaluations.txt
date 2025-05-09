@@ -1,0 +1,20 @@
+Attempt 1:
+{'y_hat_shape': 'Fail', 'compliance_error': 'Fail (CE=0.4033)'}
+Attempt 2:
+{'y_hat_shape': 'Fail', 'compliance_error': 'Fail (CE=0.9926)'}
+Attempt 3:
+{'y_hat_shape': 'Fail', 'compliance_error': 'Fail (CE=0.4215)'}
+Attempt 4:
+{'y_hat_shape': 'Fail', 'compliance_error': 'Fail (CE=0.9923)'}
+Attempt 5:
+{'y_hat_shape': 'Pass', 'compliance_error': 'Fail (CE=0.4106)'}
+Attempt 6:
+{'y_hat_shape': 'Pass', 'compliance_error': 'Fail (CE=0.9925)'}
+Attempt 7:
+{'y_hat_shape': 'Pass', 'compliance_error': 'Fail (CE=0.4146)'}
+Attempt 8:
+{'y_hat_shape': 'Pass', 'compliance_error': 'Fail (CE=0.9924)'}
+Attempt 9:
+{'y_hat_shape': 'Pass', 'compliance_error': 'Fail (CE=0.9926)'}
+Attempt 10:
+{'y_hat_shape': 'Pass', 'compliance_error': 'Fail (CE=0.4181)'}

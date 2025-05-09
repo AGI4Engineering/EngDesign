@@ -1,0 +1,43 @@
+## Task Description
+Consider the discrete‐time Lurye feedback interconnection composed of the following blocks:
+
+Nonlinear block:
+  \[
+    w_k = \phi(v_k), 
+    \quad
+    \phi:\mathbb R\to\mathbb R\text{ satisfies }
+    0 \;\le\; \frac{\phi(v_1)-\phi(v_2)}{v_1-v_2}\;\le\;1,
+    \;\forall v_1\neq v_2.
+  \]
+  
+Linear time‐invariant block:
+  \[
+    \begin{cases}
+      x_{k+1} = A\,x_k + \alpha\,B\,w_k,\\
+      y_k      = C\,x_k + D\,w_k,
+    \end{cases}
+    \quad
+    \alpha>0\text{ multiplies the input matrix }B,
+  \]
+  with numerical values
+  \[
+    A = \begin{bmatrix}0.5000 & 0 \\1.0000 & 0\end{bmatrix},
+    B = \begin{bmatrix}1 \\0\end{bmatrix},\quad
+    C = \begin{bmatrix}2.0000 & 0.9200\end{bmatrix},
+    D = [\,0\,].
+  \]
+  
+Interconnection：
+  \[
+    v_k = d_k - y_k,\qquad
+    w_k = \phi(v_k),\qquad
+    e_k = w_k.
+  \]
+  
+### Task 
+Calculate the $\alpha$ where
+\[
+    \alpha_{\max}
+    = \max\bigl\{\alpha>0 \mid \text{the closed‐loop is absolutely stable for all }\phi\text{ in the sector}\bigr\}.
+\]
+Please note the properties of the nonlinear operator $\phi$, you are encouraged to use semidefinite programming and bisection.

@@ -1,0 +1,6 @@
+## Evaluation Rubric
+- Relative band width: 20 points
+- Directivity at low frequency: 20 points
+- Directivity at center frequency: 20 points
+- Directivity at high frequency: 20 points
+- Axial ratio at center frequency: 20 points

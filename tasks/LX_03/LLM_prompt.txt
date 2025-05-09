@@ -1,0 +1,69 @@
+In vehicle dynamics, the \emph{quarter–car model} captures the vertical motion of a single wheel assembly and the corresponding section of chassis, using two masses (the sprung mass $M$ and unsprung mass $m$), interconnected by a suspension spring–damper and a tire spring. An \emph{active suspension} system adds a controllable actuator force $u$ between the sprung and unsprung masses, allowing real‑time adjustment of ride stiffness and damping. By rejecting road disturbances $y_R$ and shaping the chassis response, active control can greatly improve both \emph{ride comfort} and \emph{road holding}. Here, we linearize about the static equilibrium, normalize all displacements so that the resting positions are zero, and derive a linear time‑invariant state–space model suitable for controller design.
+
+You can find a schematic of an active suspension system in the provided figure. 
+
+A state–space model in scientific units is given below, where $v_i = \dot x_i$. 
+The states $x_i$ have been normalized so that their nominal values are $0$.
+\[
+\frac{d}{dt}
+\begin{bmatrix}
+x_1\\
+x_2\\
+v_1\\
+v_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0    & 1   & 0\\
+0 & 0    & 0   & 1\\
+-10 & 10 & -2  & 2\\
+60 & -660 & 12 & -12
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+v_1\\
+v_2
+\end{bmatrix}
++
+\begin{bmatrix}
+0\\
+0\\
+3.34\\
+-20
+\end{bmatrix}
+u
++
+\begin{bmatrix}
+0\\
+0\\
+0\\
+600
+\end{bmatrix}
+y_R
+\]
+
+\begin{enumerate}
+  \item Perform an open‑loop simulation of $x_1$ and $x_2$ for $0 \le t \le 20\,$s, 
+    with 
+    \[
+      x_1(0)=0.5\ \mathrm{m},\quad
+      x_2(0)=0\ \mathrm{m},\quad
+      v_1(0)=v_2(0)=0,\quad
+      u(t)=y_R(t)\equiv 0.
+    \]
+    Determine the values $p_1$ and $p_2$ of the two largest peaks in $x_1(t)$. Also, find the settling time $t_s$ defined as the time after which $|x_1(t)|<\SI{0.025}{m}$ holds for all subsequent $t$.
+  \item Repeat (1), but let $x_1(0)=\SI{0}{m}$ and $y_R$ be a square‐wave of amplitude $0.2\,$m 
+    and fundamental frequency $0.2\,$Hz. Determine the number of peaks $N$ in $x_1(t)$ within one period, and find the value of the largest peak $p_m$.
+    
+  \item Design a state‐feedback control law $K=[k1\ k2\ k3\ k4]$ for a comfortable ride, meeting the following requirements:
+  \begin{enumerate}
+    \item The DC gains of $X_1(s)/Y_R(s)$ and $X_2(s)/Y_R(s)$ remain $1$.
+    \item Achieve a critically damped closed‐loop response for $X_1(s)/Y_R(s)$.
+    \item Reduce the settling time to approximately half of the open‐loop value.
+    \item The car does not bottom out under the conditions of (1). In normalized states, this means that
+    \[
+      x_1(t)-x_2(t) > -0.5\ \mathrm{m}.
+    \]
+  \end{enumerate}
+\end{enumerate}

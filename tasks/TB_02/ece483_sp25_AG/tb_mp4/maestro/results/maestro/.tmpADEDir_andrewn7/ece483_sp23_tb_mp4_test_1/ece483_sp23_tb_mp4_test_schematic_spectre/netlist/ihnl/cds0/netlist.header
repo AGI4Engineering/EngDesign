@@ -1,0 +1,5 @@
+
+// Library name: ece483_sp23
+// Cell name: folded_amp
+// View name: schematic
+subckt folded_amp vout ibias_10u_n vdd vinn vinp vss

@@ -1,0 +1,12 @@
+## Rubric for Evaluating NPU Chip Design and Allocation
+- Task 1 correct: 10
+- Task 2:
+    - If the answer is with +-10% of the reference answer: 10
+    - Otherwise: 0
+- Task 3:
+    - Prefill score:
+        - If the answer violates latency SLO or memory constraint or is an invalid allocation: 0
+        - If the answer satisfies latency SLO: score = answer_throughput / ideal_throughput * 40
+    - Decode score:
+        - If the answer violates latency SLO or memory constraint or is an invalid allocation: 0
+        - If the answer satisfies latency SLO: score = answer_throughput / ideal_throughput * 40

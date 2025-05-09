@@ -1,0 +1,10 @@
+Attempt 1:
+{'relativeBW': 0.424, 'r': 0.0004, 'D': 0.055, 'turns': 6.0, 'pitch': 8.0, 'side': 0.35, 'Direc_at_low': 11.467219760747325, 'Direc_at_center': 11.90204067754874, 'Direc_at_high': 11.947821398159748, 'ar_dB': 2.8997516098759175, 'check_1': True, 'check_2': False, 'check_3': True, 'check_4': True, 'check_5': False}
+Attempt 2:
+{'relativeBW': 0.424, 'r': 0.0004, 'D': 0.058, 'turns': 8.0, 'pitch': 12.0, 'side': 0.4, 'Direc_at_low': 12.115971965556136, 'Direc_at_center': 11.183587064157322, 'Direc_at_high': 11.693032284253263, 'ar_dB': 0.8574142956656151, 'check_1': True, 'check_2': True, 'check_3': False, 'check_4': True, 'check_5': True}
+Attempt 3:
+{'relativeBW': 0.424, 'r': 0.0004, 'D': 0.058, 'turns': 10.0, 'pitch': 14.0, 'side': 0.4, 'Direc_at_low': 12.100987774180162, 'Direc_at_center': 10.562138135307775, 'Direc_at_high': 12.371380627154467, 'ar_dB': 0.9243939891581301, 'check_1': True, 'check_2': True, 'check_3': False, 'check_4': True, 'check_5': True}
+Attempt 4:
+{'relativeBW': 0.424, 'r': 0.0004, 'D': 0.055, 'turns': 6.0, 'pitch': 12.0, 'side': 0.45, 'Direc_at_low': 11.12945079930105, 'Direc_at_center': 8.832564238668304, 'Direc_at_high': 10.500118388643019, 'ar_dB': 1.6124796652929088, 'check_1': True, 'check_2': False, 'check_3': False, 'check_4': False, 'check_5': False}
+Attempt 5:
+{'relativeBW': 0.424, 'r': 0.0004, 'D': 0.055, 'turns': 7.0, 'pitch': 10.0, 'side': 0.35, 'Direc_at_low': 11.688595867497629, 'Direc_at_center': 11.905467823350705, 'Direc_at_high': 12.812331588377274, 'ar_dB': 1.2868569369066616, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': True, 'check_5': True}

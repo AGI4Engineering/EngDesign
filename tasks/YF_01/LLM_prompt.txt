@@ -1,0 +1,29 @@
+## Task Description
+
+In this task, you are required to determine a suitable **thickness (`Th`)** for an L-shaped steel beam, which will be subjected to a horizontal load and evaluated using 3D structural simulation in MATLAB’s PDE Toolbox.
+
+The L-shaped beam is formed by extruding a 2D profile composed of a horizontal and vertical segment connected by a fillet arc. The extrusion occurs in the z-direction to produce a 3D object.
+
+You are given the following fixed parameters:
+
+- `Lh = 50` mm  (Horizontal length)
+- `Lv = 80` mm  (Vertical length)
+- `Rf = 20` mm  (Fillet radius)
+- `Height = 50` mm (Extrusion height)
+- External surface traction: `[10, -20, 0]` N/mm² applied to Face ID = 5
+- Face ID = 4 is fixed
+- Material properties:
+   - Young’s modulus: 21,000 MPa
+   - Poisson’s ratio: 0.3
+
+The beam will be evaluated using a static linear elasticity model. The performance criterion is that the **maximum displacement in the z-direction (`uz`) must be less than 0.1 mm**.
+The score depends on the ratio of the maximum measured displacement to the allowable threshold. If that ratio falls between seventy percent and ninety percent, the beam earns the full 100 points. If the ratio is below seventy percent, partial credit is awarded in direct proportion to how close it is to seventy-percent (with zero displacement scoring zero and seventy-percent scoring 100). If the ratio lies between ninety percent and one hundred percent, points are deducted in proportion to how far it exceeds ninety percent (dropping from 100 at ninety percent down to zero at the full threshold). Any ratio below zero or above one hundred percent results in a score of zero.
+---
+
+### Task
+
+Your task is to:
+- Propose a structurally sound value for `Th` (thickness of the beam, in mm), you need to numerically compute the Th, not reply with your previous experience.
+- Provide a brief justification for your choice of thickness, considering stiffness, loading, and geometric constraints, you must give the computation process
+
+You do **not** need to evaluate the displacement yourself. The simulation and evaluation will be done separately.

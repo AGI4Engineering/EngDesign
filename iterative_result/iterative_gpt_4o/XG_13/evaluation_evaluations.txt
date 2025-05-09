@@ -1,0 +1,8 @@
+Attempt 1:
+{'Stability': True, 'Settling Time (s)': np.float64(0.9826589595375722), 'Overshoot (%)': np.float64(48.16106832011799)}
+Attempt 2:
+{'Stability': True, 'Settling Time (s)': np.float64(0.5960516324981018), 'Overshoot (%)': np.float64(1.8178089227935956)}
+Attempt 3:
+{'Stability': True, 'Settling Time (s)': np.float64(0.6416530723219142), 'Overshoot (%)': np.float64(0.3168737858366688)}
+Attempt 4:
+{'Stability': True, 'Settling Time (s)': np.float64(0.8321664332866573), 'Overshoot (%)': np.float64(0.002977322390185222)}

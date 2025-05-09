@@ -1,0 +1,4 @@
+Attempt 1:
+{'horizontal_distance_m': 3999.975486290352, 'time_seconds': 4079.1915732070906, 'energy_required_Wh': 169.9209911994817, 'volume_m3': 0.2, 'density_kg_per_m3': 1000.0, 'passed': False}
+Attempt 2:
+{'horizontal_distance_m': 4000.0000014594525, 'time_seconds': 4079.2156123053383, 'energy_required_Wh': 169.9219925614746, 'volume_m3': 0.2, 'density_kg_per_m3': 1000.0, 'passed': True}

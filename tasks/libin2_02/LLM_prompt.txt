@@ -1,0 +1,24 @@
+### Task Description
+
+In this task, you need to choose an appropriate Round-Robin time quantum (time_quantum) for a set of threads in order to minimize the **combined cost**.  
+We will calculate three cost components:  
+1. Average waiting time(avg_waiting_time), in milliseconds (ms). Smaller is better.  
+2. Number of context switches(context_switches). Each switch counts as 1 ms of overhead. Fewer is better.  
+3. Time quantum cost(quantum_cost), reflecting the negative impact of too long a time quantum, defined as: quantum_cost = time_quantum * 0.5
+
+The combined cost(combined_cost) is the sum of these three components.
+
+
+### Input
+The thread list is given as tuples (arrival_time, burst_time), both in ms:
+case1 = [(0,5),(2,3),(4,8),(6,6),(8,4)]
+case2 = [(0,10),(1,2),(3,7),(5,5)]
+case3 = [(0,2),(2,2),(4,2),(6,2),(8,2),(10,2)]
+
+### Requirements
+Choose a single time quantum such that the combined cost for each case does not exceed:  
+- case1: 17 ms  
+- case2: 17 ms  
+- case3: 8 ms 
+
+Return the chosen time_quantum and, for each case, the corresponding avg_waiting_time, context_switches, and quantum_cost.

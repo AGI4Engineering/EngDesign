@@ -1,0 +1,31 @@
+## Task Description
+Consider the following plant with a resonance:
+\[
+G(s) = \frac{0.5}{s}\frac{169}{s^2 + 0.26s + 169},
+\]
+This plant has a resonance around 13 rad/sec. Assuming the desired loop bandwidth is $ \omega_{L} = 3 $ rad/sec. An initial loop shaping controller using controller gain and integral boost is given as:
+- gain: $ K_g = \frac{1}{|G(j\omega_L)|}$,
+- integral boost: $ K_i(s) =  \frac{\beta_b s + \omega_L}{s \sqrt{\beta_b^2 + 1}}$ with $ \beta_b = \sqrt{10}$.
+And the initial loop shaping controller is:
+\[
+C(s) = K_g \cdot K_i(s)
+\]
+
+### Task 1
+Your first task is to obtain the explicit transfer function of the initial loop shaping controller. Please provide the complete transfer function of \( C(s) \) as part of your response in the form of numerator and denominator coefficients.
+
+### Task 2
+The initial design yeilds a unstable closed-loop system since there are additional gain crossings at 11.3 and 14.2 rad/sec. Your task is to build upon the initial controller, add a notch filter to attenuate the resonance. A notch filter with three parameters (\omega_n, \alpha_n, f_n) is given as:
+\[
+K_n(s) = \frac{s^2 + (f_n \omega_n \sqrt{\alpha_n})s + \omega_n^2}{s^2 + ((f_n \omega_n)/(\sqrt{\alpha_n}))s + \omega_n^2}.
+\]
+Now your goal is to determine the parameters of the notch filter to attenuate the resonance. Here are some information may help you design the notch filter:
+- The resonance frequency is 13 rad/sec.
+- The loop without notch filter has a magnitude of 21 dB near the resonance frequency.
+
+
+You need to design the notch filter to achieve the following requirements:
+- The closed-loop system is stable.
+- The closed-loop system should have a phase margin of at least 60 degrees.
+- The closed-loop system should have a gain margin of at least 2 dB.
+

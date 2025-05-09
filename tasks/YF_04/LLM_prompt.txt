@@ -1,0 +1,28 @@
+## Task Description
+
+In this task, you are required to determine a suitable diameter d of a solid cylindrical steel shaft, which will be subjected to an applied torque and evaluated using 3D structural simulation in MATLAB’s PDE Toolbox.
+
+The shaft is modeled as a cantilever: one end is fully fixed (all degrees of freedom constrained), and the other end is free. A torque T is applied uniformly over the free‐end circular face about the shaft axis.
+You are given the following fixed parameters:
+
+- 'L = 1000' mm  
+- 'diameter' mm (to be designed)
+
+
+- Applied torque: T=1×10^6 N·mm (equivalent to 1 kN·m)
+- Material properties:
+   - Young’s modulus: 210,000 MPa
+   - Poisson’s ratio: 0.3
+
+The shaft will be evaluated using a static linear‐elastic 3D model. The performance criterion is that the maximum twist angle ϕ between the free end and the fixed end (rotation about the longitudinal axis) must satisfy
+0.05rad. The score depends on the ratio of the maximum measured angle to the allowable threshold. If that ratio falls between seventy percent and ninety percent, the beam earns the full 100 points. If the ratio is below seventy percent, partial credit is awarded in direct proportion to how close it is to seventy-percent (with zero displacement scoring zero and seventy-percent scoring 100). If the ratio lies between ninety percent and one hundred percent, points are deducted in proportion to how far it exceeds ninety percent (dropping from 100 at ninety percent down to zero at the full threshold). Any ratio below zero or above one hundred percent results in a score of zero.
+---
+
+### Task
+
+Your task is to:
+- Propose a structurally sound value for `D` (diameter of the shaft, in mm)
+- Provide a brief justification for your choice of thickness, considering stiffness, loading, and geometric constraints
+
+You do **not** need to evaluate the angle yourself. The simulation and evaluation will be done separately.
+

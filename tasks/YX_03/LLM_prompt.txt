@@ -1,0 +1,81 @@
+## Task Description
+In this task, you should evaluate the detection performance of an S-band radar system operating at 3 GHz. Across 14 tasks, you will calculate key metrics such as available and required SNR, integration gain, fluctuation loss, MTI and CFAR losses, beam and scan-related losses, and the overall effective detectability factor. Results should be expressed in dB or km with proper rounding and error estimation.
+
+
+### Task 1
+Given an S-band airport surveillance radar operating at the frequency of 3 GHz. The peak transmit power is 0.2 MW, the transmit and receive antenna gain is 34 dB, the pulse duration is 11 microseconds, and the noise figure is 4.1 dB. Assume the radar is required to detect a target with 1 m^2 RCS at the maximum range R_m of 100 km. Assume no losses, that is L = 0 dB. Calculate the available SNR at the required maximum range of 100 km.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain two decimal places. Round your result instead of truncating.
+
+### Task 2
+Compute the required SNR for a single pulse received from a steady target by a square-law detector, assuming the desired probability of detection Pd = 0.9 and the maximum acceptable probability of false alarm Pfa = 1e-6.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain two decimal places. Round your result instead of truncating.
+
+### Task 3
+Assuming Pd = 0.9 and Pfa = 1e-6, calculate the required SNR for a single pulse received from a Swerling 1 fluctuating target.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain two decimal places. Round your result instead of truncating.
+
+### Task 4
+To lower the detectability factor, we can perform pulse integration. Calculate the required SNR for N = 10 noncoherently integrated pulses received from a Swerling 1 fluctuating target, assuming Pd = 0.9 and Pfa = 1e-6.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain two decimal places. Round your result instead of truncating.
+
+### Task 5
+The integration gain is the difference between the SNR required to detect a steady target using a single pulse and the SNR required to detect a steady target using N pulses. Given Pd = 0.9 and Pfa = 1e-6, N = 10, calculate the integration gain.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain two decimal places. Round your result instead of truncating.
+
+### Task 6
+The fluctuation loss is the difference between the SNR required to detect a fluctuating target and the SNR required to detect a steady target. Given Pd = 0.9 and Pfa = 1e-6, using 10 pulses, calculate the fluctuation loss.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain two decimal places. Round your result instead of truncating.
+
+### Task 7
+Using your result of Task 4 as the minimum required SNR, and the same conditions as in Task 1 (An S-band airport surveillance radar is operating at the frequency of 3 GHz. The peak transmit power is 0.2 MW, the transmit and receive antenna gain is 34 dB, the pulse duration is 11 microseconds, and the noise figure is 4.1 dB. The radar is required to detect a target with 1 m^2 RCS.), evaluate the actual maximum range of the system.
+Express the result in km, and please specify the absolute error you believe exists between your result and the standard answer. Retain two decimal places. Round your result instead of truncating.
+
+
+### Task 8
+Pulse radar systems turn off their receivers during the pulse transmission. Thus, the target echoes arriving from the ranges within one pulse length from the radar or within one pulse length around the unambiguous range will be eclipsed by the transmitted pulse resulting in only a fraction of the pulse being received and processed.
+Given the radar system with the pulse width of 11 microseconds, calcuate the closest range from which a full pulse can be received, Rmin.
+Express the result in km, and please specify the absolute error you believe exists between your result and the standard answer. Retain two decimal places. Round your result instead of truncating.
+
+### Task 9
+Eclipsing effect can also be observed for the targets located at or near the multiples of the unambiguous range. Assuming the pulse repetition frequency is 1350 Hz, calculate the unambiguous range of the system.
+Express the result in km, and please specify the absolute error you believe exists between your result and the standard answer. Retain two decimal places. Round your result instead of truncating.
+
+
+### Task 10
+Assume the radar system employs an electronically steered phased array to perform scanning. Using the phased array antenna will cause an increase in the required SNR due to two effects: 1. beam broadening due to the reduced projected array area in the beam direction, and 2. reduction of the effective aperture area of the individual array elements at off-broadside angles. To account for these effects, add the scan sector loss to the detectability factor. Assume that the system scans only in the azimuth dimension and the scan sector spans from –60 to 60 degrees. Assume the target is a fluctuating target. Given Pd = 0.9 and Pfa = 1e-6, N = 10, compute the resultant loss.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain four decimal places. Round your result instead of truncating.
+
+
+### Task 11
+Moving target indicator (MTI) is a process of rejecting fixed or slowly moving clutter while passing echoes from targets moving with significant velocities. Typical MTI uses 2, 3, or 4-pulse canceller that implements a high-pass filter to reject echoes with low Doppler shifts. Passing the received signal through the MTI pulse canceller introduces correlation between the noise samples. This in turn reduces the total number of independent noise samples available for integration, resulting in MTI noise correlation loss. Additionally, the MTI canceller significantly suppresses targets with velocities close to the nulls of its frequency response, causing an additional MTI velocity response loss.
+Assume the target is a fluctuating target. Given Pd = 0.9 and Pfa = 1e-6, N = 10. Assuming a 2-pulse canceller is used, calculate these two components of the MTI loss, the MTI noise correlation loss Lmti_a and the MTI velocity response loss Lmti_b.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain four decimal places. Round your result instead of truncating.
+
+### Task 12
+Binary integration is a suboptimal noncoherent integration technique also known as the M-of-N integration. If M out of N received pulses exceed a predetermined threshold, a target is declared to be present. The binary integrator is a relatively simple automatic detector and is less sensitive to the effects of a single large interference pulse that might exist along with the target echoes. Therefore, the binary integrator is more robust when the background noise or clutter is non-Gaussian. Since the binary integration is a suboptimal technique, it results in a binary integration loss compared to optimal noncoherent integration. The optimal value of M is not a sensitive selection and it can be quite different from the optimum without significant penalty resulting in the binary integration loss being lower than 1.4 dB.
+Given Pd = 0.9 and Pfa = 1e-6. Calculate the binary integration loss when N is 10 and M is set to 6.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain four decimal places. Round your result instead of truncating.
+
+### Task 13
+Constant false alarm rate (CFAR) detector is used to maintain an approximately constant rate of false target detections when the noise or the interference levels vary. Since CFAR averages a finite number of reference cells to estimate the noise level, the estimates are subject to an error which leads to a CFAR loss. CFAR loss is an increase in the SNR required to achieve a desired detection performance using CFAR when the noise levels are unknown compared to a fixed threshold with a known noise level.
+Calculate the CFAR loss assuming that Pfa = 1e-6 and total 120 cells are used for cell-averaging CFAR.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain four decimal places. Round your result instead of truncating.
+
+
+### Task 14
+The detectability factor reflects the minimum SNR required to detect a target under ideal conditions. However, practical radar systems experience additional signal processing and scanning losses.
+Using the baseline detectability factor for a steady target with a single pulse from Task 2, and incorporating the following computed components:
+- Integration gain (Task 5)
+- Fluctuation loss (Task 6)
+- Beam shape loss = 1.2338 dB
+- Scan sector loss (Task 10)
+- MTI noise correlation loss and velocity response loss (Task 11)
+- Binary integration loss (Task 12)
+- CFAR loss (Task 13)
+Calculate the effective detectability factor by appropriately adjusting the baseline with gains and adding all losses.
+Express the result in dB, and please specify the absolute error you believe exists between your result and the standard answer. Retain two decimal places. Round your result instead of truncating.
+
+### Task 15
+Based on the effective detectability factor calculated in Task 14, evaluate whether the radar system described in Task 1 — an S-band airport surveillance radar operating at 3 GHz with 0.2 MW peak transmit power, 34 dB antenna gain (Tx/Rx), 11 microseconds pulse duration, and a 4.1 dB noise figure — is capable of detecting a 1 m^2 RCS target at 100 km with Pd = 0.9 and Pfa = 1e-6.
+Compare the available SNR from Task 1 with the required detectability factor from Task 14, and conclude whether the system satisfies the performance requirement.
+If the system meets the requirement, return 1; if it does not, return 0.

@@ -1,0 +1,5 @@
+## Evaluation Rubric
+- mse: 30 points
+- psnr: 30 points
+- ssim: 40 points
+

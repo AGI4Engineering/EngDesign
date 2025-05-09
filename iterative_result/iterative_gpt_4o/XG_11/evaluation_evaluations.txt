@@ -1,0 +1,2 @@
+Attempt 1:
+{'num_passed': True, 'den_passed': True, 'stability_passed': True, 'phase_margin_passed': True, 'gain_margin_passed': True, 'gain_margin': matlab.double([[0.0,3.1207078839142977]]), 'phase_margin': matlab.double([[61.045177373625975,-42.864714574851995,166.486102838625]]), 'score': 100.0, 'passed': True}

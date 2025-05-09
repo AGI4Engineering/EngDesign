@@ -1,0 +1,8 @@
+Attempt 1:
+{'score': 40.0}
+Attempt 2:
+{'score': 40.0}
+Attempt 3:
+{'score': 40.0}
+Attempt 4:
+{'score': 100.0}

@@ -1,0 +1,30 @@
+## Task Description
+
+In this task, you are required to determine a suitable thickness (Th) of a rectangular steel cantilever beam subjected to uniform loads and evaluated using 3D structural simulation in MATLAB’s PDE Toolbox.
+
+The beam is modeled as a cantilever with one end fully fixed (all degrees of freedom constrained) and the other end free. A constant downward pressure is applied only on the outer half of the top face—that is, over the region from L/2 to L(Stay away from the end)
+
+You are given the following fixed parameters:
+
+- 'L = 1000' mm  (Total span length)
+- 'w = 40' mm  (Beam width, constant)
+
+- 'Height = Th' mm (Beam thickness to be designed)
+- Uniform load magnitude: 1000/(L/2*w)N/mm^2,applied only over the half‐length area(Stay away from the fixed end)
+- Material properties:
+   - Young’s modulus: 210,000 MPa
+   - Poisson’s ratio: 0.3
+
+The beam will be evaluated using a static linear elasticity model in 3D (extruded along the beam width). The performance criterion is that the maximum vertical displacement (uy) must be less than 2 mm under the given load.
+The score depends on the ratio of the maximum measured displacement to the allowable threshold. If that ratio falls between seventy percent and ninety percent, the beam earns the full 100 points. If the ratio is below seventy percent, partial credit is awarded in direct proportion to how close it is to seventy-percent (with zero displacement scoring zero and seventy-percent scoring 100). If the ratio lies between ninety percent and one hundred percent, points are deducted in proportion to how far it exceeds ninety percent (dropping from 100 at ninety percent down to zero at the full threshold). Any ratio below zero or above one hundred percent results in a score of zero.
+
+---
+
+### Task
+
+Your task is to:
+- Propose a structurally sound value for `Th` (thickness of the beam, in mm)
+- Provide a brief justification for your choice of thickness, considering stiffness, loading, and geometric constraints
+
+You do **not** need to evaluate the displacement yourself. The simulation and evaluation will be done separately.
+

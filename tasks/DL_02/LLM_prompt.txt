@@ -1,0 +1,111 @@
+# Solid-State Drive Design Task - Parmeter Set with Constraints
+
+In this problem, you will finalize a set of Solid-State Drive (SSD) designs that meet the performance requirements for a specific workload type. In this problem, you need to identify an optimized parameter set that satisfy the given performance criteria under given constraints (e.g., the capacity constriants need the multiple of several parameters to stay in a given range).
+
+## Background
+
+![fig_ssd_arch](./images/ssdhardware.png)
+
+The internal architecture of a typical SSD is presented in the above Figure. An SSD consists of five major components: a set of flash memory packages, an SSD controller having embedded processors like ARM, off-chip DRAM (SSD DRAM), flash controllers, and the I/O interface that includes SATA and NVMe protocols. The flash packages are organized in a hierarchical manner. Each SSD has multiple channels, and each channel can process read/write commands independently. Each channel is shared by multiple flash packages. Each package has multiple flash chips. Within each chip, there are multiple planes. Each plane includes multiple flash blocks, and each block has multiple flash pages. The page size varies in different SSDs. When a free flash page is written once, that page is no longer available for future writes until that page is erased. However, erase operation is expensive and performed at block granularity. As each flash block has limited endurance, it is important for blocks to age uniformly (i.e., wear leveling). Modern SSD controllers employ out-of-place write, GC, and wear leveling to overcome these shortcomings and maintain indirections for the address translation in their flash translation layer (FTL).
+
+In this problem, our aim is to design SSDs that allow developers to customize SSD hardware according to the application needs.
+
+## Task Description
+
+SSD customers typically evaluate SSD performance using key metrics including I/O throughput, average latency and tail latency. In this section, you should optimize the given SSD configuration by tuning only the layout related parameters ("Overprovisioning_Ratio", "Flash_Channel_Count", "Chip_No_Per_Channel", "Die_No_Per_Chip", "Plane_No_Per_Die",
+ "Block_No_Per_Plane", "Page_No_Per_Block"). You should identify a set of these parameter that satisfy the capacity constraint (The total usable capacity, not considering the over provisioning, should be around 2TB, specifically, 1.7TB - 2.1TB) and reach the performance requirements. If the requirement cannot be reached, please answer "impossible" instead of the final parameter value. Please always provide your reasoning.
+
+### Formal Problem Definition
+
+Given a parameter set $S$ and a workload set $W$, tune the parameters ("Overprovisioning_Ratio", "Flash_Channel_Count", "Chip_No_Per_Channel", "Die_No_Per_Chip", "Plane_No_Per_Die",
+ "Block_No_Per_Plane", "Page_No_Per_Block") $s \in S$ that affects the I/O throughput, average latency or both of them for each workload $w \in W$. Specifically, address the following question:
+
+If we want to get 20\% performance improvement on I/O throughput or on average latency comparing to the baseline configuration (see next section), while also satisfy the capacity constraint (The total capacity, not considering the over provisioning, should be around 2TB, specifically, 1.7TB - 2.1TB) how should we tune these parameters? If this is impossible, please answer "impossible" instead of providing the number and explain why. Note that the correlation between performance and parameter values are usurally not linear.
+
+### Configuration Set
+
+Please provide answer for each parameter listed in the table below. The third column of this table listed the baseline configuration (Samsung 983 DCT 1.92TB SSD). We provide typical values for each parameter, the tuned parameter should follow the general trend in the listed parameters (e.g., number of channels should be descrete numbers). 
+
+For convenience of reasoning, we provide all the parameters for the baseline. Please only tune the speciftied parameters ("Overprovisioning_Ratio", "Flash_Channel_Count", "Chip_No_Per_Channel", "Die_No_Per_Chip", "Plane_No_Per_Die",
+ "Block_No_Per_Plane", "Page_No_Per_Block") and the tuning range is specified in the listed parameters.
+
+| Parameter Name            | Description                                                                                                                                                                                                                                   | Baseline   |
+|:--------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| PCIe_Lane_Bandwidth       | The PCIe bandwidth per lane in GB/s. Typical values: 0.5, 1.0, 2.0, 4.0, 8.0.                                                                                                                                                                 | 8.0        |
+| PCIe_Lane_Count           | The number of PCIe lanes. Typical values: 1, 2, 4, 8, 16.                                                                                                                                                                                     | 4          |
+| HostInterface_Type        | The type of host interface.  Typical values: NVME, SATA.                                                                                                                                                                                      | NVME       |
+| IO_Queue_Depth            | the length of the host-side I/O queue. Typical values: 4, 8, 16, 32, 64, 128, 256.                                                                                                                                                            | 16         |
+| Queue_Fetch_Size          | The maximum number of requests that can be served in parallel in a queue. Typical values: 4, 8, 16, 32, 64, 128, 256.                                                                                                                         | 16         |
+| Data_Cache_Capacity             | The size of the DRAM Data Cache in bytes. Typical values:100663296, 167772160, 234881024, 301989888, 369098752, 436207616.                                                                                                                               | 536870912  |
+| Data_Cache_DRAM_Row_Size             | The size of the DRAM rows in bytes.  values:1024, 2048, 4096, 8192, 16384.                                                                                                                                                                    | 4096       |
+| Data_Cache_DRAM_Data_Rate            | The DRAM data transfer rate in MT/s. Typical values:100, 200, 400, 800, 1600, 2133, 2400, 2666, 3200.                                                                                                                                         | 800        |
+| Data_Cache_DRAM_Data_Burst_Size      | The number of bytes that are transferred in one DRAM burst (depends on the number of DRAM chips). Typical values: 1, 2, 4, 8, 16.                                                                                                             | 8          |
+| Data_Cache_DRAM_tRCD                 | The value of the timing parameter tRCD in nanoseconds used to access DRAM in the data cache. Typical values:4, 7, 14, 21, 28                                                                                                                  | 9          |
+| Data_Cache_DRAM_tCL                 | The value of the timing parameter tCL in nanoseconds used to access DRAM in the data cache. Typical values:4, 7, 14, 21, 28                                                                                                                   | 9          |
+| Data_Cache_DRAM_tRP                 | The value of the timing parameter tRP in nanoseconds used to access DRAM in the data cache. Typical values:4, 7, 14, 21, 28                                                                                                                   | 9          |
+| Address_Mapping           | The logical-to-physical address mapping policy implemented in the Flash Translation Layer (FTL).Typical values: PAGE_LEVEL, HYBRID                                                                                                             | PAGE_LEVEL  |
+| CMT_Capacity              | The size of the SRAM/DRAM space in bytes used to cache the address mapping table (Cached Mapping Table). Typical values: 67108864, 134217728, 201326592, 268435456, 335544320, 402653184, 469762048, 536870912                                | 268435456  |
+| Plane_Allocation_Scheme   | The scheme for plane allocation priorities (C-Channel, W-Way, D-Die, P-Plane). Typical values: CWDP, CWPD, CDWP, CDPW, CPWD, CPDW, WCDP, WCPD, WDCP, WDPC, WPCD, WPDC, DCWP, DCPW, DWCP, DWPC, DPCW, DPWC, PCWD, PCDW, PWCD, PWDC, PDCW, PDWC | CWDP       |
+| Overprovisioning_Ratio    | The ratio of reserved storage space with respect to the available flash storage capacity. Typical values:0.126, 0.2, 0.3, 0.4, 0.5                                                                                                            | 0.126      |
+| GC_Exect_Threshold         | The threshold for starting Garbage Collection (GC). Typical values: 0.1, 0.15, 0.2, 0.25, 0.3                                                                                                                                                 | 0.05       |
+| GC_Block_Selection_Policy | The GC block selection policy. Typical values: GREEDY, RGA, RANDOM, RANDOM  P, RANDOM  PP, FIFO                                                                                                                                               | GREEDY     |
+| Use_Copyback_for_GC       | Whether GC Copyback is enabled. Typical values: true, false                                                                                                                                                                                   | false      |
+| Preemptible_GC_Enabled    | The toggle to enable pre-emptible GC. Typical values:true, false                                                                                                                                                                              | true       |
+| GC_Hard_Threshold         | The threshold to stop pre-emptible GC execution. Typical values:0.1, 0.15, 0.2, 0.25, 0.3                                                                                                                                                     | 1          |
+| Dynamic_Wearleveling_Enabled | The toggle to enable dynamic wear-leveling. Typical values: true, false | true |
+| Static_Wearleveling_Enabled | The toggle to enable static wear-leveling. Typical values: true, false | true |
+| Static_Wearleveling_Threshold | The threshold for starting static wear-leveling. Typical values: 50, 60, 70, 80, 90, 100 | 100 |
+| Preferred_suspend_erase_time_for_read | The reasonable time to suspend an ongoing flash erase operation in favor of a recently-queued read operation. Typical values:100000, 200000, 300000, 400000, 500000 | 100000 |
+| Preferred_suspend_erase_time_for_write | The reasonable time to suspend an ongoing flash erase operation in favor of a recently-queued read operation. Typical values:100000, 200000, 300000, 400000, 500000 | 100000 |
+| Preferred_suspend_write_time_for_read | The reasonable time to suspend an ongoing flash erase operation in favor of a recently-queued program operation. Typical values:100000, 200000, 300000, 400000, 500000 | 100000 |
+| Flash_Channel_Count | The number of flash channels in the SSD back end. Typical values:4,6,8,10,12,14,16,18,20 | 8 |
+| Flash_Channel_Width | The width of each flash channel in byte. Typical values:1, 2, 4, 8 | 8 |
+| Channel_Transfer_Rate | The transfer rate of flash channels in the SSD back end in MT/s. Typical values:100, 200, 333, 800 | 800 |
+| Chip_No_Per_Channel | The number of flash chips attached to each channel in the SSD back end. Typical values:2, 4, 8, 12, 16, 20 | 4 |
+| Flash_Technology | Typical values:TLC, MLC, SLC | MLC |
+| CMD_Suspension_Support | The type of suspend command support by flash chips. Typical values:NONE, PROGRAM, PROGRAM  ERASE, ERASE | None |
+| Page_Read_Latency_LSB | The latency of reading LSB bits of flash memory cells in nanoseconds. Typical values:25000, 50000, 59975, 75000, 100000 | 5000 |
+| Page_Read_Latency_CSB | Similar as above. Typical values:0, 25000, 50000, 75000, 100000 | 0 |
+| Page_Read_Latency_MSB | Similar as above. Typical values:25000, 50000, 75000, 100000, 104956 | 10000 |
+| Page_Program_Latency_LSB | Similar as above. Typical values:82062, 250000, 500000, 750000, 1000000 | 30000 |
+| Page_Program_Latency_CSB | Similar as above. Typical values:0, 250000, 500000, 750000, 1000000 | 0 |
+| Page_Program_Latency_MSB | Similar as above. Typical values:250000, 500000, 750000, 1000000, 1250000, 1500000, 1750000, 2000000, 2250000 | 800000 |
+| Block_Erase_Latency | The latency of erasing a flash block in nanoseconds.Typical values:3000000, 3800000 | 1000000 |
+| Block_PE_Cycles_Limit | The PE limit of each flash block. Typical values:10000, 20000, 30000, 40000, 50000 | 10000 |
+| Suspend_Erase_Time | The time taken to suspend an ongoing erase operation in nanoseconds.Typical values:700000, 800000, 900000, 1000000, 1100000 | 700000 |
+| Suspend_Program_Time | The time taken to suspend an ongoing program operation in nanoseconds. Typical values:60000, 70000, 80000, 90000, 100000 | 100000 |
+| Die_No_Per_Chip | The number of dies in each flash chip.  Typical values:4,6,8, 10, 12, 14, 16, 18, 20 | 8 |
+| Plane_No_Per_Die | The number of planes in each die.  Typical values:2,4,6,8,10 | 2 |
+| Block_No_Per_Plane | The number of flash blocks in each plane.  Typical values:512,1024,1364, 2048, 4096, 8192 | 1364 |
+| Page_No_Per_Block | The number of physical pages in each flash block. Typical values:512, 768, 1024, 2048, 4096 | 768 |
+| Page_Capacity | The size of each physical flash page in bytes. Typical values:4096 | 4096 |
+| Page_Metadat_Capacity | The size of the metadata area of each physical flash page in bytes. Typical values:224, 448, 672, 896, 1120 | 448 |
+
+### Target Workload Set
+
+Please provide answer for each workload mentioned below:
+
+#### Real-world Workloads
+
+These workloads represents typical storage-intensive application patterns.
+
+| **Workload Category** | **Description** |
+|-----------------------|-----------------|
+| Big Data Analytics    | MapReduce workloads running in data centers. |
+| Cloud Storage         | Cloud storage workloads running in data centers. |
+| Key-Value Store       | YCSB benchmarks are executed against RocksDB. |
+| Maps                  | Maps workloads running on enterprise servers. |
+| Database              | TPCC/TPCH executed against Windows SQL Server. |
+| WebSearch             | WebSearch services trace from UMassTraceRepository. |
+| Advertisement         | Advertisement workloads running on servers. |
+
+## Response Instruction
+
+Your response should be structured in the following format:
+
+For each workload, create a workload_result class for the tuning result. In each workload_result, you should specify the parameters based on the values we provided.
+
+Please strictly follow the format, do not include any other text or comments.
+
+
+

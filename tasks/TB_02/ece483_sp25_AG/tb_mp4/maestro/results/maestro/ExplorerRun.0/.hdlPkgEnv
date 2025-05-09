@@ -1,0 +1,8 @@
+
+envSetVal("hdlPkg" "hdlPkgEnableHdlSetup" 'toggle '(nil))
+envSetVal("hdlPkg" "hdlPkgXrunArgsFileTableList" 'string "")
+envSetVal("hdlPkg" "hdlPkgEnableUVM" 'toggle '(nil))
+envSetVal("hdlPkg" "hdlPkgUVMVersion" 'string "1.2")
+envSetVal("hdlPkg" "hdlPkgEnableUPF" 'toggle '(nil))
+envSetVal("hdlPkg" "hdlPkgAdvancedMode" 'toggle '(nil))
+envSetVal("hdlPkg" "hdlPkgMakeLibTree" 'string "")

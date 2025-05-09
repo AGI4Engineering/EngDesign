@@ -1,0 +1,5 @@
+## Evaluation Pipeline
+
+The evaluation will be comparing the ML generated answer to our own answer. We do not need simulation in this question because the question is simple enough that the correct answer can be pre-defined. If 80\% of the answers of the parameters are correct, we will return pass. Otherwise we return fail.
+
+The final score will be computed based on the criteria above and returned pass or fail based on the evaluation results.

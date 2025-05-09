@@ -1,0 +1,4 @@
+## Evaluation Rubric
+- Volume fraction of the optimal structure is less than 0.25: 30 points
+- Compliance error (CE) = (C(y_hat) - C(y))/C(y) is less than certain threshold: 50 points
+- Optimized design feature is output as 'Symmetric-X': 20 points

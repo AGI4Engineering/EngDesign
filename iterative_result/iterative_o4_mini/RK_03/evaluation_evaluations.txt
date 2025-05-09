@@ -1,0 +1,20 @@
+Attempt 1:
+{'vf': 0.15, 'vf_threshold': 0.15, 'compliance_error': 'Fail (CE=1822.9444)', 'Dsg_feature': 'Pass'}
+Attempt 2:
+{'vf': 0.15, 'vf_threshold': 0.15, 'compliance_error': 'Fail (CE=179153.1415)', 'Dsg_feature': 'Pass'}
+Attempt 3:
+{'vf': 0.15, 'vf_threshold': 0.15, 'compliance_error': 'Fail (CE=179015.9809)', 'Dsg_feature': 'Pass'}
+Attempt 4:
+{'vf': 0.15, 'vf_threshold': 0.15, 'compliance_error': 'Fail (CE=179153.1415)', 'Dsg_feature': 'Pass'}
+Attempt 5:
+{'vf': 0.15, 'vf_threshold': 0.15, 'compliance_error': 'Fail (CE=179153.5695)', 'Dsg_feature': 'Pass'}
+Attempt 6:
+{'vf': 0.15, 'vf_threshold': 0.15, 'compliance_error': 'Fail (CE=17606655.8443)', 'Dsg_feature': 'Pass'}
+Attempt 7:
+{'vf': 0.15, 'vf_threshold': 0.15, 'compliance_error': 'Fail (CE=17606655.8443)', 'Dsg_feature': 'Pass'}
+Attempt 8:
+{'vf': 0.15, 'vf_threshold': 0.15, 'compliance_error': 'Fail (CE=179153.5695)', 'Dsg_feature': 'Pass'}
+Attempt 9:
+{'vf': 0.15, 'vf_threshold': 0.15, 'compliance_error': 'Fail (CE=179153.5695)', 'Dsg_feature': 'Pass'}
+Attempt 10:
+{'vf': 0.15, 'vf_threshold': 0.15, 'compliance_error': 'Fail (CE=179153.5695)', 'Dsg_feature': 'Pass'}

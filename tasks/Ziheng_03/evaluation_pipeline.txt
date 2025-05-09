@@ -1,0 +1,6 @@
+A script would be implemented to evaluate:
+1. The closed-loop system's settling time.
+2. The overshoot of the closed-loop system.
+3. The error is zero.
+4. The gain margin is larger than 10 dB.
+5. The phase margin is larger than 45 degrees.

@@ -1,0 +1,16 @@
+## Evaluation Rubric (100 points total)
+
+General policy
+--------------
+1. A submission must be syntactically valid and simulate without error; otherwise it receives 0.
+2. For each specification below, credit is given for the **highest satisfied tier only** (no double-counting).
+3. If the lower tier is not met, the score for that item is 0.
+4. All measurements are taken with the official testbench (VDD = 1.8V, CL = 2pF, VCM appropriately set), unless otherwise specified.
+
+Scoring table
+-------------
+| Metric | Tier 1 (partial) | Pts | Tier 2 (full) | Pts |
+|--------|------------------|-----|---------------|-----|
+| DC gain AV | 5 ± 5% V/V | **15** | 5 ± 2% V/V | **30** |
+| 3dB Bandwidth ω−3dB | ≥ 45 Mrad/s | **15** | ≥ 50 Mrad/s | **35** |
+| Output DC Voltage VOUT | 900mV ± 5% | **15** | 900mV ± 2% | **35** |

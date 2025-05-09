@@ -1,0 +1,4 @@
+Attempt 1:
+{'read_root_file': "Failed: expected b'Hello', got Hello", 'read_subdir_file': "Failed: expected b'Hello', got Hello", 'read': 'Failed', 'content correctness': 'Failed', 'read_invalid': 'Passed: exception raised as expected'}
+Attempt 2:
+{'read_root_file': 'Passed', 'read_subdir_file': 'Passed', 'read_invalid': 'Passed: exception raised as expected', 'read': 'Passed'}

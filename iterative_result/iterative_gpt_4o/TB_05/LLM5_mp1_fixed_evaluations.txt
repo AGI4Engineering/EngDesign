@@ -1,0 +1,20 @@
+Attempt 1:
+{'metrics': {'dc_gain_vv': 1.625, 'bw_mrads': 233.421, 'vout_mv': 0.312}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 2:
+{'metrics': {'dc_gain_vv': 0.277, 'bw_mrads': 1065.371, 'vout_mv': 0.174}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 3:
+{'metrics': {'dc_gain_vv': 0.027, 'bw_mrads': 3181.197, 'vout_mv': 0.039}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 4:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_vv': None, 'bw_mrads': None, 'vout_mv': None}, 'score': 0, 'passed': False}
+Attempt 5:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_vv': None, 'bw_mrads': None, 'vout_mv': None}, 'score': 0, 'passed': False}
+Attempt 6:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_vv': None, 'bw_mrads': None, 'vout_mv': None}, 'score': 0, 'passed': False}
+Attempt 7:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_vv': None, 'bw_mrads': None, 'vout_mv': None}, 'score': 0, 'passed': False}
+Attempt 8:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_vv': None, 'bw_mrads': None, 'vout_mv': None}, 'score': 0, 'passed': False}
+Attempt 9:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_vv': None, 'bw_mrads': None, 'vout_mv': None}, 'score': 0, 'passed': False}
+Attempt 10:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_vv': None, 'bw_mrads': None, 'vout_mv': None}, 'score': 0, 'passed': False}

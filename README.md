@@ -1,21 +1,47 @@
 # EngDesign
 
-A benchmark of 101 structured engineering design tasks spanning multiple domains.
+**EngDesign** is a benchmark of 101 structured engineering‑design tasks spanning multiple domains. This repository supports our NeurIPS Datasets & Benchmarks track submission:  
+**“Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs.”**
 
-This repository contains all tasks included in **EngDesign**, developed for our NeurIPS Datasets and Benchmarks track submission:
-**"Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs."**
+---
 
-### 📁 Repository Structure
+## 📂 Repository Layout
 
-The repository includes a `tasks` folder with 101 engineering design tasks. Each task is organized as a separate folder containing at least the following components:
+```text
+├── tasks/                 # 101 individual task folders
+│   ├── <task_id>/        # e.g. XG_01
+│   │   ├── LLM_prompt.txt      # Prompt presented to the LLM
+│   │   ├── output_structure.py # Defines the expected JSON/Python output schema via instructor
+│   │   ├── evaluate.py         # Runs simulations & computes evaluation results
+│   │   ├── images/             # (Optional) Input images for multimodal tasks
+│   │   └── logs/               # Our evaluation logs
+│   └── …                     
+├── iterative_result/      # Logs from iterative design runs with GPT‑4o, o1, o3, o4‑mini
+└── evaluation/            # Driver scripts & helpers for running the benchmark
+    └── eval_openai_llm.py
+````
 
-* **`LLM_prompt.txt`**: The task description presented to the LLM.
-* **`output_structure.py`**: A Python script that defines the expected structured output format for the task.
-* **`evaluate.py`**: An evaluation script that runs simulations using the LLM-generated outputs and computes performance metrics.
-* **`images/`** *(optional)*: A directory containing images used as part of the task input (for multimodal tasks).
-* **`logs/`**: A directory containing all the evaluation logs for the task.
-* **Other utility files**: Additional Python scripts or resources needed to support evaluation.
+---
 
-### ⚠️ Requirements
+## 🚀 Quickstart
 
-Some tasks rely on domain-specific simulation tools such as **MATLAB** or **SPICE**, which may not be available in all environments. Please refer to the individual task folders for tool-specific instructions.
+1. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Configure your OpenAI key**
+   Edit the top of `evaluation/eval_openai_llm.py` (or set the `OPENAI_API_KEY` environment variable).
+
+3. **Run the full benchmark**
+
+   ```bash
+   python evaluation/eval_openai_llm.py --task_dir tasks
+   ```
+
+> **Note:**
+>
+> * Some tasks rely on external tools (e.g., MATLAB, SPICE), which may not be excuable for all machines.
+
+

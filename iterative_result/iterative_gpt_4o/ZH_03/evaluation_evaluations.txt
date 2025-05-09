@@ -1,0 +1,6 @@
+Attempt 1:
+{'v_max_mps': 2.0943951023931953, 'T_wheel_Nm': 2.4000000000000004, 'T_required_Nm': 0.9242015418841666, 'C_required_Wh': 2.2992187499999996, 'C_given': 50.0, 'passed': False}
+Attempt 2:
+{'v_max_mps': 2.0943951023931953, 'T_wheel_Nm': 2.4000000000000004, 'T_required_Nm': 0.9242015418841666, 'C_required_Wh': 2.2992187499999996, 'C_given': 50.0, 'passed': False}
+Attempt 3:
+{'v_max_mps': 5.235987755982989, 'T_wheel_Nm': 1.92, 'T_required_Nm': 1.4787224670146666, 'C_required_Wh': 1.839375, 'C_given': 50.0, 'passed': True}

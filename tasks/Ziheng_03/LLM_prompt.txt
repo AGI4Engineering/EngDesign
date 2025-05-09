@@ -1,0 +1,19 @@
+## Task Description
+You need to design a PID controller for a magnetic levitation system in which an electromagnet holds a steel ball at a desired height. Near the operating point, the nonlinear dynamics can be linearized and modeled by the transfer function:
+G = K / ((tau1*s + 1)*(tau2*s + 1)*(tau3*s + 1));
+where:
+K  = 1;
+tau1 = 0.5;
+tau2 = 1.0;
+tau3 = 2.0;
+
+Design a PID controller so that the closed‑loop system meets all of the following specifications:
+1. Settling time Ts (to within plus or minus 5 percent) < 5s
+2. Overshoot < 20 percent
+3. Zero steady state error to a unit step input
+4. Gain margin > 10dB
+5. Phase margin > 45 degrees
+
+## Output format
+You need to give me your Kp, Ki, and Kd in numerical form.
+

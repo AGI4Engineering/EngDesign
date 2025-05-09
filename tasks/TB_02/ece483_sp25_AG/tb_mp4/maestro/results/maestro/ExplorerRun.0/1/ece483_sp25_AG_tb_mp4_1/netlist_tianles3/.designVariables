@@ -1,0 +1,1 @@
+parameters vstep=0.03 t_step=1e-08 VSS=0 VDD=1.4 VCM=0.6 CL=1e-12

@@ -1,0 +1,20 @@
+Attempt 1:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 624.622741, one or more assertions are triggered. See causes for specific information."}
+Attempt 2:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 708.199343, one or more assertions are triggered. See causes for specific information."}
+Attempt 3:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 708.424004, one or more assertions are triggered. See causes for specific information."}
+Attempt 4:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 708.601548, one or more assertions are triggered. See causes for specific information."}
+Attempt 5:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 725.750867, one or more assertions are triggered. See causes for specific information."}
+Attempt 6:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 742.900090, one or more assertions are triggered. See causes for specific information."}
+Attempt 7:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 760.658149, one or more assertions are triggered. See causes for specific information."}
+Attempt 8:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 760.658149, one or more assertions are triggered. See causes for specific information."}
+Attempt 9:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 777.068713, one or more assertions are triggered. See causes for specific information."}
+Attempt 10:
+{'Error': "['BattModuleThermalMgmtLFP/Solver Configuration']: At time 777.068713, one or more assertions are triggered. See causes for specific information."}

@@ -1,0 +1,2 @@
+AI tools: ChatGPT, Gemini, DeepSeek
+Textbook: https://arxiv.org/pdf/2007.01367

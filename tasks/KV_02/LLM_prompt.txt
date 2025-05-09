@@ -1,0 +1,49 @@
+## Task Description
+
+You are designing control parameters for a **Switched Capacitor Battery Balancing System** involving active balancing of three Li-ion battery cells connected in series.
+
+The system uses:
+- 2 capacitors and 6 bidirectional switches (active balancing architecture)
+- Initial state of charge (SOC) of each cell:
+  - Cell 1: 0.70
+  - Cell 2: 0.75
+  - Cell 3: 0.80
+- PWM switching for UP and DOWN phases:
+  - Switching period (Tper) = 0.006 seconds
+  - 50% duty cycle
+  - 180° interleaving
+- CC-CV Battery control block:
+  - Maximum voltage vMax = 4.1 V
+  - PI controller: Kp = 100, Ki = 10
+- Charge and discharge behavior controlled by relay toggling logic
+
+You must propose control parameters that allow safe, efficient, and effective balancing.
+
+---
+
+## Your Task
+
+You are tasked with proposing **four numerical values** that control balancing behavior:
+
+1. `lowest_current`:
+   - The **smallest balancing current** (in Amperes) that could reasonably allow balancing progress.
+2. `highest_current`:
+   - The **maximum allowable balancing current** (in Amperes) without causing SOC instability.
+3. `on_threshold`:
+   - The **SOC level** at which the relay should **stop charging** (start discharging).
+4. `off_threshold`:
+   - The **SOC level** at which the relay should **resume charging** after discharge.
+
+---
+
+## Output Format
+
+You must **only** return the following exact Python dictionary format:
+
+```python
+{
+  "lowest_current": YOUR_VALUE,
+  "highest_current": YOUR_VALUE,
+  "on_threshold": YOUR_VALUE,
+  "off_threshold": YOUR_VALUE
+}

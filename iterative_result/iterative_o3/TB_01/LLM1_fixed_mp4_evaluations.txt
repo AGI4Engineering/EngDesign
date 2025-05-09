@@ -1,0 +1,20 @@
+Attempt 1:
+{'metrics': {'dc_gain_db': 32.08, 'ugf_mhz': 13.963, 'pm_deg': 81.902, 'icmr_v': 0.0, 'io_err_mv': 1.942, 'idc_ua': 37.5}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 2:
+{'metrics': {'dc_gain_db': 18.96, 'ugf_mhz': 12.945, 'pm_deg': 86.814, 'icmr_v': 0.0, 'io_err_mv': 10.253, 'idc_ua': 47.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 3:
+{'metrics': {'dc_gain_db': 17.45, 'ugf_mhz': 11.663, 'pm_deg': 86.883, 'icmr_v': 0.0, 'io_err_mv': 6.113, 'idc_ua': 64.1}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 4:
+{'metrics': {'dc_gain_db': 41.31, 'ugf_mhz': 13.933, 'pm_deg': 83.86, 'icmr_v': 0.0, 'io_err_mv': 0.403, 'idc_ua': 106.1}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 10, 'idc': 10}, 'score': 35, 'passed': False}
+Attempt 5:
+{'metrics': {'dc_gain_db': 37.71, 'ugf_mhz': 12.075, 'pm_deg': 78.985, 'icmr_v': 0.0, 'io_err_mv': 4.578, 'idc_ua': 173.7}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 5}, 'score': 20, 'passed': False}
+Attempt 6:
+{'metrics': {'dc_gain_db': 37.98, 'ugf_mhz': 13.701, 'pm_deg': 84.087, 'icmr_v': 0.0, 'io_err_mv': 0.943, 'idc_ua': 96.6}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 5, 'idc': 10}, 'score': 30, 'passed': False}
+Attempt 7:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -97.79, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 488.774, 'idc_ua': 159.0}, 'score': 0, 'passed': False}
+Attempt 8:
+{'metrics': {'dc_gain_db': 66.09, 'ugf_mhz': 14.569, 'pm_deg': 74.629, 'icmr_v': 0.0, 'io_err_mv': 0.056, 'idc_ua': 58.7}, 'sub_scores': {'dc_gain': 35, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 10, 'idc': 10}, 'score': 70, 'passed': False}
+Attempt 9:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -98.3, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 516.226, 'idc_ua': 252.1}, 'score': 0, 'passed': False}
+Attempt 10:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}

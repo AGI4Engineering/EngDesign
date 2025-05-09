@@ -1,0 +1,56 @@
+## Task Description
+In this task, you will need to build a fuzzy inference system using MATLAB Fuzzy Logic Designer app for a tipping problem. For this problem, the tipping behavior is defined using the following rule:
+1. If the service is poor or the food is rancid, then the tip is cheap.
+2. If the service is good, then the tip is average.
+3. If the service is excellent or the food is delicious, then the tip is generous.
+The following MATLAB code is given to build the fuzzy inference system with some missing parts:
+<code>
+% create a Mamdani FIS, specifying its name
+fis = mamfis("Name","tipper");
+% add input variables
+fis = addInput(fis,[0 10],"Name","service");
+fis = addInput(fis,[0 10],"Name","food");
+% add membership function 1
+fis = addMF(fis,"service","<MISSING_type>",<MISSING_parameters>,"Name","poor");
+% add membership function 2
+fis = addMF(fis,"service","<MISSING_type>",<MISSING_parameters>,"Name","good");
+% add membership function 3
+fis = addMF(fis,"service","<MISSING_type>",<MISSING_parameters>,"Name","excellent");
+% add membership function 4
+fis = addMF(fis,"food","<MISSING_type>",<MISSING_parameters>,"Name","rancid");
+% add membership function 5
+fis = addMF(fis,"food","<MISSING_type>",<MISSING_parameters>,"Name","delicious");
+% add output variable
+fis = addOutput(fis,[0 30],"Name","tip");
+% add membership function 6
+fis = addMF(fis,"tip","<MISSING_type>",<MISSING_parameters>,"Name","cheap");
+% add membership function 7
+fis = addMF(fis,"tip","<MISSING_type>",<MISSING_parameters>,"Name","average");
+% add membership function 8
+fis = addMF(fis,"tip","<MISSING_type>",<MISSING_parameters>,"Name","generous");
+% add rules
+ruleList = <MISSING_rule_list>;
+fis = addRule(fis,ruleList);
+</code>
+
+### Task 1
+Your first task is to complete the code to build the fuzzy inference system. For membership functions, the corresponding shape is given in the attached image 1 to 8. You need to determine the type of membership function and the parameters using the images. You should choose membership function types among gaussmf, trapmf, and trimf.
+
+### Task 2
+Your second task is to specify the rule list for the fuzzy inference system as a numeric array using the aforementioned rules. 
+Each row of the array contains one rule in the following format.
+- Column 1 — Index of membership function for first input
+- Column 2 — Index of membership function for second input
+- Column 3 — Index of membership function for output
+- Column 4 — Rule weight (from 0 to 1)
+- Column 5 — Fuzzy operator (1 for AND, 2 for OR)
+Therefore, you should return a 3x5 array for this rule list.
+
+### Task 3
+Your third task is to use the fuzzy inference system to determine the tip for the following inputs:
+Input 1:
+- service = 6
+- food = 6
+Input 2:
+- service = 1
+- food = 2

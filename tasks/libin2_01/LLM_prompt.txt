@@ -1,0 +1,24 @@
+## Task Description
+
+You are an operating‑system architect tasked with designing a unified multi‑level page‑table scheme that must satisfy the following two physical‑memory scenarios:
+
+Device     | Physical Memory | Max Page‑Table Memory Overhead | Required Avg. Address Translation Time | TLB Access Time | Per‑Level PTE Access Time  
+---------- | --------------- | ------------------------------ | -------------------------------------- | --------------- | --------------------------  
+Device A   | 150 MB          | ≤ 320 KB                       | ≤ 150 ns                               | 20 ns           | 100 ns                     
+Device B   | 2 GB            | ≤ 4.05 MB                      | ≤ 150 ns                               | 20 ns           | 100 ns                     
+
+Additionally, we specify:
+
+1. Virtual addresses are 40 bits (byte‑addressable).  
+2. Each PTE is 8 bytes.  
+3. The TLB hit rate h as a function of page size is:  
+   h(page_size) = exp(-0.1542*(page_size/1024 - 5.82)**2)
+
+Please design, for Device A and Device B, a multi‑level page‑table structure including:  
+1. page_size: page size (bytes)  
+2. levels: number of levels  
+3. entries_per_level: list of entries per level  
+
+And compute:  
+- page_table_memory: total page‑table memory overhead (bytes), assuming on‑demand allocation only for mapped regions  
+- avg_translation_time: average address‑translation time (ns), including only TLB access and PTE accesses  

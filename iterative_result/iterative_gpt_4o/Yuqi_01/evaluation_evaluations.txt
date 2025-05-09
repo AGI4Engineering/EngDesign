@@ -1,0 +1,20 @@
+Attempt 1:
+{'Task_1': {'max_width_solution_min': 182, 'max_width_solution_max': 183, 'max_width': 128}, 'Task_2': {'min_BW_solution_min': 66.60000000000001, 'min_BW_solution_max': 81.4, 'min_BW': 276.5}, 'Task_3': {'comment': 'Memory constraints not satisfied.', 'prefill_mem_bytes': 162783903744, 'decode_mem_bytes': 72343355392}}
+Attempt 2:
+{'Task_1': {'max_width_solution_min': 182, 'max_width_solution_max': 183, 'max_width': 182}, 'Task_2': {'min_BW_solution_min': 66.60000000000001, 'min_BW_solution_max': 81.4, 'min_BW': 74.0}, 'Task_3': {'comment': 'Memory constraints not satisfied.', 'prefill_mem_bytes': 177077698560, 'decode_mem_bytes': 103318290432}}
+Attempt 3:
+{'Task_1': {'max_width_solution_min': 182, 'max_width_solution_max': 183, 'max_width': 182}, 'Task_2': {'min_BW_solution_min': 66.60000000000001, 'min_BW_solution_max': 81.4, 'min_BW': 74.0}, 'Task_3': {'comment': 'Memory constraints not satisfied.', 'prefill_mem_bytes': 78220283904, 'decode_mem_bytes': 103318290432}}
+Attempt 4:
+{'Task_1': {'max_width_solution_min': 182, 'max_width_solution_max': 183, 'max_width': 182}, 'Task_2': {'min_BW_solution_min': 66.60000000000001, 'min_BW_solution_max': 81.4, 'min_BW': 74.0}, 'Task_3': {'comment': 'Memory constraints not satisfied.', 'prefill_mem_bytes': 139525005312, 'decode_mem_bytes': 103318290432}}
+Attempt 5:
+{'Task_1': {'max_width_solution_min': 182, 'max_width_solution_max': 183, 'max_width': 182}, 'Task_2': {'min_BW_solution_min': 66.60000000000001, 'min_BW_solution_max': 81.4, 'min_BW': 74.0}, 'Task_3': {'comment': 'Memory constraints not satisfied.', 'prefill_mem_bytes': 139525005312, 'decode_mem_bytes': 103318290432}}
+Attempt 6:
+{'Task_1': {'max_width_solution_min': 182, 'max_width_solution_max': 183, 'max_width': 182}, 'Task_2': {'min_BW_solution_min': 66.60000000000001, 'min_BW_solution_max': 81.4, 'min_BW': 74.0}, 'Task_3': {'comment': 'Memory constraints not satisfied.', 'prefill_mem_bytes': 139525005312, 'decode_mem_bytes': 103318290432}}
+Attempt 7:
+{'error': "[Errno 2] No such file or directory: './llama3_1-405b_5p_inference_prefill.json'"}
+Attempt 8:
+{'Task_1': {'max_width_solution_min': 182, 'max_width_solution_max': 183, 'max_width': 182}, 'Task_2': {'min_BW_solution_min': 66.60000000000001, 'min_BW_solution_max': 81.4, 'min_BW': 74.0}, 'Task_3': {'comment': 'Memory constraints not satisfied.', 'prefill_mem_bytes': 78220283904, 'decode_mem_bytes': 103318290432}}
+Attempt 9:
+{'error': "[Errno 2] No such file or directory: './llama3_1-405b_5p_inference_prefill.json'"}
+Attempt 10:
+{'Task_1': {'max_width_solution_min': 182, 'max_width_solution_max': 183, 'max_width': 182}, 'Task_2': {'min_BW_solution_min': 66.60000000000001, 'min_BW_solution_max': 81.4, 'min_BW': 74.0}, 'Task_3': {'comment': 'Memory constraints not satisfied.', 'prefill_mem_bytes': 78220283904, 'decode_mem_bytes': 103318290432}}

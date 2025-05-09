@@ -1,0 +1,9 @@
+% Reference code
+sx = 0.1;
+sy = 0.1;
+wa = 0.1;
+wb = 1;
+wc = 1;
+ba = 0;
+bb = 0;
+bc = 0.7;

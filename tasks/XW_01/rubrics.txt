@@ -1,0 +1,6 @@
+## Evaluation Rubric
+- Read operation correctness:
+    - read the document in the root - 30 points
+    - read the document in other directory - 30 points
+    - correctness of the content - 20 points
+    - coorect respond to non exist file - 20 points

@@ -1,0 +1,20 @@
+Attempt 1:
+{'stability_pass': False, 'poles': matlab.double([[(-6516.22604225372+0j)],[(26.935118847683174+0j)],[(-1.936920977475071+31.6795989393081j)],[(-1.936920977475071-31.6795989393081j)],[(-28.239834639015513+0j)]], is_complex=True), 'rise_time_value': 2.133358872896264, 'rise_time_pass': False, 'gain_margin_value': inf, 'gain_margin_pass': True, 'phase_margin_value': 91.1990543164083, 'phase_margin_pass': True}
+Attempt 2:
+{'stability_pass': False, 'poles': matlab.double([[(-25671.126872764053+0j)],[(-1.9111775423680875+117.40285155673435j)],[(-1.9111775423680875-117.40285155673435j)],[(26.58090335918951+0j)],[(-26.53627551041581+0j)]], is_complex=True), 'rise_time_value': 2.1576550577557025, 'rise_time_pass': False, 'gain_margin_value': inf, 'gain_margin_pass': True, 'phase_margin_value': 90.2986238262533, 'phase_margin_pass': True}
+Attempt 3:
+{'stability_pass': False, 'poles': matlab.double([[-38438.90221150477],[-39.28987573743581],[-18.449535653140842],[16.46952512523008],[36.26749777012864]]), 'rise_time_value': 1.5793609398332482, 'rise_time_pass': False, 'gain_margin_value': inf, 'gain_margin_pass': True, 'phase_margin_value': 90.19783146403833, 'phase_margin_pass': True}
+Attempt 4:
+{'stability_pass': False, 'poles': matlab.double([[-38435.56571031507],[44.06976743849403],[5.388875436272566],[-7.208350549160034],[-50.58918201054818]]), 'rise_time_value': 1.3108967350436225, 'rise_time_pass': False, 'gain_margin_value': inf, 'gain_margin_pass': True, 'phase_margin_value': 90.19284575196228, 'phase_margin_pass': True}
+Attempt 5:
+{'stability_pass': False, 'poles': matlab.double([[-25669.050923803024],[-44.51837055014818],[-11.2165092139491],[9.692805906591389],[40.18839766052751]]), 'rise_time_value': 1.4284948072787766, 'rise_time_pass': False, 'gain_margin_value': inf, 'gain_margin_pass': True, 'phase_margin_value': 90.29525183523072, 'phase_margin_pass': True}
+Attempt 6:
+{'stability_pass': False, 'poles': matlab.double([[(-12899.228930593032+0j)],[(-9.016562538143587+89.97426925935548j)],[(-9.016562538143587-89.97426925935548j)],[(28.878889601239145+0j)],[(-27.521433931914586+0j)]], is_complex=True), 'rise_time_value': 1.9825795528672636, 'rise_time_pass': False, 'gain_margin_value': inf, 'gain_margin_pass': True, 'phase_margin_value': 90.58604971447032, 'phase_margin_pass': True}
+Attempt 7:
+{'stability_pass': False, 'poles': matlab.double([[(-12900.020873840034+0j)],[(-7.1314501563987305+74.05427200596819j)],[(-7.1314501563987305-74.05427200596819j)],[(27.57589595626304+0j)],[(-27.196721803434375+0j)]], is_complex=True), 'rise_time_value': 2.0862787680710206, 'rise_time_pass': False, 'gain_margin_value': inf, 'gain_margin_pass': True, 'phase_margin_value': 90.59052954243738, 'phase_margin_pass': True}
+Attempt 8:
+{'stability_pass': False, 'poles': matlab.double([[(-12898.47703016873+0j)],[(48.90609612347871+0j)],[(-2.4627835648221144+13.996029309519303j)],[(-2.4627835648221144-13.996029309519303j)],[(-53.40809882511318+0j)]], is_complex=True), 'rise_time_value': 1.170322486118016, 'rise_time_pass': False, 'gain_margin_value': inf, 'gain_margin_pass': True, 'phase_margin_value': 90.58601878120753, 'phase_margin_pass': True}
+Attempt 9:
+{'stability_pass': False, 'poles': matlab.double([[(-7.590274869513438+0j)],[(6.2856748695134375+0j)],[(-67.8+90.4j)],[(-67.8-90.4j)],[0j]], is_complex=True), 'rise_time_value': -inf, 'rise_time_pass': True, 'gain_margin_value': inf, 'gain_margin_pass': True, 'phase_margin_value': inf, 'phase_margin_pass': True}
+Attempt 10:
+{'error': "unsupported operand type(s) for +: 'Response_structure' and 'str'"}

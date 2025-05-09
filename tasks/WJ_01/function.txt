@@ -1,0 +1,36 @@
+def denoise_image(noisy_img):
+    """
+    Denoise a colour (BGR) image corrupted mainly by salt-and-pepper noise plus a weak Gaussian component.
+    Pipeline: median 3×3  → median 5×5 → fast non-local means (coloured).
+
+    Parameters
+    ----------
+    noisy_img : np.ndarray
+        Input noisy image, uint8, shape (H,W,3) in BGR colour order (OpenCV standard).
+
+    Returns
+    -------
+    filtered_img : np.ndarray
+        Denoised image, uint8, same shape as input.
+    """
+    import cv2
+    import numpy as np
+
+    # Safety: make sure we operate on a copy to avoid modifying the caller’s data
+    img = noisy_img.copy()
+
+    # 1. First median pass – remove single-pixel impulses
+    img = cv2.medianBlur(img, ksize=3)
+
+    # 2. Second median pass – remove remaining isolated impulses without over-smoothing
+    img = cv2.medianBlur(img, ksize=5)
+
+    # 3. Non-local means for residual Gaussian/low-level noise
+    #    h: luminance filter strength, hColor: chrominance strength
+    img = cv2.fastNlMeansDenoisingColored(img, None,
+                                          h=10, hColor=10,
+                                          templateWindowSize=7,
+                                          searchWindowSize=21)
+
+    filtered_img = img
+    return filtered_img

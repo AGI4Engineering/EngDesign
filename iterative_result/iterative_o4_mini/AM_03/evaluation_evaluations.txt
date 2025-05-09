@@ -1,0 +1,20 @@
+Attempt 1:
+{'error': "Grid.__init__() missing 1 required positional argument: 'robot_trajectory2'"}
+Attempt 2:
+{'error': "Grid.__init__() missing 1 required positional argument: 'robot_trajectory2'"}
+Attempt 3:
+{'error': "Grid.__init__() missing 1 required positional argument: 'robot_trajectory2'"}
+Attempt 4:
+{'error': "Grid.__init__() missing 1 required positional argument: 'robot_trajectory2'"}
+Attempt 5:
+{'error': "Grid.__init__() missing 1 required positional argument: 'robot_trajectory2'"}
+Attempt 6:
+{'error': "Grid.__init__() missing 1 required positional argument: 'robot_trajectory2'"}
+Attempt 7:
+{'error': "Grid.__init__() missing 1 required positional argument: 'robot_trajectory2'"}
+Attempt 8:
+{'error': "Grid.__init__() missing 1 required positional argument: 'robot_trajectory2'"}
+Attempt 9:
+{'error': "Grid.__init__() missing 1 required positional argument: 'robot_trajectory2'"}
+Attempt 10:
+{'error': "Grid.__init__() missing 1 required positional argument: 'robot_trajectory2'"}

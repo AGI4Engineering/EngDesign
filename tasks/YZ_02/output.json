@@ -1,0 +1,5 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step.",
+  "coeff_list_1": "List of coefficients for the first polynomial",
+  "coeff_list_2": "List of coefficients for the second polynomial"
+}

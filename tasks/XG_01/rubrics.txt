@@ -1,0 +1,9 @@
+## Rubric for Evaluating Controller Design Response
+
+Assess how well the returned controller meets the design requirements.
+
+| Criterion | Points | Description |
+|----------|--------|-------------|
+| num and den correct for the transfer function | 20 | LLM able to generate the correct transfer function. |
+| gamma | 40 | closer to the desired loop shape with gamma < 1. |
+| diskmargin | 40 | achieves disk margin above 0.05. |

@@ -1,0 +1,50 @@
+Testbench Evaluation Methodology
+
+This document describes how the testbench autonomously evaluates the `model` (dot-product) module for correctness.
+
+1. Clock and Reset
+
+   * A 10 ns clock (`clk`) toggles continuously.
+   * At simulation start, `resetn` is asserted low for one cycle, then deasserted high.
+
+2. Signal Monitoring
+
+   * `dout` is the 18‑bit dot‑product output.
+   * `run` is a 1‑bit flag indicating when a new result is ready.
+
+3. Test Cases
+
+   **Test 0: Reset Behavior**
+
+   * After deasserting reset, expect `run == 1` and `dout == 0` because 0·0 = 0 on initialization.
+   * Pass criterion: both conditions met on the first active clock after reset.
+
+   **Test 1: First Vector Multiplication**
+
+   * Input sequence: a1=1, a2=2, a3=3, b1=4, b2=5, b3=6.
+   * After the 6th sample, the testbench checks:
+
+     * `run == 1` (one-cycle pulse when result is valid)
+     * `dout == 32` (1·4 + 2·5 + 3·6 = 4 + 10 + 18 = 32)
+   * Pass criterion: both match expected values.
+
+   **Test 2: Second Vector Multiplication**
+
+   * Input sequence: a1=7, a2=8, a3=9, b1=1, b2=2, b3=3.
+   * After the 6th sample, the testbench checks:
+
+     * `run == 1`
+     * `dout == 50` (7·1 + 8·2 + 9·3 = 7 + 16 + 27 = 50)
+   * Pass criterion: both match expected values.
+
+4. Result Reporting
+
+   * For each test case, the testbench prints either:
+
+     * `[PASS] Test X` if the observed values match expectations.
+     * `[FAIL] Test X` with observed vs. expected if not.
+
+5. Score Integration
+
+   * External Python harness parses stdout for `[FAIL] Test X` lines.
+   * Any missing FAIL marks for Tests 0–2 indicate passes and contribute to the overall score.

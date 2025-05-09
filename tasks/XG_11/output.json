@@ -1,0 +1,7 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step",
+  "C_num": "numerator coefficients of the controller C(s) with shape [1,2]",
+  "C_den": "denominator coefficients of the controller C(s) with shape [1,2]",
+  "omega_r": "parameter of the roll-off filter",
+  "beta_r": "parameter of the roll-off filter"
+}

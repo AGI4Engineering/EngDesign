@@ -1,0 +1,52 @@
+// Generated for: spectre
+// Design Netlist Generated on: Feb 24 14:29:40 2023
+// Design library name: ece483_sp23
+// Design cell name: tb_mp3
+// Design view name: schematic
+simulator lang=spectre
+global 0
+parameters VCM=0.9 CL=2e-12 VSS=0.0 VDD=1.8
+include "/class/ece483/models/models_ece483"
+
+// Library name: MP3
+// Cell name: ota
+// View name: schematic
+subckt ota VDD VSS ibp10u vin vip vout
+    N3 (ibp10u ibp10u VSS VSS) tsmc18dN w=30.015u l=3.015u as=1.35068e-11 ad=1.35068e-11 ps=60.93u pd=60.93u m=1 region=sat
+    N2 (net7 ibp10u VSS VSS) tsmc18dN w=480.015u l=3.015u as=2.16007e-10 ad=2.16007e-10 ps=960.93u pd=960.93u m=1 region=sat
+    N5 (vout vin net7 net7) tsmc18dN w=40u l=0.18u as=100.0e-9 ad=100.0e-9 ps=560.0e-9 pd=560.0e-9 m=1 region=sat
+    N4 (net8 vip net7 net7) tsmc18dN w=40u l=0.18u as=100.0e-9 ad=100.0e-9 ps=560.0e-9 pd=560.0e-9 m=1 region=sat
+    P1 (net8 net8 VDD VDD) tsmc18dP w=80u l=0.18u as=250.0e-9 ad=250.0e-9 ps=860.0e-9 pd=860.0e-9 m=1 region=sat
+    P0 (vout net8 VDD VDD) tsmc18dP w=80u l=0.18u as=250.0e-9 ad=250.0e-9 ps=860.0e-9 pd=860.0e-9 m=1 region=sat
+ends ota
+// End of subcircuit definition.
+
+
+
+// Library name: ece483_sp23
+// Cell name: tb_mp3
+// View name: schematic
+__ECE483_SP23_OTA2 (VDD VSS ibp10u_cm vin_cm vip_cm vout_cm) ota
+__ECE483_SP23_OTA1 (VDD VSS ibp10u vin vip vout) ota
+V5 (vip_cm vin_cm) vsource dc=0 type=dc
+V4 (vin_cm VSS) vsource dc=VCM mag=1 type=dc
+V3 (vin VSS) vsource dc=VCM mag=0 type=dc
+V2 (vip vin) vsource dc=0 mag=1 type=dc
+V1 (VDD VSS) vsource dc=VDD type=dc
+V0 (VSS 0) vsource dc=VSS type=dc
+C1 (vout_cm VSS) capacitor c=CL
+C0 (vout VSS) capacitor c=CL
+I4 (VDD ibp10u_cm) isource dc=10u type=dc
+I2 (VDD ibp10u) isource dc=10u type=dc
+simulatorOptions options psfversion="1.4.0" reltol=1e-3 vabstol=1e-6 \
+    iabstol=1e-12 temp=27 tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
+    maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../../../../../../../psf/sens.output" checklimitdest=psf 
+ac ac start=1 stop=1e+09 log=201 annotate=status 
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+saveOptions options save=allpub

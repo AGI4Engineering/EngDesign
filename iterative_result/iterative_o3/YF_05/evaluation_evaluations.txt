@@ -1,0 +1,4 @@
+Attempt 1:
+{'N': -4000.0, 'sigma': 80.0, 'sigma_lim': 250.0, 'max_disp': 0.538748023761179, 'disp_thresh': 0.5}
+Attempt 2:
+{'N': -4000.0, 'sigma': 61.53846153846154, 'sigma_lim': 250.0, 'max_disp': 0.41442155673936854, 'disp_thresh': 0.5}

@@ -1,0 +1,46 @@
+## Task Description
+Consider the following continuous‑time uncertain system:
+\[
+\dot{x}(t) = \bigl(A_0 + \Delta A\bigr)\,x(t) + B_1\,w(t) + B_2\,u(t),
+\]
+\[
+z(t) = C_1\,x(t) + D_{11}\,w(t) + D_{12}\,u(t),
+\]
+\[
+y(t) = C_2\,x(t) + D_{21}\,w(t) + D_{22}\,u(t),
+\]
+where \(x\in\mathbb{R}^4\), \(u\in\mathbb{R}\), \(w\in\mathbb{R}\), and \(z,y\in\mathbb{R}\). The nominal matrices are
+\[
+A_0 = \begin{bmatrix}
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\\
+-5 & -4 & -3 & -2
+\end{bmatrix},\quad
+B_1 = \begin{bmatrix}0\\0\\0\\1\end{bmatrix},\quad
+B_2 = \begin{bmatrix}0\\0\\1\\0\end{bmatrix},
+\]
+\[
+C_1 = \begin{bmatrix}1 & 0 & 0 & 0\end{bmatrix},\quad
+D_{11} = 0,\quad
+D_{12} = 0,
+\]
+\[
+C_2 = \begin{bmatrix}0 & 0 & 1 & 0\end{bmatrix},\quad
+D_{21} = 0,\quad
+D_{22} = 0.
+\]
+
+The uncertainties are
+\[
+\Delta A \in \mathrm{Co}\{\,0.2\,I_4,\;-0.2\,I_4\}, 
+\qquad
+w(s) = \Delta_{\mathrm{dyn}}(s)\,z(s),\;\|\Delta_{\mathrm{dyn}}\|_\infty \le 1.
+\]
+
+### Task 
+By solving a SDP to meet the H-infinity performance, design a static state‑feedback gain \(K\in\mathbb{R}^{1\times 4}\) such that the closed‑loop system satisfies:
+
+1. Robust stability: for all \(\Delta A \in \mathrm{Co}\{\,\pm0.2\,I_4\}\) and any \(\Delta_{\mathrm{dyn}}\) with \(\|\Delta_{\mathrm{dyn}}\|_\infty \le 1\), the closed‑loop matrix is Hurwitz.
+
+2. \(\mathcal{H}_\infty\) performance: the transfer function \(T_{zw}(s)\) satisfies \(\|T_{zw}\|_\infty < 0.3\).

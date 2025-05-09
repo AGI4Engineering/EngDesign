@@ -1,0 +1,41 @@
+## Task Description
+In this task, you are required to design a helical antenna for use in mobile and satellite communications, operating in axial mode to produce circularly polarized radiation along its main axis. The helical antenna must be designed to meet specific frequency and performance criteria. Your final goal is to determine appropriate parameters for a helical antenna implemented using the MATLAB antenna toolbox, ensuring it satisfies specific requirements in terms of directivity variation and axial ratio. Notably, the helix model in the toolbox uses a strip approximation, which relates the width of the strip to the radius of an equivalent cylinder.
+
+### Task 1
+Your first task is to calculate the relative bandwidth (less than 1), based on the following frequency range and center frequency:
+- Frequency range: 1.3 - 2 GHz
+- Center frequency: 1.65 GHz
+
+
+### Task 2
+Your second task is to determine a set of appropriate parameters for the helical antenna design using the MATLAB toolbox. Since the helix model in the toolbox has a circular ground plane, the radius of the ground plane should be set to half the side length of an equivalent square ground plane. Specifically, the parameters you need to consider include:
+- $r$, the radius of cylinder, must be less than 0.0005
+- $D$, the diameter of the helical antenna, must satisfy $0.05 < D < 0.06$.
+- $turns$, the number of helical turns
+- $pitch$, the pitch of the helix, which must be greater than 5 deg
+- $side$, the side length of the square ground plane, must be greater than 0.3.
+The helical antenna will be created and evaluated using the MATLAB code shown below. The frequency range and center frequency are given in Task 1:
+</code_block>
+% design helix antenna
+width = cylinder2strip(r);
+feedheight = 3*r;
+radius = D/2;
+spacing = helixpitch2spacing(pitch,radius);
+radiusGP = side/2;
+hx = helix(Radius=radius,Width=width,Turns=turns,...
+          Spacing=spacing,GroundPlaneRadius=radiusGP,...
+          FeedStubHeight=feedheight);
+% directivity as a function of frequency
+freq = [1.3e9, 1.65e9, 2.0e9];  
+Nf = length(freq);
+D = nan(1, Nf);
+for i = 1:Nf
+    D(i) = pattern(hx, freq(i), 0, 90);
+end
+% axial ratio at center frequency
+ar_dB = axialRatio(hx, freq, 0, 90);
+</code_block>
+The helix antenna you design must satisfy the following requirements:
+- r: < D / (20 * 3.14)
+- Directivity range: 13 dBi +/- 1.5 dBi
+- Axial Ratio: < 1.5

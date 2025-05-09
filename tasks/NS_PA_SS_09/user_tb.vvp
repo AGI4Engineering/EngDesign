@@ -1,0 +1,139 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2009.vpi";
+S_0x10ee04080 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x10ee04220 .scope module, "tb" "tb" 3 3;
+ .timescale -9 -12;
+P_0x10ee04390 .param/l "WIDTH" 1 3 5, +C4<00000000000000000000000000001000>;
+v0x12f820080_0 .net "bin", 7 0, L_0x12f8215e0;  1 drivers
+v0x12f820150_0 .var "gray", 7 0;
+S_0x10ee044c0 .scope module, "dut" "model" 3 12, 4 1 0, S_0x10ee04220;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "gray";
+    .port_info 1 /OUTPUT 8 "bin";
+P_0x10ee04630 .param/l "WIDTH" 0 4 2, +C4<00000000000000000000000000001000>;
+v0x12f81fe20_0 .net *"_ivl_32", 0 0, L_0x12f8218d0;  1 drivers
+v0x12f81fee0_0 .net "bin", 7 0, L_0x12f8215e0;  alias, 1 drivers
+v0x12f81ff90_0 .net "gray", 7 0, v0x12f820150_0;  1 drivers
+L_0x12f820200 .part L_0x12f8215e0, 7, 1;
+L_0x12f820300 .part v0x12f820150_0, 6, 1;
+L_0x12f8204f0 .part L_0x12f8215e0, 6, 1;
+L_0x12f820590 .part v0x12f820150_0, 5, 1;
+L_0x12f820780 .part L_0x12f8215e0, 5, 1;
+L_0x12f8208a0 .part v0x12f820150_0, 4, 1;
+L_0x12f820a90 .part L_0x12f8215e0, 4, 1;
+L_0x12f820b70 .part v0x12f820150_0, 3, 1;
+L_0x12f820d20 .part L_0x12f8215e0, 3, 1;
+L_0x12f820e10 .part v0x12f820150_0, 2, 1;
+L_0x12f820fa0 .part L_0x12f8215e0, 2, 1;
+L_0x12f8210a0 .part v0x12f820150_0, 1, 1;
+L_0x12f821230 .part L_0x12f8215e0, 1, 1;
+L_0x12f821440 .part v0x12f820150_0, 0, 1;
+LS_0x12f8215e0_0_0 .concat8 [ 1 1 1 1], L_0x12f820820, L_0x12f821140, L_0x12f820eb0, L_0x12f820c10;
+LS_0x12f8215e0_0_4 .concat8 [ 1 1 1 1], L_0x12f8209c0, L_0x12f820650, L_0x12f8203e0, L_0x12f8218d0;
+L_0x12f8215e0 .concat8 [ 4 4 0 0], LS_0x12f8215e0_0_0, LS_0x12f8215e0_0_4;
+L_0x12f8218d0 .part v0x12f820150_0, 7, 1;
+S_0x12f80e070 .scope generate, "gray_to_bin_loop[0]" "gray_to_bin_loop[0]" 4 15, 4 15 0, S_0x10ee044c0;
+ .timescale 0 0;
+P_0x12f804cf0 .param/l "i" 1 4 15, +C4<00>;
+L_0x12f820820 .functor XOR 1, L_0x12f821230, L_0x12f821440, C4<0>, C4<0>;
+v0x12f804e40_0 .net *"_ivl_0", 0 0, L_0x12f821230;  1 drivers
+v0x12f81e120_0 .net *"_ivl_1", 0 0, L_0x12f821440;  1 drivers
+v0x12f81e1d0_0 .net *"_ivl_2", 0 0, L_0x12f820820;  1 drivers
+S_0x12f81e290 .scope generate, "gray_to_bin_loop[1]" "gray_to_bin_loop[1]" 4 15, 4 15 0, S_0x10ee044c0;
+ .timescale 0 0;
+P_0x12f81e470 .param/l "i" 1 4 15, +C4<01>;
+L_0x12f821140 .functor XOR 1, L_0x12f820fa0, L_0x12f8210a0, C4<0>, C4<0>;
+v0x12f81e500_0 .net *"_ivl_0", 0 0, L_0x12f820fa0;  1 drivers
+v0x12f81e5b0_0 .net *"_ivl_1", 0 0, L_0x12f8210a0;  1 drivers
+v0x12f81e660_0 .net *"_ivl_2", 0 0, L_0x12f821140;  1 drivers
+S_0x12f81e720 .scope generate, "gray_to_bin_loop[2]" "gray_to_bin_loop[2]" 4 15, 4 15 0, S_0x10ee044c0;
+ .timescale 0 0;
+P_0x12f81e910 .param/l "i" 1 4 15, +C4<010>;
+L_0x12f820eb0 .functor XOR 1, L_0x12f820d20, L_0x12f820e10, C4<0>, C4<0>;
+v0x12f81e9a0_0 .net *"_ivl_0", 0 0, L_0x12f820d20;  1 drivers
+v0x12f81ea50_0 .net *"_ivl_1", 0 0, L_0x12f820e10;  1 drivers
+v0x12f81eb00_0 .net *"_ivl_2", 0 0, L_0x12f820eb0;  1 drivers
+S_0x12f81ebc0 .scope generate, "gray_to_bin_loop[3]" "gray_to_bin_loop[3]" 4 15, 4 15 0, S_0x10ee044c0;
+ .timescale 0 0;
+P_0x12f81ed90 .param/l "i" 1 4 15, +C4<011>;
+L_0x12f820c10 .functor XOR 1, L_0x12f820a90, L_0x12f820b70, C4<0>, C4<0>;
+v0x12f81ee30_0 .net *"_ivl_0", 0 0, L_0x12f820a90;  1 drivers
+v0x12f81eee0_0 .net *"_ivl_1", 0 0, L_0x12f820b70;  1 drivers
+v0x12f81ef90_0 .net *"_ivl_2", 0 0, L_0x12f820c10;  1 drivers
+S_0x12f81f050 .scope generate, "gray_to_bin_loop[4]" "gray_to_bin_loop[4]" 4 15, 4 15 0, S_0x10ee044c0;
+ .timescale 0 0;
+P_0x12f81f260 .param/l "i" 1 4 15, +C4<0100>;
+L_0x12f8209c0 .functor XOR 1, L_0x12f820780, L_0x12f8208a0, C4<0>, C4<0>;
+v0x12f81f300_0 .net *"_ivl_0", 0 0, L_0x12f820780;  1 drivers
+v0x12f81f390_0 .net *"_ivl_1", 0 0, L_0x12f8208a0;  1 drivers
+v0x12f81f440_0 .net *"_ivl_2", 0 0, L_0x12f8209c0;  1 drivers
+S_0x12f81f500 .scope generate, "gray_to_bin_loop[5]" "gray_to_bin_loop[5]" 4 15, 4 15 0, S_0x10ee044c0;
+ .timescale 0 0;
+P_0x12f81f6d0 .param/l "i" 1 4 15, +C4<0101>;
+L_0x12f820650 .functor XOR 1, L_0x12f8204f0, L_0x12f820590, C4<0>, C4<0>;
+v0x12f81f770_0 .net *"_ivl_0", 0 0, L_0x12f8204f0;  1 drivers
+v0x12f81f820_0 .net *"_ivl_1", 0 0, L_0x12f820590;  1 drivers
+v0x12f81f8d0_0 .net *"_ivl_2", 0 0, L_0x12f820650;  1 drivers
+S_0x12f81f990 .scope generate, "gray_to_bin_loop[6]" "gray_to_bin_loop[6]" 4 15, 4 15 0, S_0x10ee044c0;
+ .timescale 0 0;
+P_0x12f81fb60 .param/l "i" 1 4 15, +C4<0110>;
+L_0x12f8203e0 .functor XOR 1, L_0x12f820200, L_0x12f820300, C4<0>, C4<0>;
+v0x12f81fc00_0 .net *"_ivl_0", 0 0, L_0x12f820200;  1 drivers
+v0x12f81fcb0_0 .net *"_ivl_1", 0 0, L_0x12f820300;  1 drivers
+v0x12f81fd60_0 .net *"_ivl_2", 0 0, L_0x12f8203e0;  1 drivers
+    .scope S_0x10ee04220;
+T_0 ;
+    %delay 1000, 0;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x12f820150_0, 0, 8;
+    %delay 1000, 0;
+    %load/vec4 v0x12f820080_0;
+    %pad/u 32;
+    %cmpi/e 0, 0, 32;
+    %jmp/0xz  T_0.0, 6;
+    %vpi_call/w 3 24 "$display", "[PASS] Test 0" {0 0 0};
+    %jmp T_0.1;
+T_0.0 ;
+    %vpi_call/w 3 26 "$display", "[FAIL] Test 0: gray=0x%0h, expected bin=0x00, got=0x%0h", v0x12f820150_0, v0x12f820080_0 {0 0 0};
+T_0.1 ;
+    %pushi/vec4 3, 0, 8;
+    %store/vec4 v0x12f820150_0, 0, 8;
+    %delay 1000, 0;
+    %load/vec4 v0x12f820080_0;
+    %cmpi/e 2, 0, 8;
+    %jmp/0xz  T_0.2, 6;
+    %vpi_call/w 3 31 "$display", "[PASS] Test 1" {0 0 0};
+    %jmp T_0.3;
+T_0.2 ;
+    %vpi_call/w 3 33 "$display", "[FAIL] Test 1: gray=0x%0h, expected bin=0x02, got=0x%0h", v0x12f820150_0, v0x12f820080_0 {0 0 0};
+T_0.3 ;
+    %pushi/vec4 6, 0, 8;
+    %store/vec4 v0x12f820150_0, 0, 8;
+    %delay 1000, 0;
+    %load/vec4 v0x12f820080_0;
+    %cmpi/e 4, 0, 8;
+    %jmp/0xz  T_0.4, 6;
+    %vpi_call/w 3 38 "$display", "[PASS] Test 2" {0 0 0};
+    %jmp T_0.5;
+T_0.4 ;
+    %vpi_call/w 3 40 "$display", "[FAIL] Test 2: gray=0x%0h, expected bin=0x04, got=0x%0h", v0x12f820150_0, v0x12f820080_0 {0 0 0};
+T_0.5 ;
+    %vpi_call/w 3 42 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "tb.sv";
+    "code.sv";

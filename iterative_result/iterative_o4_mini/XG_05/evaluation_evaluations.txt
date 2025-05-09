@@ -1,0 +1,6 @@
+Attempt 1:
+{'theta': 16.5, 'tau': 19.5, 'overshoot': 0.0, 'settling_time': 1209.4553465818724, 'gain_margin': 29.723958340817518, 'phase_margin': 87.06204872127533}
+Attempt 2:
+{'theta': 16.5, 'tau': 19.5, 'overshoot': inf, 'settling_time': inf, 'gain_margin': -inf, 'phase_margin': -inf}
+Attempt 3:
+{'theta': 16.5, 'tau': 19.5, 'overshoot': 4.074171306431618, 'settling_time': 100.11440135394805, 'gain_margin': 9.945681233990369, 'phase_margin': 61.331587953798575}

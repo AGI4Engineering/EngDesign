@@ -1,0 +1,9 @@
+## theta and tau:
+tau = 3/2 * ( t2 - t1 ) = 3/2 * ( 36 - 23 ) = 19.5 (\pm 2)
+theta = t2 - tau = 36 - 19.5 = 16.5 (\pm 2)
+
+## Required Current:
+The following PI controller provided a satisfactory response with tau = 21.3 and theta = 14.7:
+
+num = [23.24, 0.9]
+den = [25.82, 0]

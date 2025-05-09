@@ -1,0 +1,6 @@
+## Evaluation Rubric
+- A (a11, a12, a21, a22) correct: 8 points
+- B (b11, b21) correct: 8 points
+- K (k1, k2) correct: 10 points
+- L (l1, l2) correct: 10 points
+- stability correct: 16 points for each of 4 sets of initial condition

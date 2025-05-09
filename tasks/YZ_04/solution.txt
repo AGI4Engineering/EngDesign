@@ -1,0 +1,8 @@
+## Battery module parameters:
+numCells_p = 3
+numCells_s = 5
+
+## Cooling plate parameters:
+NumChannel = 3
+Flowrate = 1
+ChannelDia = 0.002

@@ -1,0 +1,7 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step.",
+  "refresh_rate": "Refresh rate in Hz",
+  "acceleration": "Acceleration in m/s\u00b2",
+  "max_velocity": "Maximum velocity in m/s",
+  "lookahead_distance": "Lookahead distance in meters"
+}

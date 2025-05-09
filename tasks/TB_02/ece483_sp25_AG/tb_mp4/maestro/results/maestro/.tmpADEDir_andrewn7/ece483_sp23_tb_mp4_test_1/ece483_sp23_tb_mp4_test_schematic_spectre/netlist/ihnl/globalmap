@@ -1,0 +1,18 @@
+CADENCE IHNL11140
+$model
+ece483_sp23/folded_amp/schematic folded_amp
+ece483_sp23/fc_ota/schematic fc_ota
+ece483_sp23/tb_mp4_test/schematic tb_mp4_test
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+VDD VDD
+CL CL
+VCM VCM
+VSS VSS
+vstep vstep
+ibn ibn
+t_step t_step
+$endparam

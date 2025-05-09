@@ -1,0 +1,225 @@
+;============================================================================
+;============================================================================
+; Staff-Use OCEAN Auto-Grader
+; ECE483
+; Spring 2023
+; Mini Project #3
+;
+; Andy Ng
+; Jan 16, 2023
+;
+; Updated by
+; Luke Granger
+; Mar 20, 2025
+;
+; NOTES:
+; 1. The commented lines "// LIB_NAME", "// TB_NAME", "// USERNAME", and
+; "// NETLIST_IDS" will be updated by "update_dut.py". DO NOT REMOVE OR EDIT
+; THESE LINES!!!
+;
+; 2. The "ANALYSIS" and "MEASUREMENTS" sections of the script needs to be
+; manually created for each testbench to ensure the correct metrics and
+; specifications are being used.
+;============================================================================
+;============================================================================
+
+
+;============================================================================
+; CONSTANT PATH & FILE VARIABLES
+;============================================================================
+
+MODEL_FILE = "/class/ece483/models/models_ece483"
+
+; LIB_NAME
+; TB_NAME
+TST_INDEX = "1"
+TST_NAME = strcat(LIB_NAME "_" TB_NAME "_" TST_INDEX)
+
+; NETLIST_IDS
+; NAMES
+
+;============================================================================
+; SIMULATION SETUP
+;============================================================================
+
+simulator('spectre)
+modelFile(MODEL_FILE)
+
+; USERNAME
+
+; Set path to design/results directory
+dir = strcat("/home/" USERNAME "/cadence/simulation/" LIB_NAME "/" TB_NAME)
+
+spec_data_fn = strcat(dir "/spec_data_" TB_NAME ".csv")
+spec_data = outfile(spec_data_fn "w")
+
+; CSV to be constructed as follows:
+; Net ID,<spec1>,<spec2>,...,<specN>
+; <id1>,<pass/fail>,...,<pass/fail>
+; <id2>,<pass/fail>,...,<pass/fail>
+; .
+; .
+; .
+; <idN>,<pass/fail>,...,<pass/fail>
+
+; UPDATE THIS STATEMENT FOR GIVEN TB SPECS
+fprintf(spec_data "Net ID,DC Gain,Unity Gain Freq,CMRR,ICMR\n")
+
+;============================================================================
+; BEGIN LOOP
+;============================================================================
+
+foreach(id NETLIST_IDS
+	cktfile=strcat(dir "/maestro/results/maestro/ExplorerRun.0/1/" TST_NAME "/netlist_" id "/netlist")
+	file_exists = infile(cktfile)
+
+	if(file_exists then
+		close(file_exists)
+
+	; ERROR CATCHING		
+		err_result = errset(
+    		list(
+		design(cktfile)
+		resultsDir(dir)
+
+		;============================================================================
+		; DESIGN SPECIFICATIONS
+		;============================================================================
+
+		GAIN_SPEC = 40 ; [dB]
+
+		CMRR_SPEC = 80 ; [dB]
+
+		FUGF_SPEC = 50M ; [Hz]
+
+		ICMR_SPEC = 0.800 ; [V]
+
+		ICMR_PARTIAL = 0.700 ; [V]
+
+		OP_SW_SPEC = 0.5 ; [V]
+
+		;============================================================================
+		; DESIGN VARIABLES
+		;============================================================================
+
+		VDD = 1.8
+		VCM = 0.9
+		VSS = 0.0
+
+		desVar("VDD" VDD)
+		desVar("VSS" VSS)
+		desVar("CL" 2p)
+		desVar("VCM" VCM)
+		
+		;============================================================================
+		; ANALYSIS COMMANDS
+		;============================================================================
+		; NOTE: THIS SECTION MUST BE UPDATED SPECIFICALLY FOR A GIVEN TESTBENCH!!!
+		;============================================================================
+
+
+		analysis( 'ac ?start 1 ?stop 1e9 ?log 201 )
+		run()
+
+		;============================================================================
+		; MEASUREMENTS
+		;============================================================================
+		; NOTE: THIS SECTION MUST BE UPDATED SPECIFICALLY FOR A GIVEN TESTBENCH!!!
+		;============================================================================
+
+		selectResults('ac)
+		if(v("vout") then 
+			A0 = value(dB20(v("vout")) 1)
+		else
+			A0 = 0
+		)
+		
+		if(v("vout_cm") then 
+			ACM = value(dB20(v("vout_cm")) 1)
+		else
+			ACM = 1e12
+		)
+		
+		CMRR = A0-ACM
+	
+		if(v("vout") then
+			if(cross(dB20(v("vout")) 0) then
+				FUGF = cross(dB20(v("vout")) 0)
+			else
+				FUGF = 0
+			)
+
+		GAIN_SPEC_PF = if( (A0 >= GAIN_SPEC) "pass" "fail" )
+		FUGF_SPEC_PF = if( (FUGF >= FUGF_SPEC) "pass" "fail" )
+		CMRR_SPEC_PF = if( (CMRR >= CMRR_SPEC) "pass" "fail")
+
+		;============================================================================
+		; BEGIN ICMR LOOP
+		;============================================================================
+
+		ICMR_COUNT = 0
+		vcm_step = 0.1
+		for( i 0 int(VDD/vcm_step)
+			desVar("VCM" i*vcm_step)
+			run()
+			selectResults('ac)
+			A0_sw = if(v("vout") value(dB20(v("vout")) 1) 0)
+			ACM_sw = if(v("vout_cm") value(dB20(v("vout_cm")) 1) 0)
+			CMRR_sw = A0_sw-ACM_sw
+			FUGF_sw = if(cross(dB20(v("vout")) 0) cross(dB20(v("vout")) 0) 0)
+			ICMR_COUNT = if(A0_sw >= A0-3 && FUGF_sw >= FUGF_SPEC && CMRR_sw >= CMRR-3 ICMR_COUNT+1 ICMR_COUNT )
+			printf("\n===============================================================")
+			printf("\nVCM = %0.3f V\n\n", i*vcm_step)
+			printf("\nSimulated DC Gain: %10.3f dB\n\n", A0_sw)
+			printf("\nSimulated CMRR: %10.3f dB\n\n", CMRR_sw)
+			printf("\nSimulated Unity Gain Frequency: %10.3f MHz\n", FUGF_sw*1e-6)
+			printf("===============================================================\n\n\n")
+		)
+		ICMR = ICMR_COUNT*vcm_step
+
+		;============================================================================
+		; END ICMR LOOP
+		;============================================================================
+		
+		printf("\n\n\n\n\n")
+		ICMR_SPEC_PF = if( (ICMR >= ICMR_SPEC) "pass" if( (ICMR >= ICMR_PARTIAL) "partial credit" "fail") )
+
+		; Print whether the specs were met
+
+		printf("\n===============================================================\n")
+		printf("===============================================================\n")
+		printf("Simulated DC Gain: %10.3f dB\n", A0)
+		printf("DC Gain Specification: %10s\n\n", GAIN_SPEC_PF)
+		printf("\n\nSimulated CMRR: %10.3f dB\n", CMRR)
+		printf("CMRR Specification: %10s\n\n", CMRR_SPEC_PF)
+		printf("\nSimulated Unity Gain Frequency: %10.3f MHz\n", FUGF*1e-6)
+		printf("Unity Gain Frequency Specification: %10s\n\n", FUGF_SPEC_PF)
+		printf("\nSimulated ICMR: %10.3f V\n", ICMR)
+		printf("ICMR Specification: %10s", ICMR_SPEC_PF)
+		printf("\n===============================================================\n")
+		printf("===============================================================\n")
+
+		; Print pass/fail data to spec_data CSV
+		fprintf(spec_data "%s,%s,%s,%s,%s\n" id GAIN_SPEC_PF FUGF_SPEC_PF CMRR_SPEC_PF ICMR_SPEC_PF)
+		)
+	)
+)
+		; Check if an error occurred
+		if(err_result == nil then
+		    fprintf(spec_data "%s,%s\n" id "SIMULATION ERROR")
+		)
+		else
+		fprintf(spec_data "%s,%s\n" id "NO SUBMISSION")
+	)
+)
+;============================================================================
+; END LOOP
+;============================================================================
+close(spec_data)
+
+;============================================================================
+;============================================================================
+; END SCRIPT
+;============================================================================
+;============================================================================
+

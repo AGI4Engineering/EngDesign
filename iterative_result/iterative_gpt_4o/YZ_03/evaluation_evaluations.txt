@@ -1,0 +1,6 @@
+Attempt 1:
+{'relativeBW': 0.42424242424242425, 'r': 0.0004, 'D': 0.055, 'turns': 5.0, 'pitch': 8.0, 'side': 0.35, 'Direc_at_low': 11.101707203010951, 'Direc_at_center': 11.37691009131271, 'Direc_at_high': 12.261344162254439, 'ar_dB': 3.8018142795316825, 'check_1': True, 'check_2': False, 'check_3': False, 'check_4': True, 'check_5': False}
+Attempt 2:
+{'relativeBW': 0.42424242424242425, 'r': 0.0004, 'D': 0.055, 'turns': 6.0, 'pitch': 8.0, 'side': 0.35, 'Direc_at_low': 11.467219760747325, 'Direc_at_center': 11.90204067754874, 'Direc_at_high': 11.947821398159748, 'ar_dB': 2.8997516098759175, 'check_1': True, 'check_2': False, 'check_3': True, 'check_4': True, 'check_5': False}
+Attempt 3:
+{'relativeBW': 0.42424242424242425, 'r': 0.0004, 'D': 0.055, 'turns': 7.0, 'pitch': 10.0, 'side': 0.37, 'Direc_at_low': 11.757376608821348, 'Direc_at_center': 11.67374910855421, 'Direc_at_high': 12.408129452106383, 'ar_dB': 1.403338859214499, 'check_1': True, 'check_2': True, 'check_3': True, 'check_4': True, 'check_5': True}

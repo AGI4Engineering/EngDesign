@@ -1,0 +1,141 @@
+\# Program start time:     UTC 2023.03.25 19:43:46.376
+\# Local time: CDT (UTC-05:00) 2023.03.25 14:43:46.376
+\o Program:		@(#)$CDS: vds version ICADVM20.1-64b 08/17/2021 18:50 (cpgsrv07) $
+\o Hierarchy:		/software/cadence-2021-09/ICADVM201/tools.lnx86/dfII/
+\o Sub version:		sub-version  ICADVM20.1-64b.500.20  (64-bit addresses)
+\# Command line:	/software/cadence-2021-09/ICADVM201/tools.lnx86/dfII/bin/64bit/vds -axlSession fnxSession5 -configFile /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist/toolArgs.ils -configlog /software/cadence-2021-09/ICADVM201/share/cdssetup/dfII/swift/ade.exprEval.log4cxx.xml -dataDir /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/psf/ -davinciService DaVinciService_1469596_1679766794 -exprEval -fenixMode explorer -historyName ExplorerRun.0 -historyUUID  -jobId 51 -log /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist/exprOutputs.log -mappingFile /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist/../../../.mappingFile.51.0 -mode batchEvaluation -mpshost fastx3-19.ews.illinois.edu -mpssession virtuoso1469596 -netlistDir /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist -noautostart -nocdsinit -nographE -point 1 -psRunMode Single_Run,_Sweeps_and_Corners -runId 0 -s3Prefix  -sdbCell tb_mp4_test -sdbLib ece483_sp23 -sdbView maestro -simReqId 189 -testName ece483_sp23_tb_mp4_test_1 -uuid a962bb33-9bda-4411-ad8b-6c615e02ca18 -logLevel configFile -lscs 000175E1894CBE06FF0966E38F1FFC06BC4D67E680469231D93A6DA4C44FD137C47E65F5C5458F72DA2C72FC925B9971856363E6925E9269D02402FCC1F0B2E9D85200001DB1 -beanhost fastx3-19.ews.illinois.edu -beanport 11300 -beanbinlog
+\# Host name (type):	fastx3-19.ews.illinois.edu (x86_64)
+\# Operating system:	Linux 4.18.0-425.10.1.el8_7.x86_64 #1 SMP Thu Jan 12 10:05:00 EST 2023
+\# Linux /etc/issue:	\S
+\# Linux /etc/issue:	Kernel \r on an \m
+\# X display name (WxH):	:3497 (1024x868)
+\# Available geometry:			TL(0:0) BR(1023:867)
+\# X server:			The X.Org Foundation
+\# Depth of Visual (Root):	24 (24)
+\# Number of Planes Used:	24
+\# X version:		11.0 (vendor release 12011000)
+\# X resource pool:	base 0x400000, mask 0x1fffff (2097151), shift 0
+\# 			current id 0x0, current max 0x1ffffa (2097146)
+\# Max data seg size:	     unlimited
+\# Max process size:	     unlimited
+\# Initial sbrk value:	         91 MB
+\# Available memory:	     13,602 MB
+\# System memory:	     19,896 MB
+\# Maximum memory size:	     19,857 MB
+\# Max mem available:	     13,654 MB
+\# Initial memory used:	         52 MB
+\#        process size:	        779 MB
+\# Thread usage limits (effective/default):	maxthreads 62970/62970 maxload 8.00/8.00
+\# Qt version:		5.9.1
+\# Window Manager:	other
+\# User Name:		andrewn7
+\o Working Directory:	fastx3-19.ews.illinois.edu:/home/andrewn7/ece483.work
+\# Process Id:		1572039
+\o 
+\o COPYRIGHT (C) 1992-2021  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
+\o           (C) 1992-2021  UNIX SYSTEMS Laboratories INC.,
+\o                          Reproduced with permission.
+\o 
+\o This Cadence Design Systems program and online documentation are
+\o proprietary/confidential information and may be disclosed/used only
+\o as authorized in a license agreement controlling such use and disclosure.
+\o 
+\o           RESTRICTED RIGHTS NOTICE (SHORT FORM)
+\o Use/reproduction/disclosure is subject to restriction
+\o set forth at FAR 1252.227-19 or its equivalent.
+\w *WARNING* (intern): *hrAdjustNetPathName* different atom already in symbol table
+\o Loading ams.cxt 
+\o Loading auCore.cxt 
+\o Loading deBase.cxt 
+\o Loading oasis.cxt 
+\o Loading analog.cxt 
+\o Loading asimenv.cxt 
+\o Loading dal.cxt 
+\o Loading awv.cxt 
+\o Loading socket.cxt 
+\o Loading par.cxt 
+\o Loading alvs.cxt 
+\o Loading caa.cxt 
+\o Loading amps.cxt 
+\o Loading adexlCore.cxt 
+\o Loading adexl.cxt 
+\o Loading menuBuilder.cxt 
+\o Loading vdsil.cxt 
+\o Loading all ADEXL libs...
+\o Loading simui.cxt 
+\o loading vars from /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist/.vdsenv.il for tool adexl
+\o loading vars from /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist/.vdsenv.il for tool asimenv
+\o [2023-03-25 14:43:47.433 -0500] [event] - NewPoint [Attributes] {"point": 1, "testname": "ece483_sp23_tb_mp4_test_1", "event": "NewPoint", "EventSource": "Expression Evaluator", "HistoryName": "ExplorerRun.0", "logFile": "/home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist/exprOutputs.log", "logFileSize": "3746"}
+\o [2023-03-25 14:43:47.434 -0500] [process] - Expression Evaluator has successfully started ... [Attributes] {"hostname": "fastx3-19.ews.illinois.edu", "processid": 1572039, "testname": "ece483_sp23_tb_mp4_test_1", "point": 1, "logfile": "/home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist/exprOutputs.log"}
+\o Loading vqp.cxt 
+\o 
+\o 
+\o *Info*    Configuring the session ...
+\o 
+\o 	Library      = ece483_sp23
+\o 	Cell         = tb_mp4_test
+\o 	View         = schematic
+\o 	Simulator    = spectre
+\o 	State Path   = $AXL_SETUPDB_DIR/test_states
+\o 	State Name   = ExplorerRun.0
+\o 	Results DB   = /home/andrewn7/ece483.work/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0.rdb
+\o 	Results Dir  = /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1
+\o 	Results Loc  = /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro
+\o 	Project Dir  = /home/andrewn7/cadence/simulation
+\o 	Setup DB loc = /home/andrewn7/ece483.work/ece483_sp23/tb_mp4_test/maestro
+\o 
+\o 
+\o INFO (TECH-150003): The technology database "NCSU_TechLib_tsmc02d" has been automatically
+\o updated from revision 226610(DM 0) to revision 227612(DM 3) in virtual memory.
+\o Loading spectrei.cxt 
+\# Memory report: using         209 MB, process size 1,139 MB at UTC 2023.03.25 19:43:48.368
+\o Loading devCheck.cxt 
+\o Loading relXpert.cxt 
+\o Loading hspiceD.cxt 
+\o Loading spectreinl.cxt 
+\o Loading UltraSim.cxt 
+\o Loading AMSOSS.cxt 
+\o Loading AMS.cxt 
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist
+\o 
+\o [2023-03-25 14:43:49.260 -0500] [event] - NewPoint [Attributes] {"point": 1, "testname": "ece483_sp23_tb_mp4_test_1", "event": "NewPoint", "EventSource": "Expression Evaluator", "HistoryName": "ExplorerRun.0", "logFile": "/home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist/exprOutputs.log", "logFileSize": "6467"}
+\o Simulation design variables differ from those on the cellView,
+\o they have been saved in the file "/tmp/saved-design-variables3".
+\o To save future changes, copy variables to cellView before exiting.
+\o 
+\o 
+\o *Info*    Configuring the session ...
+\o 
+\o 	Library      = ece483_sp23
+\o 	Cell         = tb_mp4_test
+\o 	View         = schematic
+\o 	Simulator    = spectre
+\o 	State Path   = $AXL_SETUPDB_DIR/test_states
+\o 	State Name   = ExplorerRun.0
+\o 	Results DB   = /home/andrewn7/ece483.work/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0.rdb
+\o 	Results Dir  = /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1
+\o 	Results Loc  = /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro
+\o 	Project Dir  = /home/andrewn7/cadence/simulation
+\o 	Setup DB loc = /home/andrewn7/ece483.work/ece483_sp23/tb_mp4_test/maestro
+\o 
+\o 
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist
+\o 
+\o [2023-03-25 14:43:49.817 -0500] [process] - Started evaluation [Attributes] {"hostname": "fastx3-19.ews.illinois.edu", "processid": 1572039, "testname": "ece483_sp23_tb_mp4_test_1", "point": 1, "logfile": "/home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist/exprOutputs.log"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var CL = "1p"
+\o Setting var VCM = "0.9"
+\o Setting var VDD = "1.8"
+\o Setting var VSS = "0"
+\o Setting var ibn = "10u"
+\o Setting temp(T) = 27
+\o Loading monte.cxt 
+\o [2023-03-25 14:43:50.162 -0500] [process] - Finished evaluation [Attributes] {"hostname": "fastx3-19.ews.illinois.edu", "processid": 1572039, "testname": "ece483_sp23_tb_mp4_test_1", "point": 1, "logfile": "/home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist/exprOutputs.log"}
+\# Available memory:         13,603 MB at UTC 2023.03.25 19:43:56.222

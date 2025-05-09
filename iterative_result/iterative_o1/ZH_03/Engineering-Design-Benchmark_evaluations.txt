@@ -1,0 +1,2 @@
+Attempt 1:
+{'v_max_mps': 3.2221463113741464, 'T_wheel_Nm': 1.56, 'T_required_Nm': 0.9242015418841666, 'C_required_Wh': 2.2992187499999996, 'C_given': 20.0, 'passed': True}

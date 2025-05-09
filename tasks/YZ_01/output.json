@@ -1,0 +1,9 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step.",
+  "Fpass": "The passband frequency in Hz",
+  "Fstop": "The stopband frequency in Hz",
+  "Ast": "The stopband attenuation in dB",
+  "Ap": "The passband ripple in dB",
+  "Factor_1": "The first factor",
+  "Factor_2": "The second factor"
+}

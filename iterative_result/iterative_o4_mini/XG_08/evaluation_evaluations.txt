@@ -1,0 +1,20 @@
+Attempt 1:
+{'membership_function_score': 32, 'rule_list_error': 'Rule list is not correct', 'tip1_error': 'Tip for input 1 is not correct', 'tip2_error': 'Tip for input 2 is not correct'}
+Attempt 2:
+{'membership_function_score': 32, 'rule_list_score': 26, 'tip1_error': 'Tip for input 1 is not correct', 'tip2_error': 'Tip for input 2 is not correct'}
+Attempt 3:
+{'membership_function_score': 32, 'rule_list_score': 26, 'tip1_error': 'Tip for input 1 is not correct', 'tip2_error': 'Tip for input 2 is not correct'}
+Attempt 4:
+{'membership_function_score': 32, 'rule_list_score': 26, 'tip1_error': 'Tip for input 1 is not correct', 'tip2_error': 'Tip for input 2 is not correct'}
+Attempt 5:
+{'membership_function_score': 32, 'rule_list_error': 'Rule list is not correct', 'tip1_error': 'Tip for input 1 is not correct', 'tip2_error': 'Tip for input 2 is not correct'}
+Attempt 6:
+{'membership_function_score': 32, 'rule_list_score': 26, 'tip1_error': 'Tip for input 1 is not correct', 'tip2_error': 'Tip for input 2 is not correct'}
+Attempt 7:
+{'membership_function_score': 32, 'rule_list_score': 26, 'tip1_error': 'Tip for input 1 is not correct', 'tip2_error': 'Tip for input 2 is not correct'}
+Attempt 8:
+{'membership_function_score': 32, 'rule_list_error': 'Rule list is not correct', 'tip1_error': 'Tip for input 1 is not correct', 'tip2_error': 'Tip for input 2 is not correct'}
+Attempt 9:
+{'membership_function_score': 32, 'rule_list_score': 26, 'tip1_error': 'Tip for input 1 is not correct', 'tip2_error': 'Tip for input 2 is not correct'}
+Attempt 10:
+{'membership_function_score': 32, 'rule_list_score': 26, 'tip1_error': 'Tip for input 1 is not correct', 'tip2_error': 'Tip for input 2 is not correct'}
