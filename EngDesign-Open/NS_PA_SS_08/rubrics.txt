@@ -1,0 +1,4 @@
+## Evaluation Rubric
+- reset behavior correct (test0_pass): 30 points
+- first-write behavior correct (test1_pass): 35 points
+- second-write & write-when-full behavior correct (test2_pass): 35 points

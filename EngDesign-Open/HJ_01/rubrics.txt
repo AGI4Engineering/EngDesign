@@ -1,0 +1,7 @@
+##Evaluation Rubric
+The design met all the following requirements: 100pts
+The design fails arbitrary one of the requirements: 0pts
+Constrains:
+Total runtime <= 10 s 
+Max off-track distance <= 1 meters
+Cost for design <= 300 Dollars

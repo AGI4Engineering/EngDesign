@@ -1,0 +1,30 @@
+## Task Description
+You are given a 2D gridmap of a construction site, where each node is represented as a triplet (x, y, 0/1). This map follows the specifications below:
+-The construction site spans an area that is 50 meters wide and 40 meters long.
+-Each grid cell is 1 meter × 1 meter.
+-The bottom-left corner of the site map corresponds to world coordinates (0, 0).
+-The value 0 or 1 in (x, y, 0/1) represents: A value of 1 denotes an obstacle (construction material, equipment, barricade, etc.), while a 0 indicates traversable space.
+
+The construction site contains the following obstacles:
+-A vertical wall from (10,5) to (10,35)
+-A horizontal wall from (10,20) to (40,20)
+-A vertical wall from (30,0) to (30,15)
+-A cluster of obstacles in the region from (20,25) to (25,30)
+-Several random obstacles at: (15,10), (25,5), (35,25), (40,30), (45,15)
+
+Your goal is to perform path planning for an autonomous construction robot navigating this site. You can choose any suitable algorithm to compute collision-free paths. We use an autonomous construction vehicle with a radius of 0.5 meters, which can navigate continuously on the site (not just on grid nodes). Based on the site map described above, use a path planning algorithm to compute a smooth, efficient (as short as possible), and collision-free path from the given start pose to the goal pose, while considering the vehicle's turning constraints.
+
+Please follow these specifications:
+1. Set the state space bounds to match the site limits: x from 0 to 49, y from 0 to 39, and orientation θ from 0 to 2π radians.
+2. The construction vehicle has the following motion constraints:
+	-The minimum turning radius is 4 meters due to its wheelbase and steering mechanism.
+	-The vehicle moves at a constant forward speed of 1 meter per second for safety on the construction site.
+3. The start pose is: (0, 0, π) (at the site entrance, facing left)
+4. The goal pose is: (49, 39, π/2) (at the far corner delivery area, facing up)
+
+## Required Results:
+1. Path representation: Output the path as a list of tuples (x, y, θ) at regular intervals (e.g., every 1 meter along the path or at fixed time steps)
+2. Total path length (in meters)
+3. Minimum distance to obstacles (in meters)
+4. Maximum curvature (to verify turning radius constraint)
+5. Number of nodes/states explored  

@@ -1,0 +1,40 @@
+## Task Description
+You are tasked with designing a buoyancy-driven underwater glider that travels a horizontal distance using only changes in buoyancy and pitch angle. The glider follows a shallow glide path under water with a constant average glide speed of **1 m/s** and must meet all mission goals using a feasible design.
+
+Your goal is to determine a feasible set of design parameters for:
+- Glide angle **θ** (in degrees)
+- Vehicle volume **V** (in cubic meters)
+- Ballast mass **m_b** (in kg)
+
+These four parameters must satisfy all of the following performance constraints:
+
+- The glider must follow a V-shape path and reach a horizontal distance of at least **4000 meters** in total with diving  to 400 meters depth in the middle in no more than 2 hours
+- The total energy consumed (by buoyancy and control systems) must not exceed the **battery capacity**
+- The battery capacity must not exceed **200 Wh**
+- The density of the vehicle must not exceeds water density to that the vehicle can float without water inside it
+- The vehicle volume must be in the range of  **0.2-1 m³**
+- The vehicle mass should be at least **200 kg**
+
+The glider is assumed to follow a constant glide angle and experience power consumption that increases linearly with depth:
+- Power consumption:  
+  **P(z) = P₀ + l·m + k·z**, where  
+  **P₀ = 100 W** (base system power),  
+  **l = 0.05 W/kg** (mass-related power coefficient),  
+  **k = 0.2 W/m** (depth-related power coefficient),  
+  with z in meters and m in kg
+
+Constants:
+- Water density: **ρ = 1025 kg/m³**
+- Gravitational acceleration: **g = 9.81 m/s²**
+- Total gliding depth: **400 meters**
+
+Your output should propose values for the four design parameters that satisfy all three constraints.
+
+### Response Format
+Please provide your response in the following format:
+{
+  "reasoning": "<Your reasoning and design process>",
+  "angle": <proposed glide angle in degrees>,
+  "volume": <proposed vehicle volume in m³>,
+  "mass": <proposed ballast mass in kg>
+}

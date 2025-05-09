@@ -1,0 +1,120 @@
+## Task Description
+In this task, you will be provided with a filesystem image. You are required to develop separate programs—each implementing a different filesystem operation (e.g., create, read, update, delete)—to modify the corresponding sections of that image. Your objective is to ensure that each program correctly performs its assigned operation on the intended part of the filesystem image while preserving its overall integrity.
+
+Here is the class definition for your reference:
+
+from dataclasses import dataclass, field
+from typing import List, Dict, Optional
+
+@dataclass
+class SuperBlock:
+    """File system superblock, stores metadata."""
+    block_size: int             # Size of each block (bytes)
+    total_blocks: int           # Total number of blocks
+    inode_count: int            # Total number of inodes
+    free_block_bitmap: List[bool]  # Free block bitmap, True = free
+
+@dataclass
+class Inode:
+    """Inode structure, stores file/directory metadata."""
+    ino: int                    # Inode number
+    is_dir: bool                # Whether this inode is a directory
+    size: int                   # File size (bytes)
+    direct_blocks: List[int]    # List of direct block indices
+    # Optional: add indirect block pointers, multi-level indexing, permissions, timestamps, etc.
+
+@dataclass
+class DirEntry:
+    """Directory entry: maps a filename to an inode."""
+    name: str
+    inode: int
+
+@dataclass
+class FileSystemImage:
+    """Complete file system image structure."""
+    superblock: SuperBlock
+    inodes: Dict[int, Inode] = field(default_factory=dict)
+    # Directory tree: inode -> list of entries in that directory; valid only for is_dir=True inodes
+    directories: Dict[int, List[DirEntry]] = field(default_factory=dict)
+    # Data block storage area: index corresponds to block number, content is bytes
+    data_blocks: List[Optional[bytes]] = field(default_factory=list)
+
+    def __post_init__(self):
+        # Initialize data block storage area
+        if not self.data_blocks:
+            self.data_blocks = [None] * self.superblock.total_blocks
+
+    def allocate_block(self) -> int:
+        """Allocate a block from the free bitmap and return its index; raise if none available."""
+        for idx, free in enumerate(self.superblock.free_block_bitmap):
+            if free:
+                self.superblock.free_block_bitmap[idx] = False
+                self.data_blocks[idx] = b''  # Initialize with empty content
+                return idx
+        raise RuntimeError("No free blocks available")
+
+    def free_block(self, block_idx: int):
+        """Free the specified block index."""
+        if 0 <= block_idx < self.superblock.total_blocks:
+            self.superblock.free_block_bitmap[block_idx] = True
+            self.data_blocks[block_idx] = None
+        else:
+            raise IndexError("Block index out of range")
+
+    def create_inode(self, is_dir: bool) -> Inode:
+        """Create a new inode and return it."""
+        new_ino = len(self.inodes) + 1
+        if new_ino > self.superblock.inode_count:
+            raise RuntimeError("No free inodes")
+        inode = Inode(
+            ino=new_ino,
+            is_dir=is_dir,
+            size=0,
+            direct_blocks=[]
+        )
+        self.inodes[new_ino] = inode
+        if is_dir:
+            self.directories[new_ino] = []
+        return inode
+
+    def add_dir_entry(self, dir_ino: int, name: str, inode: int):
+        """Add a directory entry to the directory with inode dir_ino."""
+        if dir_ino not in self.directories:
+            raise RuntimeError("Not a directory inode")
+        self.directories[dir_ino].append(DirEntry(name=name, inode=inode))
+
+### Task 1
+def write(fs_img: FileSystemImage, name: str, pos: int, data: str) -> FileSystemImage:
+    """
+    Write the UTF‑8 encoded bytes of `data` into the file called `name`
+    in the given FileSystemImage, starting at byte offset `pos`. Return
+    the updated FileSystemImage so that its blocks and inode metadata
+    can be inspected for correctness.
+
+    Parameters:
+    - fs_img:   the FileSystemImage instance containing inodes, directories,
+                and data blocks.
+    - name:     an absolute or relative path to the target file within `fs_img`.
+    - pos:      the byte offset within the file at which to begin writing.
+    - data:     a Python string whose UTF‑8 encoding will be written.
+
+    Returns:
+    - The same FileSystemImage instance (`fs_img`), mutated to reflect the
+      writes (updated data_blocks and inode.size).
+
+    Behavior:
+    1. If the file `name` does not exist or refers to a directory, raise
+       `FileNotFoundError` or `IsADirectoryError` respectively.
+    2. If `pos` is negative or greater than the file’s current size, raise
+       `ValueError`.
+    3. Encode `data` as UTF‑8 bytes.
+    4. If writing beyond the current end of file, extend the file:
+       - Allocate new blocks via `fs_img.allocate_block()` as needed.
+       - Update the inode’s `direct_blocks` list accordingly.
+    5. Compute which blocks and byte‐ranges within them correspond to
+       the target file range `[pos, pos + len(bytes))`.
+    6. Overwrite or append bytes in `fs_img.data_blocks[block_idx]` per block.
+    7. Update the inode’s `size` to `max(old_size, pos + len(bytes))`.
+    8. Return the mutated `fs_img` so that test harnesses can inspect
+       its `data_blocks` and `inodes` for correctness.
+    """

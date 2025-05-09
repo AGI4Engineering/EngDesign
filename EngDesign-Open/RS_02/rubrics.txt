@@ -1,0 +1,5 @@
+#Evaluation Rubrics:
+-Maximum acceleration within 0.5 m/s^2 and Maximum deceleration within 0.5 m/s^2: 50 points
+-Maximum acceleration within 1.0 m/s^2 and Maximum deceleration within 1.0 m/s^2: 25 points
+-Maximum acceleration within 1.5 m/s^2 and Maximum deceleration within 1.5 m/s^2: 15 points
+-Maximum acceleration within 2.0 m/s^2 and Maximum deceleration within 2.0 m/s^2: 10 points

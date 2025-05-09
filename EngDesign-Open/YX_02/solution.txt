@@ -1,0 +1,13 @@
+## Task 1 solution:
+constraint_parameters = [-0.0625, 300]
+
+## Task 2 solution:
+The quality of the sampling points of the global inputs is checked by evaluate.py.
+
+## Task 3 solution:
+normalized_speed_factor = 0.5
+P_range = [100, 140]
+G_range = [0.4, 0.65]
+
+## Task 4 solution:
+The quality of the sampling points of the local inputs is checked by evaluate.py.

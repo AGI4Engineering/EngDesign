@@ -1,0 +1,8 @@
+## Evaluation Rubric
+- reasonable order (below 60): 10
+- number of coefficients = order + 1: 10
+- stopband placement appropriate: 20
+- decimation factor appropriate: 10
+- transition band attenuation appropriate: 10
+- passband frequency attenuation appropriate: 20
+- stopband frequency attenuation appropriate: 20

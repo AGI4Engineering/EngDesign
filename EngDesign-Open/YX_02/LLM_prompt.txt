@@ -1,0 +1,53 @@
+## Task Description
+In this task, your goal is to produce local maps for a diesel engine calibration. You are provided with two global inputs: engine speed (N) and fuel mass (F), and four local inputs: injection (S), fuel pressure (P), variable geometry turbo rack position (G) and exhaust gas recirculation valve lift (E). Given the defined input ranges and physical constraints, you are required to perform structured sampling of the input space using the specified sampling strategy, ensuring representative and constraint-compliant coverage for subsequent modeling and calibration tasks.
+
+### Task 1
+First, for the global inputs: engine speed (N) and fuel mass (F), the maximum value of F changes as the value of N changes. You need to find the functional relationship between them.
+The following information is given:
+ - At N = 1600, F <= 200.
+ - At N = 2000, F <= 175.
+ - Values between these two breakpoints are linearly interpolated.
+Find the linear relationship between the maximum value of F and the value of N, and express their relationship in the format: F_max = a * N + b, where a, b are parameters.
+
+### Task 2
+After Task 1, you need to generate a **15 point Latin Hypercube Sampling (LHS)** design for the global inputs (N, F) based on the following specifications:
+- Global Input Definitions:
+ - Engine speed (N):
+  - Range: [1600, 2200]
+  - Unit: rpm
+ - Fuel mass (F):
+  - Range: [20, 200]
+  - Unit: mg/stroke
+- Physical Constraint:
+ - The maximum value of F has a linear relationship with the value of N, which you have gained from Task 1. When N is in the interval [1600, 2000], the sampling points you find need to satisfy this linear relationship. When N is not in the interval [1600, 2000], there are no constraints on F.
+- Requirements:
+ - Use the LHS strategy to generate 15 design points.
+ - All sampled points must satisfy the constraint on F based on N.
+
+### Task 3
+Given a global operating point with engine speed N = 1900 rpm, calculate the **normalized speed factor** as: f = (N - 1600) / (2200 - 1600).
+Use this factor f to determine input-dependent variable limits via **linear interpolation**:
+- For the fuel pressure (P) limits:
+ - P_range = (1 − f) * [90, 120] + f * [110, 160]
+- For the variable geometry turbo rack position (G) limits:
+ - G_range = (1 − f) * [0.2, 0.4] + f * [0.6, 0.9]
+These bounds will be used for local sampling in the next task.
+
+### Task 4
+Based on the result from Task 2 and the given global inputs:
+- Engine speed: N = 1900 rpm
+- Fuel mass: F = 110 mg/stroke
+Construct a **local design of experiments** using **Latin Hypercube Sampling (LHS)** over the following local inputs:
+- Injection (S):
+ - Range: [-9, 3]
+ - Unit: deg
+- Fuel pressure (P):
+ - Range: P_range computed from Task 2
+ - Unit: MPa
+- Variable geometry turbo rack position (G):
+ - Range: G_range computed from Task 2
+ - Unit: ratio
+- Exhaust gas recirculation valve lift (E):
+ - Range: [0.5, 5]
+ - Unit: mm
+Your design must contain **30 local samples** that respect the variable-specific bounds defined above.

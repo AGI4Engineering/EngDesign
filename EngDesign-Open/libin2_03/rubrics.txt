@@ -1,0 +1,8 @@
+## Evaluation Rubric
+1. 'cluster_kb' is an integer that is a power of 2. (5pts)
+2. 'cluster_kb' is between [4, 1024]. (5pts)   // Common choice of cluster size
+3. 'small_threshold_kb' is an integer that is a power of 2. (10pts)
+4. 'frag_overhead' is calculated correctly. (20pts)
+5. 'frag_overhead' meets the requirements. (20pts)
+6. 'meta_overhead' is calculated correctly. (20pts)
+7. 'meta_overhead' is meets the requirements. (20pts)

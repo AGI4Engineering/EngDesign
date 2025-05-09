@@ -1,0 +1,7 @@
+The solution is evaluated based on Intersection over Union (IoU) between the predicted binary mask and the ground truth mask.
+
+IoU is computed as the area of overlap divided by the area of union between the two masks.
+
+The final score is calculated as IoU × 100.
+
+A score of 80 or higher (i.e., IoU ≥ 0.80) is considered a passing solution.

@@ -1,0 +1,50 @@
+Testbench Evaluation Methodology for 5‑bit Sequence Detector
+
+This document describes how the testbench (`tb_seq.sv`) evaluates the `model` (sequence detector) module:
+
+1. Clock and Reset
+
+   * A 10 ns period clock (`clk`) toggles indefinitely.
+   * At simulation start, `resetn` is deasserted low for one cycle, then asserted high.
+
+2. Monitored Signals
+
+   * `din` (1-bit) is the serial input stream.
+   * `init` (5-bit) is the target sequence, loaded on reset.
+   * `seen` (1-bit) pulses high for one cycle when the target is detected.
+
+3. Test Cases
+
+   **Test 0: Reset Behavior**
+
+   * With arbitrary `init` and no streaming, after reset assert:
+
+     * Expect `seen == 0` on the first active clock.
+   * Pass if `seen` remains low.
+
+   **Test 1: Basic Sequence Detection**
+
+   * Load target `init = 5'b00101` during reset.
+   * Stream bits `0,0,1,0,1` on `din` over five consecutive clocks.
+   * After the fifth bit, expect `seen == 1` on that clock.
+   * Pass if `seen` pulses high exactly once at the correct time.
+
+   **Test 2: Target Change Detection**
+
+   * Load new target `init = 5'b11100` during reset.
+   * Stream bits `1,1,1,0,0` over five clocks.
+   * After the fifth bit, expect `seen == 1`.
+   * Pass if detection occurs correctly with the updated target.
+
+4. Result Reporting
+
+   * Each test prints `[PASS] Test X` or `[FAIL] Test X: seen=<observed>`.
+   * The external Python harness scans stdout for `[FAIL] Test X` to determine pass/fail per test.
+
+5. Scoring
+
+   * Test 0: 30 points
+   * Test 1: 35 points
+   * Test 2: 35 points
+
+A fully passing testbench produces no `[FAIL]` messages and achieves a perfect score.

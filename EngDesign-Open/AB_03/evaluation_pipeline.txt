@@ -1,0 +1,8 @@
+Exact code evaluation.
+1. Extract solution_code from LLM response.
+2. Write solution_code to a temporary python file.
+3. Import the get_simplified_contours function from the temporary file.
+4. Execute the function get_simplified_contours().
+5. Compare the returned approximate polygon vertices and convex hull vertices against pre-calculated ground truth vertices.
+6. Calculate a score based on matching the number of vertices and the IoU of the bounding boxes for both approx polygon and convex hull. Average these two comparison scores.
+7. Determine pass/fail based on the final score exceeding a threshold (e.g., 95).

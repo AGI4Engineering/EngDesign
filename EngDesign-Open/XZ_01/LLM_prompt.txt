@@ -1,0 +1,24 @@
+## Task Description
+You are given a 2D gridmap of a construction site, where each node is represented as a triplet (x, y, 0/1). This map follows the specifications below:
+-The construction site spans an area that is 50 meters wide and 40 meters long.
+-Each grid cell is 1 meter × 1 meter.
+-The bottom-left corner of the site map corresponds to world coordinates (0, 0).
+-The value 0 or 1 in (x, y, 0/1) represents: A value of 1 denotes an obstacle (construction material, equipment, barricade, etc.), while a 0 indicates traversable space.
+
+A small inspection robot's starting position is at the site entrance (0,0,0), and we set the goal position to the far corner inspection point (49,39,0). Suppose this inspection robot can only navigate on grid nodes (i.e., x and y values are integers). Find the shortest way from the entrance to the inspection point without hitting any obstacles.
+The construction site contains the following obstacles:
+
+-A vertical wall from (10,5) to (10,35)
+-A horizontal wall from (10,20) to (40,20)
+-A vertical wall from (30,0) to (30,15)
+-A cluster of obstacles in the region from (20,25) to (25,30)
+-Several random obstacles at: (15,10), (25,5), (35,25), (40,30), (45,15)
+
+## Required Results:
+1. The complete path as an ordered list of coordinates from start to goal
+2. The total path length (in meters)
+3. The algorithm used (A*, Dijkstra, etc.)
+4. The number of nodes explored during the search
+5. Whether 4-connected or 8-connected movement was used
+6. Execution time of the algorithm
+

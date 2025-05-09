@@ -1,0 +1,98 @@
+## Neural Processing Unit Architecture
+Neural processing units (NPUs) are specialized accelerators for machine learning (ML) workloads. A typical example is Google TPU [1,2], the state-of-the-art NPU architecture widely deployed in production.
+It consists of weight-stationary systolic arrays (SAs) for matrix multiplications and convolutions, and SIMD vector units (VUs) for generic vector operations.
+An SA consists of a 2D array of processing elements (PEs) that are connected in a mesh topology. Each PE can perform a multiply-accumulate (MAC) operation.
+Each VU takes 8$\times$128$ vectors as inputs and can output a 8$\times$128$ vector per cycle.
+Each chip has an off-chip high-bandwidth memory (HBM) to store the ML model weights and input/output data, and an on-chip SRAM to exploit on-chip data reuse and hide HBM access latency.
+A DMA engine performs asynchronous memory copy between the HBM and SRAM, and the DMA operation are performed in parallel with the computation in the SAs and VUs.
+Multiple NPU chips can be interconnected via high-speed inter-chip interconnect (ICI) links, which form an NPU pod. The NPU chips in a pod are arranged as a 3D torus, which is optimized for all-reduce bandwidth [3,10]. The DMA engine performs peer-to-peer RDMA operations to access another chip's HBM or SRAM.
+
+
+## Distributed Large Language Model Serving
+Large language models (LLMs) are auto-regressive transformer-based language models.
+To serve an input request, the LLM performs two stages of computations: prefill and decode.
+During prefill, the LLM computes the forward pass for the input sequence and generate the key-value (KV) cache for each input token. It also generates the first output token.
+During decode, the LLM iteratively generates the next output token based on the KV cache of the input tokens and the previously generated output tokens.
+In state-of-the-art LLM serving systems, the prefill and decode stages are disaggregated and performed in a pipelined manner.
+Therefore, we can treat the prefill and decode stages as two separate workloads and optimize them independently.
+
+Since the LLM is too large to fit into a single NPU chip, we need to shard the model weights, KV cache, and activation tensors across multiple chips.
+Typically, there are three tunable sharding parameters: data parallelism (DP), tensor parallelism (TP), and pipeline parallelism (PP).
+
+In DP, the input batch is sharded across chips such that each chip independently computes the forward pass for its own local batch.
+
+In TP, the model weights are sharded across chips follwing the Megatron-LM approach [6]. For the attention layers, each attention head is assigned to a different chip. For the FFN layers, the FNN matrices are sharded across chips, and it requires all-reduce (or reduce-scatter plus all-gather) communication to aggregate the final output of the FNN layers.
+
+In PP, different transformer layers in the LLM are assigned to different chips, forming a pipeline. There will be peer-to-peer (P2P) inter-chip communications to receive and send the input/output tensors of each pipeline stage.
+
+
+## SLO Metrics for LLM Serving
+For prefill, the latency SLO metric is the time-to-first-token (TTFT) for each request, which is the time taken to process all input tokens of the request.
+For decode, the latency SLO metric is the time-per-output-token (TPOT) for each request, which is the time taken to generate each output token.
+For both prefill and decode, the throughput metric is tokens per second, which is the number of tokens processed per second.
+
+
+## Task Description
+In this task, you will act as a computer architect to tune the hardware specifications of a neural processing unit (NPU). You are given a large language model (LLM) inference workload with the average input and output sequence lengths for each request. You first need to determine some critical architectural parameters for each NPU chip.
+Then, you will consider deploying the given LLM workload at scale. You need to act as the cluster NPU allocator [4,5] to figure out how to allocate NPU resourcess to the given workload.
+Specifically, you need to tune the NPU cluster configuration for serving the given LLM workload, including the number of chips, network topology, the model shardings, and the batch size, to meet latency and throughput service-level objective (SLO) constraints.
+For the following tasks, assume each task is independent, and you do not need to consider the previous tasks when answering the next task.
+
+### Task 1: Systolic Array (SA) Width
+We want to first decide the width of the SA based on the tensor operator semantics in the LLM model. Assume the SA is square.
+Consider a matrix multiplication operator $C = A \times B$, where the input matrix $A$ is of size $m \times k$, the input matrix $B$ is of size $k \times n$, and the output matrix $C$ is of size $m \times n$.
+For a weight-stationary SA, if $m$ is less than its width, the SA will be diagonally underutilized; if $n$ is less than its width, some columns in the SA will be underutilized; if $k$ is less than its width, some rows in the SA will be underutilized.
+The SA is fully utilized when $m$, $k$, and $n$ are all greater than or equal to its width.
+Consider a specific matrix multiplication operator where $m=1024$, $k=128$, and $n=128$.
+If we want to make sure the FLOPs (floating-point operations) per second utilization of the SA is at least 70%, what is the maximum width of the SA?
+Your answer should be a a positive integer, which is the width of the SA.
+
+### Task 2: HBM Bandwidth
+Now we tune the memory subsystem.
+Specifically, we need to determine how much HBM bandwidth is required to avoid stalling the computation.
+Suppose we have four SAs, each with width 128 and running at 940 MHz.
+For simplicity, assume the SRAM bandwidth is infinite, and the VUs will not be a performance bottleneck.
+Consider a matrix multiplication operator $C = A \times B$, where the input matrix $A$ is of size $m \times k$, the input matrix $B$ is of size $k \times n$, and the output matrix $C$ is of size $m \times n$.
+We perform tiled matrix multiplication [7] to exploit on-chip data reuse and reduce the HBM bandwidth pressure.
+Each SA computes separate output tiles.
+You may refer to the JAX documentation [9] for the tiling strategy for multiple SAs on an NPU.
+The tile size is restricted by the SRAM size, and we need to keep at least 10 tiles in the SRAM for each SA, in order to hide the HBM access latency.
+Assume the on-chip SRAM is 32 MB, and all elements in the matrices are float16 (2 bytes).
+For a matrix multiplication operator where $m=4096$, $k=8192$, and $n=28672$, what is the minimum required HBM bandwidth in GB/s (including both read and write traffic) such that the SA computation will not be stalled?
+
+### Task 3: NPU Allocations for Prefill and Decode
+Consider an NPU chip with the following specifications:
+{
+    "num_sa": 8,
+    "num_vu": 6,
+    "hbm_bw_GBps": 2765,
+    "vmem_size_MB": 128,
+    "freq_GHz": 1.75,
+    "sa_dim": 128,
+    "hbm_size_GB": 95,
+    "ici_link_bw_GBps": 100,
+}
+where "num_sa" is the number of SAs, "num_vu" is the number of VUs, "hbm_bw_GBps" is the HBM bandwidth in GB/s, "vmem_size_MB" is the size of the on-chip SRAM in MB, "freq_GHz" is the frequency of the chip in GHz, "sa_dim" is the width of the SA, "hbm_size_GB" is the size of the HBM in GB, and "ici_link_bw_GBps" is the bandwidth of each ICI link in GB/s.
+Each NPU chip has 6 ICI links that are directly connected to 6 neighboring chips, and all NPU chips in an NPU pod are connected in a 3D torus topology.
+You are given the Llama3.1-405B LLM model, and you need to find the optimal NPU pod configuration and the optimal model sharding and batch size for serving the LLM model. The detailed model specifications are as follows:
+{
+    "d_model": 16384,
+    "num_heads": 128,
+    "d_head": 128,
+    "num_kv_heads": 8,
+    "d_ff": 53248,
+    "num_layers": 126,
+    "use_flash_attention": true,
+}
+where "d_model" is the embedding dimension, "num_heads" is the number of attention heads, "d_head" is the dimension of each attention head, "num_kv_heads" is the number of key-value heads (for grouped-query attention), "d_ff" is the hidden dimension of the feed-forward network (FFN), "num_layers" is the number of transformer layers, and "use_flash_attention" indicates whether to use flash attention [8] (only used for prefill) or not.
+The average input sequence length is 4096 tokens for prefill, and the average output sequence length is 512 tokens for decode.
+The latency SLO is 500 ms TTFT for prefill and 20 ms TPOT for decode.
+Assume we have a 4$\times$4$\times$4 NPU pod for prefill, and another 4$\times$4$\times$4 NPU pod for decode. Please find the optimal allocations for each of them to achieve the best throughput (tokens per second), while ensuring that the latency SLO is met.
+You should output two allocations plans, one for prefill and one for decode.
+Each allocation plan should include the following parameters:
+    - DP: data parallelism degree. Must be a multiple of 2.
+    - TP: tensor parallelism degree. Must be a multiple of 2.
+    - PP: pipeline parallelism degree. Must be a multiple of 2.
+    - batch_size: the number of requests in a batch. Must be a power of 2.
+    - mem_per_chip_GB: the HBM memory footprint on each NPU chip in GB.
+You need to ensure that the product of DP, TP, and PP does not exceed 64 chips (but each parallelism degree can exceed 4 by taking multiple ICI axes). You also need to ensure that the allocation plan meets the 95GB per-chip HBM memory capacity constraint.

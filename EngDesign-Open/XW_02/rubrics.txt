@@ -1,0 +1,6 @@
+## Evaluation Rubric
+- Write operation correctness:
+    - write file in root Directory - 30 points
+    - write file in subdirecotry - 30 points
+    - content correctness - 20 points
+    - correctly react to invalid file - 20 points

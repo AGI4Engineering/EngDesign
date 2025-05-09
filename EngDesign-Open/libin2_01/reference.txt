@@ -1,0 +1,4 @@
+[1] Privileged Horizontal Committee, “The RISC‑V Instruction Set Manual Volume II: Privileged Architecture,” Version 20240411, RISC‑V Tech Hub, May 2024. [Online]. 
+Available: https://drive.google.com/file/d/17GeetSnT5wW3xNuAHI95-SI1gPGd5sJ_/view?usp=drive_link :contentReference[oaicite:0]{index=0}
+
+[2] Professor [Krill Levchenko], "Virtual Memory", Lecture Slides, [UIUC], ECE391 Course Materials, Fall 2024.

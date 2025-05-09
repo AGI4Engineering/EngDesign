@@ -1,0 +1,9 @@
+For MatMul with shape [128, 5120, 15360],
+the optimal F_op is [2, 122, 6],
+and the optimal temporal factors are
+f_t_A_m = 2,
+f_t_A_k = 1,
+f_t_B_k = 1,
+f_t_B_n = 1,
+f_t_C_m = 1,
+f_t_C_n = 1.

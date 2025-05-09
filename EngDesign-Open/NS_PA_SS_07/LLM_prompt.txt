@@ -1,0 +1,61 @@
+You are a hardware‐design expert. Write synthesizable Verilog for a simple 1-read/1-write register file (RF) implemented as a multidimensional array of flip-flops, according to the following spec:
+
+1. Architecture  
+   - The RF has 8 entries, each 8 bits wide.  
+   - Internally use `reg [7:0] mem [0:7];` or equivalent to model the array of flip-flops.  
+
+2. Ports  
+```verilog
+module model (
+    input  wire [7:0] din,     // data input for write
+    input  wire [2:0] addr,    // address for read or write
+    input  wire       wr,      // write-enable
+    input  wire       rd,      // read-enable
+    input  wire       clk,     // clock
+    input  wire       resetn,  // synchronous, active-low reset
+    output reg  [7:0] dout,    // data output for read
+    output reg        error    // error flag for invalid op
+);
+Behavior
+
+Reset (resetn == 0):
+
+Clear all memory entries (optional) or implicitly treat as “unwritten.”
+
+Drive dout = 0, error = 0.
+
+One operation per cycle on rising edge of clk:
+
+If both wr and rd are high → invalid:
+
+error = 1, dout = 0.
+
+Else if wr is high (wr == 1 && rd == 0):
+
+Write din into mem[addr].
+
+error = 0, dout = 0.
+
+Else if rd is high (rd == 1 && wr == 0):
+
+If the addressed entry has been written before (or track via a valid bit):
+
+dout = mem[addr], error = 0.
+
+Else (unwritten address):
+
+dout = 0, error = 0.
+
+Else (no operation):
+
+dout = 0, error = 0.
+
+Implementation notes
+
+You may use a reg valid [0:7]; array to track which entries have been written.
+
+All logic must be synchronous to clk.
+
+Keep the design simple and fully synthesizable.
+
+Produce clean, commented Verilog that meets this specification.

@@ -1,0 +1,14 @@
+## Background
+Control systems play a critical role in stabilizing and regulating the behavior of dynamic systems, such as robotic arms and autonomous vehicles. In this task, you will design a proportional-integral-derivative (PID) controller for a mass-spring-damper system. The system is described by the following physical parameters:
+- Mass: $m = 1\, \text{kg}$  
+- Damping coefficient: $b = 10\, \text{N s/m}$ 
+- Spring constant: $k = 20\, \text{N/m}$ 
+- External force: $F = 1\, \text{N}$
+An illustrative diagram is provided to help visualize the system.
+
+## Task Description
+Please design a PID controller for the given mass-spring-damper system, such that the closed-loop system satisfies the following performance requirements:
+   - **Settling time:** $T_s < 0.2\, \text{seconds}$
+   - **Overshoot:** $M_p < 5\%$
+   - **Steady-state error:** Zero
+**Note:** You may choose to implement a simplified controller by setting one or more of the PID parameters (i.e., $K_i$ or $K_d$) to zero, effectively designing a PI, PD, or P controller as needed.

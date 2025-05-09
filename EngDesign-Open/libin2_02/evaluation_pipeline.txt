@@ -1,0 +1,32 @@
+We will use exact code in evaluate.py to evaluate the correctness of LLM responses, based on the rubrics:
+
+1. Parse JSON output and extract:
+   - time_quantum
+   - case1.avg_waiting_time, case1.context_switches, case1.quantum_cost
+   - case2.avg_waiting_time, case2.context_switches, case2.quantum_cost
+   - case3.avg_waiting_time, case3.context_switches, case3.quantum_cost
+
+2. Time-Quantum Integer Check (10 pts):
+   - Assert that time_quantum is an integer.
+
+--------------------------------------------
+Let Fi be the finish time of thread i;
+Let Ai be the arrival time of thread i;
+Let Bi be the burst time of thread i;
+--------------------------------------------
+3. Case-by-Case Metrics (for each of case1, case2, case3):
+   a. avg_waiting_time correctness (5 pts):
+      - Simulate Round-Robin with the given time_quantum and threads.
+      - Compute waits as Fi – Ai – Bi and average.
+      - Assert reported avg_waiting_time matches simulation.
+   b. context_switches correctness (5 pts):
+      - Count context switches in simulation.
+      - Assert reported context_switches matches simulation.
+   c. quantum_cost correctness (5 pts):
+      - Compute quantum_cost = time_quantum * 0.5.
+      - Assert reported quantum_cost matches calculation.
+   d. combined_cost limit check (15 pts):
+      - Compute combined_cost = avg_waiting_time + context_switches + quantum_cost.
+      - Assert combined_cost is not larger than case-specific limit.
+
+4. Sum all earned points and return final score (out of 100) along with detailed pass/fail indicators.

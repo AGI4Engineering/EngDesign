@@ -1,0 +1,242 @@
+## Task Description
+You are given a Webots world file named 'construction_site.wbt' with some walls (obstacles) and a controller file named "robot_controller.py", you should first read the world info as shown below, then choose a path planning algorithm to generate the shortest path from start point to goal point without hitting any obstacles or walls. The path should satisfy the following requirements: The small inspection robot's starting position is at the site entrance (0,0,0), and we set the goal position to the far corner inspection point (49,39,0). Suppose this inspection robot can only navigate on grid nodes (i.e., x and y values are integers). 
+
+The construction_site.wbt contains the following world info:
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+
+Viewpoint {
+  orientation 0.57 -0.495 -0.656 4.55
+  position 3.88 -16.8 99.5
+}
+
+TexturedBackground {
+}
+
+TexturedBackgroundLight {
+}
+
+DEF FLOOR Solid {
+  translation 25 20 0
+  name "floor"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 50 40 0.1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 50 40 0.1
+  }
+}
+
+# Vertical wall from (10,5) to (10,35) 
+DEF VERTICAL_WALL_1 Solid {
+  translation 10 20 0.5
+  name "vertical_wall_1"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 0.6
+      }
+      geometry Box {
+        size 1 30 1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 1 30 1
+  }
+}
+
+# Horizontal wall from (10,20) to (40,20) 
+DEF HORIZONTAL_WALL Solid {
+  translation 25 20 0.5
+  name "horizontal_wall"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 0.6
+      }
+      geometry Box {
+        size 30 1 1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 30 1 1
+  }
+}
+
+# Vertical wall from (30,0) to (30,15)
+DEF VERTICAL_WALL_2 Solid {
+  translation 30 7.5 0.5
+  name "vertical_wall_2"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 0.6
+      }
+      geometry Box {
+        size 1 15 1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 1 15 1
+  }
+}
+
+# Obstacle cluster from (20,25) to (25,30) 
+DEF OBSTACLE_CLUSTER Solid {
+  translation 22.5 27.5 0.5
+  name "obstacle_cluster"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 0.6
+      }
+      geometry Box {
+        size 5 5 1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 5 5 1
+  }
+}
+
+# Random obstacles 
+DEF OBSTACLE_1 Solid {
+  translation 15 10 0.5
+  name "obstacle_1"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 0.6
+      }
+      geometry Box {
+        size 1 1 1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 1 1 1
+  }
+}
+
+DEF OBSTACLE_2 Solid {
+  translation 25 5 0.5
+  name "obstacle_2"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 0.6
+      }
+      geometry Box {
+        size 1 1 1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 1 1 1
+  }
+}
+
+DEF OBSTACLE_3 Solid {
+  translation 35 25 0.5
+  name "obstacle_3"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 0.6
+      }
+      geometry Box {
+        size 1 1 1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 1 1 1
+  }
+}
+
+DEF OBSTACLE_4 Solid {
+  translation 40 30 0.5
+  name "obstacle_4"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 0.6
+      }
+      geometry Box {
+        size 1 1 1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 1 1 1
+  }
+}
+
+DEF OBSTACLE_5 Solid {
+  translation 45 15 0.5
+  name "obstacle_5"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 0.6
+      }
+      geometry Box {
+        size 1 1 1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 1 1 1
+  }
+}
+
+# Robot node - simplified to avoid physical features
+Robot {
+  translation 0 0 0.5
+  name "robot"
+  controller "robot_controller"
+  supervisor TRUE
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Sphere {
+        radius 0.500000
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject Sphere {
+    radius 0.500000
+  }
+}
+
+
+## Required Results:
+1. The complete path as an ordered list of coordinates from start to goal
+2. The total path length (in meters)
+3. The algorithm used (A*, Dijkstra, etc.)
+4. The number of nodes explored during the search
+5. Whether 4-connected or 8-connected movement was used

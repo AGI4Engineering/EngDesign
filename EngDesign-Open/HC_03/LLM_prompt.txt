@@ -1,0 +1,24 @@
+In this task, you will be given a set of 2D points.
+
+## Task Description
+You are given a list of (x, y) pairs that roughly follow a quadratic (second-order) polynomial relationship, but include some noise.
+
+Your task is to estimate the best-fit second-order polynomial function of the form:
+    y = a * x^2 + b * x + c
+
+where:
+- a, b, c are real-valued coefficients.
+
+You must provide the estimated coefficients (a, b, c) and minimize the mean squared error (MSE) of the fit.
+
+## Output Format
+You must provide the following:
+
+### coefficients
+    a
+    b
+    c
+
+## Data points:
+x = [-2, -1, 0, 1, 2, 3]
+y = [7.9, 2.0, 0.1, 2.2, 6.0, 12.1]

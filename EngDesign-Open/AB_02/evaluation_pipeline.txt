@@ -1,0 +1,17 @@
+Load task prompt from LLM_prompt.txt.
+
+Collect optional input images from the images/ folder.
+
+Send prompt (+ images) to OpenAI API with model (e.g., gpt-4o).
+
+Expect structured response matching Response_structure with reasoning + solution_code.
+
+Save and run solution_code from the response in a temp Python file.
+
+Call segment_image() and get its predicted binary mask.
+
+Load ground truth mask from images/ground_truth_mask.png.
+
+Compute IoU between prediction and ground truth.
+
+Pass if IoU ≥ 0.80. The score is simply the IoU * 100.

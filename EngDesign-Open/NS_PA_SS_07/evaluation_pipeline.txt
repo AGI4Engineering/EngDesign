@@ -1,0 +1,58 @@
+Testbench Evaluation Methodology for 1RW Register File
+
+This document describes how the testbench (`tb.sv`) evaluates the `model` (1RW RF) module:
+
+1. Clock and Reset
+
+   * A 10 ns period clock (`clk`) toggles indefinitely.
+   * At initialization, `resetn` is held low for one clock cycle, then released high.
+
+2. Monitored Signals
+
+   * `dout` (8-bit) is the data read from the RF.
+   * `error` (1-bit) indicates invalid operation (simultaneous read/write).
+
+3. Test Cases
+
+   **Test 0: Reset Behavior**
+
+   * After `resetn` deasserts (goes high), check on the next rising edge:
+
+     * `dout == 0`
+     * `error == 0`
+   * Pass if both conditions are true, else fail.
+
+   **Test 1: Write and Read Operation**
+
+   * Write value `0xA5` to address `3`:
+
+     * Assert `wr=1`, `addr=3`, `din=8'hA5`, `rd=0` for one cycle.
+   * Then read back from address `3`:
+
+     * Deassert `wr`, assert `rd=1`, same `addr`.
+   * On the read cycle, check:
+
+     * `dout == 8'hA5`
+     * `error == 0`
+   * Pass if both match expected, else fail.
+
+   **Test 2: Concurrent Read/Write Error**
+
+   * Assert both `wr=1` and `rd=1` on address `1` with `din=8'hFF`:
+
+     * Expect `error == 1`
+     * Expect `dout == 0`
+   * Pass if both conditions are met, else fail.
+
+4. Result Reporting
+
+   * Each test prints either `[PASS] Test X` or `[FAIL] Test X: observed vs expected`.
+   * The external Python harness (`evaluate_llm_response`) scans stdout for `[FAIL] Test X` to determine pass/fail per test.
+
+5. Scoring
+
+   * Test 0: 30 points
+   * Test 1: 35 points
+   * Test 2: 35 points
+
+A fully passing testbench produces no `[FAIL]` messages and achieves a perfect score.

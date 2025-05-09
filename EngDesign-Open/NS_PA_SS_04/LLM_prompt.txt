@@ -1,0 +1,38 @@
+You are a hardware‐design expert. Write synthesizable SystemVerilog for an 8-bit Fibonacci Linear-Feedback Shift Register (LFSR) with a parameterizable DATA_WIDTH, according to the following spec:
+
+1. Parameterization  
+   - DATA_WIDTH (default 8)
+
+2. Ports
+```verilog
+module model #(
+    parameter DATA_WIDTH = 8
+) (
+    input  logic                  clk,      // clock signal
+    input  logic                  resetn,   // synchronous, active-low reset
+    input  logic [DATA_WIDTH-1:0] din,      // initial seed value written on reset
+    input  logic [DATA_WIDTH-1:0] tap,      // feedback polynomial (tap positions)
+    output logic [DATA_WIDTH-1:0] dout      // current LFSR output
+);
+
+3. Behavior
+
+Reset: On the rising edge of clk when resetn = 0, load the shift register with din, and set dout = 1.
+
+Shift: On each rising edge of clk when resetn = 1:
+
+Compute the feedback bit as the XOR of all register bits whose positions correspond to a ‘1’ in the registered/latched tap value.
+
+Shift the register right by one bit.
+
+Insert the feedback bit into the MSB position.
+
+Update dout with the new register value.
+
+Tap buffering: Internally register the tap input on reset so that the feedback polynomial remains constant until the next reset.
+
+4. Output
+
+dout presents the current DATA_WIDTH-bit state of the shift register.
+
+Please produce clean, synthesizable SystemVerilog that meets this specification.

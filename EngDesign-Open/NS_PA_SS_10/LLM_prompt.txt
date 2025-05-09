@@ -1,0 +1,40 @@
+You are a hardware‐design expert. Write synthesizable SystemVerilog for a serial‐input “divisible‐by‐5” detector that outputs a 1 whenever the cumulative binary value shifted in is evenly divisible by five, according to the following spec:
+
+1. Parameterization  
+   - No fixed width: the module processes an arbitrarily long bitstream, one bit per clock.  
+
+2. Ports  
+```verilog
+module model (
+    input  logic clk,      // clock signal
+    input  logic resetn,   // synchronous, active‐low reset: clears history
+    input  logic din,      // serial input bit, MSB first
+    output logic dout      // high if the current value mod 5 == 0
+);
+Behavior
+
+State machine on remainder: Internally maintain a 3‐bit or larger state register holding the current remainder modulo 5.
+
+Shift in bit: On each rising edge when resetn == 1:
+
+Compute new_value = (old_value << 1) + din
+
+new_remainder = new_value mod 5, computed from the previous remainder and incoming bit.
+
+Store new_remainder in the state register.
+
+Set dout = 1 if new_remainder == 0, else dout = 0.
+
+Reset: When resetn == 0 on the rising edge, clear the remainder state to 0 and drive dout = 0.
+
+Implementation notes
+
+Use a small finite‐state machine with five states (remainders 0–4).
+
+The update logic can be built combinationally from the previous remainder and din.
+
+Keep all logic synchronous to clk.
+
+dout must be valid the same cycle the new bit is processed.
+
+Please produce clean, commented, synthesizable SystemVerilog that meets this specification.

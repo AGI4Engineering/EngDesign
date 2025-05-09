@@ -1,0 +1,33 @@
+# evaluation_pipeline.txt
+
+# 1) Compilation
+# We compile the LLM-generated register-file (`user_model.sv`) together with our golden testbench (`tb.sv`)
+# using Icarus Verilog:
+#
+#   iverilog -g2012 -o sim.vvp user_model.sv tb.sv
+#
+# 2) Simulation
+# Run the compiled simulation:
+#
+#   vvp sim.vvp
+#
+# 3) Test output format
+# The testbench will print “[PASS] Test N” or “[FAIL] Test N” for each subtest:
+#   • Test 0 → write then read back at the same address
+#   • Test 1 → read from an unwritten address should return zero
+#   • Test 2 → collision flag when writing and reading the same address in one cycle
+#
+# 4) Parsing & scoring
+# Our `evaluate.py` will:
+#   • Capture stdout/stderr from `vvp sim.vvp`
+#   • Parse the presence of “[FAIL] Test 0”, “[FAIL] Test 1”, “[FAIL] Test 2” into booleans
+#   • Look up point values for each test in `rubrics.txt`
+#   • Compute a total score and set “confidence” to 100
+#   • Emit a JSON summary with fields:
+#       {
+#         "test0_pass": <true|false>,
+#         "test1_pass": <true|false>,
+#         "test2_pass": <true|false>,
+#         "score": <numeric total>,
+#         "confidence": 100
+#       }

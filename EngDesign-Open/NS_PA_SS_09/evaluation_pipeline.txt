@@ -1,0 +1,45 @@
+Testbench Evaluation Methodology for Gray-to-Binary Converter
+
+This document describes how the testbench (`tb_gray2bin.sv`) evaluates the `model` (Gray-to-binary) module:
+
+1. Combinational Delay
+
+   * The design is purely combinational. After changing the `gray` input, the testbench waits 1 ns for outputs to settle.
+
+2. Monitored Signals
+
+   * `gray` (8-bit input): the Gray code value.
+   * `bin` (8-bit output): the corresponding binary index.
+
+3. Test Cases
+
+   **Test 0: Zero Conversion**
+
+   * Input: `gray = 8'h00`
+   * Expected: `bin = 8'h00`
+   * Pass if `bin == 0x00`, else fail.
+
+   **Test 1: Small Gray Value**
+
+   * Input: `gray = 8'h03` (binary `00000011`)
+   * Standard Gray-to-binary mapping yields `bin = 8'h02` (binary `00000010`).
+   * Pass if `bin == 0x02`, else fail.
+
+   **Test 2: Larger Gray Value**
+
+   * Input: `gray = 8'h06` (binary `00000110`)
+   * Expected: `bin = 8'h04` (binary `00000100`).
+   * Pass if `bin == 0x04`, else fail.
+
+4. Result Reporting
+
+   * The testbench prints `[PASS] Test X` or `[FAIL] Test X: gray=0x<g>, expected bin=0x<e>, got=0x<o>`.
+   * The external Python harness (`evaluate_llm_response`) scans stdout for `[FAIL] Test X` to determine pass/fail for each test.
+
+5. Scoring
+
+   * Test 0: 30 points
+   * Test 1: 35 points
+   * Test 2: 35 points
+
+A fully passing testbench produces no `[FAIL]` messages and achieves a perfect score.

@@ -1,0 +1,49 @@
+You are a hardware‐design expert. Write synthesizable SystemVerilog for a parameterized, 32-entry, 2-read/1-write register file with collision detection, according to the following spec:
+
+1. Parameterization
+
+parameter DATA_WIDTH = 16;
+
+2. Ports
+
+module model #(
+    parameter DATA_WIDTH = 16
+) (
+    input  logic [DATA_WIDTH-1:0] din,   // write data
+    input  logic [4:0]            wad1,  // write address
+    input  logic [4:0]            rad1,  // read address 1
+    input  logic [4:0]            rad2,  // read address 2
+    input  logic                  wen1,  // write-enable
+    input  logic                  ren1,  // read-enable 1
+    input  logic                  ren2,  // read-enable 2
+    input  logic                  clk,   // clock
+    input  logic                  resetn,// sync active-low reset
+    output logic [DATA_WIDTH-1:0] dout1, // read data 1
+    output logic [DATA_WIDTH-1:0] dout2, // read data 2
+    output logic                  collision // collision flag
+);
+
+
+3. Behavior
+
+Register bank: 32 words, each DATA_WIDTH bits.
+
+Write on rising edge of clk when wen1 is high:
+– If wen1 && resetn, write din into entry wad1.
+
+Read on rising edge of clk when renN is high:
+– If renN is deasserted, output zero on that port.
+– If reading an unwritten address, output zero.
+
+Default outputs: dout1 and dout2 reset to zero.
+
+Reset: synchronous, active-low; on reset, clear all 32 entries (or implicitly treat as unwritten) and drive dout1, dout2, and collision to zero.
+
+Collision detection:
+– At each clock edge, set collision = 1 if any two of (wad1, rad1, rad2) are equal and their enables are asserted (i.e. write/read or read/read to same address); otherwise collision = 0.
+
+4. Support
+
+Up to three operations per cycle: two reads + one write, or fewer when enables are low.
+
+Please produce clean synthesizable SystemVerilog that meets this specification.
