@@ -5,7 +5,7 @@ import json
 # from tasks.DL_01.simulation_results.baseline_configuration import configuration_base
 # from tasks.DL_01.simulation_results.xdb_operations import load_xdb, decode_configuration
 
-ground_truth_file = "/Users/xingang/Desktop/Engineering-Design-Benchmark/tasks/DL_02/simulation_results/ground_truth_layout.json"
+ground_truth_file = "simulation_results/ground_truth_layout.json"
 
 workload_name_mapper = {
     "Big Data Analytics": "MapReduce",

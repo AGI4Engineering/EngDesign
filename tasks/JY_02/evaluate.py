@@ -65,7 +65,8 @@ def evaluate_llm_response(llm_response):
        input_path = os.path.join(current_dir, "input.npy")
        input_image= np.load(input_path)
        sobel3, sobel3_metrics, sobel3_binary= apply_edge_detection(input_image , gaussian, edge_x, edge_y, maximum, minimum)
-       cv2.imwrite("sobel3.png", sobel3)
+       sobel3_uint8 = cv2.convertScaleAbs(sobel3)
+       cv2.imwrite("sobel3.png", sobel3_uint8)
        total_loss= unsupervised_edge_loss_numpy(sobel3/ 255.0)
        if( total_loss<70):
            passed=True
