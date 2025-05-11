@@ -21,7 +21,7 @@ def evaluate_llm_response(llm_response):
     compile_cmd = [
         "iverilog", "-g2012",
         "-o", vvp_path,
-        vvp_path,  # generated DUT
+        code_path,  # generated DUT
         tb_path     # golden testbench
     ]
     cmp = subprocess.run(compile_cmd, capture_output=True, text=True)
