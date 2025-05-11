@@ -3,6 +3,9 @@
 **EngDesign** is a benchmark of 101 structured engineering‑design tasks spanning multiple domains. This repository supports our NeurIPS Datasets & Benchmarks track submission:  
 **“Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs.”**
 
+Among the 101 tasks in **EngDesign**, 48 require domain-specific scientific software such as MATLAB or Cadence for evaluation, which may not be excuable for all machines. The remaining 53 tasks are fully open-source and can be evaluated using manually authored scripts. To facilitate broader community adoption without licensing constraints, we have consolidated these 53 tasks into a subset called **EngDesign-Open**.
+Since the remaining 48 tasks depend on proprietary software, we currently provide run commands only for the open-source subset.
+
 ---
 
 ## 📂 Repository Layout
@@ -24,31 +27,6 @@
     ├── eval_openai_llm.py
     └── eval_openai_llm_new.py
 ````
-
----
-
-## 🚀 Quickstart
-
-1. **Install dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Configure your OpenAI key**
-   Edit the top of `evaluation/eval_openai_llm.py` (or set the `OPENAI_API_KEY` environment variable).
-
-3. **Run the full benchmark**
-
-   ```bash
-   python evaluation/eval_openai_llm.py --task_dir tasks
-   ```
-
-> **Note:**
->
-> * Some tasks rely on external tools (e.g., MATLAB, SPICE), which may not be excuable for all machines.
-
-
 
 ---
 ## 🚀 How to Run All Open Source Tasks (EngDesign-Open)
