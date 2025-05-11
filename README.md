@@ -51,7 +51,7 @@
 
 
 ---
-## How to Run All Open Source Tasks (EngDesign-Open)
+## 🚀 How to Run All Open Source Tasks (EngDesign-Open)
 
 EngDesign-Open contains **all 53 open source tasks**. You can run them by following these steps:
 
@@ -113,10 +113,12 @@ Once inside the container (you'll see a prompt like root@xxxxxxxxxxxx:/app#), ru
    ```
 
 ##### Parameter Description
-   --task_dir: Directory containing the task folders
-   --task_list: (Optional) Names of specific tasks to run (If not set, all tasks in EngDesign-Open will be run.)
-   --model: Model to use, e.g., gpt-4o
-   --k: Number of repetitions per task
+| Parameter     | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| `--task_dir`  | Directory containing the task folders                                        |
+| `--task_list` | *(Optional)* Names of specific tasks to run. If not set, all tasks will run |
+| `--model`     | Model to use, e.g., `gpt-4o`                                                 |
+| `--k`         | Number of repetitions per task                                               |
 
 #### 7. Exit the Container
 
