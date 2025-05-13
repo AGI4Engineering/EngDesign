@@ -71,13 +71,13 @@ Once inside the container (you'll see a prompt like root@xxxxxxxxxxxx:/app#), yo
      --k 1
    ```
 
-#### 🛠️ Parameter Descriptions
+#### Parameter Descriptions
 
 | Parameter           | Description                                                                                   |
 |---------------------|-----------------------------------------------------------------------------------------------|
 | `--task_dir`        | Directory containing the task folders (e.g. `./EngDesign-Open`)                               |
 | `--task_list`       | *(Optional)* Names of specific tasks to run (e.g. `AB_01 AB_02`). If not set, all tasks will run    |
-| `--model`           | Model to use (Names of the twelve LLM variants using in the commands are: gpt-4o, o1, o3, o3‑high, o4‑mini, o4‑mini‑high, gemini-2.0-flash, gemini-2.5-pro-preview-05-06, deepseek-chat, deepseek-reasoner, claude-3-7, and claude-3-7-thinking)|
+| `--model`           | Model to use (Names of the twelve LLM variants using in the commands are: **gpt-4o, o1, o3, o3‑high, o4‑mini, o4‑mini‑high, gemini-2.0-flash, gemini-2.5-pro-preview-05-06, deepseek-chat, deepseek-reasoner, claude-3-7, and claude-3-7-thinking**)|
 | `--api_key`         | Your API key for the corresponding provider (OpenAI, Google, DeepSeek, Anthropic, etc.)                |
 | `--k`               | Number of repetitions per task                                                                |
 | `--reasoning_effort`| *(Optional)* Use `high` for o3 or o4-mini models with high-effort reasoning mode                              |
