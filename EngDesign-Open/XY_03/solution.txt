@@ -1,0 +1,21 @@
+*Explanation of why is_flicker_possible = False:
+1. Each digit needs to refresh at least 60Hz → 4×60 = 240Hz total for 4 digits.
+2. Base clock = 50MHz. Normal refresh period per digit = (1/240) ≈ 4.167ms.
+3. Worst case clock drift: +100ppm → clock becomes 50,005,000 Hz.
+4. New division ratio = 50,005,000 / 240 ≈ 208,354.
+5. Worst case refresh time = 208,354 / 50,005,000 ≈ 4.1673ms per digit.
+6. Logic delay adds up to 5 cycles: 5 × (1 / 50,005,000) ≈ 100ns.
+7. Max delay for 4 digits = 4 × 4.1673ms + 100ns ≈ 16.6692ms.
+8. Flicker threshold = 33.33ms (30Hz).
+9. Since 16.67ms < 33.33ms, no visible flicker will occur.
+Therefore, is_flicker_possible = False.
+
+config=ConfigFile(
+        counter_bits=18,
+        division_ratio=208333,
+        digit_select_bits=[15, 16],
+        bit_select_reasoning="Bits [15, 16] of an 18-bit counter naturally cycle through 4 states (00, 01, 10, 11) at the correct rate for digit multiplexing.",
+        max_delay_ms=16.67,
+        is_flicker_possible=False,
+        mitigation_strategy="No mitigation necessary since the max delay is below the flicker threshold. Standard counter-based multiplexing is sufficient."
+    )

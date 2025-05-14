@@ -1,0 +1,4 @@
+## Evaluation Rubric
+- Volume fraction of the optimal structure is less than 0.25: 10 points
+- Max. stress s(y_hat) is less than certain threshold: 70 points
+- Optimized design feature is output as 'Symmetric-X': 20 points

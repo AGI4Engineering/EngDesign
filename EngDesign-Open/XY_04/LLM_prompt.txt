@@ -1,0 +1,59 @@
+## Task Description
+
+You are tasked to design a flexible and efficient color mapping system for a Tetris game implemented on an FPGA development board with VGA output. The objective is to ensure distinct visual representation of all gameplay elements while operating under hardware resource constraints.
+
+A VGA display of 640x480 pixels and RGB444 color depth is available. Only a maximum of 10 distinct color mappings can be active at any time due to memory limitations. Additionally, your design should handle dynamic gameplay states, including a Night Mode that adjusts the color palette for low-light visibility.
+
+
+### Task 1: Define Color Mapping and Screen Regions
+Define color schemes for different game elements such as the Tetris playfield, active tetrominoes, next piece preview, background, UI panels, and game over screen.
+Each tetromino (I, J, L, O, S, T, Z) must have distinguishable default colors.
+Designate display regions for playfield, next piece preview, and score display by specifying pixel coordinate boundaries.
+Respect the 10-color definition constraint.
+
+### Task 2: Design Dynamic Mode Handling
+Create a Night Mode theme that switches colors to darker palettes suitable for low-light gameplay.
+Ensure smooth and logical color remapping when transitioning between normal and Night Mode.
+
+### Task 3: Optimize Hardware Resource Usage
+Implement bit slicing strategies for efficient pixel-to-grid mapping.
+Avoid expensive multiplication or division in hardware logic.
+
+### Task 4: Validate and Discuss Your Design
+Propose a simple method to validate that color mappings are correctly applied under different game states.
+Discuss trade-offs made between visual richness, resource constraints, and adaptability.
+Suggest one innovative feature or future improvement to the color mapping system.
+
+
+## Output Format
+
+Your response must include:
+
+1. task_report:
+Introduction
+Task Analysis
+Methodology
+Results
+Discussion and Trade-offs
+Innovation and Future Improvements
+
+2. config:
+color_mapping: Colors for different elements
+display_regions: Regions for game components
+tetromino_colors: Specific color schemes for each tetromino
+ui_elements: Colors for UI states
+bit_slicing: Expressions mapping pixels to grid positions
+dynamic_modes: Color adjustments for Night Mode
+resource_constraints: Statement about the 10-color limit
+
+
+## Technical Specifications
+
+1.Clock frequency: 50 MHz
+2.VGA resolution: 640x480 pixels
+3.Color depth: RGB444
+4.Tetris playfield grid: 10 blocks wide by 20 blocks tall
+5.Game states: start menu, in-progress gameplay, game over, Night Mode (dynamic)
+
+Follow the structured output format precisely to ensure full evaluation credit.
+

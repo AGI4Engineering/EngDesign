@@ -1,0 +1,66 @@
+Response_structure(
+    task_report=EngineeringReport(
+        introduction=Introduction(
+            background="Color mapping is essential for creating visually appealing and functional game interfaces in FPGA-based systems. The Tetris game requires distinct visual elements to represent different game states and tetromino pieces.",
+            objectives=[
+                "Define appropriate color schemes for all game elements",
+                "Establish display regions for game area, next piece preview, and score",
+                "Create distinct color schemes for different tetromino types",
+                "Implement UI elements for game states",
+                "Design efficient bit slicing strategy for position calculations"
+            ],
+            significance="Effective color mapping enhances gameplay experience and visual clarity in FPGA-based games."
+        ),
+        task_analysis=TaskAnalysis(
+            task_description="The task involves designing a color mapping system for a Tetris game on an FPGA, including defining colors for game elements, display regions, tetromino pieces, UI elements, and bit slicing strategies.",
+            key_requirements={
+                "R1": "Complete color mapping for all game elements",
+                "R2": "Proper definition of display regions",
+                "R3": "At least 4 distinct tetromino color schemes",
+                "R4": "Implementation of start menu and game over UI elements",
+                "R5": "Efficient bit slicing strategy for position calculations"
+            }
+        ),
+        methodology=Methodology(
+            framework="SystemVerilog-based color mapping with bit slicing for position calculations",
+            design_process="Analyzed game requirements → Defined display regions → Created color schemes → Implemented UI elements → Optimized bit slicing",
+        ),
+        results=Results(
+            parameters="Color mapping complete with 5 game elements, 3 display regions, 4 tetromino color schemes, 2 UI elements, and 4 bit slicing strategies"
+        ),
+        discussion_conclusion=Discussion_Conclusion(
+            discussion="The color mapping system provides visual distinction between game elements while maintaining aesthetic appeal. The bit slicing strategy efficiently calculates positions without excessive logic.",
+            conclusion="The implemented color mapping system meets all requirements for the Tetris game interface, providing clear visual feedback and efficient position calculations."
+        )
+    ),
+    config=ConfigFile(
+        color_mapping={
+            "background": {"r": 8, "g": 8, "b": 8},
+            "tetromino": {"r": 15, "g": 7, "b": 0},
+            "map_block": {"r": 12, "g": 6, "b": 0},
+            "menu": {"r": 8, "g": 15, "b": 8},
+            "game_over": {"r": 15, "g": 0, "b": 0}
+        },
+        display_regions={
+            "game_area": {"x_start": 15, "x_end": 25, "y_start": 5, "y_end": 25},
+            "next_piece": {"x_start": 28, "x_end": 32, "y_start": 8, "y_end": 12},
+            "score_area": {"x_start": 28, "x_end": 34, "y_start": 14, "y_end": 17}
+        },
+        tetromino_colors=[
+            {"type": "I", "default": {"r": 0, "g": 9, "b": 0}, "highlight": {"r": 0, "g": 12, "b": 0}, "shadow": {"r": 0, "g": 6, "b": 0}},
+            {"type": "J", "default": {"r": 0, "g": 0, "b": 9}, "highlight": {"r": 0, "g": 0, "b": 12}, "shadow": {"r": 0, "g": 0, "b": 6}},
+            {"type": "L", "default": {"r": 12, "g": 8, "b": 0}, "highlight": {"r": 15, "g": 12, "b": 0}, "shadow": {"r": 8, "g": 4, "b": 0}},
+            {"type": "T", "default": {"r": 12, "g": 0, "b": 10}, "highlight": {"r": 15, "g": 0, "b": 13}, "shadow": {"r": 8, "g": 0, "b": 6}}
+        ],
+        ui_elements={
+            "start_menu": {"position": {"x_start": 15, "x_end": 25, "y_start": 13, "y_end": 17}, "colors": {"background": {"r": 8, "g": 15, "b": 8}, "text": {"r": 0, "g": 0, "b": 0}}},
+            "game_over_screen": {"position": {"x_start": 15, "x_end": 25, "y_start": 13, "y_end": 17}, "colors": {"background": {"r": 15, "g": 0, "b": 0}, "text": {"r": 15, "g": 15, "b": 15}}}
+        },
+        bit_slicing={
+            "position_x": "DrawX[9:4]",
+            "position_y": "DrawY[9:4]",
+            "block_x": "DrawX[3:0]",
+            "block_y": "DrawY[3:0]"
+        }
+    )
+)

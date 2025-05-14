@@ -1,0 +1,18 @@
+## Task Description
+
+This is a michell structure problem. 
+Design domain is a 2D rectangular region in cartesian coordinates, with vertices at (0,0), (2,0), (2,1), (0,1). 
+A vertically downward load of magnitude 2.5 is applied at (1,0.5) uniformly over small area of length 0.05. Pin supports are at (0,0.5) and at (2,0.5). 
+Solid material parameters are Young's modulus, E = 70000, and Poisson's ratio, nu = 0.3. Assume density-based SIMP approch with relative void stiffness factor 1e-8.
+Lx = 2 and Ly = 1 denotes the domain lengths in x- and y-directions. The filter radius is R = 0.05*max(Lx,Ly), and the filter exponent is 3.
+Total number of elements in the discretized domain is approximately 8000.
+
+
+---
+
+### Task
+
+Your task is to:
+- Obtain a topology optimized design that has minimum structural compliance and volume fraction not exceeding 0.15.
+- Given the optimized design, output the corresponding minimum structural compliance, named C_y_hat, and also its volume fraction, named vf, in numerical numbers. Note that vf is in the range of [0,1].
+- Check if the optimized design is 'symmetric' or 'asymmetric' in x- and y-directions. Give the output 'Asymmetric-XY' if not symmetric in both x- and y-directions, 'Symmetric-Y' if symmetric in y-direction but not in x-direction, 'Symmetric-X' if symmetric in x-direction but not in y-direction, and 'Symmetric-XY' if symmetric in both x- and y-directions. Output this in a variable named Dsg_feature.  

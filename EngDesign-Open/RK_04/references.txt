@@ -1,0 +1,2 @@
+Matlab code in this folder are adapted (with necessary modifications) from the following educational paper:
+O Giraldo-Londoño, GH Paulino, "PolyStress: A Matlab implementation for topology optimization with local stress constraints using the augmented Lagrangian method", Structural and Multidisciplinary Optimization, DOI 10.1007/s00158-020-02664-7, 2020.
