@@ -1,36 +1,24 @@
-def denoise_image(noisy_img):
-    """
-    Denoise a colour (BGR) image corrupted mainly by salt-and-pepper noise plus a weak Gaussian component.
-    Pipeline: median 3×3  → median 5×5 → fast non-local means (coloured).
+import cv2
+import numpy as np
 
-    Parameters
-    ----------
-    noisy_img : np.ndarray
-        Input noisy image, uint8, shape (H,W,3) in BGR colour order (OpenCV standard).
+def denoise_image(img):
+    # img is a color image (H, W, C) as read by cv2.imread
 
-    Returns
-    -------
-    filtered_img : np.ndarray
-        Denoised image, uint8, same shape as input.
-    """
-    import cv2
-    import numpy as np
+    # Step 1: Apply Median Filter to remove salt-and-pepper noise
+    # ksize=3 is chosen to effectively remove speckle noise.
+    median_filtered_img = cv2.medianBlur(img, 3)
 
-    # Safety: make sure we operate on a copy to avoid modifying the caller’s data
-    img = noisy_img.copy()
-
-    # 1. First median pass – remove single-pixel impulses
-    img = cv2.medianBlur(img, ksize=3)
-
-    # 2. Second median pass – remove remaining isolated impulses without over-smoothing
-    img = cv2.medianBlur(img, ksize=5)
-
-    # 3. Non-local means for residual Gaussian/low-level noise
-    #    h: luminance filter strength, hColor: chrominance strength
-    img = cv2.fastNlMeansDenoisingColored(img, None,
-                                          h=10, hColor=10,
-                                          templateWindowSize=7,
-                                          searchWindowSize=21)
-
-    filtered_img = img
+    # Step 2: Apply Non-Local Means Denoising for colored images
+    # This filter is effective at removing Gaussian-like noise while preserving textures.
+    # h: Parameter regulating filter strength. Higher h removes more noise but can blur.
+    # hColor: Parameter for color components.
+    # templateWindowSize: Size of the window to compute weights.
+    # searchWindowSize: Size of the window to search for similar patches.
+    filtered_img = cv2.fastNlMeansDenoisingColored(median_filtered_img, 
+                                                  None, 
+                                                  h=10, 
+                                                  hColor=10, 
+                                                  templateWindowSize=7, 
+                                                  searchWindowSize=21)
+    
     return filtered_img

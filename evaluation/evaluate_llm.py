@@ -343,6 +343,8 @@ def run_task_k_times(task_path: str, k=3, model="gpt-4o", reasoning_effort="medi
                 return str(obj)  # Convert any other types to string
                 
         log_entry = convert_to_serializable(log_entry)
+
+        os.makedirs(os.path.dirname(log_file), exist_ok=True)
         
         with open(log_file, "w") as logf:
             logf.write(json.dumps(log_entry) + "\n")
