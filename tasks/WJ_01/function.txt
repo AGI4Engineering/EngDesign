@@ -1,24 +1,14 @@
 import cv2
 import numpy as np
 
-def denoise_image(img):
-    # img is a color image (H, W, C) as read by cv2.imread
-
-    # Step 1: Apply Median Filter to remove salt-and-pepper noise
-    # ksize=3 is chosen to effectively remove speckle noise.
-    median_filtered_img = cv2.medianBlur(img, 3)
-
-    # Step 2: Apply Non-Local Means Denoising for colored images
-    # This filter is effective at removing Gaussian-like noise while preserving textures.
-    # h: Parameter regulating filter strength. Higher h removes more noise but can blur.
-    # hColor: Parameter for color components.
-    # templateWindowSize: Size of the window to compute weights.
-    # searchWindowSize: Size of the window to search for similar patches.
-    filtered_img = cv2.fastNlMeansDenoisingColored(median_filtered_img, 
-                                                  None, 
-                                                  h=10, 
-                                                  hColor=10, 
-                                                  templateWindowSize=7, 
-                                                  searchWindowSize=21)
+def denoise_image(noisy_img):
+    # Apply Median Filter to reduce Salt-and-Pepper noise
+    filtered_img = cv2.medianBlur(noisy_img, 3)
+    
+    # Apply Bilateral Filter to reduce Gaussian noise while preserving edges
+    filtered_img = cv2.bilateralFilter(filtered_img, d=9, sigmaColor=75, sigmaSpace=75)
+    
+    # Apply Non-Local Means Denoising for further smoothing and texture preservation
+    filtered_img = cv2.fastNlMeansDenoisingColored(filtered_img, None, h=10, templateWindowSize=7, searchWindowSize=21)
     
     return filtered_img

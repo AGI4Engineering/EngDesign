@@ -1,0 +1,1 @@
+{"completion_tokens": 0, "response": "LLM API call failed: 'ThinkingBlock' object has no attribute 'text'", "passed": false, "evaluation_result": {"read": "Error in code execution: 'str' object has no attribute 'config'"}, "score": 0}
