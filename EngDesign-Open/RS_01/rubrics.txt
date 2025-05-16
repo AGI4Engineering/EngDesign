@@ -1,0 +1,5 @@
+#Evaluation Rubrics:
+-Lap time within 0.5 secs and Top speed within 1 km/h: 50 points
+-Lap time within 1.0 secs and Top speed within 1.5 km/h: 25 points
+-Lap time within 1.5 secs and Top speed within 2 km/h: 15 points
+-Lap time within 2.0 secs and Top speed within 2.5 km/h: 10 points

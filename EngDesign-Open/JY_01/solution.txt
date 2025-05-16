@@ -1,0 +1,34 @@
+Mueller Matrices for Optical Elements
+-------------------------------------
+
+1. Linear Polarizer
+
+The Mueller matrix for the linear polarizer is given by:
+
+M_LP(θ) = (1/2) ×
+[
+  [1,         cos(2θ),           sin(2θ),        0],
+  [cos(2θ),   cos²(2θ),          cos(2θ)sin(2θ), 0],
+  [sin(2θ),   cos(2θ)sin(2θ),    sin²(2θ),       0],
+  [0,         0,                 0,              0]
+]
+
+2. Quarter-Wave Plate (QWP)
+
+The Mueller matrix for the QWP is given by:
+
+M_QWP(φ) = R(−φ) · M_QWP(0) · R(φ)
+
+Where R(φ) is the Mueller rotation matrix:
+
+R(φ) =
+[
+  [1, 0,             0,              0],
+  [0, cos(2φ),       sin(2φ),        0],
+  [0, −sin(2φ),      cos(2φ),        0],
+  [0, 0,             0,              1]
+]
+
+
+Thus the final equation that the LLM is required to solve is I_in*M_LP(θ1)*R(φ)*M_LP(θ2) = I_out 
+Given I_in and I_out any three angles that the equation is valid will be correct.  

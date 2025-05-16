@@ -1,0 +1,16 @@
+## Task Description
+In this task, you are required to design a system to downsample a digital audio signal from 48kHz to 8kHz. Before downsampling, we need an anti-aliasing filter. Design this filter.
+
+### Design Constraints
+The input signal is sampled at 48kHz.
+The output signal is sampled at 8kHz.
+The useful frequency bandwidth of the original signal is between 0 and 3.5kHz, and it must be preserved with minimal distortion (Attenuation less than 3dB, Ripple amplitude less than 3dB)
+You must ensure that the useful frequency bandwidth is unaffected by aliasing. Thus, determine the beginning frequency of the stopband.
+Ensure that your filter is FIR.
+
+### Response Specifications
+Provide the following information as your response.
+- The filter order
+- A list of the filter's coefficients
+- The beginning frequency of the stopband
+- The decimation factor

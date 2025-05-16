@@ -1,0 +1,57 @@
+import cv2
+import numpy as np
+
+IMAGE_PATH = 'images/test_shape.png' # Hardcoded path
+
+def get_simplified_contours():
+    """
+    Finds the largest contour in the image and computes its
+    approximate polygon and convex hull.
+
+    Returns:
+        tuple: (approx_vertices, hull_vertices)
+               Returns (None, None) if image fails to load or no contours found.
+    """
+    # 1. Load image
+    img = cv2.imread(IMAGE_PATH)
+    if img is None:
+        print(f"Error: Could not load image '{IMAGE_PATH}'")
+        return None, None
+
+    # 2. Convert to grayscale
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    # 3. Thresholding (Object white, background black)
+    # Adjust threshold value (e.g., 127) if needed based on the image
+    # Use THRESH_BINARY_INV if the object is dark on a light background
+    ret, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+
+    # 4. Find contours
+    contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    if not contours:
+        print("No contours found.")
+        return None, None
+
+    # 5. Find the largest contour by area
+    # Using try-except block in case contours list is unexpectedly empty after check
+    try:
+        largest_contour = max(contours, key=cv2.contourArea)
+    except ValueError:
+        print("Error finding largest contour.")
+        return None, None
+
+
+    # 6. Compute simplified representations
+    # 6a. Arc Length
+    arc_length = cv2.arcLength(largest_contour, True)
+    # 6b. Epsilon
+    epsilon = 0.01 * arc_length
+    # 6c. Approximate Polygon
+    approx_vertices = cv2.approxPolyDP(largest_contour, epsilon, True)
+    # 6d. Convex Hull
+    hull_vertices = cv2.convexHull(largest_contour)
+
+    # 7. Return vertices
+    return approx_vertices, hull_vertices
+

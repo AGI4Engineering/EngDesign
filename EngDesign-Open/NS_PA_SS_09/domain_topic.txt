@@ -1,0 +1,2 @@
+Main domain: Digital Design  
+Sub-topic: Gray Code to Binary

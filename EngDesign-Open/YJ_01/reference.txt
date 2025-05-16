@@ -1,0 +1,3 @@
+https://decode.mit.edu/projects/topodiff/
+
+François Mazé, and Faez Ahmed. "Diffusion Models Beat GANs on Topology Optimization" In Proceedings of the AAAI Conference on Artificial Intelligence, 2023.

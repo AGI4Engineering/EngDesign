@@ -1,0 +1,15 @@
+## Task Description
+In this task, you are required to design a digital IIR filter, used to eliminate a particular resonant frequency that is affecting a sensor reading.
+
+### Design Constraints
+The sensor signal is being sampled at a rate of 2000Hz.
+The resonant frequency you should eliminate is 120Hz.
+Your filter should strongly attenuate the resonant frequency. (Attenuation more than 40dB)
+Your filter should minimally affect frequencies more than 5Hz below the resonant frequency. (Attenuation less than 3dB at 115Hz)
+Your filter should minimally affect frequencies more than 5Hz above the resonant frequency. (Attenuation less than 3dB at 125Hz)
+
+### Response Specifications
+Provide the following information as your response.
+- The filter order
+- A list of the filter's numerator coefficients (Provide ALL of them)
+- A list of the filter's denominator coefficients (Provide ALL of them)

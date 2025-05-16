@@ -1,0 +1,16 @@
+We will use exact code in evaluate.py to evaluate the correctness of LLM responses, based on the rubrics:
+\We compile the LLM-generated FIFO (`user_fifo.sv`) together with our golden testbench (`fifo2_tb.sv`) 
+using Icarus Verilog (`iverilog -g2012`). We then run the simulation via `vvp`. 
+
+The testbench prints “[FAIL] Test N” for each subtest failure:
+  • Test 0 → reset behavior
+  • Test 1 → first write
+  • Test 2 → second write + write-when-full
+
+Finally it prints either:
+  ** All tests passed! **  
+or  
+  ** N test(s) FAILED **
+
+Our `evaluate.py` parses these lines into three booleans, assigns points per `rubrics.txt`, 
+and emits a JSON summary.

@@ -1,0 +1,29 @@
+We will use exact codes in evaluate.py to evaluate the correctness of LLM responses, based on the rubrics:
+
+1. Parse JSON output and extract DeviceA and DeviceB configs.
+
+2. Design Consistency (10 pts):
+   - Assert that page_size, levels and entries_per_level are identical for DeviceA and DeviceB.
+
+3. Virtual‑Address Bit‑Width Check (15 pts):
+   - For each device compute:
+     total_bits = log2(page_size) + sum(log2(e) for e in entries_per_level)
+     and assert total_bits == 40.
+
+4. Power‑of‑Two Checks:
+   - Page size (5 pts): verify page_size & (page_size–1) == 0.
+   - Entries per level (5 pts): verify each entries_per_level[i] & (entries_per_level[i]–1) == 0.
+
+5. Entries vs Levels (5 pts):
+   - Assert len(entries_per_level) == levels.
+
+6. Device A Metrics (30 pts):
+   a. Recompute page_table_memory using on‑demand allocation formula and compare to reported value (5 pts).
+   b. Assert page_table_memory ≤ 320 KB (10 pts).
+   c. Recompute avg_translation_time with corresponding formula and compare to reported value (5 pts).
+   d. Assert avg_translation_time ≤ 150 ns (10 pts).
+
+7. Device B Metrics (30 pts):
+   - Repeat steps 6a–6d using 2 GB physical memory and limits (≤ 4.05 MB / ≤ 150 ns).
+
+8. Sum all earned points and return final score out of 100.

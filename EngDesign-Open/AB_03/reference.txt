@@ -1,0 +1,3 @@
+- Howse, J., & Minichino, J. (2020). Learning OpenCV 4 Computer Vision with Python 3 (3rd ed.). Packt Publishing.
+
+- ChatGPT, OpenAI. Helped develop the task prompt, generate images.

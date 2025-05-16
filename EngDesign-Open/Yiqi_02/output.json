@@ -1,0 +1,10 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step.",
+  "F_op": "F_op: a list of integers with length 3, which are the operator partition factors on dimensions m, k, and n, respectively.",
+  "f_t_A_m": "f_t_A_m: integer, which is the temporal partition factor of tensor A on dimension m.",
+  "f_t_A_k": "f_t_A_k: integer, which is the temporal partition factor of tensor A on dimension k.",
+  "f_t_B_k": "f_t_B_k: integer, which is the temporal partition factor of tensor B on dimension k.",
+  "f_t_B_n": "f_t_B_n: integer, which is the temporal partition factor of tensor B on dimension n.",
+  "f_t_C_m": "f_t_C_m: integer, which is the temporal partition factor of tensor C on dimension m.",
+  "f_t_C_n": "f_t_C_n: integer, which is the temporal partition factor of tensor C on dimension n."
+}

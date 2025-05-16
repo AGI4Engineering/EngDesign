@@ -1,0 +1,45 @@
+## Task 1 solution:
+18.32
+
+## Task 2 solution:
+13.12
+
+## Task 3 solution:
+21.14
+
+## Task 4 solution:
+13.50
+
+## Task 5 solution:
+7.79
+
+## Task 6 solution:
+8.17
+
+## Task 7 solution:
+131.93
+
+## Task 8 solution:
+1.65
+
+## Task 9 solution:
+111.03
+
+## Task 10 solution:
+2.7745
+
+## Task 11 solution:
+Lmti_a = 1.4468
+Lmti_b = 8.1562
+
+## Task 12 solution:
+1.0549
+
+## Task 13 solution:
+0.2500
+
+## Task 14 solution:
+28.42
+
+## Task 15 solution:
+0

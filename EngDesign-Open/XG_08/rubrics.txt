@@ -1,0 +1,20 @@
+## Evaluation Rubric
+- Membership function 1 type: 2 points
+- Membership function 1 parameters: 2 points
+- Membership function 2 type: 2 points
+- Membership function 2 parameters: 2 points
+- Membership function 3 type: 2 points
+- Membership function 3 parameters: 2 points
+- Membership function 4 type: 2 points
+- Membership function 4 parameters: 2 points
+- Membership function 5 type: 2 points
+- Membership function 5 parameters: 2 points
+- Membership function 6 type: 2 points
+- Membership function 6 parameters: 2 points
+- Membership function 7 type: 2 points
+- Membership function 7 parameters: 2 points
+- Membership function 8: 4 points
+- Rule list: 26 points
+- Task 3 input 1: 25 points
+- Task 3 input 2: 25 points
+

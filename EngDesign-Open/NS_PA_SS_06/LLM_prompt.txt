@@ -1,0 +1,42 @@
+You are a hardware‐design expert. Write synthesizable SystemVerilog for a dot‐product module that computes A·B for two 3‐element vectors, according to the following spec:
+
+1. Parameterization  
+   - Each input element is an 8‐bit unsigned word.  
+   - The output is an 18‐bit unsigned word.
+
+2. Ports  
+```verilog
+module model (
+    input  logic [7:0] din,     // serial input words: a1,a2,a3,b1,b2,b3
+    input  logic       clk,     // clock signal
+    input  logic       resetn,  // synchronous, active‐low reset
+    output logic [17:0] dout,    // dot product result
+    output logic       run      // asserted for one cycle when dout is valid
+);
+
+Behavior
+
+Input sequencing: On each rising edge of clk while resetn==1, sample din and store it in order a1→a2→a3→b1→b2→b3.
+
+Dot‐product: After the 6th word (b3) is captured, in the same clock cycle assert run=1 and compute
+  dout = a1*b1 + a2*b2 + a3*b3;
+
+as an 18‐bit unsigned sum.
+
+Output timing:
+
+When run=1, dout holds the new product.
+
+In subsequent cycles (until the next 6 inputs), run=0 but dout retains its last value.
+
+Reset: On resetn==0, clear all internal registers, set dout=0, and assert run=1 once (since 0·0=0).
+
+Implementation hints
+
+Use a 3‐entry shift‐register or counter to track which input you’re on.
+
+Multiply and accumulate within one cycle after the 6th sample.
+
+Ensure all operations are synchronous to clk.
+
+Please produce clean, commented, synthesizable SystemVerilog that meets this specification.```

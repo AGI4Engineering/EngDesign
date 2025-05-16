@@ -1,0 +1,52 @@
+## Page‑Table Structure Design
+
+### Design Parameters
+
+- page_size = 4096 bytes = 4 KB  
+- levels = 3  
+- entries_per_level = [512, 512, 1024]
+
+### Size of Each Page‑Table Level
+
+root page table: 512 * 8 bytes = 4096 bytes = 4 KB → one page in page_size 
+level‑1 page table: 512 * 8 bytes = 4096 bytes = 4 KB → one page in page_size
+level‑0 page table: 1024 * 8 bytes = 8192 bytes = 8 KB → two pages in page_size
+
+------
+
+### Device A
+
+i. page_table_memory  
+Physical pages = 150 MB / 4 KB = 38,400  
+level‑0 page‑table pages = ⌈38,400 / 1024⌉ = 38  
+level‑1 page‑table pages = ⌈38 / 512⌉ = 1  
+root page‑table pages = ⌈1 / 512⌉ = 1  
+Therefore, page_table_memory = 38 * 8 KB + 1 * 4 KB + 1 * 4 KB 
+                             = 312 KB (≤ 320 KB)
+
+ii. avg_translation_time  
+The TLB hit rate = exp(-0.1542*(4096/1024 - 5.82)**2) = 0.6  
+avg_translation_time = TLB_access + (1 − h) × levels × T_pt  
+                     = 20 ns + (1 − 0.6) × 3 × 100 ns  
+                     = 20 + 0.4 × 300  
+                     = 140 ns (≤ 150 ns)
+
+------
+
+### Device B
+
+i. page_table_memory  
+Physical pages = 2 GB / 4 KB = 524,288  
+level‑0 page‑table pages = ⌈524,288 / 1024⌉ = 512  
+level‑1 page‑table pages = ⌈512 / 512⌉ = 1  
+root page‑table pages = ⌈1 / 512⌉ = 1  
+Therefore, page_table_memory = 512 * 8 KB + 1 * 4 KB + 1 * 4 KB 
+                             = 4104 KB 
+                             ≈ 4.01 MB (≤ 4.05 MB)
+
+ii. avg_translation_time  
+The TLB hit rate = exp(-0.1542*(4096/1024 - 5.82)**2) = 0.6  
+avg_translation_time = TLB_access + (1 − h) × levels × T_pt  
+                     = 20 ns + (1 − 0.6) × 3 × 100 ns  
+                     = 20 + 0.4 × 300  
+                     = 140 ns (≤ 150 ns)

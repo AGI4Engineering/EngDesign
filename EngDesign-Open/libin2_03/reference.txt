@@ -1,0 +1,5 @@
+[1] Wikipedia. “Clustered file system” Wikipedia, The Free Encyclopedia. 
+https://en.wikipedia.org/wiki/Clustered_file_system (accessed May 2, 2025).
+
+[2] Microsoft Docs. "Files and Clusters (Windows)."
+https://learn.microsoft.com/en-us/windows/win32/fileio/files-and-clusters (accessed May 2, 2025).

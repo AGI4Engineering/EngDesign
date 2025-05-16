@@ -1,0 +1,224 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x55baee326470 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x55baee2e9cf0 .scope module, "tb" "tb" 3 3;
+ .timescale -9 -12;
+v0x55baee347500_0 .var "clk", 0 0;
+v0x55baee3475c0_0 .var "din", 0 0;
+v0x55baee347660_0 .var "init", 4 0;
+v0x55baee347700_0 .var "resetn", 0 0;
+v0x55baee3477d0_0 .net "seen", 0 0, L_0x55baee319bb0;  1 drivers
+S_0x55baee2e9e80 .scope module, "dut" "model" 3 12, 4 1 0, S_0x55baee2e9cf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "resetn";
+    .port_info 2 /INPUT 5 "init";
+    .port_info 3 /INPUT 1 "din";
+    .port_info 4 /OUTPUT 1 "seen";
+L_0x55baee319190 .functor AND 1, v0x55baee347700_0, v0x55baee347140_0, C4<1>, C4<1>;
+L_0x55baee319500 .functor AND 1, L_0x55baee319190, L_0x55baee357ab0, C4<1>, C4<1>;
+L_0x55baee319830 .functor AND 1, v0x55baee347140_0, L_0x55baee357e50, C4<1>, C4<1>;
+L_0x55baee319bb0 .functor AND 1, L_0x55baee319830, L_0x55baee358100, C4<1>, C4<1>;
+v0x55baee3192f0_0 .net *"_ivl_1", 0 0, L_0x55baee319190;  1 drivers
+v0x55baee319660_0 .net *"_ivl_11", 0 0, L_0x55baee319500;  1 drivers
+v0x55baee319990_0 .net *"_ivl_14", 0 0, L_0x55baee357e50;  1 drivers
+v0x55baee319d10_0 .net *"_ivl_17", 0 0, L_0x55baee319830;  1 drivers
+v0x55baee31a090_0 .net *"_ivl_18", 31 0, L_0x55baee357fc0;  1 drivers
+v0x55baee31a410_0 .net *"_ivl_2", 31 0, L_0x55baee3478f0;  1 drivers
+L_0x7fe36b6b90a8 .functor BUFT 1, C4<000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55baee31a790_0 .net *"_ivl_21", 26 0, L_0x7fe36b6b90a8;  1 drivers
+L_0x7fe36b6b90f0 .functor BUFT 1, C4<00000000000000000000000000000101>, C4<0>, C4<0>, C4<0>;
+v0x55baee346900_0 .net/2u *"_ivl_22", 31 0, L_0x7fe36b6b90f0;  1 drivers
+v0x55baee3469e0_0 .net *"_ivl_24", 0 0, L_0x55baee358100;  1 drivers
+L_0x7fe36b6b9018 .functor BUFT 1, C4<000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55baee346aa0_0 .net *"_ivl_5", 26 0, L_0x7fe36b6b9018;  1 drivers
+L_0x7fe36b6b9060 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55baee346b80_0 .net/2u *"_ivl_6", 31 0, L_0x7fe36b6b9060;  1 drivers
+v0x55baee346c60_0 .net *"_ivl_8", 0 0, L_0x55baee357ab0;  1 drivers
+v0x55baee346d20_0 .net "clk", 0 0, v0x55baee347500_0;  1 drivers
+v0x55baee346de0_0 .var "cur", 4 0;
+v0x55baee346ec0_0 .net "din", 0 0, v0x55baee3475c0_0;  1 drivers
+v0x55baee346f80_0 .net "init", 4 0, v0x55baee347660_0;  1 drivers
+v0x55baee347060_0 .var "len", 4 0;
+v0x55baee347140_0 .var "reset_seen", 0 0;
+v0x55baee347200_0 .net "resetn", 0 0, v0x55baee347700_0;  1 drivers
+v0x55baee3472c0_0 .net "seen", 0 0, L_0x55baee319bb0;  alias, 1 drivers
+v0x55baee347380_0 .net "target", 4 0, L_0x55baee357cc0;  1 drivers
+E_0x55baee323370 .event posedge, v0x55baee346d20_0;
+L_0x55baee3478f0 .concat [ 5 27 0 0], v0x55baee347060_0, L_0x7fe36b6b9018;
+L_0x55baee357ab0 .cmp/eq 32, L_0x55baee3478f0, L_0x7fe36b6b9060;
+L_0x55baee357cc0 .functor MUXZ 5, L_0x55baee357cc0, v0x55baee347660_0, L_0x55baee319500, C4<>;
+L_0x55baee357e50 .cmp/eq 5, v0x55baee346de0_0, L_0x55baee357cc0;
+L_0x55baee357fc0 .concat [ 5 27 0 0], v0x55baee347060_0, L_0x7fe36b6b90a8;
+L_0x55baee358100 .cmp/eq 32, L_0x55baee357fc0, L_0x7fe36b6b90f0;
+    .scope S_0x55baee2e9e80;
+T_0 ;
+    %wait E_0x55baee323370;
+    %load/vec4 v0x55baee347200_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x55baee347140_0, 0;
+    %pushi/vec4 0, 0, 5;
+    %assign/vec4 v0x55baee346de0_0, 0;
+    %pushi/vec4 0, 0, 5;
+    %assign/vec4 v0x55baee347060_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x55baee346de0_0;
+    %parti/s 4, 0, 2;
+    %load/vec4 v0x55baee346ec0_0;
+    %concat/vec4; draw_concat_vec4
+    %assign/vec4 v0x55baee346de0_0, 0;
+    %load/vec4 v0x55baee347060_0;
+    %pad/u 32;
+    %cmpi/u 5, 0, 32;
+    %flag_mov 8, 5;
+    %jmp/0 T_0.2, 8;
+    %load/vec4 v0x55baee347060_0;
+    %addi 1, 0, 5;
+    %jmp/1 T_0.3, 8;
+T_0.2 ; End of true expr.
+    %load/vec4 v0x55baee347060_0;
+    %jmp/0 T_0.3, 8;
+ ; End of false expr.
+    %blend;
+T_0.3;
+    %assign/vec4 v0x55baee347060_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x55baee2e9cf0;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55baee347500_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x55baee2e9cf0;
+T_2 ;
+    %delay 5000, 0;
+    %load/vec4 v0x55baee347500_0;
+    %inv;
+    %store/vec4 v0x55baee347500_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x55baee2e9cf0;
+T_3 ;
+    %vpi_call/w 3 25 "$display", ">> TESTBENCH START <<" {0 0 0};
+    %pushi/vec4 21, 0, 5;
+    %store/vec4 v0x55baee347660_0, 0, 5;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55baee347700_0, 0, 1;
+    %delay 12000, 0;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55baee347700_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %load/vec4 v0x55baee3477d0_0;
+    %cmpi/e 0, 0, 1;
+    %jmp/0xz  T_3.0, 6;
+    %vpi_call/w 3 38 "$display", "[PASS] Test 0" {0 0 0};
+    %jmp T_3.1;
+T_3.0 ;
+    %vpi_call/w 3 40 "$display", "[FAIL] Test 0: seen=%b", v0x55baee3477d0_0 {0 0 0};
+T_3.1 ;
+    %pushi/vec4 5, 0, 5;
+    %store/vec4 v0x55baee347660_0, 0, 5;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55baee347700_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55baee347700_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %load/vec4 v0x55baee3477d0_0;
+    %cmpi/e 1, 0, 1;
+    %jmp/0xz  T_3.2, 6;
+    %vpi_call/w 3 59 "$display", "[PASS] Test 1" {0 0 0};
+    %jmp T_3.3;
+T_3.2 ;
+    %vpi_call/w 3 61 "$display", "[FAIL] Test 1: seen=%b", v0x55baee3477d0_0 {0 0 0};
+T_3.3 ;
+    %pushi/vec4 28, 0, 5;
+    %store/vec4 v0x55baee347660_0, 0, 5;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55baee347700_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55baee347700_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55baee3475c0_0, 0, 1;
+    %wait E_0x55baee323370;
+    %delay 1000, 0;
+    %load/vec4 v0x55baee3477d0_0;
+    %cmpi/e 1, 0, 1;
+    %jmp/0xz  T_3.4, 6;
+    %vpi_call/w 3 80 "$display", "[PASS] Test 2" {0 0 0};
+    %jmp T_3.5;
+T_3.4 ;
+    %vpi_call/w 3 82 "$display", "[FAIL] Test 2: seen=%b", v0x55baee3477d0_0 {0 0 0};
+T_3.5 ;
+    %vpi_call/w 3 84 "$finish" {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "tb.sv";
+    "solution.sv";

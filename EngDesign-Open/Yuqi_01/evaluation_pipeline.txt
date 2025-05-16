@@ -1,0 +1,11 @@
+A utility script will automatically evaluate each task.
+
+For Task 1, the answer will be directly compared with the solution.
+
+For Task 2, the answer will be compared with the solution with a tolerance of +-10%.
+
+For Task 3, the script will look up all possible NPU allocation plans from JSON files.
+The script will first check if the answer is valid (i.e., if it satisfies the latency SLO and memory constraint, and do not exceed the number of chips).
+Then, the script will compare the throughput of the answer with the ideal throughput.
+If the answer is valid, the score will be calculated as answer_throughput / ideal_throughput * 40 for prefill/decode.
+The total score will be the sum of the prefill score and decode score.

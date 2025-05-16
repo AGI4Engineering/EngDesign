@@ -1,0 +1,6 @@
+There are three values that are taken into count for this multivariant loss. 
+the first is Total variation loss, this loss encourages local smoothness by penalizing the sharp transitions 
+the second is entropy loss, this loss is used to encourage edge probability to be confident 
+the thrid loss is density loss, this encourages sparsity over the average number of pixels 
+In the end the losses are weighted together, using a defined weight to combine to a loss term. 
+The final score is a linear relationship as the lower the loss the higher the score 

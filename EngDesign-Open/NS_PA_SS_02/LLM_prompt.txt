@@ -1,0 +1,25 @@
+## Task Description
+You are tasked with designing and implementing a parameterizable Gray‐code sequence generator in Verilog. Your module will produce an n-bit Gray code on each rising edge of a clock, starting from zero after a synchronous, active‐low reset
+
+### Background
+Gray code (also known as reflected binary code) is an ordering of binary numbers such that two successive values differ in only a single bit. This property is critical in digital interfaces (e.g., rotary encoders, ADCs) to minimize glitching when multiple bits change simultaneously. The standard encoding for an n-bit Gray code can be built by reflecting and prefixing the (n-1)-bit sequence.
+
+### Module Interface
+Your Verilog source file `code.sv` must declare a module with the following signature, the module SHOULD be named model:
+
+module model #(parameter
+  DATA_WIDTH = 4
+) (
+  input clk,
+  input resetn,
+  output logic [DATA_WIDTH-1:0] out
+);
+
+
+N: positive integer ≥ 1, set via parameter.
+
+clk: single‐bit input, rising‐edge clock.
+
+resetn: synchronous, active‐low reset. When resetn == 0 on the rising edge, dout must be set to zero.
+
+dout: N-bit register that holds the current Gray code value.

@@ -1,0 +1,5 @@
+One of the solutions that will work is to use a simple linear interpolation kernel 
+
+[ [0, 0.25, 0 ] , [0.25,1,0.25 ] , [ 0, 0.25, 0 ] ] 
+
+This will pass the threshold 

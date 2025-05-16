@@ -1,0 +1,5 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step (include all the calculations).",
+  "vcarmax": "Max velocity of a car for given setup on a particular track",
+  "laptime": "Lap time of a car for a given setup on a particular track"
+}

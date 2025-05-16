@@ -1,0 +1,8 @@
+## Evaluation Rubric
+
+- S0 (Intensity delta) within 0.05: 20 points
+- S1 (Linear Polarization - Q delta) within 0.05: 20 points
+- S2 (Linear Polarization - U delta) within 0.05: 20 points
+- S3 (Circular Polarization - V delta) within 0.05: 20 points
+if all are correct 20 points 
+Total Maximum Score: 100 points

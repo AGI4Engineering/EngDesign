@@ -1,0 +1,9 @@
+## Evaluation Rubric
+
+This task evaluates (1) if the solution forms a valid execution plan and (2) how the solution plan's performance compares with that of the optimal plan.
+
+| Criterion                        | Points | Description                                                                  |
+|----------------------------------|--------|------------------------------------------------------------------------------|
+| Valid F_op                       | 20     | Solution plan does not use more tensor cores than avaliable.                 |
+| Valid temporal partition factors | 20     | The temporal factors are align with the hardware and scheduling constraints. |
+| Performance score                | 60     | Perf score = sqrt(optimal_exec_time / solution_exec_time) * 60.              |

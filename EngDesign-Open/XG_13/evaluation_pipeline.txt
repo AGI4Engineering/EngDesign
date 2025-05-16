@@ -1,0 +1,5 @@
+A utility script will automatically:
+1. Validate the stability of the derived transfer function and controller.
+2. Simulate the closed-loop step response to measure settling time and overshoot.
+
+The final score will be computed based on the criteria above and returned pass or fail based on the evaluation results.

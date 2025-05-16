@@ -1,0 +1,2 @@
+The following is a reference PID design that meets the performance requirements:
+  $$K(s) = 350 + \frac{300}{s} + 50$$

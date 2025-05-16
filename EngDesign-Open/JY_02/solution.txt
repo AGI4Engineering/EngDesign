@@ -1,0 +1,4 @@
+One of the solutions is to use gaussian kernel of size 3 to first filer the input image. 
+Then applying a sobel filter in both the x and y direction. Followed up by a threshold of maximum value of 255 and minimum value of 100. 
+
+The total loss of the above solution is 68 thus smaller than the passing score 70 

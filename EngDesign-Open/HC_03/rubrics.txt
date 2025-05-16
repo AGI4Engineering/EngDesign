@@ -1,0 +1,9 @@
+## Rubric for Evaluating Polynomial Fit
+
+| Criterion            | Points | Description |
+|----------------------|--------|-------------|
+| Coefficient a        | 20     | Estimated a within absolute error 0.05. |
+| Coefficient b        | 20     | Estimated b within absolute error 0.05. |
+| Coefficient c        | 20     | Estimated c within absolute error 0.05. |
+| Residual Error (MSE) | 40     | Residual MSE less than 0.1. |
+

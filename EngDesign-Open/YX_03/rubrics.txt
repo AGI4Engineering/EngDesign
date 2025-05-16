@@ -1,0 +1,18 @@
+## Evaluation Rubric
+- Available SNR: 5 points
+- Required SNR D0: 5 points
+- Required SNR D1: 5 points
+- Required SNR DN: 5 points
+- Integration gain: 5 points
+- Fluctuation loss: 5 points
+- Actual maximum range: 5 points
+- The closest range from which a full pulse can be received: 5 points
+- The unambiguous range: 5 points
+- Scan sector loss: 10 points
+- The MTI noise correlation loss: 5 points
+- The MTI velocity response loss: 5 points
+- Binary integration loss: 10 points
+- CFAR loss: 10 points
+- Effective detectability factor: 10 points
+- Evaluate system feasibility: 5 points
+

@@ -1,0 +1,22 @@
+Rubric for Radiomics Feature Extraction Task:
+
+- Mean: 20 points  
+  LLM output must match the reference mean within a tolerance of 1e-4.
+
+- Variance: 20 points  
+  LLM output must match the sample variance (N-1 denominator) within a tolerance of 1e-4.
+
+- Skewness: 20 points  
+  LLM output must match the bias-corrected skewness within a tolerance of 1e-4.
+
+- Kurtosis: 20 points  
+  LLM output must match excess kurtosis (Fisher’s definition) within a tolerance of 1e-4.
+
+- GLCM Contrast: 20 points  
+  LLM output must match the contrast computed from the normalized co-occurrence matrix using only ROI pixels and horizontal adjacency.
+
+Scoring:  
+Each correct value earns 20 points.  
+Total score = 100.  
+All five values correct (100/100) = Pass.  
+Any incorrect value = Fail.

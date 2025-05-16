@@ -1,0 +1,11 @@
+## Task 1 solution:
+(-80, -30)
+(40, -30)
+(40, 70)
+(-80, 70)
+
+## Task 2 solution:
+127.44
+
+## Task 3 solution:
+72.97

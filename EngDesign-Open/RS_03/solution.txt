@@ -1,0 +1,86 @@
+The load on the neck is given by:
+
+\[ F = m \cdot a_{\text{lateral}} \]
+
+where \( m = 7 \, \text{kg} \) (head plus helmet), and \( a_{\text{lateral}} \) is the maximum lateral acceleration in \( \text{m/s}^2 \).
+### Understanding Lateral Acceleration
+
+The maximum lateral acceleration is:
+
+\[ a_{\text{lateral}}^{\text{max}} = \frac{F_{\text{lateral}}^{\text{max}}}{m_{\text{car}}} \]
+
+where \( F_{\text{lateral}}^{\text{max}} = \mu_y \cdot N \), \( \mu_y \) is the lateral grip coefficient ("gripy" = 1.40), \( N \) is the total normal force, and \( m_{\text{car}} = 728 \, \text{kg} \) is the car's mass.
+
+The normal force \( N \) is:
+
+\[ N = m_{\text{car}} \cdot g + F_{\text{down}} \]
+
+where \( g = 9.81 \, \text{m/s}^2 \) is the gravitational acceleration, and \( F_{\text{down}} \) is the downforce, which depends on speed.
+
+### Calculating Downforce
+Downforce is an aerodynamic force that increases with the square of the car's speed:
+
+\[ F_{\text{down}} = \frac{1}{2} \cdot \rho \cdot v^2 \cdot C_l \cdot A \]
+
+From the Setup file:
+- \( \rho = 1.22 \, \text{kg/m}^3 \) (air density),
+- \( C_l = 3.1 \) ("clt", downforce coefficient),
+- \( A = 1.0 \, \text{m}^2 \) ("afrcar", frontal area),
+- \( v \) is the car's speed in \( \text{m/s} \).
+
+To find the *maximum possible* load, we need the maximum downforce, which occurs at the car's maximum speed \( v_{\text{max}} \).
+
+### Determining Maximum Speed
+The maximum speed is achieved on a straight when the engine's power equals the drag force power. Power is,
+
+\[ P = F_{\text{drag}} \cdot v \]
+
+where \( F_{\text{drag}} = \frac{1}{2} \cdot \rho \cdot v^2 \cdot C_d \cdot A \), and \( C_d = 1.0 \) ("cx", drag coefficient). Thus:
+
+\[ P = \frac{1}{2} \cdot \rho \cdot v^3 \cdot C_d \cdot A \]
+
+Solving for \( v^3 \):
+
+\[ v^3 = \frac{P}{\frac{1}{2} \cdot \rho \cdot C_d \cdot A} \]
+
+The engine's power is derived from torque ("EngNm") and RPM ("EngRpm"). The torque curve is:
+- 200 Nm at 0 RPM,
+- 300 Nm at 3000 RPM,
+- 430 Nm at 7000 RPM,
+- 380 Nm at 10000 RPM.
+
+Power in watts is \( P = T \cdot \omega \), where \( \omega = 2\pi \cdot \text{RPM} / 60 \) is the angular velocity in rad/s. Calculate power at each point:
+- At 7000 RPM: \( P = 430 \cdot (2\pi \cdot 7000 / 60) = 430 \cdot 733.038 = 315206.34 \, \text{W} \),
+- At 10000 RPM: \( P = 380 \cdot (2\pi \cdot 10000 / 60) = 380 \cdot 1047.197 = 397934.86 \, \text{W} \).
+
+Maximum power is 397934.86 W at 10000 RPM. Now,
+
+\[ v^3 = \frac{397934.86}{0.5 \cdot 1.22 \cdot 1.0 \cdot 1.0} = \frac{397934.86}{0.61} \approx 652352.23 \]
+
+\[ v = (652352.23)^{1/3} \approx 86.71 \, \text{m/s} \]
+
+### Computing Maximum Downforce
+At \( v = 86.71 \, \text{m/s} \):
+
+\[ v^2 = (86.71)^2 = 7522.9041 \]
+
+\[ F_{\text{down}} = 0.5 \cdot 1.22 \cdot 7522.9041 \cdot 3.1 \cdot 1.0 \]
+\[ = 0.61 \cdot 7522.9041 \cdot 3.1 \]
+\[ \approx 4588.9715 \cdot 3.1 \approx 14225.81 \, \text{N} \]
+
+### Computing Total Normal Force
+\[ N = m_{\text{car}} \cdot g + F_{\text{down}} \]
+\[ = 728 \cdot 9.81 + 14225.81 \]
+\[ = 7141.68 + 14225.81 = 21367.49 \, \text{N} \]
+
+### Computing Maximum Lateral Force
+\[ F_{\text{lateral}}^{\text{max}} = \mu_y \cdot N = 1.40 \cdot 21367.49 \approx 29914.49 \, \text{N} \]
+
+### Computing Maximum Lateral Acceleration
+\[ a_{\text{lateral}}^{\text{max}} = \frac{F_{\text{lateral}}^{\text{max}}}{m_{\text{car}}} = \frac{29914.49}{728} \approx 31.28 \, \text{m/s}^2 \]
+
+### Compute Maximum Load on the Neck
+\[ F = m \cdot a_{\text{lateral}}^{\text{max}} = 7 \cdot 31.28 \approx 218.99 \, \text{N} \]
+
+
+Thus, the maximum possible load on the driver's neck is: 218.99 N

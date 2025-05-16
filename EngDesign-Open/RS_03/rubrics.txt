@@ -1,0 +1,5 @@
+#Evaluation Rubrics:
+-Force on neck within 1.0 N: 50 points
+-Force on neck within 2.0 N: 25 points
+-Force on neck within 3.0 N: 15 points
+-Force on neck within 4.0 N: 10 points

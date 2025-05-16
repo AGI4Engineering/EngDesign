@@ -1,0 +1,9 @@
+We manually input the 5 values returned by the LLM into the evaluation script.
+
+The script computes ground truth values from the fixed image matrix and ROI polygon.
+
+Each LLM value is compared to the reference with a tolerance of 1e-4.
+
+Each correct match earns 20 points, for a total score out of 100.
+
+All 5 correct = pass. Less than 5 correct = fail.

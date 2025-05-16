@@ -1,0 +1,10 @@
+## Evaluation Rubric
+- Constraint parameters for global inputs: 5 points
+- Sampling of global inputs satisfies the constraints: 20 points
+- Sampling points of the global inputs satisfy the LHS sampling principle: 25 points
+- normalized_speed_factor: 5 points
+- P_range: 5 points
+- G_range: 5 points
+- Sampling points of the local inputs satisfy the LHS sampling principle: 35 points
+
+

@@ -1,0 +1,20 @@
+## Evaluation Rubric
+1. Consistency of Device A and B design solutions: 10 pts  
+2. Verification that (sum of entries per level) + page‑offset bits matches the 40‑bit virtual address space: 15 pts  
+3. Page size is a power of two: 5 pts  
+4. Each entries_per_level count is a power of two: 5 pts  
+5. Number of entries_per_level matches the chosen number of levels: 5 pts  
+
+6. Device A:  
+i.   Correct calculation of page_table_memory: 5 pts  
+ii.  page_table_memory meets the specified limit: 10 pts  
+iii. Correct calculation of avg_translation_time: 5 pts  
+iv.  avg_translation_time meets the specified limit: 10 pts  
+
+7. Device B:  
+i.   Correct calculation of page_table_memory: 5 pts  
+ii.  page_table_memory meets the specified limit: 10 pts  
+iii. Correct calculation of avg_translation_time: 5 pts  
+iv.  avg_translation_time meets the specified limit: 10 pts   
+
+Total points: 100

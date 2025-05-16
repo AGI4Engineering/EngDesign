@@ -1,0 +1,3 @@
+- Byron Knoll: http://code.google.com/p/vector-playing-cards/ (public domain image)
+
+- Howse, J., & Minichino, J. (2020). Learning OpenCV 4 Computer Vision with Python 3 (3rd ed.). Packt Publishing.

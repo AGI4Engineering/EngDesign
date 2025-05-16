@@ -1,0 +1,5 @@
+## Evaluation Rubric
+- pass peak heat flux test: 30 points  
+- pass total heat load test: 30 points  
+- pass peak deceleration test: 40 points
+

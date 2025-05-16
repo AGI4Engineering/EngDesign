@@ -1,0 +1,2 @@
+Main domain: Digital Design  
+Sub-topic: Programmable Sequence Detector

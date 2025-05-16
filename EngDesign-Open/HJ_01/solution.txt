@@ -1,0 +1,6 @@
+There is two set of design I tried out that met the requirements: 
+
+run_simulation(refresh_rate=15, acceleration=17, max_velocity=6.5, lookahead_dist=3.0)
+run_simulation(refresh_rate=10, acceleration=18, max_velocity=7, lookahead_dist=3.0)
+
+Both met the requirements.

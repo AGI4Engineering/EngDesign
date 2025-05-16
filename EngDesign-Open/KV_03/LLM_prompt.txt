@@ -1,0 +1,51 @@
+Switched Capacitor Battery Balancing System – Design Challenge Task
+
+Task Title:
+Fill-in-the-Blank System Architecture Inference – Battery CC-CV Interface
+
+System Description:
+The system balances a 3-cell lithium-ion battery pack using switched-capacitor charge redistribution. The system includes six switches (S1–S6), two capacitors, and a Battery CC-CV block that can both inject and extract current depending on the system’s state-of-charge (SOC). The current flow is dynamically controlled based on SOC feedback, voltage readings, and a relay mechanism to toggle modes. A PI controller regulates behavior during charging and discharging. The goal is to maintain safe and efficient balancing under varying SOC conditions using only local cell information and logic-driven control blocks.
+
+Technical Specifications:
+- Battery: 3 Li-ion cells in series, each 27 Ah
+- Capacitors: 0.5 F each (2 total)
+- Switches: 6 total; closed resistance = 0.00734 Ω, open conductance = 1e-5 S
+- Switching control: 50% duty cycle, Tper = 0.006 s
+- Initial SOCs: Cell 1 = 0.8, Cell 2 = 0.75, Cell 3 = 0.7
+- Battery CC-CV behavior with max voltage = 4.1 V
+- PI Controller: Proportional gain = 100, Integral gain = 10
+- Feedback channels include SOC and voltage monitoring through ZOH blocks
+- Relay logic is used to switch between injecting and withdrawing current
+- Final current output is passed through a control logic layer before being applied to the Battery CC-CV block
+
+Design Task:
+You are given a redacted system diagram with 9 missing functional blocks labeled A through J (excluding H, which is not used). Each label corresponds to a required Simulink or logic block that enables correct operation of the system. Your task is to infer and name the correct block for each label based only on your understanding of the system architecture and its operational requirements.
+
+To assist, here are examples of Simulink or logical block types that may appear somewhere in the system (not in any particular order, and not mapped to any specific label):
+
+- max
+- chargingenabled
+- cellvoltage
+- currentwhencharging
+- currentwhendischarging
+- gain
+- constant
+- relay
+- current output port
+
+You must **not assume the ordering** or directly match these terms to any label. Instead, you must analyze the described system behavior and infer the correct Simulink block for each missing label. Do not include any explanations, justifications, or descriptions — only provide the mapping.
+
+Expected Output Format:
+Return a dictionary in the following format, using strings that correspond to valid Simulink block types or logic expressions (no comments, no extra spaces, no Markdown, no special control characters):
+
+{
+  "A": "<Simulink block or logic>",
+  "B": "<Simulink block or logic>",
+  "C": "<Simulink block or logic>",
+  "D": "<Simulink block or logic>",
+  "E": "<Simulink block or logic>",
+  "F": "<Simulink block or logic>",
+  "G": "<Simulink block or logic>",
+  "I": "<Simulink block or logic>",
+  "J": "<Simulink block or logic>"
+}
