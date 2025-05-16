@@ -266,10 +266,6 @@ Remove the image if needed:
 
 ---
 
-## 🚀 Run Tasks Requiring Scientific Softwares
-
----
-
 ## 📂 Repository Layout
 
 ```text
