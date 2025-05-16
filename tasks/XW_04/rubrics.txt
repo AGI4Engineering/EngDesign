@@ -1,0 +1,7 @@
+## Evaluation Rubric
+- Delete a valid file: 20 points
+- Delete valid directories - testing child directory: 10 points
+- Delete valid directories - testing father directory: 10 points
+- Raising FileNotFoundError correctly: 20 points
+- Raising NotADirectoryError correctly: 20 points
+- Raising OSError correctly: 20 points

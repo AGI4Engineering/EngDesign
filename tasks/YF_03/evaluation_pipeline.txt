@@ -1,0 +1,7 @@
+1. Use LLM to give the suitable Th(thickness)
+2. Use Evalute.py to call the matlab function and input the thickness
+3. Use matlab function give the answer
+Like this
+    PASS: false
+    Max uz: 0.30336 mm
+    Score: 0

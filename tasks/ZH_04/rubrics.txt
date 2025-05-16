@@ -1,0 +1,6 @@
+## Evaluation Rubric
+- pass horizontal range requirement : 20 points
+- pass total mission time constraint : 20 points
+- pass energy consumption test : 20 points
+- pass volume constraint : 20 points
+- pass density and mass constraint : 20 points

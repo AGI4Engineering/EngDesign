@@ -1,0 +1,6 @@
+{
+  "cluster_kb": 8,
+  "small_threshold_kb": 4,
+  "frag_overhead": 0.4654,
+  "meta_overhead": 0.0488
+}

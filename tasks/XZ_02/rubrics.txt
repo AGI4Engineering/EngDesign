@@ -1,0 +1,13 @@
+## Evaluation Rubric (100 points total)
+
+1. Path Representation (35 points)
+- Path completeness with (x,y,θ) tuples (20 points)
+- Regular sampling intervals (15 points)
+
+2. Constraint Validation (50 points)
+- Obstacle clearance validation (minimum 0.5m) (25 points)
+- Turning radius constraint validation (maximum curvature ≤ 1/4) (25 points)
+
+3. Performance Metrics (15 points)
+- Computation time reporting (5 points)
+- Number of nodes/states explored reporting (10 points)

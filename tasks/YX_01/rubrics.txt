@@ -1,0 +1,9 @@
+## Evaluation Rubric
+- Bottom_left vertex: 5 points
+- Bottom_right vertex: 5 points
+- Top_right vertex: 5 points
+- Top_left vertex: 5 points
+- task2_length: 40 points
+- task3_length: 40 points
+
+

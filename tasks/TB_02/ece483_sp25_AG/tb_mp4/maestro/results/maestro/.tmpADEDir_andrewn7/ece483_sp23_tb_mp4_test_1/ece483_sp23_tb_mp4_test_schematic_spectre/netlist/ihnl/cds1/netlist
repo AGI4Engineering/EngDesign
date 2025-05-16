@@ -1,0 +1,12 @@
+
+// Library name: ece483_sp23
+// Cell name: tb_mp4_test
+// View name: schematic
+VSTB (vout net1) vsource dc=0 type=dc
+V1 (VDD VSS) vsource dc=VDD type=dc
+V0 (VSS 0) vsource dc=VSS type=dc
+I2 (net4 VSS) isource dc=10u type=dc
+C0 (vout VSS) capacitor c=CL
+V2 (vip VSS) vsource dc=VCM type=pulse val0=VCM - vstep/2 val1=VCM + vstep/2 \
+         period=1 delay=t_step rise=1n fall=1n
+__ECE483_SP23_FC (vout net4 VDD net1 vip VSS) fc_ota

@@ -1,0 +1,10 @@
+We will use exact code judgment to evaluate the correctness of LLM responses.
+
+The evaluation will verify:
+The completeness of color mapping for all game elements
+The proper definition of display regions for game area, next piece preview, and score display
+The variety and appropriateness of tetromino color schemes
+The implementation of UI elements for start menu and game over screen
+The bit slicing strategy used for position and block calculations
+
+The evaluation will use a Python script to test the functionality of the provided solution against the requirements. The test will verify that all necessary elements are defined with appropriate values and that the color mapping follows good design practices for game visibility and user experience.

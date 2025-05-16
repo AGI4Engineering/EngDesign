@@ -1,0 +1,10 @@
+## Evaluation Rubric
+- A is correct: 15 points
+- B is correct: 15 points
+- beta is within the range of 0 and 1: 10 points
+- RMS of the body travel: 20 points
+- Peak of the body travel: 20 points
+- Energy attenuation: 20 points
+
+
+

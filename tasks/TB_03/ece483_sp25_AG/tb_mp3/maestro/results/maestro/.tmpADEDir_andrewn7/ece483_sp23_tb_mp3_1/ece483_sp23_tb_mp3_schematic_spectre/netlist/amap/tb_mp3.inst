@@ -1,0 +1,6 @@
+HEADER
+"PSFversion" "1.00"
+"__ECE483_SP23_OTAn" "ota"
+"V3n V2n V1n V0n" "analogLib_vdc_spectre"
+"C0n" "analogLib_cap_spectre"
+"I2n" "analogLib_idc_spectre"

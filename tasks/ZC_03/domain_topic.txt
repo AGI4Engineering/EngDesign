@@ -1,0 +1,2 @@
+Main domain: Online decision making
+Sub domain: Multi-armed bandits

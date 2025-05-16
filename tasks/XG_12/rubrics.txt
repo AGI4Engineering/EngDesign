@@ -1,0 +1,7 @@
+## Evaluation Rubric
+- numerator coefficients of the PI controller: 20 points
+- denominator coefficients of the PI controller: 20 points
+- system stability: 20 points
+- phase margin: 20 points
+- gain margin: 20 points
+

@@ -1,0 +1,18 @@
+## Task Description
+
+Design domain is a 2D rectangular region in cartesian coordinates, with vertices at (0,0), (6,0), (6,1), (0,1). 
+A vertically downward load of magnitude 2.5 is applied at (2,1), and another vertically downward load of magnitude 2.5 is applied at (4,1); both uniformly distributed over small lengths 0.2. 
+Pin support is at (0,0) and roller support is at (6,0). 
+Solid material parameters are Young's modulus, E = 70000, and Poisson's ratio, nu = 0.3. Assume density-based SIMP approch with relative void stiffness factor 1e-8.
+Lx = 6 and Ly = 1 denotes the domain lengths in x- and y-directions. The filter radius is R = 0.05*max(Lx,Ly), and the filter exponent is 3.
+Total number of elements in the discretized domain is approximately 8000.
+
+
+---
+
+### Task
+
+Your task is to:
+- Obtain a topology optimized design that has minimum structural compliance and volume fraction not exceeding 0.25.
+- Given the optimized design, output the corresponding minimum structural compliance, named C_y_hat, and also its volume fraction, named vf, in numerical numbers. Note that vf is in the range of [0,1].
+- Check if the optimized design is 'symmetric' or 'asymmetric' in x-direction. Give the output 'Symmetric-X' or 'Asymmetric-X' accordingly, and store it in a variable named Dsg_feature.  

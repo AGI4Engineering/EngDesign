@@ -1,0 +1,2 @@
+Attempt 1:
+reasoning='By testing different time_quantum values, we found that a time_quantum of 5 ms satisfies all constraints (combined_cost <= 17 for case1 and case2, and <= 8 for case3). The detailed Round-Robin calculations show the following metrics for each case.' config=ConfigFile(time_quantum=5, case1=CaseMetrics(avg_waiting_time=8.0, context_switches=6, quantum_cost=2.5), case2=CaseMetrics(avg_waiting_time=9.25, context_switches=5, quantum_cost=2.5), case3=CaseMetrics(avg_waiting_time=0.0, context_switches=5, quantum_cost=2.5))

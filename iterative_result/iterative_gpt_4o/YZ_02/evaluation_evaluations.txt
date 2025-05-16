@@ -1,0 +1,20 @@
+Attempt 1:
+{'Error': 'Expected frmae length to be a scalar with value > 6.'}
+Attempt 2:
+{'Error': 'Expected frmae length to be a scalar with value > 6.'}
+Attempt 3:
+{'Error': 'Expected frmae length to be a scalar with value > 6.'}
+Attempt 4:
+{'Error': 'Expected frmae length to be a scalar with value > 6.'}
+Attempt 5:
+{'Error': 'Expected frmae length to be a scalar with value > 6.'}
+Attempt 6:
+{'Error': 'Expected frmae length to be a scalar with value > 6.'}
+Attempt 7:
+{'coeff_1': matlab.double([[0.03,0.55,0.25,0.05]]), 'coeff_2': matlab.double([[0.6,0.75,0.4]]), 'F3dB': 4.537068788148961, 'nhW': 3.0, 'rSGwNone': -5.684341886080802e-14, 'rSGwSqHann': 0.0, 'rSGwTriang': 0.0, 'rSGwOptimal': 5.684341886080802e-14, 'sSGwNone': -1.1368683772161603e-13, 'sSGwSqHann': 0.0, 'sSGwTriang': 0.0, 'sSGwOptimal': 5.684341886080802e-14, 'check_1': False, 'check_2': False, 'check_3': False, 'check_4': False, 'check_5': False, 'check_6': True, 'check_7': False}
+Attempt 8:
+{'coeff_1': matlab.double([[0.03,0.55,0.25,0.05]]), 'coeff_2': matlab.double([[0.6,0.75,0.4]]), 'F3dB': 4.537068788148961, 'nhW': 3.0, 'rSGwNone': -5.684341886080802e-14, 'rSGwSqHann': 0.0, 'rSGwTriang': 0.0, 'rSGwOptimal': 5.684341886080802e-14, 'sSGwNone': -1.1368683772161603e-13, 'sSGwSqHann': 0.0, 'sSGwTriang': 0.0, 'sSGwOptimal': 5.684341886080802e-14, 'check_1': False, 'check_2': False, 'check_3': False, 'check_4': False, 'check_5': False, 'check_6': True, 'check_7': False}
+Attempt 9:
+{'coeff_1': matlab.double([[0.03,0.55,0.25,0.05]]), 'coeff_2': matlab.double([[0.6,0.75,0.4]]), 'F3dB': 4.537068788148961, 'nhW': 3.0, 'rSGwNone': -5.684341886080802e-14, 'rSGwSqHann': 0.0, 'rSGwTriang': 0.0, 'rSGwOptimal': 5.684341886080802e-14, 'sSGwNone': -1.1368683772161603e-13, 'sSGwSqHann': 0.0, 'sSGwTriang': 0.0, 'sSGwOptimal': 5.684341886080802e-14, 'check_1': False, 'check_2': False, 'check_3': False, 'check_4': False, 'check_5': False, 'check_6': True, 'check_7': False}
+Attempt 10:
+{'coeff_1': matlab.double([[0.03,0.55,0.25,0.05]]), 'coeff_2': matlab.double([[0.6,0.75,0.4]]), 'F3dB': 4.537068788148961, 'nhW': 3.0, 'rSGwNone': -5.684341886080802e-14, 'rSGwSqHann': 0.0, 'rSGwTriang': 0.0, 'rSGwOptimal': 5.684341886080802e-14, 'sSGwNone': -1.1368683772161603e-13, 'sSGwSqHann': 0.0, 'sSGwTriang': 0.0, 'sSGwOptimal': 5.684341886080802e-14, 'check_1': False, 'check_2': False, 'check_3': False, 'check_4': False, 'check_5': False, 'check_6': True, 'check_7': False}

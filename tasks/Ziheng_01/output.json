@@ -1,0 +1,9 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step",
+  "Ac": "MATLAB code for A_c, e.g. 'Ac = [...];'",
+  "Bc1": "MATLAB code for B_c1, e.g. 'Bc1 = [...];'",
+  "Bc2": "MATLAB code for B_c2, e.g. 'Bc2 = [...];'",
+  "Cc": "MATLAB code for C_c, e.g. 'Cc = [...];'",
+  "Dc1": "MATLAB code for D_c1, e.g. 'Dc1 = [...];'",
+  "Dc2": "MATLAB code for D_c2, e.g. 'Dc2 = [...];'"
+}

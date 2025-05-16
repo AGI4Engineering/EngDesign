@@ -1,0 +1,7 @@
+HEADER
+"PSFversion" "1.00"
+"VSTBn V1n V0n" "analogLib_vdc_spectre"
+"I2n" "analogLib_idc_spectre"
+"C0n" "analogLib_cap_spectre"
+"V2n" "analogLib_vpulse_spectre"
+"__ECE483_SP23_FCn" "fc_ota"

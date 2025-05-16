@@ -1,0 +1,20 @@
+Attempt 1:
+{'counter_bits': '18 bits is within acceptable engineering range (17-19)', 'division_ratio': '208333 is within ±1000 of 208333', 'digit_select_bits': '[17, 16] are valid consecutive high-order bits', 'max_delay': 'Maximum delay calculation of 5.243ms is incorrect', 'flicker_assessment': 'Incorrect assessment of flicker possibility'}
+Attempt 2:
+{'counter_bits': '18 bits is within acceptable engineering range (17-19)', 'division_ratio': '208333 is within ±1000 of 208333', 'digit_select_bits': '[17, 16] are valid consecutive high-order bits', 'max_delay': 'Maximum delay calculation of 5.2435ms is incorrect', 'flicker_assessment': 'Incorrect assessment of flicker possibility'}
+Attempt 3:
+{'counter_bits': '18 bits is within acceptable engineering range (17-19)', 'division_ratio': '208333 is within ±1000 of 208333', 'digit_select_bits': '[17, 16] are valid consecutive high-order bits', 'max_delay': 'Maximum delay calculation of 10.486ms is incorrect', 'flicker_assessment': 'Incorrect assessment of flicker possibility'}
+Attempt 4:
+{'counter_bits': '18 bits is within acceptable engineering range (17-19)', 'division_ratio': '208333 is within ±1000 of 208333', 'digit_select_bits': '[17, 16] are valid consecutive high-order bits', 'max_delay': 'Maximum delay calculation of 21.0ms is incorrect', 'flicker_assessment': 'Incorrect assessment of flicker possibility'}
+Attempt 5:
+{'counter_bits': '17 bits is within acceptable engineering range (17-19)', 'division_ratio': '131072 is too far from 208333', 'digit_select_bits': '[16, 15] are valid consecutive high-order bits', 'max_delay': 'Maximum delay calculation of 2.622ms is incorrect', 'flicker_assessment': 'Incorrect assessment of flicker possibility'}
+Attempt 6:
+{'counter_bits': '18 bits is within acceptable engineering range (17-19)', 'division_ratio': '208333 is within ±1000 of 208333', 'digit_select_bits': '[17, 16] are valid consecutive high-order bits', 'max_delay': 'Maximum delay calculation of 16.672ms is incorrect', 'flicker_assessment': 'Incorrect assessment of flicker possibility'}
+Attempt 7:
+{'counter_bits': '18 bits is within acceptable engineering range (17-19)', 'division_ratio': '208333 is within ±1000 of 208333', 'digit_select_bits': '[17, 16] are valid consecutive high-order bits', 'max_delay': 'Maximum delay calculation of 16.6685ms is incorrect', 'flicker_assessment': 'Incorrect assessment of flicker possibility'}
+Attempt 8:
+{'counter_bits': '18 bits is within acceptable engineering range (17-19)', 'division_ratio': '208333 is within ±1000 of 208333', 'digit_select_bits': '[17, 16] are valid consecutive high-order bits', 'max_delay': 'Maximum delay calculation of 4.1672ms is incorrect', 'flicker_assessment': 'Incorrect assessment of flicker possibility'}
+Attempt 9:
+{'counter_bits': '18 bits is within acceptable engineering range (17-19)', 'division_ratio': '208333 is within ±1000 of 208333', 'digit_select_bits': '[17, 16] are valid consecutive high-order bits', 'max_delay': 'Maximum delay calculation of 8.3343ms is incorrect', 'flicker_assessment': 'Incorrect assessment of flicker possibility'}
+Attempt 10:
+{'counter_bits': '18 bits is within acceptable engineering range (17-19)', 'division_ratio': '208333 is within ±1000 of 208333', 'digit_select_bits': '[17, 16] are valid consecutive high-order bits', 'max_delay': 'Maximum delay calculation of 33.33ms is incorrect', 'flicker_assessment': 'Correct assessment of flicker possibility'}

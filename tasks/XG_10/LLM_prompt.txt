@@ -1,0 +1,49 @@
+## Task Description
+
+Consider the following first-order plant:
+\[
+G(s) = \frac{3}{s + 2}
+\]
+
+### Task 1
+Your first task is to design a controller using the **loop-shaping method**. The desired loop bandwidth is \( \omega_L = 5 \, \text{rad/s} \).  
+To shape the loop around the desired bandwidth:
+1. First, compute the gain  
+   \[
+   K_g = \frac{1}{|G(j\omega_L)|}
+   \]
+   so that the open-loop gain at \( \omega_L \) equals 1.
+2. Next, design an integral-boost element of the form:  
+   \[
+   K_b(s) = \frac{\beta_b s + \omega_b}{s \sqrt{\beta_b^2 + 1}}
+   \]
+   with \( \omega_b = \omega_L \) and \( \beta_b = \sqrt{10} \).
+This yields a **PI controller**:
+\[
+K_1(s) = K_g \cdot K_b(s)
+\]
+Please provide the complete transfer function of \( K_1(s) \) as part of your response in the form of numerator and denominator coefficients.
+
+
+### Task 2
+
+To enhance noise rejection, your second task is to augment the controller with a **first-order roll-off filter** of the form:
+\[
+K_r(s) = \frac{\omega_r \sqrt{\beta_r^2 + 1}}{s + \beta_r \omega_r}
+\]
+The final controller becomes:
+\[
+K_2(s) = K_1(s) \cdot K_r(s)
+\]
+You are to determine appropriate values for \( \omega_r \) and \( \beta_r \) such that the **controller’s sensitivity to measurement noise** is sufficiently reduced.
+\( K_2(s) \) will be evaluated in a closed-loop simulation with:
+- A step reference signal: \( r(t) = 3 \) for \( t \ge 0 \)
+- Additive measurement noise: \( n(t) = 0.05 \cdot \texttt{randn}(...) \) for \( t \ge 1 \)
+To evaluate the controller’s robustness to noise, we compute the **standard deviation of the control signal** during the noisy interval:
+\[
+\sigma_u = \mathrm{std}(u(t \ge 1))
+\]
+Please choose \( \omega_r \) and \( \beta_r \) such that:
+\[
+\sigma_u \le 0.02
+\]

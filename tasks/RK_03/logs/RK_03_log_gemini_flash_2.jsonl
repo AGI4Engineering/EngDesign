@@ -1,0 +1,1 @@
+{'completion_tokens': 0, 'response': 'OpenAI API call failed: 429 Resource has been exhausted (e.g. check quota).', 'passed': False, 'evaluation_result': {'error': "'str' object has no attribute 'config'"}, 'score': None}

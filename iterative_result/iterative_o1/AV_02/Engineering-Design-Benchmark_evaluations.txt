@@ -1,0 +1,20 @@
+Attempt 1:
+{'order': 2.0, 'numerator coefficients': [1.0, -1.857, 1.0], 'denominator coefficients': [1.0, -1.8384, 0.9801], 'passband below target attenuation appropriate': np.True_, 'passband above target attenuation appropriate': np.True_, 'target frequency attenuation appropriate': np.False_, 'order value reasonable': True, 'order and coefficient are properly related': True}
+Attempt 2:
+{'order': 2.0, 'numerator coefficients': [1.0, -1.8569533818, 1.0], 'denominator coefficients': [1.0, -1.838383848, 0.9801], 'passband below target attenuation appropriate': np.True_, 'passband above target attenuation appropriate': np.True_, 'target frequency attenuation appropriate': np.False_, 'order value reasonable': True, 'order and coefficient are properly related': True}
+Attempt 3:
+{'order': 2.0, 'numerator coefficients': [1.0, -1.8569533818, 1.0], 'denominator coefficients': [1.0, -1.8513825212, 0.994009], 'passband below target attenuation appropriate': np.True_, 'passband above target attenuation appropriate': np.True_, 'target frequency attenuation appropriate': np.False_, 'order value reasonable': True, 'order and coefficient are properly related': True}
+Attempt 4:
+{'order': 2.0, 'numerator coefficients': [1.0, -1.8569533818, 1.0], 'denominator coefficients': [1.0, -1.8550964284, 0.998001], 'passband below target attenuation appropriate': np.True_, 'passband above target attenuation appropriate': np.True_, 'target frequency attenuation appropriate': np.False_, 'order value reasonable': True, 'order and coefficient are properly related': True}
+Attempt 5:
+{'order': 2.0, 'numerator coefficients': [1.0, -1.8569533818, 1.0], 'denominator coefficients': [1.0, -1.856767716, 0.99980001], 'passband below target attenuation appropriate': np.True_, 'passband above target attenuation appropriate': np.True_, 'target frequency attenuation appropriate': np.False_, 'order value reasonable': True, 'order and coefficient are properly related': True}
+Attempt 6:
+{'order': 4.0, 'numerator coefficients': [1.0, -3.71390676, 5.44428, -3.71390676, 1.0], 'denominator coefficients': [1.0, -3.71019286, 5.4328, -3.70276, 0.996006], 'passband below target attenuation appropriate': np.False_, 'passband above target attenuation appropriate': np.False_, 'target frequency attenuation appropriate': np.False_, 'order value reasonable': True, 'order and coefficient are properly related': True}
+Attempt 7:
+{'order': 4.0, 'numerator coefficients': [1.0, -3.71390676, 5.44828, -3.71390676, 1.0], 'denominator coefficients': [1.0, -3.71353541, 5.4468929, -3.7127596, 0.99960006], 'passband below target attenuation appropriate': np.True_, 'passband above target attenuation appropriate': np.False_, 'target frequency attenuation appropriate': np.False_, 'order value reasonable': True, 'order and coefficient are properly related': True}
+Attempt 8:
+{'order': 4.0, 'numerator coefficients': [0.9922, -3.6866, 5.4069, -3.6866, 0.9922], 'denominator coefficients': [1.0, -3.686, 5.3662, -3.63, 0.9692], 'passband below target attenuation appropriate': np.False_, 'passband above target attenuation appropriate': np.False_, 'target frequency attenuation appropriate': np.False_, 'order value reasonable': True, 'order and coefficient are properly related': True}
+Attempt 9:
+{'order': 2.0, 'numerator coefficients': [1.0, -1.85695338177, 1.0], 'denominator coefficients': [1.0, -1.85695152482, 0.999998000001], 'passband below target attenuation appropriate': np.True_, 'passband above target attenuation appropriate': np.True_, 'target frequency attenuation appropriate': np.False_, 'order value reasonable': True, 'order and coefficient are properly related': True}
+Attempt 10:
+{'order': 4.0, 'numerator coefficients': [1.0, -3.71390676, 5.4443, -3.71390676, 1.0], 'denominator coefficients': [1.0, -3.71386962, 5.4442, -3.713864, 0.99996], 'passband below target attenuation appropriate': np.True_, 'passband above target attenuation appropriate': np.True_, 'target frequency attenuation appropriate': np.False_, 'order value reasonable': True, 'order and coefficient are properly related': True}

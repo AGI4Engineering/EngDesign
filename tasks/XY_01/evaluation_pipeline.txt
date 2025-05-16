@@ -1,0 +1,12 @@
+# Evaluation Pipeline for Tetris Block ROM Analysis
+
+1. Parse the LLM response to extract the structured output
+2. Validate the extracted tetromino pattern against the ground truth ROM data
+   - Compare bit patterns directly with the ROM content at the calculated address
+   - Verify that the visual representation matches the bit pattern
+3. Calculate scores based on the simplified rubric:
+   - Use code-based verification for pattern extraction
+   - Allocate 100 points for correct pattern extraction
+4. Generate a simplified evaluation report with scores and explanations
+
+The evaluation will primarily use code-based verification against the ground truth ROM data, ensuring objective assessment of pattern extraction. The focus is exclusively on the correctness of the extracted pattern compared to the ROM data.

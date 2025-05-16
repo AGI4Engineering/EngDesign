@@ -1,0 +1,1 @@
+parameters t_step=10n vstep=300m CL=1p VCM=0.6 VDD=1.4 VSS=0

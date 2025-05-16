@@ -1,0 +1,8 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step",
+  "C_num": "numerator coefficients of the controller C(s)",
+  "C_den": "denominator coefficients of the controller C(s)",
+  "omega_n": "parameter of the notch filter",
+  "alpha_n": "parameter of the notch filter",
+  "f_n": "parameter of the notch filter"
+}

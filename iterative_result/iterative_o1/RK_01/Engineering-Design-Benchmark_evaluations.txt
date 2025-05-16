@@ -1,0 +1,20 @@
+Attempt 1:
+{'compliance_error': 'Fail (CE=19281.3735)'}
+Attempt 2:
+{'compliance_error': 'Fail (CE=8824842.2435)'}
+Attempt 3:
+{'compliance_error': 'Fail (CE=3629461713.4720)'}
+Attempt 4:
+{'compliance_error': 'Fail (CE=1661159184512.0439)'}
+Attempt 5:
+{'compliance_error': 'Fail (CE=760291760634290.6250)'}
+Attempt 6:
+{'compliance_error': 'Fail (CE=347976019804620480.0000)'}
+Attempt 7:
+{'compliance_error': 'Fail (CE=72942060990709050114048.0000)'}
+Attempt 8:
+{'compliance_error': 'Fail (CE=33384668063109388408193024.0000)'}
+Attempt 9:
+{'compliance_error': 'Fail (CE=15279744588324140153021923328.0000)'}
+Attempt 10:
+{'compliance_error': 'Fail (CE=6993347791958719898066033311744.0000)'}

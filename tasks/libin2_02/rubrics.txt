@@ -1,0 +1,9 @@
+## Evaluation Rubric
+1. time_quantum is an integer (10 pts)
+
+2. For each case:
+   - avg_waiting_time computed correctly (5 pts)
+   - context_switches computed correctly (5 pts)
+   - quantum_cost computed correctly (5 pts)
+   - combined_cost does not exceed the specified limit (15 pts)
+

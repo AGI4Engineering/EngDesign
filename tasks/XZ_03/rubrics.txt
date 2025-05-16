@@ -1,0 +1,20 @@
+## Evaluation Rubric (100 points total)
+
+- Path_validity: 50 points
+  - Start point correct (0,0,0): 10 points
+  - End point correct (49,39,0): 10 points
+  - No obstacle collisions: 30 points
+- Path_optimality: 30 points
+  - Path length within 5% of optimal: 30 points
+  - Path length within 10% of optimal: 10 points
+  - Path length within 20% of optimal: 5 points
+  - Path length >20% longer than optimal: 0 points
+- Algorithm_implementation: 10 points
+  - Correctly identified algorithm: 3 points
+  - Nodes explored reported: 3 points
+  - Connectivity (4 or 8) specified: 2 points
+  - Execution time reported: 2 points
+- Path_format: 10 points
+  - Complete ordered list of coordinates: 5 points
+  - All coordinates are valid integers: 5 points
+

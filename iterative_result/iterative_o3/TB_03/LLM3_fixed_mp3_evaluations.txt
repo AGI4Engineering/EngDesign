@@ -1,0 +1,20 @@
+Attempt 1:
+{'metrics': {'dc_gain_db': 37.35, 'ugf_mhz': 31.005, 'cmrr_db': 67.622, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 2:
+{'metrics': {'dc_gain_db': 49.627, 'ugf_mhz': 28.316, 'cmrr_db': 92.167, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 20, 'ugf': 0, 'cmrr': 20, 'icmr': 0, 'netlist': 0}, 'score': 40, 'passed': False}
+Attempt 3:
+{'metrics': {'dc_gain_db': 37.435, 'ugf_mhz': 62.986, 'cmrr_db': 45.905, 'icmr_v': 0.4}, 'sub_scores': {'dc_gain': 0, 'ugf': 20, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 20, 'passed': False}
+Attempt 4:
+{'metrics': {'dc_gain_db': 44.64, 'ugf_mhz': 26.746, 'cmrr_db': 96.157, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 20, 'ugf': 0, 'cmrr': 20, 'icmr': 0, 'netlist': 0}, 'score': 40, 'passed': False}
+Attempt 5:
+{'metrics': {'dc_gain_db': 43.816, 'ugf_mhz': 35.318, 'cmrr_db': 85.393, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 20, 'ugf': 0, 'cmrr': 20, 'icmr': 0, 'netlist': 0}, 'score': 40, 'passed': False}
+Attempt 6:
+{'metrics': {'dc_gain_db': 43.418, 'ugf_mhz': 47.097, 'cmrr_db': 80.893, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 20, 'ugf': 0, 'cmrr': 20, 'icmr': 0, 'netlist': 0}, 'score': 40, 'passed': False}
+Attempt 7:
+{'metrics': {'dc_gain_db': 42.495, 'ugf_mhz': 55.436, 'cmrr_db': 66.626, 'icmr_v': 0.2}, 'sub_scores': {'dc_gain': 20, 'ugf': 20, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 40, 'passed': False}
+Attempt 8:
+{'metrics': {'dc_gain_db': 54.473, 'ugf_mhz': 0.0, 'cmrr_db': 117.328, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 20, 'ugf': 0, 'cmrr': 20, 'icmr': 0, 'netlist': 0}, 'score': 40, 'passed': False}
+Attempt 9:
+{'metrics': {'dc_gain_db': 42.988, 'ugf_mhz': 49.599, 'cmrr_db': 74.455, 'icmr_v': 0.2}, 'sub_scores': {'dc_gain': 20, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 20, 'passed': False}
+Attempt 10:
+{'metrics': {'dc_gain_db': 44.188, 'ugf_mhz': 33.797, 'cmrr_db': 99.492, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 20, 'ugf': 0, 'cmrr': 20, 'icmr': 0, 'netlist': 0}, 'score': 40, 'passed': False}

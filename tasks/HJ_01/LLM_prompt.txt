@@ -1,0 +1,9 @@
+## Task Description
+The company let you assembly a car for track following design competition. The car control is simply a look ahead point tracking model. A path with length of 56 meters is given, and your car should finish test in 10 sec with max tolerance 1 meters of track-off distance. You are given 300 dolors budget. You can control four different value: refresh rate, acceleration, max velocity and lookahead distance. The refreshing cost is 5 dollar/hz; the acceleration cost is 10 dolors/ m/s^2; the max motor velocity is 8 dolors/ m/s, and the look ahead camera distance cost 1 dolor/ meter. 
+
+### Task 
+Your task is to design the car setup with:  refresh rate, acceleration, max velocity and lookahead distance so that: 
+Total runtime < 10 sec
+Max off-track error < 1 meter
+Budget cost < 300 dollars
+

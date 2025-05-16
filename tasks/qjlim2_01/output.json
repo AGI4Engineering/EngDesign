@@ -1,0 +1,8 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step",
+  "length_mm": "Length of the patch in millimeters",
+  "width_mm": "Width of the patch in millimeters",
+  "height_mm": "Substrate height in millimeters",
+  "epsilon_r": "Relative permittivity of the substrate",
+  "feed_offset_x_mm": "Feed offset along the x-axis in millimeters"
+}

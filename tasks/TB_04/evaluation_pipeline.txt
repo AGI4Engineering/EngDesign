@@ -1,0 +1,25 @@
+We use exact code judgment via our batch autograder:
+
+1. `evaluate.py` runs `run_autograder.sh mp3` to produce  
+   `~/cadence/simulation/ece483_SP25_AG/tb_mp3.csv`  
+   with headers:  
+     - Av0_dB  
+     - fUGF_MHz  
+     - CMRR_dB  
+     - ICMR_mV  
+     - netlist_flag  
+
+2. Parse the CSV into a dict of booleans (`pass` / `fail`) for each metric.
+
+3. For each metric, award **20 points** if it passes:
+   - **DC Gain (Av0)**: ≥ 40 dB → 20 pts  
+   - **Unity-Gain Frequency (fUGF)**: ≥ 50 MHz → 20 pts  
+   - **Common-Mode Rejection Ratio (CMRR)**: ≥ 80 dB → 20 pts  
+   - **Input Common-Mode Range (ICMR)**: ≥ 800 mV → 20 pts  
+   - **Netlist Naming & Pin Order**: `netlist_flag == pass` → 20 pts  
+
+4. **Score** = sum of the five metric scores (0–100).
+
+5. **Passed** = `true` if **all five** metrics pass (score == 100); otherwise `false`.
+
+6. **Confidence** = 100.

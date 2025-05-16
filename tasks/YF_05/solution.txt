@@ -1,0 +1,12 @@
+## Proposed Design
+
+- Th (thickness): 70 mm
+
+## Reasoning
+1.  Build the reduced 2-D truss stiffness model with the prescribed supports (Node-1 fixed, Node-2 vertical roller).\n   Unknown DOF  :  u2x , u3x , u3y.\n\n2.  Assemble element stiffnesses (E = 210 000 MPa):\n   •  1-2, A = 100 mm²,  L = 1 000 mm   ⇒ EA/L = 21 000 N/mm (x-only)\n   •  2-3, A = A*  ,      L = 1 000 mm   ⇒ EA/L = 210·A  N/mm (y-only)\n   •  1-3, A = 100 mm²,  L = 1 414 mm   ⇒ EA/L = 14 857 N/mm (45°)\n\n   After applying the constraints the 3×3 global stiffness becomes\n         [ 21000      0          0    ]\n   K  =  [     0   7428.5    7428.5  ]\n         [     0   7428.5  7428.5+210A]\n\n3.  External load:  F = [0, 0, –4000]^T  (4000 N downward at Node-3).\n   Solving KU = F gives\n       u2x = 0\n       u3x = –u3y\n       u3y = –4000/(210 A)\n   ⇒ |δ|max = √2·4000 /(210 A)\n\n4.  Serviceability requirement:  |δ|max < 0.5 mm\n      ⇒   A  >  4000√2 /(0.5·210) ≈ 54 mm²\n\n5.  Scoring rule:  Full (100 pts) if 0.35 mm ≤ |δ|max ≤ 0.45 mm.\n   Choosing A = 70 mm² gives\n       u3y = –0.272 mm  ,  |δ|max = 0.385 mm\n     – Below the 0.5 mm limit and inside the 0.35–0.45 mm band (≈77 % of limit),\n       so the member should obtain the maximum score.\n\n6.  Practical check:\n   •  Area 70 mm² is 30 % lighter than the 100 mm² bracing members, preserving a\n      balanced stiffness while avoiding an unnecessarily heavy chord.\n   •  Axial stress in 2-3:  σ = N/A = 4000 N / 70 mm² ≈ 57 MPa (< 0.25 · f_y for\n      typical structural steel), so the member is well within elastic limits.\n\nTherefore an area of 70 mm² for member 2-3 meets displacement, strength and\nscoring objectives with a comfortable margin.' config=ConfigFile(Th=70.0)
+## Simulation Result (MATLAB eval)
+
+- Max displacement : 0.384820016972270
+- Threshold: 0.5 mm
+- Result: ✅ Passed
+- Score: 100.0

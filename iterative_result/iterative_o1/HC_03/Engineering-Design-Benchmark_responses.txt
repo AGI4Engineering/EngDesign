@@ -1,0 +1,2 @@
+Attempt 1:
+reasoning='1) We set up a design matrix X whose rows are [x^2, x, 1] for each point, and a vector Y of observed y-values. 2) We solve the normal equations (X^T * X) * [a, b, c] = X^T * Y to find the least-squares solution. 3) After computing and doing row operations, we arrive at approximate values for a, b, and c that minimize the MSE. 4) The resulting coefficients are a ≈ 1.4786, b ≈ -0.4757, and c ≈ 0.6057.' config=ConfigFile(a=1.4786, b=-0.4757, c=0.6057)

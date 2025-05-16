@@ -1,0 +1,5 @@
+## Evaluation Rubric
+- Resonant Frequency: 40 points
+- S11 at Resonant Frequency: 20 points
+- Bandwidth: 20 points
+- Gain at Resonant Frequency: 20 points 

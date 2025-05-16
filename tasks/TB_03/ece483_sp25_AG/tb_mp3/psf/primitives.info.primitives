@@ -1,0 +1,56 @@
+HEADER
+"PSFversion" "1.00"
+"simulator" "spectre"
+"version" "21.1.0.058"
+"date" "11:55:41 AM, Sun Apr 27, 2025"
+"design" "// Generated for: spectre"
+"analysis type" "info.primitives"
+"analysis name" "primitives"
+"analysis description" "Circuit Information"
+"xVecSorted" "unknown"
+"tolerance.relative" 0.00100000
+TYPE
+"primitive" STRUCT(
+"model" STRING *
+"oppoint" STRING *
+"output" STRING *
+"inst" STRING *
+"region" STRING *
+"terminals" STRING *
+) PROP(
+"key" "prim"
+)
+VALUE
+"bsim3v3" "primitive" (
+"type vtho vfb k1 k2 k3 k3b w0 nlx gamma1 gamma2 vbx vbm dvt0 dvt1 dvt2 dvt0w dvt1w dvt2w a0 b0 b1 a1 a2 ags keta vfbflag vthmod ivth ivthw ivthl ivth_vdsmin nsub nch ngate xj lint wint ll lln lw lwn lwl wl wln ww wwn wwl dwg dwb tox dtoxcv toxm toxe xt rdsw prwb prwg wr binunit binflag lref wref mobmod u0 vsat ua ub uc drout pclm pdiblc1 pdiblc2 pdiblcb pscbe1 pscbe2 pvag delta cdsc cdscb cdscd nfactor cit voff dsub eta0 etab alpha0 alpha1 beta0 rsh rs rd lgcs lgcd rsc rdc rss rdd sc ldif hdif minr js jsw jssw is n nj jtss jtsd jtssws jtsswd jtsswgs jtsswgd njts njtssw njtsswg njtsd njtsswd njtsswgd xtss xtsd xtssws xtsswd xtsswgs xtsswgd vtss vtsd vtssws vtsswd vtsswgs vtsswgd tnjts tnjtssw tnjtsswg tnjtsd tnjtsswd tnjtsswgd jsswg dskip imelt ijth jmelt vnds nds tt cgso cgdo cgbo meto cgsl cgdl ckappa cbs cbd cj mj pb fc cjsw mjsw pbsw cjswg mjswg pbswg fcsw capmod nqsmod acnqsmod dwc dlc clc cle cf elm vfbcv acde moin noff voffcv xpart llc lwc lwlc wlc wwc wwlc wmlt lmlt w l as ad ps pd nrd nrs version paramchk fullreinit level acm geo calcacm tnom trise tlev tlevc eg gap1 gap2 eglev diomod kt1 kt1l kt2 at ua1 ub1 uc1 prt trs trd ute xti pta tpb ptp tpbsw tpbswg cta tcj ctp tcjsw tcjswg noimod kf af ef noia noib noic noid wnoi em flkmod gamma nlev gdsnoi lintnoi agidl bgidl cgidl egidl agisl bgisl cgisl egisl bforward breverse cforward creverse tcc aigbinv bigbinv cigbinv eigbinv nigbinv aigbacc bigbacc cigbacc nigbacc aigsd bigsd cigsd aigc bigc cigc nigc pigcd dlcig ntox toxref poxedge igcmod igbmod wmax wmin lmax lmin alarm imax jmax bvj vbox warn apwarn vds_max vgd_max vgs_max vbd_max vbs_max vgb_max vgdr_max vgsr_max vgbr_max vbsr_max vbdr_max lvtho lvth0 lk1 lk2 lk3 lk3b lw0 lnlx lgamma1 lgamma2 lvbx lvbm ldvt0 ldvt1 ldvt2 ldvt0w ldvt1w ldvt2w la0 lb0 lb1 la1 la2 lags lketa lnsub lnch lngate lxj ldwg ldwb lxt lrdsw lprwb lprwg lwr lu0 lvsat lua lub luc ldrout lpclm lpdiblc1 lpdiblc2 lpdiblcb lpscbe1 lpscbe2 lpvag ldelta lcdsc lcdscb lcdscd lnfactor lcit lvoff ldsub leta0 letab lalpha0 lalpha1 lbeta0 lcgsl lcgdl lckappa lclc lcle lcf lelm lvfbcv lvfb lacde lmoin lnoff lvoffcv lkt1 lkt1l lkt2 lat lua1 lub1 luc1 lprt lute xl xlref lagidl lbgidl lcgidl legidl wvtho wvth0 wk1 wk2 wk3 wk3b ww0 wnlx wgamma1 wgamma2 wvbx wvbm wdvt0 wdvt1 wdvt2 wdvt0w wdvt1w wdvt2w wa0 wb0 wb1 wa1 wa2 wags wketa wnsub wnch wngate wxj wdwg wdwb wxt wrdsw wprwb wprwg wwr wu0 wvsat wua wub wuc wdrout wpclm wpdiblc1 wpdiblc2 wpdiblcb wpscbe1 wpscbe2 wpvag wdelta wcdsc wcdscb wcdscd wnfactor wcit wvoff wdsub weta0 wetab walpha0 walpha1 wbeta0 wcgsl wcgdl wckappa wclc wcle wcf welm wvfbcv wvfb wacde wmoin wnoff wvoffcv wkt1 wkt1l wkt2 wat wua1 wub1 wuc1 wprt wute xw xwref wagidl wbgidl wcgidl wegidl pvtho pvth0 pk1 pk2 pk3 pk3b pw0 pnlx pgamma1 pgamma2 pvbx pvbm pdvt0 pdvt1 pdvt2 pdvt0w pdvt1w pdvt2w pa0 pb0 pb1 pa1 pa2 pags pketa pnsub pnch pngate pxj pdwg pdwb pxt prdsw pprwb pprwg pwr pu0 pvsat pua pub puc pdrout ppclm ppdiblc1 ppdiblc2 ppdiblcb ppscbe1 ppscbe2 ppvag pdelta pcdsc pcdscb pcdscd pnfactor pcit pvoff pdsub peta0 petab palpha0 palpha1 pbeta0 pcgsl pcgdl pckappa pclc pcle pcf pelm pvfbcv pvfb pacde pmoin pnoff pvoffcv pkt1 pkt1l pkt2 pat pua1 pub1 puc1 pprt pute pagidl pbgidl pcgidl pegidl mvtwl mvtwl2 mvt0 mbewl mbe0 mismatchmod mismatchdist stimod sa0 saref sb0 sbref wlod ku0 kvsat kvth0 tku0 llodku0 wlodku0 llodvth wlodvth lku0 wku0 pku0 lkvth0 wkvth0 pkvth0 stk2 lodk2 steta0 lodeta0 wpemod web wec kvth0we k2we lkvth0we wkvth0we pkvth0we lk2we wk2we pk2we ku0we lku0we wku0we pku0we scref mnr bnr cnr dnr tmnr tcnr tdnr xjbv ijthrev nrfwd shrink shrink2 msgskip compatible "
+"region trise reversed ids isub vgs vds vbs vgb vdb vgd vth vdsat vfbeff gm gds gmbs betaeff cjd cjs qb qg qd qbd qbs cgg cgd cgs cgb cdg cdd cds cdb csg csd css csb cbg cbd cbs cbb ron id is ibulk ibs ibd pwr gmoverid ueff cgsovl cgdovl cgbovl i1 i3 i4 gbd gbs vgsteff qinv igd igs igb igcs igcd igidl igisl qgi qsi qdi qbi cddbi cssbi cggbi cgsbi cgdbi cbdbi cbsbi qsrco ide ige ise ibe idb isb vsb gmb vgt vdss vsat_marg self_gain rout beff fug vearly ft vth_drive vdsat_marg tk ib ig "
+"tempeff meff weff leff rseff rdeff aseff adeff pseff pdeff "
+"w l as ad ps pd nrd nrs m nqsmod acnqsmod isnoisy aforward areverse delvto mulmu0 mulu0 delk1 delnfct geo rdc rsc sa sb sa1 sa2 sa3 sa4 sa5 sa6 sa7 sa8 sa9 sa10 sb1 sb2 sb3 sb4 sb5 sb6 sb7 sb8 sb9 sb10 sw1 sw2 sw3 sw4 sw5 sw6 sw7 sw8 sw9 sw10 stimod sca scb scc sc mulid0 mulbeta "
+"off triode sat subth breakdown "
+"d g s b "
+)
+"capacitor" "primitive" (
+"c trise tnom w l etch cj cjsw scalec rforce di thick coeffs symmetric min max tc1 tc2 shrink shrink2 bv_max bv_min "
+"trise cap "
+"tempeff meff leff weff ceff "
+"c w l m scale tc1 tc2 ic area perim coeffs symmetric bv_max scalec bv_min "
+""
+"1 2 "
+)
+"isource" "primitive" (
+""
+"i v pwr "
+"tempeff "
+"dc type fundname delay edgetype val0 val1 period rise fall width file offset scale stretch rms pwlfilter rolloff pwlbandwidth allbrkpts pwlperiod pwlperiodstart twidth sinedc ampl freq sinephase ampl2 freq2 sinephase2 fundname2 iqmodfiles fmmodindex fmmodfreq fmmodfiles ammodindex ammodoffset ammodfreq ammodphase damp freqvec amplvec phasevec maxharms td1 tau1 td2 tau2 expperiod data rptstart rpttimes td01 td10 ref jitter rjseed rjrms pjamp pjfreq pjtype seed taps lfsrtaps lfsrseed registerlength triggerthreshold triggerdelthresh triggerdirection transitionreference modulation pam4_mapping oscmacrofile freqscale amplscale noisefile noisetype noiseinterp isnoisy mag phase xfmag pacmag pacphase m tc1 tc2 tnom trise "
+""
+"sink src ctlp ctln "
+)
+"vsource" "primitive" (
+""
+"v i pwr "
+"tempeff "
+"dc type fundname delay edgetype val0 val1 period rise fall width file offset scale stretch rms pwlfilter rolloff pwlbandwidth allbrkpts pwlperiod pwlperiodstart twidth sinedc ampl freq sinephase ampl2 freq2 sinephase2 fundname2 iqmodfiles fmmodindex fmmodfreq fmmodfiles ammodindex ammodoffset ammodfreq ammodphase damp freqvec amplvec phasevec maxharms td1 tau1 td2 tau2 expperiod data rptstart rpttimes td01 td10 ref jitter rjseed rjrms pjamp pjfreq pjtype seed taps lfsrtaps lfsrseed registerlength triggerthreshold triggerdelthresh triggerdirection transitionreference modulation pam4_mapping oscmacrofile freqscale amplscale noisefile noisetype noiseinterp isnoisy mag phase xfmag pacmag pacphase m tc1 tc2 tnom trise "
+""
+"p n ctlp ctln "
+)
+END

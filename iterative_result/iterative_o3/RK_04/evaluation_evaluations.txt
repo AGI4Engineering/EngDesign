@@ -1,0 +1,8 @@
+Attempt 1:
+{'vf': 0.247, 'vf_threshold': 0.25, 'max_stress': 'Partially Pass (s_y_hat=153.4000)', 'Dsg_feature': 'Pass'}
+Attempt 2:
+{'vf': 0.249, 'vf_threshold': 0.25, 'max_stress': 'Partially Pass (s_y_hat=149.9000)', 'Dsg_feature': 'Pass'}
+Attempt 3:
+{'vf': 0.248, 'vf_threshold': 0.25, 'max_stress': 'Partially Pass (s_y_hat=138.6000)', 'Dsg_feature': 'Pass'}
+Attempt 4:
+{'vf': 0.246, 'vf_threshold': 0.25, 'max_stress': 'Pass (s_y_hat=124.2000)', 'Dsg_feature': 'Pass'}

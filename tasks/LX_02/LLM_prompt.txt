@@ -1,0 +1,34 @@
+Magnetic levitation systems suspend a ferromagnetic ball beneath an electromagnet by balancing gravitational and magnetic forces.  The fundamental nonlinear dynamics are given by
+\[
+m\ddot y=mg-\frac{kI^2}{y^2},
+\]
+where \(y(t)\) is the ball’s vertical displacement and \(I(t)\) the coil current.  Around an operating point \((y_0,I_0)\), a first‑order Taylor expansion and appropriate nondimensionalization yield a normalized second‑order linear model suitable for controller design.  In this task, you are required to analyze that linearized model and then validate the controller on the original nonlinear dynamics.
+
+To simplify the problem, consider the following equation:
+\[
+\ddot y=1-\frac{u^2}{y^2}.
+\]
+
+\begin{enumerate}
+  \item Linearize the nonlinear equation around the operating point $y = 1, u=1$. You need to give $a_{11},a_{12},a_{21},a_{22},b_{11},b_{21}$, where
+  \[\dot{x}=\begin{bmatrix}
+      a_{11}&a_{12}\\
+      a_{21}&a_{22}
+  \end{bmatrix}x+\begin{bmatrix}
+      b_{11}\\
+      b_{21}
+  \end{bmatrix}u.\]
+  \item Determine a feedback gain $K=(k1\ k2)$ that places the closed‑loop poles at \(-1\pm j1\).
+  \item The ball position $x_1$ can be measured using a photocell, but the velocity $x_2$ is more difficult to obtain. Therefore, suppose the output is $y=x_1$. Design a full-order observer $L = (l1\ l2)'$ having eigenvalues at $-5, -6$, and use the observer feedback to produce closed-loop eigenvalues at $-1\pm j1, -5, -6$. 
+  \item Simulate your controller for the nonlinear model
+  \[
+    \ddot{y} = 1 -\frac{u^2}{y^2},
+  \]
+  with nominal equilibrium \(y_0=u_0=1\). With the initial condition $(x(0),\dot{x}(0))$ set as $(1,0)$ for the observer, you need to identify whether the following initial conditions $(x(0),\dot{x}(0))$ for the real system are within the region of asymptotic stability -- the set of initial states from which the closed‑loop system converges to the equilibrium. You need to use $1$ as yes and $0$ as no.
+  \begin{enumerate}
+      \item $(2, 2)$
+      \item $(2.5, 0)$
+      \item $(0.8, 0)$
+      \item $(0.9, -1)$
+  \end{enumerate}
+\end{enumerate}

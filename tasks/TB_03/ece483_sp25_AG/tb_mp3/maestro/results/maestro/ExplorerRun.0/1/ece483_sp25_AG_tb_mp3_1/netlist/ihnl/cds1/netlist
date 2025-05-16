@@ -1,0 +1,11 @@
+
+// Library name: ece483_sp23
+// Cell name: tb_mp3
+// View name: schematic
+__ECE483_SP23_OTA (VDD VSS ibp10u vin vip vout) ota
+V3 (vin VSS) vsource dc=VCM mag=0 type=dc
+V2 (vip vin) vsource dc=0 mag=1 type=dc
+V1 (VDD VSS) vsource dc=VDD type=dc
+V0 (VSS 0) vsource dc=VSS type=dc
+C0 (vout VSS) capacitor c=CL
+I2 (VDD ibp10u) isource dc=10u type=dc

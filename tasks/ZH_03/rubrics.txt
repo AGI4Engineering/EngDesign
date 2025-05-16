@@ -1,0 +1,4 @@
+## Evaluation Rubric
+- pass cruising range test : 30 points
+- pass max speed requirement : 30 points
+- pass hill climbing ability : 40 points

@@ -1,0 +1,50 @@
+
+// Library name: MP4
+// Cell name: fc_ota
+// View name: schematic
+subckt fc_ota VDD VSS ibn10u vin vip vout
+    p11 (BP2 ibn10u net22 VDD) tsmc18dP w=3.015u l=495.00n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=4 region=sat
+    p0 (net1 BP2 VDD VDD) tsmc18dP w=3.015u l=990.0n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=24 region=sat
+    p10 (net22 BP2 VDD VDD) tsmc18dP w=3.015u l=990.0n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=4 region=sat
+    p12 (BN2 ibn10u net18 VDD) tsmc18dP w=3.015u l=495.00n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=4 region=sat
+    p9 (net18 BP2 VDD VDD) tsmc18dP w=3.015u l=990.0n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=4 region=sat
+    p1 (net12 ibn10u net1 VDD) tsmc18dP w=3.015u l=495.00n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=24 region=sat
+    p3 (net3 vip net12 VDD) tsmc18dP w=3.015u l=495.00n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=24 region=sat
+    p2 (net4 vin net12 VDD) tsmc18dP w=3.015u l=495.00n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=24 region=sat
+    p8 (vout ibn10u net16 VDD) tsmc18dP w=3.015u l=495.00n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=4 region=sat
+    p7 (net2 ibn10u net13 VDD) tsmc18dP w=3.015u l=495.00n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=4 region=sat
+    p6 (net16 net2 VDD VDD) tsmc18dP w=3.015u l=360.0n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=4 region=sat
+    p4 (net13 net2 VDD VDD) tsmc18dP w=3.015u l=360.0n as=1.35675e-12 \
+        ad=1.35675e-12 ps=6.93u pd=6.93u m=4 region=sat
+    n7 (net11 BN1 VSS VSS) tsmc18dN w=1.485u l=990.0n as=6.6825e-13 \
+        ad=6.6825e-13 ps=3.87u pd=3.87u m=2 region=sat
+    n5 (BN1 BN2 net11 VSS) tsmc18dN w=1.485u l=990.0n as=6.6825e-13 \
+        ad=6.6825e-13 ps=3.87u pd=3.87u m=6 region=sat
+    N3 (net4 BN1 VSS VSS) tsmc18dN w=1.395u l=990.0n as=6.2775e-13 \
+        ad=6.2775e-13 ps=3.69u pd=3.69u m=8 region=sat
+    N2 (net3 BN1 VSS VSS) tsmc18dN w=1.395u l=990.0n as=6.2775e-13 \
+        ad=6.2775e-13 ps=3.69u pd=3.69u m=8 region=sat
+    n4 (vout BN2 net4 VSS) tsmc18dN w=1.395u l=990.0n as=6.2775e-13 \
+        ad=6.2775e-13 ps=3.69u pd=3.69u m=6 region=sat
+    N0 (net2 BN2 net3 VSS) tsmc18dN w=1.395u l=990.0n as=6.2775e-13 \
+        ad=6.2775e-13 ps=3.69u pd=3.69u m=6 region=sat
+    R1 (BP2 ibn10u) resistor r=10K m=1
+    R0 (BN2 BN1) resistor r=10K m=1
+ends fc_ota
+// End of subcircuit definition.
+
+// Library name: MP4
+// Cell name: dut
+// View name: schematic
+I1 (net1 net2 net5 net3 net4 net6) fc_ota

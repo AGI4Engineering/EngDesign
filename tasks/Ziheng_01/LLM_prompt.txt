@@ -1,0 +1,46 @@
+## Task Description
+You are given an aircraft pitch-axis plant model and asked to design a Robust-Servo LQR (RS-LQR) controller. Consider the continuous‐time state–space model
+\[
+\dot{\bm x}_p = A_p\,\bm x_p + B_p\,u,\quad
+y = C_p\,\bm x_p + D_p\,u,
+\]
+where
+\[
+\bm x_p = [\alpha,\; q,\; \delta_e,\;\dot\delta_e]^T,\quad
+u = \delta_{\mathrm{cmd}},\quad
+y = [A_z,\;\alpha,\;q,\;\delta_e,\;\dot\delta_e]^T.
+\]
+The plant matrices are
+\[
+A_p = \begin{bmatrix}
+-1.3046 & 1.0     & -0.21420 &    0     \\
+ 47.71  & 0       & -104.83  &    0     \\
+ 0      & 0       & 0        &  1.0     \\
+ 0      & 0       & -12769.0 & -135.6
+\end{bmatrix},\quad
+B_p = [0,\;0,\;0,\;12769.0]^T,
+\]
+\[
+C_p = \begin{bmatrix}
+-1156.9 &  0  & -189.95 & 0 \\
+     1  &  0  &     0   & 0 \\
+     0  &  1  &     0   & 0 \\
+     0  &  0  &     1   & 0 \\
+     0  &  0  &     0   & 1
+\end{bmatrix},\quad
+D_p = \mathbf{0}_{5\times1}.
+\]
+Design a dynamic state–feedback controller
+\[
+\dot{\bm x}_c = A_c\,\bm x_c + B_{c1}\,y + B_{c2}\,r,\quad
+u = C_c\,\bm x_c + D_{c1}\,y + D_{c2}\,r,
+\]
+such that:
+\begin{itemize}
+  \item The closed‐loop rise time of \(A_z\) is \(<0.2\) s.
+  \item The system is stable.
+  \item The gain margin is \(>3\) dB.
+  \item The phase margin is \(>30\) degrees.
+\end{itemize}
+
+Please output all six controller matrices Ac, Bc1, Bc2, Cc, Dc1, Dc2 that satisfies the above requirements.

@@ -1,0 +1,8 @@
+Attempt 1:
+{'vf': 0.249, 'vf_threshold': 0.25, 'compliance_error': 'Fail (CE=0.7223)', 'Dsg_feature': 'Pass'}
+Attempt 2:
+{'vf': 0.249, 'vf_threshold': 0.25, 'compliance_error': 'Fail (CE=11.8107)', 'Dsg_feature': 'Pass'}
+Attempt 3:
+{'vf': 0.249, 'vf_threshold': 0.25, 'compliance_error': 'Fail (CE=0.9998)', 'Dsg_feature': 'Pass'}
+Attempt 4:
+{'vf': 0.249, 'vf_threshold': 0.25, 'compliance_error': 'Pass (CE=0.0001)', 'design feasibility': 'Potentially Infeasible', 'Dsg_feature': 'Pass'}

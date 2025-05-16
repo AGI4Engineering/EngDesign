@@ -1,0 +1,1 @@
+vout ibn10u VDD vin vip VSS

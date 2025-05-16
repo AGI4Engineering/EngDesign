@@ -1,0 +1,11 @@
+## parameters of designed strip dipole antenna
+height = 150           # Length in mm
+radius = 5              # Width in mm
+
+# Performance
+f_resonant = 0.487      # Resonant frequency in GHz (with S11 below -10 dB)
+s11_dB = -10.40         # Return loss (dB)
+bandwidth_MHz = 25.20      # Bandwidth in MHz
+max_gain_dBi = 1.18     # Maximum gain in dBi
+
+

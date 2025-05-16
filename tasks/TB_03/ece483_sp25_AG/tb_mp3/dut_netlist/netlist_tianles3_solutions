@@ -1,0 +1,24 @@
+
+// Library name: mp_3
+// Cell name: ota
+// View name: schematic
+subckt ota VDD VSS ibp10u vin vip vout
+    N3 (ibp10u ibp10u VSS VSS) tsmc18dN w=3u l=3u as=1.8e-12 ad=1.8e-12 \
+        ps=7.2u pd=7.2u m=1 region=sat
+    N5 (vout vin net2 net2) tsmc18dN w=600.0000u l=1.8u as=3.6e-10 \
+        ad=3.6e-10 ps=1.2012m pd=1.2012m m=1 region=sat
+    N1 (net2 ibp10u VSS VSS) tsmc18dN w=70.02u l=3u as=4.2012e-11 \
+        ad=4.2012e-11 ps=141.24u pd=141.24u m=1 region=sat
+    N4 (net4 vip net2 net2) tsmc18dN w=600.0000u l=1.8u as=3.6e-10 \
+        ad=3.6e-10 ps=1.2012m pd=1.2012m m=1 region=sat
+    P1 (net4 net4 VDD VDD) tsmc18dP w=180.00000u l=1.8u as=1.08e-10 \
+        ad=1.08e-10 ps=361.2u pd=361.2u m=1 region=sat
+    P0 (vout net4 VDD VDD) tsmc18dP w=180.00000u l=1.8u as=1.08e-10 \
+        ad=1.08e-10 ps=361.2u pd=361.2u m=1 region=sat
+ends ota
+// End of subcircuit definition.
+
+// Library name: mp_3
+// Cell name: dut
+// View name: schematic
+I0 (net6 net1 net4 net3 net2 net5) ota

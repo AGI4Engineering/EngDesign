@@ -1,0 +1,11 @@
+We will use exact code in evaluate.py to evaluate the correctness of LLM responses, based on the rubrics:
+
+1. Parse 'cluster_kb' and 'small_threshold_kb' from the JSON output.  
+2. Compute the true fragmentation overhead and metadata overhead using the specified formulas.  
+3. Verify:
+   - 'cluster_kb' is a power of 2 and within [4, 1024].
+   - 'small_threshold_kb' is a power of 2.
+   - The computed fragmentation overhead percentage ≤ 0.5 %.
+   - The computed metadata overhead percentage ≤ 0.05 %.
+4. Compare the LLM’s reported 'frag_overhead' and 'meta_overhead' against our computed values to award correctness points.
+5. Assign points according to the rubric and output a final pass/fail decision, detailed scoring breakdown, and overall score (0–100).

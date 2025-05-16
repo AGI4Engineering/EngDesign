@@ -1,0 +1,8 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step.",
+  "numCells_p": "Number of cells in the positive electrode",
+  "numCells_s": "Number of cells in the separator",
+  "NumChannel": "Number of channels",
+  "Flowrate": "Flow rate",
+  "ChannelDia": "Channel diameter"
+}

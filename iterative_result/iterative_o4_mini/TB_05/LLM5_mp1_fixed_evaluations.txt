@@ -1,0 +1,20 @@
+Attempt 1:
+{'metrics': {'dc_gain_vv': 2.511, 'bw_mrads': 30.465, 'vout_mv': 1.395}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 0, 'vout': 0}, 'score': 0, 'passed': False}
+Attempt 2:
+{'metrics': {'dc_gain_vv': 2.104, 'bw_mrads': 30.876, 'vout_mv': 1.153}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 0, 'vout': 0}, 'score': 0, 'passed': False}
+Attempt 3:
+{'metrics': {'dc_gain_vv': 2.93, 'bw_mrads': 62.868, 'vout_mv': 1.064}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 4:
+{'metrics': {'dc_gain_vv': 4.313, 'bw_mrads': 40.808, 'vout_mv': 0.642}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 0, 'vout': 0}, 'score': 0, 'passed': False}
+Attempt 5:
+{'metrics': {'dc_gain_vv': 3.494, 'bw_mrads': 19.932, 'vout_mv': 0.859}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 0, 'vout': 0}, 'score': 0, 'passed': False}
+Attempt 6:
+{'metrics': {'dc_gain_vv': 4.146, 'bw_mrads': 98.29, 'vout_mv': 0.726}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 7:
+{'metrics': {'dc_gain_vv': 3.594, 'bw_mrads': 223.854, 'vout_mv': 0.901}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 8:
+{'metrics': {'dc_gain_vv': 2.947, 'bw_mrads': 143.844, 'vout_mv': 1.189}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 9:
+{'metrics': {'dc_gain_vv': 3.157, 'bw_mrads': 105.114, 'vout_mv': 1.118}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 10:
+{'metrics': {'dc_gain_vv': 1.705, 'bw_mrads': 59.482, 'vout_mv': 1.437}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}

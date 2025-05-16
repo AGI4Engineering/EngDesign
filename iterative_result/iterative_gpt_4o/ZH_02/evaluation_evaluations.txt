@@ -1,0 +1,20 @@
+Attempt 1:
+{'r': 0.4, 'q_max_W_per_cm2': 8264323.080000001, 'Q_J_per_m2': 4779373205.129901, 'a_max_mps2': 5.71719597470885, 'passed': False}
+Attempt 2:
+{'r': 0.2, 'q_max_W_per_cm2': 11687517.78356899, 'Q_J_per_m2': 19117492820.519604, 'a_max_mps2': 1.4292989936772125, 'passed': False}
+Attempt 3:
+{'r': 0.15, 'q_max_W_per_cm2': 13495583.077004189, 'Q_J_per_m2': 33986653903.14596, 'a_max_mps2': 0.8039806839434318, 'passed': False}
+Attempt 4:
+{'r': 0.05, 'q_max_W_per_cm2': 23375035.56713798, 'Q_J_per_m2': 305879885128.31366, 'a_max_mps2': 0.08933118710482578, 'passed': False}
+Attempt 5:
+{'r': 0.12, 'q_max_W_per_cm2': 15088520.57808857, 'Q_J_per_m2': 53104146723.665565, 'a_max_mps2': 0.5145476377237963, 'passed': False}
+Attempt 6:
+{'r': 0.18, 'q_max_W_per_cm2': 12319725.463266956, 'Q_J_per_m2': 23601842988.29581, 'a_max_mps2': 1.1577321848785416, 'passed': False}
+Attempt 7:
+{'r': 0.12, 'q_max_W_per_cm2': 15088520.57808857, 'Q_J_per_m2': 53104146723.665565, 'a_max_mps2': 0.5145476377237963, 'passed': False}
+Attempt 8:
+{'r': 0.05, 'q_max_W_per_cm2': 23375035.56713798, 'Q_J_per_m2': 305879885128.31366, 'a_max_mps2': 0.08933118710482578, 'passed': False}
+Attempt 9:
+{'r': 0.06, 'q_max_W_per_cm2': 21338390.43767839, 'Q_J_per_m2': 212416586894.66226, 'a_max_mps2': 0.12863690943094908, 'passed': False}
+Attempt 10:
+{'r': 0.1, 'q_max_W_per_cm2': 16528646.160000002, 'Q_J_per_m2': 76469971282.07841, 'a_max_mps2': 0.3573247484193031, 'passed': False}

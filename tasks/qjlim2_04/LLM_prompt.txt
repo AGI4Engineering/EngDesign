@@ -1,0 +1,39 @@
+----------
+Background
+----------
+
+Cylindrical monopole antennas are vertically oriented antennas commonly used for broadband and omnidirectional communication in the azimuth plane. They are typically placed over a large ground plane and function as a half-wave dipole with one arm mirrored by the ground.
+
+In this task, you are to design a cylindrical monopole antenna that meets the specified performance objectives and constraints outlined below.
+
+The monopole is centered at the origin and aligned along the z-axis, extending vertically from the ground plane. The antenna is made of a highly conductive material such as copper and radiates in free space. It is mounted on a perfectly conducting square ground plane of size 300 m × 300 m and is fed using a 70-ohm lumped port at its base.
+
+------------------------------
+Task Objective and Constraints
+------------------------------
+
+Your task is to design a cylindrical monopole antenna that meets the following specifications:
+
+Resonant Frequency: 0.487 GHz (S11 ≤ –10 dB)
+
+Bandwidth: ≥ 10 MHz
+
+Gain: ≥ 0 dBi
+
+-------------
+Design Inputs
+-------------
+
+Determine the optimal design parameters to satisfy the task objectives:
+
+Height of cylindrical monopole in mm: height_mm
+
+Radius of cylindrical monopole in mm: radius_mm
+
+Confidence of your design: confidence
+
+----------------
+Additional Note
+----------------
+
+The radius of the antenna should generally be at most 1/20 of the length of the antenna.

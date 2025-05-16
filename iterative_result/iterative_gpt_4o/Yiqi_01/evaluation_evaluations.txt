@@ -1,0 +1,20 @@
+Attempt 1:
+{'F_op': [4, 8, 16], 'f_t_A_m': 2, 'f_t_A_k': 4, 'f_t_B_k': 4, 'f_t_B_n': 8, 'f_t_C_m': 2, 'f_t_C_n': 8, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}
+Attempt 2:
+{'F_op': [4, 8, 16], 'f_t_A_m': 2, 'f_t_A_k': 4, 'f_t_B_k': 4, 'f_t_B_n': 8, 'f_t_C_m': 2, 'f_t_C_n': 8, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}
+Attempt 3:
+{'F_op': [4, 4, 4], 'f_t_A_m': 4, 'f_t_A_k': 8, 'f_t_B_k': 8, 'f_t_B_n': 16, 'f_t_C_m': 4, 'f_t_C_n': 16, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}
+Attempt 4:
+{'F_op': [4, 4, 8], 'f_t_A_m': 2, 'f_t_A_k': 4, 'f_t_B_k': 2, 'f_t_B_n': 8, 'f_t_C_m': 2, 'f_t_C_n': 8, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}
+Attempt 5:
+{'F_op': [8, 8, 8], 'f_t_A_m': 2, 'f_t_A_k': 4, 'f_t_B_k': 4, 'f_t_B_n': 8, 'f_t_C_m': 2, 'f_t_C_n': 8, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}
+Attempt 6:
+{'F_op': [8, 4, 32], 'f_t_A_m': 2, 'f_t_A_k': 4, 'f_t_B_k': 2, 'f_t_B_n': 4, 'f_t_C_m': 2, 'f_t_C_n': 4, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}
+Attempt 7:
+{'F_op': [8, 10, 18], 'f_t_A_m': 4, 'f_t_A_k': 5, 'f_t_B_k': 5, 'f_t_B_n': 9, 'f_t_C_m': 4, 'f_t_C_n': 9, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}
+Attempt 8:
+{'F_op': [8, 10, 18], 'f_t_A_m': 4, 'f_t_A_k': 5, 'f_t_B_k': 5, 'f_t_B_n': 9, 'f_t_C_m': 4, 'f_t_C_n': 9, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}
+Attempt 9:
+{'F_op': [8, 8, 8], 'f_t_A_m': 2, 'f_t_A_k': 4, 'f_t_B_k': 4, 'f_t_B_n': 8, 'f_t_C_m': 2, 'f_t_C_n': 8, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}
+Attempt 10:
+{'F_op': [8, 8, 18], 'f_t_A_m': 4, 'f_t_A_k': 5, 'f_t_B_k': 5, 'f_t_B_n': 9, 'f_t_C_m': 4, 'f_t_C_n': 9, 'score': 20, 't10_time': 28672, 'ai_time': -1, 'passed': False}

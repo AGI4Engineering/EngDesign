@@ -1,0 +1,7 @@
+[1] Antenna-Theory.com, “Patch Antennas,” 2011–2021. [Online]. Available: https://www.antenna-theory.com/antennas/patches/patch4.php. [Accessed: Apr. 22, 2025].
+
+[2] K. R. Kashwan, V. Rajeshkumar, T. Gunasekaran, and K. R. Shankar Kumar, “Design and characterization of pin fed microstrip patch antennae,” in 2011 Eighth International Conference on Fuzzy Systems and Knowledge Discovery (FSKD), Shanghai, China, 2011, pp. 1737–1741. doi: 10.1109/FSKD.2011.6019756.
+
+[3] Antenna Toolbox, MATLAB, MathWorks, Natick, MA, USA. [Online]. Available: https://www.mathworks.com/products/antenna.html. [Accessed: Apr. 22, 2025].
+
+

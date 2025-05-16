@@ -1,0 +1,7 @@
+The following controller matrices can confirm the rise time faster than 0.2s and the stability. Additionally, the gain margin is bigger than 3 dB, the phase is bigger than 30 degrees.
+Ac = [0]
+Bc1 = [1 0 0 0 0]
+Bc2 = [-1]
+Cc = [-2.7726e-02]
+Dc1 = [0 5.0997 3.5837e-01 0 0]
+Dc2 = [0]

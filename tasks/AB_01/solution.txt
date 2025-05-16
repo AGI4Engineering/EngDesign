@@ -1,0 +1,59 @@
+Final Answers:
+Mean          = 37.5000
+Variance      = 17.3333
+Skewness      = 0.0000
+Kurtosis      = -0.5992
+GLCM_Contrast = 9.0000
+
+Above solutions can be determined mathmatically or via code. Below is one way to determine it using code:
+
+Solution for Radiomics Feature Extraction Task:
+
+Define ROI Polygon
+
+Vertices = [(2,2),(2,7),(7,7),(7,2)]
+
+Use matplotlib.path.Path on flipped (col,row) coordinates
+
+Build Pixel-Center Grid and Mask
+import numpy as np
+from matplotlib.path import Path
+rows, cols = image.shape
+ys = np.arange(rows) + 0.5
+xs = np.arange(cols) + 0.5
+xx, yy = np.meshgrid(xs, ys)
+pts = np.column_stack((xx.ravel(), yy.ravel()))
+mask = Path(verts[:, ::-1]).contains_points(pts).reshape(rows, cols)
+coords = list(zip(*np.nonzero(mask)))
+
+Extract Intensities
+vals = np.array([image[r, c] for r, c in coords], float)
+
+First-Order Statistics
+from scipy.stats import skew, kurtosis
+mean = vals.mean()
+variance = vals.var(ddof=1)
+skewness = skew(vals, bias=False)
+kurtosis = kurtosis(vals, fisher=True, bias=False)
+
+GLCM Contrast (horizontal offset [0,1])
+from collections import defaultdict
+def calculate_glcm_contrast(image, coords):
+glcm = defaultdict(int)
+count = 0
+for r, c in coords:
+nr, nc = r, c + 1
+if (nr, nc) in coords:
+glcm[(image[r, c], image[nr, nc])] += 1
+count += 1
+return sum((i - j)**2 * (freq / count) for (i, j), freq in glcm.items())
+contrast = calculate_glcm_contrast(image, coords)
+
+Final Rounded Results
+Mean = 37.5000
+Variance = 17.3333
+Skewness = 0.0000
+Kurtosis = -0.5992
+GLCM_Contrast = 9.0000
+
+

@@ -1,0 +1,23 @@
+## Evaluation Rubric (100 points total)
+
+General Policy
+--------------
+1. A submission must be syntactically valid and simulate without error; otherwise it receives 0.
+2. For each specification below, credit is given for the **highest satisfied tier only** (no double-counting).
+3. If the lower tier is not met, the score for that item is 0.
+4. All measurements are taken with the official testbench (VDD = 1.4 V, CL = 2 pF, VCM = 600 mV), unless otherwise specified.
+
+Scoring Table
+--------------
+
+### Design Specifications (100 points total)
+
+| Metric | Requirement | Points |
+|--------|-------------|--------|
+| DC Gain (AV0) | ≥ 40 dB | **20** |
+| Unity-Gain Frequency (fUGF) | ≥ 50 MHz | **20** |
+| Common-Mode Rejection Ratio (CMRR) | ≥ 80 dB | **20** |
+| Input Common-Mode Range (ICMR) | ≥ 800 mV | **20** |
+| Proper Netlist Naming and Pin Order | Correct extraction, correct pin names and order | **20** |
+
+Maximum Possible: **100 points**

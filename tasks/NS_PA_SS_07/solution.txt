@@ -1,0 +1,54 @@
+module model (
+    input [7:0] din,
+    input [2:0] addr,
+    input wr,
+    input rd,
+    input clk,
+    input resetn,
+    output logic [7:0] dout,
+    output logic error
+);
+
+    reg [7:0] mem [7:0];
+    reg [7:0] dout_int;
+    reg error_int;
+
+    always @(posedge clk) begin
+        if (!resetn) begin
+            // If reset mode, all entries are set to zero
+            mem[0] <= 0;
+            mem[1] <= 0;
+            mem[2] <= 0;
+            mem[3] <= 0;
+            mem[4] <= 0;
+            mem[5] <= 0;
+            mem[6] <= 0;
+            mem[7] <= 0;
+            dout_int <= 0;
+            error_int <= 0;
+        end
+        else begin
+            if (!wr & !rd) begin  // NOP
+                dout_int <= 0;
+                error_int <= 0;
+            end
+            else if (wr & !rd) begin  // Write
+                mem[addr] <= din;
+                dout_int <= 0;
+                error_int <= 0;
+            end
+            else if (!wr & rd) begin  // Read
+                dout_int <= mem[addr];
+                error_int <= 0;
+            end
+            else begin  // Not allowed
+                dout_int <= 0;
+                error_int <= 1;
+            end
+        end
+    end
+
+    assign dout = dout_int;
+    assign error = error_int;
+
+endmodule

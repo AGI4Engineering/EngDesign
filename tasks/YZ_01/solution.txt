@@ -1,0 +1,9 @@
+## top level parameters:
+Fpass = 10e6
+Fstop = 15.36e6
+Ast = 60
+Ap = 0.1
+
+## reduction factors for the last two decimating FIR filters
+Factor_1 = 2.0
+Factor_2 = 2.0

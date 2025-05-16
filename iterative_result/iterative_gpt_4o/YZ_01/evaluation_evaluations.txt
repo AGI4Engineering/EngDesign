@@ -1,0 +1,20 @@
+Attempt 1:
+{'Fpass': 10500000.0, 'Fstop': 15000000.0, 'Ast': 60.0, 'Ap': 0.1, 'Factor_1': 4.0, 'Factor_2': 5.0, 'fpsrEVM': 0.04140815953293701, 'fpspEVM': 0.07989077319736808}
+Attempt 2:
+{'Error': 'Expected TransitionWidth to be positive.'}
+Attempt 3:
+{'Error': 'Expected TransitionWidth to be positive.'}
+Attempt 4:
+{'Error': 'Expected TransitionWidth to be positive.'}
+Attempt 5:
+{'Error': 'Expected TransitionWidth to be positive.'}
+Attempt 6:
+{'Error': 'Expected TransitionWidth to be positive.'}
+Attempt 7:
+{'Error': 'Expected TransitionWidth to be positive.'}
+Attempt 8:
+{'Error': 'Expected TransitionWidth to be positive.'}
+Attempt 9:
+{'Error': 'Expected TransitionWidth to be positive.'}
+Attempt 10:
+{'Error': 'Expected TransitionWidth to be positive.'}

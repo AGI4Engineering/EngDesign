@@ -1,0 +1,4 @@
+## Evaluation Rubric
+- Meet target 1, 30 points
+- Meet target 2, 70 points
+

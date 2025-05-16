@@ -1,0 +1,3 @@
+https://chipdev.io/question/32
+
+Question 32 : Configurable 8-Bit LFSR

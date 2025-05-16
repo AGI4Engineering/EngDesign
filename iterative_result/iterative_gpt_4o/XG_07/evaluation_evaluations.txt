@@ -1,0 +1,20 @@
+Attempt 1:
+{'A_correct': False, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.01401732395595836, 'peak': 0.03090169059943859, 'attenuation': 0.5734079784168857}
+Attempt 2:
+{'A_correct': False, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.014009591775712862, 'peak': 0.030885831351557085, 'attenuation': 0.5727756523057579}
+Attempt 3:
+{'A_correct': False, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.014026260700532055, 'peak': 0.030919933997127603, 'attenuation': 0.5741392423684158}
+Attempt 4:
+{'A_correct': False, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.014036200592404983, 'peak': 0.03094028474137536, 'attenuation': 0.5749531333676389}
+Attempt 5:
+{'A_correct': False, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.014036200592404983, 'peak': 0.03094028474137536, 'attenuation': 0.5749531333676389}
+Attempt 6:
+{'A_correct': False, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.014009591775712862, 'peak': 0.030885831351557085, 'attenuation': 0.5727756523057579}
+Attempt 7:
+{'A_correct': False, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.014058276460542715, 'peak': 0.030986240002917012, 'attenuation': 0.5767627814882581}
+Attempt 8:
+{'A_correct': False, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.014082046350148968, 'peak': 0.031037926838312337, 'attenuation': 0.5787144578345523}
+Attempt 9:
+{'A_correct': False, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.014082046350148968, 'peak': 0.031037926838312337, 'attenuation': 0.5787144578345523}
+Attempt 10:
+{'A_correct': False, 'B_correct': True, 'rms_correct': False, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.014082046350148968, 'peak': 0.031037926838312337, 'attenuation': 0.5787144578345523}

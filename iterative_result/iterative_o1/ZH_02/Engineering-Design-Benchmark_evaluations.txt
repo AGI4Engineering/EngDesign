@@ -1,0 +1,20 @@
+Attempt 1:
+{'r': 0.4, 'q_max_W_per_cm2': 8264323.080000001, 'Q_J_per_m2': 4779373205.129901, 'a_max_mps2': 5.71719597470885, 'passed': False}
+Attempt 2:
+{'r': 27300000.0, 'q_max_W_per_cm2': 1000.3591733772475, 'Q_J_per_m2': 1.026043168190616e-06, 'a_max_mps2': 2.6631056174942236e+16, 'passed': False}
+Attempt 3:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}
+Attempt 4:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}
+Attempt 5:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}
+Attempt 6:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}
+Attempt 7:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}
+Attempt 8:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}
+Attempt 9:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}
+Attempt 10:
+{'r': 1.0, 'q_max_W_per_cm2': 5226816.850459587, 'Q_J_per_m2': 764699712.8207841, 'a_max_mps2': 35.732474841930305, 'passed': False}

@@ -1,0 +1,2 @@
+Attempt 1:
+{'Coefficient a is correct': np.True_, 'Coefficient b is correct': np.True_, 'Coefficient c is correct': np.True_, 'Errors in the fit are within acceptable limits': np.True_}

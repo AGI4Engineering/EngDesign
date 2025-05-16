@@ -1,0 +1,8 @@
+## Evaluation Rubric
+- Fpass: 15 points
+- Fstop: 15 points
+- Ast: 15 points
+- Ap: 15 points
+- Factor_1 & Factor_2: 40 points
+
+

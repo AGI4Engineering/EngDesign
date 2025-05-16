@@ -1,0 +1,18 @@
+## Task Description
+You are tasked with designing a heat shield for a small spacecraft re-entering Earth’s atmosphere from low Earth orbit (LEO). The spacecraft follows a ballistic reentry trajectory. Your goal is to determine an appropriate heat shield radius (in meters) that satisfies the following performance constraints:
+
+- The peak heat flux on the heat shield must not exceed **1000 W/cm²**
+- The total heat load must not exceed **100 MJ/m²**
+- The peak deceleration must not exceed **30g** (where 1g = 9.81 m/s²)
+
+The spacecraft is spherical with the following properties:
+- by experience it reaches highest heat at 40km above sea level
+- Initial velocity: 7.8 km/s
+- at 40km the speed is about 5500m/s and lose about half the heat
+- Entry altitude: 400 km
+- Flight path angle: –6 degrees
+- Mass: 250 kg
+- Drag coefficient: 0.47
+
+
+Your output should propose a value of the heat shield radius that satisfies all three constraints.

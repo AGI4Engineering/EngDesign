@@ -1,0 +1,37 @@
+## Task Description
+You are tasked with designing a wheel-motor-gear system for a lightweight electric ground robot. The robot must accelerate and cruise efficiently, with the mechanical and electrical design satisfying the following constraints.
+
+Your goal is to determine a feasible set of design parameters for:
+- Gear ratio **r**
+- Wheel diameter **d** (in meters)
+- Battery capacity **C** (in Wh)
+- Robot mass **m** (in kg)
+
+These four parameters must satisfy all of the following performance constraints:
+
+- The robot must reach a top linear velocity of at least **3.0 m/s**
+- The robot must be able to climb a **10-degree incline** 
+- The battery must support at least **30 minutes** of level cruising at **2.5 m/s** average speed without recharging
+
+The robot has the following physical characteristics:
+
+- Motor voltage: 24 V  
+- Max torque: 0.3 Nm at 4000 rpm  
+- Motor efficiency: 80%  
+- Rolling resistance coefficient: 0.015  
+- Robot cross-sectional area: 0.05 m²  
+- Gravitational acceleration: g = 9.81 m/s²
+
+
+Your output should propose values for the four design parameters that satisfy all three constraints.
+
+### Response Format
+Please provide your response in the following format:
+
+{
+  "reasoning": "<Your reasoning and design process>",
+  "r": <proposed gear ratio>,
+  "d": <proposed wheel diameter in meters>,
+  "C": <proposed battery capacity in Wh>,
+  "m": <proposed robot mass in kg>
+}

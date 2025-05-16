@@ -1,0 +1,6 @@
+Attempt 1:
+{'max_displacement_y': 19.44302068685415, 'threshold': 2.0}
+Attempt 2:
+{'max_displacement_y': 2.434648399179653, 'threshold': 2.0}
+Attempt 3:
+{'max_displacement_y': 1.8299688799911769, 'threshold': 2.0}

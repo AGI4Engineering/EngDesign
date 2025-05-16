@@ -1,0 +1,3 @@
+- Tetris Guideline: https://tetris.fandom.com/wiki/Tetromino
+- SystemVerilog ROM implementation: IEEE Std 1800-2017
+- Tetris hardware design discussions: https://www.fpga4student.com/2017/08/fpga-verilog-code-for-tetris-game.html

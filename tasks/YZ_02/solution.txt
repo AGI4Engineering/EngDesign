@@ -1,0 +1,6 @@
+## coefficients for analytical expression (1):
+coeff_list_1 = [6.352, 1.379, 0.513, 0.316]
+
+## coefficients for analytical expression (2):
+coeff_list_2 = [0.509, 0.1922, -0.001485]
+

@@ -1,0 +1,28 @@
+HEADER
+"PSFversion" "1.00"
+"Run Generator" "drlRun rev. 1.0"
+"Run Time Stamp" "Apr 27 11:55:41 2025"
+"simulator" "spectre"
+"date" "Apr 27 11:55:41 2025"
+ "externalSweepVariableCount" 0
+"#maeTestName" ""
+"#maeHistoryName" ""
+"#maeCorner" "nom"
+ "#maeDesignPoint" -1
+"netlistDir" "../maestro/results/maestro/ExplorerRun.0/1/ece483_sp25_AG_tb_mp3_1/netlist_tianles3"
+TYPE
+"runObject" STRUCT(
+"logName" ARRAY( * ) STRING *
+"parent" STRING *
+"sweepVariable" ARRAY( * ) STRING *
+) PROP( "key" "runObject" )
+VALUE
+"Run1" "runObject" (
+(
+"logFile"
+"artistLogFile"
+)
+""
+()
+)
+END

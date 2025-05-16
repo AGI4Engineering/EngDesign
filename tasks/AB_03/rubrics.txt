@@ -1,0 +1,8 @@
+## Evaluation Rubric
+
+Comparison score for approximate polygon (based on vertex count and bounding box IoU): 50 points
+Comparison score for convex hull (based on vertex count and bounding box IoU): 50 points
+
+Total Score = (approx_comparison_score + hull_comparison_score) / 2.0 * 100
+Passing Score >= 95.0
+

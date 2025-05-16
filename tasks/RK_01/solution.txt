@@ -1,0 +1,5 @@
+## Simulation Result (MATLAB eval)
+
+- As shown in solution.png
+- C_y (minimum compliance): 0.058
+- Dsg_feature: 'Asymmetric-X'

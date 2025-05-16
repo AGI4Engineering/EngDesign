@@ -1,0 +1,5 @@
+% Reference solution
+K_num = [5.6765, 8.9753]
+K_den = [3.3166, 0]
+omega_r = 5
+beta_r = 8

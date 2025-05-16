@@ -1,0 +1,9 @@
+## relative bandwidth:
+relativeBW = 0.45 
+
+## parameters of designed helical antenna
+r = 0.3e-3
+D = 56e-3;
+turns = 17.5;
+pitch = 11.2;
+side = 600e-3;

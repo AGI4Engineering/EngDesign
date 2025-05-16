@@ -1,0 +1,20 @@
+Attempt 1:
+{'metrics': {'dc_gain_db': 25.27, 'ugf_mhz': 12.746, 'pm_deg': 90.244, 'icmr_v': 0.0, 'io_err_mv': 0.334, 'idc_ua': 71.5}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 10, 'idc': 10}, 'score': 35, 'passed': False}
+Attempt 2:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -93.24, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 526.058, 'idc_ua': 97.2}, 'score': 0, 'passed': False}
+Attempt 3:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -92.7, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 537.977, 'idc_ua': 56.2}, 'score': 0, 'passed': False}
+Attempt 4:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -78.0, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 522.84, 'idc_ua': 62.8}, 'score': 0, 'passed': False}
+Attempt 5:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -68.67, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 485.121, 'idc_ua': 119.0}, 'score': 0, 'passed': False}
+Attempt 6:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -49.44, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 422.02, 'idc_ua': 116.1}, 'score': 0, 'passed': False}
+Attempt 7:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -81.7, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 521.499, 'idc_ua': 76.3}, 'score': 0, 'passed': False}
+Attempt 8:
+{'metrics': {'dc_gain_db': 22.09, 'ugf_mhz': 12.771, 'pm_deg': 90.868, 'icmr_v': 0.0, 'io_err_mv': 14.102, 'idc_ua': 103.5}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 9:
+{'metrics': {'dc_gain_db': 10.55, 'ugf_mhz': 6.589, 'pm_deg': 107.428, 'icmr_v': 0.0, 'io_err_mv': 70.428, 'idc_ua': 107.1}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'pm': 15, 'icmr': 0, 'io_err': 0, 'idc': 10}, 'score': 25, 'passed': False}
+Attempt 10:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -61.1, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 468.638, 'idc_ua': 126.8}, 'score': 0, 'passed': False}

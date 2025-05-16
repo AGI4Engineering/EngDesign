@@ -1,0 +1,5 @@
+## Required Current: 
+
+The following alpha is the optimal solution: 
+
+alpha = 1.087.

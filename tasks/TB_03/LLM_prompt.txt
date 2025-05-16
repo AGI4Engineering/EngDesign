@@ -1,0 +1,65 @@
+## Task Description (OTA Sizing Only)
+You are given a  5-transistor differential-to-single-ended OTA  topology whose schematic has already been instantiated.  
+The full netlist is shown in the code block **<OTA_TEMPLATE>** below, where every
+MOSFET width/length placeholder appears as symbols `W0…`, `L0…`, etc.
+The output should be only the OTA_TEMPLATE format provided under.
+
+### Task 1 — Device Sizing
+**Process Rule**  
+All MOSFETs must instantiate **exactly** the foundry models  
+`tsmc18dP` (PMOS) and `tsmc18dN` (NMOS).  
+You **may only adjust** the parameters `W`, `L`, and `m` (multiplier).  
+Do **not** edit or override any other model settings, corners, or temperatures.
+
+Replace every `W*`, `L*`,  and `M*` placeholder in the template with concrete numeric
+values (µm or Ω) so that the design meets the required performance.  
+**Do not** change device connectivity, add/delete devices, or alter pin names.
+
+Task 2 — Performance Verification
+
+Using the provided Cadence/SPECTRE testbench (differential input OTA, CL = 2 pF, VDD = 1.4 V, VSS = 0 V), verify that your OTA design satisfies the following specifications:
+
+| Spec                          | Target                  |
+|-------------------------------|-------------------------|
+| DC differential-mode gain AV0 | ≥ 40 dB                |
+| Unity-gain frequency fUGF     | ≥ 50 MHz               |
+| Common-mode rejection ratio CMRR | ≥ 80 dB            |
+| Input common-mode range ICMR  | ≥ 800 mV*              |
+
+*ICMR pass rule: for VCM ∈ {VSS, VDD}, each point must achieve
+fUGF(VCM) ≥ 50 MHz, AV(VCM) ≥ AV0 − 3 dB, and CMRR(VCM) ≥ CMRR0 − 3 dB,
+where AV0 and CMRR0 are the values measured at a nominal VCM.
+
+---
+
+### <OTA_TEMPLATE>
+```spice
+
+// Library name: MP3
+// Cell name: ota
+// View name: schematic
+subckt ota VDD VSS ibp10u vin vip vout
+    N3 (ibp10u ibp10u VSS VSS) tsmc18dN w=30.015u l=3.015u as=1.35068e-11 \
+        ad=1.35068e-11 ps=60.93u pd=60.93u m=M3 region=sat
+    N2 (net7 ibp10u VSS VSS) tsmc18dN w=480.015u l=3.015u as=2.16007e-10 \
+        ad=2.16007e-10 ps=960.93u pd=960.93u m=M2 region=sat
+    N5 (vout vin net7 net7) tsmc18dN w=W5 l=L5 as=W5 * 2.5 * (180.0n) ad=W5 * 2.5 * (180.0n) \
+         ps=(2 * W5) + (5 * (180.0n)) pd=(2 * W5) + (5 * (180.0n)) m=M5 \
+        region=sat
+    N4 (net8 vip net7 net7) tsmc18dN w=W4 l=L4 as=W4 * 2.5 * (180.0n) ad=W4 * 2.5 * (180.0n) \
+         ps=(2 * W4) + (5 * (180.0n)) pd=(2 * W4) + (5 * (180.0n)) m=M4 \
+        region=sat
+    P1 (net8 net8 VDD VDD) tsmc18dP w=W1 l=L1 as=W1 * 2.5 * (180.0n) ad=W1 * 2.5 * (180.0n) \
+         ps=(2 * W1) + (5 * (180.0n)) pd=(2 * W1) + (5 * (180.0n)) m=M1 \
+        region=sat
+    P0 (vout net8 VDD VDD) tsmc18dP w=W0 l=L0 as=W0 * 2.5 * (180.0n) ad=W0 * 2.5 * (180.0n) \
+         ps=(2 * W0) + (5 * (180.0n)) pd=(2 * W0) + (5 * (180.0n)) m=M0 \
+        region=sat
+ends ota
+// End of subcircuit definition.
+
+// Library name: MP3
+// Cell name: dut
+// View name: schematic
+I16 (net1 net2 net6 net4 net3 net5) ota
+

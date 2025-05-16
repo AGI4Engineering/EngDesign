@@ -1,0 +1,9 @@
+### Task 1
+The maximum width of the SA is ceil(128/0.7)=183 (or 182 if rounded down, both are acceptable).
+
+### Task 2
+The minimum required HBM bandwidth is 74 GB/s.
+
+### Task 3
+Prefill: (DP=1, TP=32, PP=1, batch_size=2)
+Decode: (DP=1, TP=64, PP=1, batch_size=32)

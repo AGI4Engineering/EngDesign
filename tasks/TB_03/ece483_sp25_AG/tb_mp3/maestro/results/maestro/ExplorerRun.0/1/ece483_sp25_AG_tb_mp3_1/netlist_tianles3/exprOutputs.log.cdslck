@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      andrewn7
+HostName                       fastx3-06.ews.illinois.edu
+ProcessIdentifier              581887
+ProcessCreationTime_UTC        1676515617
+ProcessCreationTime_Readable   Wed Feb 15 20:46:57 2023 CST
+AppIdentifier                  /software/cadence-2021-09/ICADVM201/tools.lnx86/dfII/bin/64bit/vds
+OSType                         lnx86
+ReasonForPlacingEditLock       Set lock by hiiLockFile
+FilePathUsedToEditLock         /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp3/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp3_1/netlist/exprOutputs.log
+TimeEditLocked                 Wed Feb 15 20:46:58 2023 CST

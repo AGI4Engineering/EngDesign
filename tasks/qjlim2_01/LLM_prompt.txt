@@ -1,0 +1,34 @@
+## Background
+
+Microstrip patch antennas are widely used in modern wireless communication due to their low profile, ease of fabrication, and compatibility with printed circuit board (PCB) technology. 
+
+In this task, you are to design a rectangular microstrip patch antenna that satisfy the task objective and constraints stated below.
+
+The antenna is centered at the origin with the patch facing the +z direction. The feed point lies in the x-y plane. The dielectric substrate must be selected from commercially available Rogers low-loss laminates, and the chosen material's permittivity will influence the design.
+
+## Task Objective and Constraints
+
+Your task is to design a rectangular microstrip patch antenna that meets the following specifications:
+
+- Resonant Frequency: 1.537 GHz (S11 <= –10 dB)
+- Bandwidth: >= 50 MHz
+- Gain: >= 3 dBi
+- Volume Constraint (Ground Plane Size) [ Length × Width × Height ]: <= 100 mm × 100 mm × 10 mm
+- Feed Method: 50-ohm coaxial pin feed (from below substrate)
+- Substrate Material: Rogers low-loss laminate (commercially available)
+
+## Design Inputs
+
+Determine the optimal design parameters to satisfy the task objectives:
+
+- Length of Metallic Patch in mm: length_mm
+- Width of Metallic Patch in mm: width_mm
+- Substrate height in mm: height_mm
+- Relative permittivity of selected Rogers material: epsilon_r
+- Feed position in the x direction relative to patch center: feed_offset_x_mm
+- Confidence of your design: confidence
+
+## Design Context
+
+- Ground Plane Size is 1.5 times max(Length, Width)
+- Patch size (Length and Width) have to be smaller than ground plane size

@@ -1,0 +1,16 @@
+CADENCE IHNL11140
+$model
+ece483_sp23/tb_mp4/schematic tb_mp4
+ece483_sp23/fc_ota/schematic fc_ota
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+VDD VDD
+CL CL
+VCM VCM
+VSS VSS
+vstep vstep
+t_step t_step
+$endparam

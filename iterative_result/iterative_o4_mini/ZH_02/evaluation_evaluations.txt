@@ -1,0 +1,20 @@
+Attempt 1:
+{'r': 2.5, 'q_max_W_per_cm2': 3305729.2320000003, 'Q_J_per_m2': 122351954.05132546, 'a_max_mps2': 223.32796776206442, 'passed': False}
+Attempt 2:
+{'r': 4.0, 'q_max_W_per_cm2': 2613408.4252297934, 'Q_J_per_m2': 47793732.051299006, 'a_max_mps2': 571.7195974708849, 'passed': False}
+Attempt 3:
+{'r': 4.0, 'q_max_W_per_cm2': 2613408.4252297934, 'Q_J_per_m2': 47793732.051299006, 'a_max_mps2': 571.7195974708849, 'passed': False}
+Attempt 4:
+{'r': 4.0, 'q_max_W_per_cm2': 2613408.4252297934, 'Q_J_per_m2': 47793732.051299006, 'a_max_mps2': 571.7195974708849, 'passed': False}
+Attempt 5:
+{'r': 5.0, 'q_max_W_per_cm2': 2337503.556713798, 'Q_J_per_m2': 30587988.512831364, 'a_max_mps2': 893.3118710482577, 'passed': False}
+Attempt 6:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}
+Attempt 7:
+{'r': 4.0, 'q_max_W_per_cm2': 2613408.4252297934, 'Q_J_per_m2': 47793732.051299006, 'a_max_mps2': 571.7195974708849, 'passed': False}
+Attempt 8:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}
+Attempt 9:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}
+Attempt 10:
+{'error': "'<=' not supported between instances of 'complex' and 'int'"}

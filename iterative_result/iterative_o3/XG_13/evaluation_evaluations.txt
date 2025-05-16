@@ -1,0 +1,20 @@
+Attempt 1:
+{'Stability': True, 'Settling Time (s)': np.float64(0.08601720344068814), 'Overshoot (%)': np.float64(15.227083061049363)}
+Attempt 2:
+{'Stability': True, 'Settling Time (s)': np.float64(0.06601320264052811), 'Overshoot (%)': np.float64(10.46737791141541)}
+Attempt 3:
+{'Stability': True, 'Settling Time (s)': np.float64(0.07201440288057612), 'Overshoot (%)': np.float64(11.11141393192867)}
+Attempt 4:
+{'Stability': True, 'Settling Time (s)': np.float64(0.08201640328065612), 'Overshoot (%)': np.float64(11.923022117722471)}
+Attempt 5:
+{'Stability': True, 'Settling Time (s)': np.float64(0.08516213560432362), 'Overshoot (%)': np.float64(18.727404161378193)}
+Attempt 6:
+{'Stability': True, 'Settling Time (s)': np.float64(0.09865824782951856), 'Overshoot (%)': np.float64(16.85747366674546)}
+Attempt 7:
+{'Stability': True, 'Settling Time (s)': np.float64(0.2100673801030519), 'Overshoot (%)': np.float64(10.300471778064457)}
+Attempt 8:
+{'Stability': True, 'Settling Time (s)': np.float64(0.14285714285714285), 'Overshoot (%)': np.float64(43.03009398559017)}
+Attempt 9:
+{'Stability': True, 'Settling Time (s)': np.float64(0.04600920184036807), 'Overshoot (%)': np.float64(12.593051070958762)}
+Attempt 10:
+{'Stability': True, 'Settling Time (s)': np.float64(0.10013812154696132), 'Overshoot (%)': np.float64(4.218847493575595e-13)}

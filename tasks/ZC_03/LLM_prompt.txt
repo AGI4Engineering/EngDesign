@@ -1,0 +1,77 @@
+## Task Description
+
+We consider a multi-armed bandit (MAB) problem, where each arm corresponds to a different treatment option (e.g., a specific drug administered to a patient). Pulling an arm represents prescribing and administering that particular drug. The reward received after pulling an arm reflects the patient's observed health outcome following the treatment, such as improvement in symptoms or biomarker changes.
+
+\subsection*{1. Environment}
+\begin{itemize}
+    \item $K \in \mathbb{N}$ denotes the number of arms.
+    \item Let $L \in \mathbb{N}$, and $T = L*K$ is the fixed time horizon.
+    \item Each arm $i \in \{1,\dots,K\}$ produces i.i.d.\ rewards drawn from an unknown, $1$-sub-Gaussian distribution $P_i$ with mean $\mu_i \in [0,1]$.
+\end{itemize}
+
+\subsection*{2. Interaction processes}
+
+At each round $t \in \{1, \dots, T\}$, the learner selects an arm $a_t \in \{1,\dots,K\}$, which corresponds to administering a particular treatment (e.g., giving a specific drug to a patient). After pulling arm $a_t$, the learner observes a reward $r_t \sim P_{a_t}$. 
+
+\subsection*{3. Cumulative regret}
+One important performance metric in MAB problems is the cumulative regret, which ideally should be as small as possible; a lower cumulative regret often indicates better overall welfare of the patients. The definition of the regret is:
+    \[
+        R_T \;:=\;
+        \mathbb{E}\!\Bigl[\, \sum_{t=1}^{T} \bigl(\mu^\ast - \mu_{a_t}\bigr) \Bigr],
+        \quad
+        \mu^\ast \;:=\; \max_{1\le i \le K} \mu_i .
+    \]
+
+\subsection*{4. Average treatment effect (ATE)}
+The ATE quantifies the difference in expected outcomes between two treatments (or arms). Estimating the ATE allows us to identify the performance of each treatment. 
+
+For any two arms $i,j$ define the true ATE
+\[
+    \Delta_{ij} \;:=\; \mu_i \;-\; \mu_j .
+\]
+For arm $i$ the reward estimator after $T$ iterations is $\hat{\mu}_i$. The empirical ATE between arms $i$ and $j$ is
+\[
+    \hat{\Delta}_{ij} \;:=\; \hat{\mu}_i \;-\; \hat{\mu}_j.
+\]
+Besides, we define the maximum ATE estimation error after $T$ rounds as
+    \[
+        \hat{\Delta}_T \;:=\;
+        \max_{1 \le i < j \le K}
+        \bigl| \, \hat{\Delta}_{ij} - \Delta_{ij} \, \bigr|.
+    \]
+We aim for the $\hat{\Delta}_T$ to be as small as possible.
+
+\subsection*{5. Performance Quantities}
+Minimizing both cumulative regret and ATE estimation error is essential to balance effective decision-making with accurate statistical inference. Low regret indicates that the learner is consistently selecting high-performing arms and thus achieving strong reward performance. At the same time, a small ATE estimation error enables reliable comparisons between treatments, which is critical for understanding their relative effectiveness. To capture this trade-off, we aim to minimize the following objective:
+    \[
+        J \;:=\;
+        \mathbb{E}\!\bigl[ \sqrt{R_T} \bigr]
+        \;\cdot\;
+        \mathbb{E}\!\bigl[ \hat{\Delta}_T \bigr].
+    \]
+We want to design a learning algorithm that can minimize $J$.
+
+\subsection*{6. Two--phase algorithm design}
+We aim to design a two-phase algorithm to minimize \(J\). Let \(\alpha\) and \(\beta\) satisfy \(1 \le K^{\alpha}L^{\beta} \le T\). The algorithm proceeds in two stages: an initial uniform exploration phase, followed by an adaptive exploitation phase based on the collected data.
+
+\paragraph{Exploration phase (rounds $1,\dots,K^{\alpha}L^{\beta}$).}
+Pull every arm in a round--robin fashion.
+
+
+\paragraph{Exploitation phase (rounds $K^{\alpha}L^{\beta}+1,\dots,T$).}
+Run the standard UCB rule.
+
+The resulting $J$ is denoted $J(\alpha,\beta)$.
+  
+### Task 
+
+Here we analyze the asymptotic behavior of $J$, focusing only on the constants $K$ and $L$, ignoring the logarithmic term and other constant factors.
+
+ \textbf{Goal:} Find the upper bounds and lower bounds of $\alpha$ and $\beta$ $\{\bar\alpha,\bar\beta,\underline{\alpha},\underline{\beta}\}$ such that
+ \[
+        \forall \alpha \in [\bar\alpha,\underline{\alpha}],\ \forall \beta\in[\bar\beta,\underline{\beta}];\quad J(\alpha,\beta) = \min_{x,y \in S} J(x,y) 
+ \]
+ where
+ \[
+        S \;:=\; \bigl\{\, \alpha,\beta \in \mathbb{R} \,:\; 1 \le K^{\alpha}L^\beta \le T \bigr\}.
+ \]

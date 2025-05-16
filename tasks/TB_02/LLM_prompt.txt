@@ -1,0 +1,63 @@
+## Task Description (FC‑OTA Sizing Only)
+You are asked to design a folded‑cascode OTA topology including the folded-cascode and its bias current.  
+The output should be the same format as the ### <TEMPLATE> provided under. Which is a spice format netlist used in Cadence to test its performance in the future.
+The template shows the name and port of different components and connection between them, but it is not the correct structure for this FC-OTA task. You should create a different netlist to solve this problem.
+
+Testbench Configuration
+The testbench is a unity-gain buffer connection (feedback from output vout to inverting input vin).
+VDD = 1.4 V
+VSS = 0 V
+Output load: CL = 1 pF capacitor at vout.
+A DC current source IB = 10μA is connected to the OTA's bias input ibn10u.
+A small-signal AC source VSTB is applied to vin for AC analysis.
+A DC voltage sweep (Vstep + VCM) is used at vip to verify input common-mode range (ICMR).
+
+### Task 1 — Device Sizing
+**Process Rule**  
+All MOSFETs must instantiate **exactly** the foundry models  
+`tsmc18dP` (PMOS) and `tsmc18dN` (NMOS).  
+
+
+### Task 2 — Performance Verification
+Using the provided Cadence/SPECTRE testbench (unity‑gain buffer, CL = 1 pF, VDD = 1.4 V,
+VCM = 600 mV), verify that the sized design satisfies:
+
+| Spec | Target |
+|------|--------|
+| DC gain AV0 | ≥ 60 dB |
+| Unity‑gain frequency fUGF | ≥ 50 MHz |
+| Phase margin PM | ≥ 60° |
+| DC input‑to‑output error \|vip,DC – vout,DC\| | ≤ 0.6 mV |
+| Total DC current | ≤ 150 µA |
+| Input common‑mode range (ICMR) | ≥ 600 mV* |
+
+\*ICMR pass rule: for VCM ∈ {VSS, VSS+25 mV, …, VDD‑25 mV}, each point must achieve  
+AV0 ≥ 50 dB, fUGF ≥ 40 MHz, PM ≥ 45°, and \|vip,DC – vout,DC\| ≤ 1.8 mV.
+
+---
+
+### <TEMPLATE>
+```spice
+// Library name: mp_4
+// Cell name: ota
+// View name: schematic
+subckt ota VDD VSS ibp10u vin vip vout
+    N3 (ibp10u ibp10u VSS VSS) tsmc18dN w=3u l=3u as=1.8e-12 ad=1.8e-12 \
+        ps=7.2u pd=7.2u m=1 region=sat
+    N5 (vout vin net2 net2) tsmc18dN w=600.0000u l=1.8u as=3.6e-10 \
+        ad=3.6e-10 ps=1.2012m pd=1.2012m m=1 region=sat
+    N1 (net2 ibp10u VSS VSS) tsmc18dN w=70.02u l=3u as=4.2012e-11 \
+        ad=4.2012e-11 ps=141.24u pd=141.24u m=1 region=sat
+    N4 (net4 vip net2 net2) tsmc18dN w=600.0000u l=1.8u as=3.6e-10 \
+        ad=3.6e-10 ps=1.2012m pd=1.2012m m=1 region=sat
+    P1 (net4 net4 VDD VDD) tsmc18dP w=180.00000u l=1.8u as=1.08e-10 \
+        ad=1.08e-10 ps=361.2u pd=361.2u m=1 region=sat
+    P0 (vout net4 VDD VDD) tsmc18dP w=180.00000u l=1.8u as=1.08e-10 \
+        ad=1.08e-10 ps=361.2u pd=361.2u m=1 region=sat
+ends ota
+// End of subcircuit definition.
+
+// Library name: mp_4
+// Cell name: dut
+// View name: schematic
+I0 (net6 net1 net4 net3 net2 net5) ota

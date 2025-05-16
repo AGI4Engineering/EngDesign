@@ -1,0 +1,6 @@
+## Evaluation Rubric
+- Number of parallel-connected cells: 20 points
+- Number of series-connected sets: 20 points
+- Maximum rise in cell temperature: 20 points
+- Maximum temperature gradient: 20 points
+- Maximum pressure drop: 20 points

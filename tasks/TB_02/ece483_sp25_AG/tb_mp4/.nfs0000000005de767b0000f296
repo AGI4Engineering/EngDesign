@@ -1,0 +1,258 @@
+;============================================================================
+;============================================================================
+; Staff-Use OCEAN Auto-Grader
+; ECE483
+; Spring 2023
+; Mini Project #4
+;
+; Andy Ng
+; Jan 16, 2023
+;
+; NOTES:
+; 1. The commented lines "; LIB_NAME", "; TB_NAME", "; USERNAME", "; NAMES",
+; and "; NETLIST_IDS" will be updated by "update_dut.py". DO NOT REMOVE OR
+; EDIT THESE LINES!!!
+;
+; 2. The "ANALYSIS" and "MEASUREMENTS" sections of the script needs to be
+; manually created for each testbench to ensure the correct metrics and
+; specifications are being used.
+;============================================================================
+;============================================================================
+
+
+;============================================================================
+; CONSTANT PATH & FILE VARIABLES
+;============================================================================
+
+MODEL_FILE = "/class/ece483/models/models_ece483"
+
+; LIB_NAME
+; TB_NAME
+TST_INDEX = "1"
+TST_NAME = strcat(LIB_NAME "_" TB_NAME "_" TST_INDEX)
+
+; NETLIST_IDS
+; NAMES
+
+;============================================================================
+; SIMULATION SETUP
+;============================================================================
+
+simulator('spectre)
+modelFile(MODEL_FILE)
+
+; USERNAME
+
+; Set path to design/results directory
+dir = strcat("/home/" USERNAME "/cadence/simulation/" LIB_NAME "/" TB_NAME)
+
+spec_data_fn = strcat(dir "/spec_data_" TB_NAME ".csv")
+spec_data = outfile(spec_data_fn "w")
+
+; CSV to be constructed as follows:
+; Net ID,<spec1>,<spec2>,...,<specN>
+; <id1>,<pass/fail>,...,<pass/fail>
+; <id2>,<pass/fail>,...,<pass/fail>
+; .
+; .
+; .
+; <idN>,<pass/fail>,...,<pass/fail>
+
+; UPDATE THIS STATEMENT FOR GIVEN TB SPECS
+fprintf(spec_data "Net ID,DC Gain,Phase Margin,IO Error,fUGF,ICMR\n")
+
+;============================================================================
+; BEGIN LOOP
+;============================================================================
+
+foreach(id NETLIST_IDS
+	cktfile=strcat(dir "/maestro/results/maestro/ExplorerRun.0/1/" TST_NAME "/netlist_" id "/netlist")
+	file_exists = infile(cktfile)
+
+	if(file_exists then
+		close(file_exists)
+
+		design(cktfile)
+		resultsDir(dir)
+
+		;============================================================================
+		; DESIGN SPECIFICATIONS
+		;============================================================================
+
+		GAIN_SPEC = 60 ; [dB]
+		GAIN_SPEC_PC = 55 ; [dB]		
+
+		PM_SPEC = 60 ; [deg]
+		PM_SPEC_PC = 45 ; [deg]
+
+		FUGF_SPEC = 50M ; [Hz]
+		FUGF_SPEC_PC = 40M ; [Hz]
+
+		ICMR_SPEC = 0.600 ; [V]
+		ICMR_SPEC_PC = 0.500 ; [V]
+		ICMR_G = 50 ; [dB]
+		ICMR_P = 45 ; [dB]
+		ICMR_F = 40M ; [Hz]
+		ICMR_I = 0.0012 ; [V]
+		
+		IO_ERR_SPEC = 0.0006 ; [V]
+		IO_ERR_SPEC_PC = 0.0012 ; [V]
+
+		;============================================================================
+		; DESIGN VARIABLES
+		;============================================================================
+
+		VDD = 1.4
+		VCM = 0.6
+		VSS = 0.0
+
+		desVar(	  "CL" 1p	)
+		desVar(	  "VCM" VCM	)
+		desVar(	  "VDD" VDD	)
+		desVar(	  "VSS" 0	)
+		desVar(	  "t_step" 10n	)
+		desVar(	  "vstep" 30m	)
+		
+		;============================================================================
+		; ANALYSIS COMMANDS
+		;============================================================================
+		; NOTE: THIS SECTION MUST BE UPDATED SPECIFICALLY FOR A GIVEN TESTBENCH!!!
+		;============================================================================
+
+		analysis('dc ?saveOppoint t  )
+		analysis('tran ?stop "200n"  ?errpreset "conservative"  )
+		analysis('stb ?start "1"  ?stop "2G"  ?dec "101"  
+		?probe "/VSTB"  ?localgnd "/VSS" ?annotate "no"  )
+
+		;============================================================================
+		; MEASUREMENTS
+		;============================================================================
+		; NOTE: THIS SECTION MUST BE UPDATED SPECIFICALLY FOR A GIVEN TESTBENCH!!!
+		;============================================================================
+
+
+		;============================================================================
+		; BEGIN ICMR LOOP
+		;============================================================================
+
+		ICMR_COUNT = 0
+		vcm_step = 0.7
+		
+		for( i 0 int(VDD/vcm_step)
+			desVar("VCM" i*vcm_step)
+			run()
+			selectResults('stb)
+
+			A0x = value(db(mag(getData("loopGain" ?result "stb"))) 1);
+			PMx = getData("phaseMargin" ?result "stb_margin")
+			IO_ERRx = abs(VDC("/vip") - VDC("/vout"))
+			FUGFx = cross(db(mag(getData("loopGain" ?result "stb"))) 0)
+			
+			A0_sw = if(A0x A0x 0.00)
+			PM_sw = if(PMx PMx 0.00)
+			IO_ERR_sw = if(IO_ERRx IO_ERRx 0.00)
+			FUGF_sw = if(FUGFx FUGFx 0.00)
+			ICMR_COUNT = if(A0_sw >= ICMR_G && IO_ERR <= ICMR_I && \
+				   FUGF_sw >= ICMR_F && PM_sw >= ICMR_P ICMR_COUNT+1 ICMR_COUNT )
+				   
+			printf("\n====================================================================\n")
+			printf("RUN %d OF %d\n", i+1, int(VDD/vcm_step)+1)
+			printf("VCM = %0.3f V\n", i*vcm_step)
+			printf("====================================================================")
+			printf("\nSimulated DC Gain: %10.2f dB\n\n", A0_sw)
+			printf("\nSimulated Phase Margin: %10.1f deg\n\n", PM_sw)
+			printf("\nSimulated Input-Output Error: %10.2f mV\n\n", IO_ERR_sw*1000)
+			printf("\nSimulated Unity Gain Frequency: %10.2f MHz\n", FUGF_sw*1e-6)
+			printf("\n====================================================================\n")
+			printf("====================================================================\n\n\n")
+		)
+		ICMR = ICMR_COUNT*vcm_step
+
+		;============================================================================
+		; END ICMR LOOP
+		;============================================================================
+		
+		printf("\n\n\n\n\n")
+		ICMR_SPEC_PF = if( (ICMR >= ICMR_SPEC) "Pass" if( (ICMR >= ICMR_SPEC_PC) "Partial Credit" "Fail") )
+
+		run()
+		selectResults('stb)
+
+		;========================
+		; Open-Loop Performance
+		;========================
+		if(v("vout") then 
+			if( value(db(mag(getData("loopGain" ?result "stb"))) 1) then
+				A0 = value(db(mag(getData("loopGain" ?result "stb"))) 1)
+			else
+				A0 = 0.00
+			)
+			
+			if(cross(db(mag(getData("loopGain" ?result "stb"))) 0) then
+				FUGF = cross(db(mag(getData("loopGain" ?result "stb"))) 0)
+			else
+				FUGF = 0.00
+			)
+
+			if(getData("phaseMargin" ?result "stb_margin") then
+				PM = getData("phaseMargin" ?result "stb_margin")
+			else
+				PM = 0.00
+			)
+		else
+			A0 = 0.00
+			FUGF = 0.00
+			PM = 0.00
+		)
+
+		GAIN_SPEC_PF = if( (A0 >= GAIN_SPEC) "pass" "fail" )
+		FUGF_SPEC_PF = if( (FUGF >= FUGF_SPEC) "pass" "fail" )
+		PM_SPEC_PF = if( (PM >= PM_SPEC) "Pass" if( (PM >= PM_SPEC_PC) "Partial Credit" "Fail"))
+
+		;========================
+		; Closed-Loop Performance
+		;========================
+		if(v("vout") && v("vip") then
+			IO_ERR = abs(VDC("/vip") - VDC("/vout"))
+		else
+			IO_ERR = 999
+		)
+
+		IO_ERR_SPEC_PF = if( (IO_ERR <= IO_ERR_SPEC) "Pass" if( (IO_ERR <= IO_ERR_SPEC_PC) "Partial Credit" "Fail"))
+
+		; Print whether the specs were met
+
+		printf("\n===============================================================\n")
+		printf("===============================================================\n")
+		printf("Simulated DC Gain: %10.2f dB\n", A0)
+		printf("DC Gain Specification: %10s\n\n", GAIN_SPEC_PF)
+		printf("\n\nSimulated Phase Margin: %10.2f deg\n", PM)
+		printf("Phase Margin Specification: %10s\n\n", PM_SPEC_PF)
+		printf("\n\nSimulated Input-Output Error: %10.2f %%\n", IO_ERR)
+		printf("Input-Output Error Specification: %10s\n\n", IO_ERR_SPEC_PF)
+		printf("\nSimulated Unity Gain Frequency: %10.2f MHz\n", FUGF*1e-6)
+		printf("Unity Gain Frequency Specification: %10s\n\n", FUGF_SPEC_PF)
+		printf("\nSimulated ICMR: %10.2f V\n", ICMR)
+		printf("ICMR Specification: %10s", ICMR_SPEC_PF)
+		printf("\n===============================================================\n")
+		printf("===============================================================\n")
+
+		; Print pass/fail data to spec_data CSV
+		fprintf(spec_data "%s,%s,%s,%s,%s,%s\n" id GAIN_SPEC_PF PM_SPEC_PF IO_ERR_SPEC_PF FUGF_SPEC_PF ICMR_SPEC_PF)
+
+		else
+		fprintf(spec_data "%s,%s\n" id "NO SUBMISSION")
+	)
+)
+
+;============================================================================
+; END LOOP
+;============================================================================
+close(spec_data)
+
+;============================================================================
+;============================================================================
+; END SCRIPT
+;============================================================================
+;============================================================================
+

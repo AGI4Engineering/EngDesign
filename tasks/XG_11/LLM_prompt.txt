@@ -1,0 +1,32 @@
+## Task Description
+Consider the following third-order plant:
+\[
+G(s) = \frac{0.5}{s}\frac{169}{s^2 + 0.26s + 169},
+\]
+Assuming the desired loop bandwidth is $ \omega_{L} = 1 $ rad/sec. An initial loop shaping controller using controller gain and integral boost is given as:
+- gain: $ K_g = \frac{1}{|G(j\omega_L)|}$,
+- integral boost: $ K_i(s) =  \frac{\beta_b s + \omega_L}{s \sqrt{\beta_b^2 + 1}}$ with $ \beta_b = \sqrt{10}$.
+And the initial loop shaping controller is:
+\[
+C(s) = K_g \cdot K_i(s)
+\]
+
+### Task 1
+Your first task is to obtain the explicit transfer function of the initial loop shaping controller. Please provide the complete transfer function of \( C(s) \) as part of your response in the form of numerator and denominator coefficients.
+
+### Task 2
+The initial design yeilds a unstable closed-loop system since there are additional gain crossings at 12.5 and 13.4 rad/sec. Your task is to build upon the initial controller, add a second-order roll-off element $K_r(s)$. A typical roll-off element has the form:
+\[
+K_r(s) = \frac{F_r(s)}{|F_r(j\omega_r)|},
+\]
+where \( F_r(s) = \frac{(\beta_r \omega_r)^2}{s^2 + \sqrt{2}\beta_r \omega_r s + (\beta_r \omega_r)^2} \). You need to design this roll-off by choosing \( \beta_r \) and \( \omega_r \). Then the final controller is given by:
+\[
+C(s) = K_g \cdot K_i(s) \cdot K_r(s)
+\].
+
+You need to design the roll-off element to achieve the following requirements:
+- The closed-loop system is stable.
+- The desired loop bandwidth is 1 rad/sec.
+- The closed-loop system should have a phase margin of at least 50 degrees.
+- The closed-loop system should have a gain margin of at least 3 dB.
+

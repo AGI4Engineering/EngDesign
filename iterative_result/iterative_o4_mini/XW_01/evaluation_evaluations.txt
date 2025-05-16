@@ -1,0 +1,4 @@
+Attempt 1:
+{'read': 'the function is not executable'}
+Attempt 2:
+{'read_root_file': 'Passed', 'read_subdir_file': 'Passed', 'read_invalid': 'Passed: exception raised as expected', 'read': 'Passed'}

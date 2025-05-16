@@ -1,0 +1,21 @@
+We use exact code judgment via our batch autograder:
+
+1. `evaluate.py` runs `run_autograder.sh mp1` to produce  
+   `~/cadence/simulation/ece483_sp25_AG/tb_mp1/CDS_mp1.log`  
+   where key metrics are extracted from simulation logs:
+   - DC Gain (V/V)
+   - 3dB Bandwidth (Mrad/s)
+   - DC Output Voltage (mV)
+
+2. Parse the log file into a dictionary of floats.
+
+3. For each metric, award **only** the highest tier met:
+   - DC Gain: 5 ±2% V/V → 15 pts; 5 ±5% V/V → 7.5 pts
+   - 3dB Bandwidth: ≥50 Mrad/s → 15 pts; ≥45 Mrad/s → 7.5 pts
+   - Output DC Voltage: 900mV ±2% → 15 pts; 900mV ±5% → 7.5 pts
+
+4. **Score** = sum of the three metrics (0–45 points).
+
+5. **Passed** = true if the design meets at least partial requirements for two metrics, or full requirement for one metric.
+
+6. **Confidence** = 100 (since code-based evaluation is used).

@@ -1,0 +1,2 @@
+Attempt 1:
+{'isStable': True, 'HinfNorm': 0.3834271963108732, 'meetsHinf': True}

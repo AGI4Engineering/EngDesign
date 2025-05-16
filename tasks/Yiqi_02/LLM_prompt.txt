@@ -1,0 +1,140 @@
+# Problem Definition of T10 Benchmark
+
+To compute a matrix multiplication operator on an inter-core connected AI chip, we need you to derive an execution plan using T10's abstraction. For more information about this problem, please refer to "Background Information of T10 Benchmark".
+
+**The Computation Task:**  
+The matrix multiplication (MatMul) to be computed is defined as $C[m,n] += A[m,k]*B[k,n]$, where $m = 32$, $k = 5120$, and $n = 15360$. The input and output tensors are all in FP16 format (2 bytes per data element). To find better partitioning plans, you may consider padding this operator along any of its dimensions. However, there will be performance overhead if you pad too much.
+
+**The Hardware:**  
+We use an inter-core connected AI chip called IPU Mk2. An IPU chip has 1,472 cores, and each core executes independent threads in parallel with a private 624KB scratchpad memory, which adds up to a total of 896MB on-chip memory. The IPU cores are interconnected by high-bandwidth low-latency links. Each core can access the scratchpad memory of another core at 5.5GB/s, offering an aggregated inter-core all-to-all bandwidth of $1472 \times 5.5$ GB/s $\approx 8$ TB/s [1]. Inside each core, there is a systolic array of shape $16 \times 16$, which can compute a partition of the MatMul operator at high throughput. If the sub-MatMul to be computed on each core does not have a shape that is a multiple of the systolic array shape, this sub-MatMul must be padded to align with the systolic array shape.
+
+**The Execution Plan:**  
+In this problem, we need you to derive a fast execution plan that computes the above MatMul on an IPU chip. First, this plan should ensure that at any time during execution, the sub-tensor partitions on each core do not overflow the per-core SRAM size. Second, the partition factors in this plan should comply with all constraints defined in T10's background information. Third, this plan should use no more than 1,472 cores. Finally, this plan should try to minimize the total execution time, which is the sum of per-core computation time and inter-core communication time.
+
+**The Output Format:**  
+You should output the execution plan in the following format:
+
+- `F_op`: a list of integers with length 3, which are the operator partition factors on dimensions $m$, $k$, and $n$, respectively.
+- `f_t_A_m`: integer, which is the temporal partition factor of tensor A on dimension $m$.
+- `f_t_A_k`: integer, which is the temporal partition factor of tensor A on dimension $k$.
+- `f_t_B_k`: integer, which is the temporal partition factor of tensor B on dimension $k$.
+- `f_t_B_n`: integer, which is the temporal partition factor of tensor B on dimension $n$.
+- `f_t_C_m`: integer, which is the temporal partition factor of tensor C on dimension $m$.
+- `f_t_C_n`: integer, which is the temporal partition factor of tensor C on dimension $n$.
+
+---
+
+# Background Information of T10 Benchmark
+
+## 1. Inter-core Connected AI Chip
+
+Deep learning accelerators, such as GPUs and TPUs, are widely recognized for their exceptional computing throughput (e.g., hundreds of Tera-FLOPS), making them ideal for handling large-scale models and high-dimensional data in deep learning. Such effectiveness is largely attributed to their massive parallel cores and specialized accelerator units, e.g., TensorCore. However, to saturate the high computing throughput, they usually require a high-throughput memory system, e.g., a large shared memory with multi-hierarchical cache layers in accelerators. Also, an efficient deep learning compiler [7, 8] is necessary to optimize data reuse across the memory hierarchy, ensuring the computing units are fully utilized. This combination of hardware and software design often yields orders of magnitude higher performance than traditional CPUs for critical deep learning operations, including matrix multiplication and convolution.
+
+Despite the success of existing accelerators, the constantly increasing demand for processing large deep-learning models with higher computation throughput presents a significant challenge to the underlying memory system. To address this challenge, the community is exploring a more scalable architecture with fully distributed memory, such as the Graphcore IPU [2], SambaNova SN10 [5], and Cerebras WSE [3]. Rather than relying on shared-memory architecture, they typically associate each computation core with local memory, and connect the cores via a high-bandwidth on-chip network, creating a large aggregated on-chip memory. However, this unique architecture renders previous deep learning compilers designed for shared-memory architectures, which cannot fully leverage the new architecture's scalability, resulting in significant memory waste.
+
+Designing a deep learning compiler for distributed memory-based accelerators presents several unique challenges:
+1. Due to the absence of global shared memory, it is necessary to partition the operators, along with their input and output tensors, into sub-operators that can operate independently on each core with only local memory access.
+2. As the local memory on each core is mostly on-chip memory, the aggregated memory capacity is considerably smaller than the off-chip memory. Thus, the compiler must effectively utilize the limited memory capacity to support a model size as large as possible, without compromising on computing performance.
+3. Given that there is usually a trade-off between memory consumption and computation performance for each operator, an end-to-end model compilation must consider the trade-offs among all operators, generating a combinatorial optimization space that is infeasible to solve using existing compilers.
+
+In this problem, we focus on a representative example of the inter-core connected AI chip: the Graphcore Intelligence Processing Unit (IPU) MK2 [2]. An IPU chip has 1,472 cores, and each core executes independent threads in parallel with a private 624KB scratchpad memory, which adds up to a total of 896MB on-chip memory. Compared to the global shared memory architecture, a key distinction is that IPU cores are interconnected by high-bandwidth low-latency links. Each core can access the scratchpad memory of another core at 5.5GB/s, offering an aggregated inter-core all-to-all bandwidth of $1472 \times 5.5$GB/s $\approx 8$TB/s [1].
+
+---
+
+## 2. Background of T10
+
+To eliminate the excessive memory footprint and redundant inter-core communications of VGM, we map the DNN computation to a _compute-shift_ pattern. In each step, each core independently computes a sub-task with data received from its upstream neighbors and shifts the data to its downstream. The feasibility of this approach for general DNNs comes from this observation: most DNN operators can be divided into regular computation tasks, which load and produce consecutive data tiles of the input and output tensors, respectively.
+
+![Figure 1](./images/figure1.png)
+Figure 1 shows an example that maps a MatMul operator to two cores with the compute-shift style execution. 
+Both (b) and (c) are valid compute-shift execution plans, but with different tradeoffs between memory footprint and communication overhead.
+
+**Example: Mapping MatMul to Two Cores**
+We show an example that maps a matrix multiplication (MatMul) operator to two cores in Figure 1 (a).  
+1. **Partitioning:** We first partition the operator along dimension $m$ onto two cores in Figure 1 (b). By default, both cores hold a copy of the weight tensor, which incurs memory capacity overhead.  
+2. **Memory Optimization:** To reduce memory footprint, in Figure 1 (c), we further split the weight tensor along dimension $n$ into two parts and place each part on one of the cores. Then, the computation must be conducted in two steps, as each core holds half of the weight tensor and performs half of its computation per step. Between the computation steps, each core circularly shifts its partition to the next core, forming a shift ring of two cores.
+
+**Advantages of Compute-Shift Pattern**
+1. Eliminates the need for a global memory to store shared data, improving memory capacity utilization.  
+2. Evenly distributes communication volume across inter-core connections.  
+3. Aligns computation with data tile, avoiding redundant communications to many cores.
+
+**Tradeoff Between Memory Footprint and Communication Overhead**
+For example, both Figure 1 (b) and (c) show valid execution plans:
+- **Plan (b):** Finishes the entire computation in one step without inter-core communication, but has a higher memory footprint.  
+- **Plan (c):** Has less memory footprint but incurs more communication overhead.
+
+In reality, deriving the best tradeoff is challenging due to multi-dimensional DNN operators and thousands of cores on an IPU chip. An efficient compute-shift execution plan may contain numerous nested shift rings along multiple tensor dimensions, composing a massive tradeoff space to search through.
+
+---
+
+## 3. T10's Execution Plan Format
+
+### $r$Tensor: A New Tensor Abstraction
+T10 introduces a distributed tensor abstraction called RotatingTensor ($r$Tensor). $r$Tensor describes how each tensor is partitioned, mapped, and shifted on the interconnected cores (summarized in Table 1).
+
+**Table 1. Terminologies used in T10**
+| **Symbol** | **Name**                     | **Description**                                                               |
+|------------|------------------------------|-------------------------------------------------------------------------------|
+| `f_s^X`    | Spatial Partition Factor     | Spatially partitions a tensor X into sub-tensors.                             |
+| `f_t^X`    | Temporal Partition Factor    | Temporally partitions a sub-tensor of X into sub-tensor partitions.           |
+| `F_op`     | Operator Partition Factor    | Spatially partitions an entire operator into sub-operators.                   |
+
+First, T10 partitions the computation of an operator onto multiple cores. Based on the data dependency, the computation partitioning will imply how each of its input/output tensor is partitioned. This gives a spatial partition factor ($f_s$), which splits a tensor into sub-tensors. Second, each sub-tensor may be required by multiple cores. To share a sub-tensor among them, we specify how the sub-tensor is further partitioned among the cores using a temporal partition factor ($f_t$). $f_t$ also specifies how the partitions of a sub-tensor are circularly shifted among the cores. Altogether, a set of $r$Tensors of an operator defines a compute-shift execution plan. The numerous possible $r$Tensor configurations of an operator generate a huge search space of execution plans.
+
+![Figure 2](./images/figure2.png)
+Figure 2 shows the llustration of rTensor partitioning and rotating.
+
+Specifically, $f_s$ and $f_t$ are vectors with a length equal to the number of dimensions of a tensor, indicating how the tensor is partitioned along each dimension. For example, in Figure 2 (a), a tensor $T$ of shape $[6,8]$ is partitioned onto 8 cores by a spatial factor $f_s=[2,1]$, forming 2 sub-tensors of shape $[3,8]$. Thus, to share each sub-tensor among 4 cores without incurring high memory footprint, a temporal factor $f_t=[1,2]$ further partitions each sub-tensor into 2 partitions with shape $[3,4]$, as shown in Figure 2 (b). It forms $\frac{4}{2} = 2$ rotation rings with 2 cores in each, where cores share the sub-tensor by circularly shifting its partitions. In comparison, Figure 2 (c) shows how another $f_t=[1,4]$ splits the same sub-tensor to 4 partitions, on $\frac{4}{4}=1$ rotation ring with 4 cores.
+
+---
+
+## 3.2. Compute-Shift Execution Plan
+
+Using the $r$Tensor abstraction, T10 organizes the computation of a general DNN operator into a compute-shift pattern, where the operator's computation and tensors are partitioned to individual cores and their local memories. The entire computation involves multiple compute-shift steps until each tensor has been shifted across all cores. Each compute step is defined as a *sub-task*. In each compute-shift step, each core computes a sub-task and shifts local tensors to its neighbors. We now discuss how T10 partitions DNN operators into compute-shift-based execution plans.
+
+### Operator representation.
+To represent an operator's computation, T10 uses tensor expression [6], which defines how each output tensor value is computed from the input values. For example, a matrix multiplication of tensors $A$ in shape $[M,K]$ and $B$ in $[K,N]$ into $C$ is defined as
+
+$C[m,n] \longleftarrow A[m,k]*B[k,n]$,
+
+where $m$, $k$, and $n$ are axes to index the elements in each tensor. Equation (1) indicates that any value in $C$ indexed by $m$ and $n$ (i.e., $C[m,n]$) is computed by summing $A[m,k]*B[k,n]$ over all possible indices $k$. T10 supports all common operators, like MatMult and Convolution, from DNN workloads in both inference and training. For a few special cases like Sort, which cannot be represented in tensor expression, T10 uses the implementations from the vendor library.
+
+### Partitioning an operator.
+To map an operator to interconnected cores, T10 first partitions it into parallel *sub-operators* along all unique axes in its tensor expression, using an *operator partition factor* ($F_{op}$). For example, Equation (1) contains axes $m$, $k$, and $n$, then $F_{op}$ is a vector of three integer factors specifying how the three axes are spatially partitioned. The total number of sub-operators is the product of all elements in $F_{op}$. For example, $F_{op}=[2,1,4]$ for $[m,k,n]$ slices the operator into 8 sub-operators on 8 cores, each computing a $\lceil\frac{M}{2},\frac{K}{1}\rceil \times \lceil\frac{K}{1},\frac{N}{4}\rceil$ sub-matrix multiplication.
+
+### Partitioning $r$Tensors.
+T10 then uses $F_{op}$ to derive the spatial partition factor $f_s$ for each tensor, following the data dependencies in tensor expression. With the same example, for $F_{op}=[2,1,4]$ on $[m,k,n]$, the spatial partition factor for the tensor A is $f_s^A=[2,1]$ for axes $m$ and $k$. Similarly, for tensors B and C, we have $f_s^B=[1,4]$ and $f_s^C=[2,4]$.
+
+If a tensor's dimensions do not include some axis in $F_{op}$, each of the sliced sub-tensors is required by multiple sub-operators along the missing axis. Thus, once the spatial factor determines the number of cores that will share a sub-tensor, the temporal factor determines how we split the sub-tensor across these cores into rotation ring(s). In the above example, $F_{op}$ partitions the entire operator onto $2 \times 1 \times 4 = 8$ cores, and $f_s^B$ spatially partitions tensor B into $1 \times 4 = 4$ sub-tensors. Thus, each sub-tensor is shared by $P=\frac{8}{4}=2$ cores. Then, a temporal factor $f_t^B=[2,1]$ further splits each sub-tensor into $2 \times 1 = 2$ partitions, forming $\frac{P}{2}=1$ rotation ring.
+
+T10 enforces that the product of elements in $f_t$, or $\prod f_t$, is a divisor of the number of cores that shares the sub-tensor ($P$), so that the number of rotation rings (i.e., $\frac{P}{\prod f_t}$) is an integer. If there is more than one rotation ring, we replicate each sub-tensor $\frac{P}{\prod f_t}$ times to ensure that each ring shares one copy of the sub-tensor. While the duplication consumes memory space, it may reduce the number of rotation steps by allowing a larger sub-task on each core at each step, which enables a trade-off between memory usage and communication cost.
+
+![Figure 3](./images/figure3.png)
+Figure 3 shows an example of the rotation of rTensor.
+The compute-shift executions of the sub-operators need to be aligned.
+
+### Aligning the rotations of $r$Tensors.
+Since a general DNN operator can have various tensor shapes, a naive partitioning plan can easily cause the tensor shifting and the sub-task computing at an unaligned pace. In Figure 3 (a), we still use the MatMult operator in Equation (1) as an example. We partition it into a $2 \times 4$ grid in Figure 3 (b), with the specified partition factors. Note that both A and B are temporally partitioned along axis $k$, but with different $f_t$ factors.
+
+The rotating paces of tensors in one operator must be aligned to ensure correct data dependency. In Figure 3 (b), tensors A and B are shifted with different paces along axis $k$. To synchronizes the paces, each core shifts A for 2 times along $k$ for each time B is shifted, and computes a sub-task (i.e., a sub-MatMult) of shape $[\text{m=1, k=1, n=1}]$ for each time A is shifted. This requires 4 compute steps to finish the sub-operator on this core, where A is shifted after each step and B is shifted every 2 steps.
+
+### Alignment constraints.
+To ensure that a $r$Tensor configuration can be translated into a valid execution plan, the product of the temporal partition factors of a tensor (i.e., the total number of temporal partitions) should be a factor of the replication number caused by spatial partitioning. Additionally, for different tensors of an operator that share a common dimension, all their temporal factors on this dimension should be aligned. Thus, any pair of temporal factors should be a factor or multiple of each other. This approach allows each tensor or sub-tensor to flow across cores at a different pace, while ensuring that corresponding tensor partitions can meet at the same time step on a specific core. For instance, in the matrix multiplication illustrated in Figure 3(b), tensor A has a temporal factor of 4 along dimension $k$, tensor B has a factor of 2, and these factors along $k$ (i.e., 4 and 2) must be a factor or multiple of each other.
+
+### Sub-operator scheduling.
+With the above constraints, we can organize an operator's computation into a valid compute-shift execution plan. At each step, each sub-operator computes a sub-task partitioned by $F_{op}$ and the $f_t$ along each axis. Each sub-operator iterates over all its sub-tasks by nested-looping through the axes of this operator. Between sub-tasks, an $r$Tensor is rotated along the currently iterating axis for all its sub-tensors, until all sub-tasks are enumerated.
+
+Specifically, T10 organizes the computation on each core as nested loops of interleaved compute and shift stages. Each loop corresponds to a temporally partitioned dimension. For example, if there are two dimensions to shift, $m$ and $n$, with $m$ shifting twice and $n$ shifting once, then there are two valid 5-time shift schedules: (1) $m$ is the inner loop, i.e., $\text{shift}(m) \times 2 \rightarrow \text{shift}(n) \rightarrow \text{shift}(m) \times 2$; and (2) $n$ is the inner loop, i.e., $\text{shift}(n) \rightarrow \text{shift}(m) \rightarrow \text{shift}(n) \rightarrow \text{shift}(m) \rightarrow \text{shift}(n)$. To determine the optimal loop order, T10 designates the dimension belonging to the tensor with the smaller size as the inner loop to reduce the total communication volume, as the inner loop is executed more times. To generate local computations for each core, T10 invokes the corresponding compute function with the partition configuration and the tensor expression.
+
+---
+
+# References
+[1] Zhe Jia, Blake Tillman, Marco Maggioni, and Daniele Paolo Scarpazza. 2019. Dissecting the Graphcore IPU Architecture via Microbenchmarking.  
+[2] Simon Knowles. 2021. Graphcore Colossus Mk2 IPU.  
+[3] Sean Lie. 2021. Multi-Million Core, Multi-Wafer AI Cluster.  
+[4] Yiqi Liu et al. 2024. Scaling Deep Learning Computation over the Inter-Core Connected Intelligence Processor with T10.  
+[5] Raghu Prabhakar and Sumti Jairath. 2021. SambaNova SN10 RDU.  
+[6] Nicolas Vasilache et al. 2018. Tensor Comprehensions.  
+[7] Lianmin Zheng et al. 2020. Ansor.  
+[8] Hongyu Zhu et al. 2022. ROLLER. 

@@ -1,0 +1,1 @@
+[1] Lavretsky, E. Wise, K. (2024). Multivariable Stability Margins. In M. Grimble &  L. Marconi &  O. Jackson (Ed.), Robust and Adaptive Control With Aerospace Applications Second Edition (pp. 131). 

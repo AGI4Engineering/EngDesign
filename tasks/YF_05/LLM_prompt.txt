@@ -1,0 +1,38 @@
+## Task Description
+
+In this task, you are required to determine a suitable cross-sectional area A for a specified member of a simple 2D truss, which will be evaluated using a static linear-elastic finite-element model in MATLAB.
+
+The truss is defined by three nodes and three pin-connected members forming a right triangle:
+You are given the following fixed parameters:
+
+- Nodes (coordinates in mm):
+Node1 - (0,0) (ux=uy=0)
+Node2 - (1000,0)(uy = 0)
+Node3 - (1000,1000)
+
+- A vertical downward force of 4000 N applied at Node 3
+
+- Members (element connectivity):
+   Node 1 → Node 2 (A = 100mm^2)
+
+   Node 2 → Node 3 ← design this member’s area
+
+   Node 1 → Node 3 (A = 100mm^2)
+
+- Material properties:
+   - Young’s modulus: 210,000 MPa
+   - Poisson’s ratio: 0.3
+
+Performance criterion:
+The maximum nodal displacement must satisfy δ max < 0.5mm
+The score depends on the ratio of the maximum measured angle to the allowable threshold. If that ratio falls between seventy percent and ninety percent, the beam earns the full 100 points. If the ratio is below seventy percent, partial credit is awarded in direct proportion to how close it is to seventy-percent (with zero displacement scoring zero and seventy-percent scoring 100). If the ratio lies between ninety percent and one hundred percent, points are deducted in proportion to how far it exceeds ninety percent (dropping from 100 at ninety percent down to zero at the full threshold). Any ratio below zero or above one hundred percent results in a score of zero.
+---
+
+### Task
+
+Your task is to:
+- a structurally sound value for the area A (in mm²) of the member between Node 2 and Node 3. You must have a numerical computation and analysis.
+- Provide a brief justification for your choice of thickness, considering stiffness, loading, and geometric constraints
+
+You do **not** need to evaluate the angle yourself. The simulation and evaluation will be done separately.
+

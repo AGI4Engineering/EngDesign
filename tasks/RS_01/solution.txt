@@ -1,0 +1,78 @@
+## Parameters
+
+- **SetupFile.json**:
+  - mcar = 728 kg, clt = 3.1, cx = 1.0, afrcar = 1.0 m², mbrk = 7000 N
+  - gripx = 1.15, gripy = 1.40, loadEff = 0.10, rtyre = 0.32 m
+  - rGearRat = \[10.0, 7.8, 6.1, 7.8, 5.2, 4.5, 4.0\], reff = 0.95
+  - EngNm = \[200, 300, 430, 380\] Nm, EngRpm = \[0, 3000, 7000, 10000\] rpm
+  - rho = 1.22 kg/m³
+- **TrackFile.txt**:
+  - 695 segments, each 10 m (skip first row with 0 m)
+  - Total track length = 6950 m
+  - Columns: length (m), curvature (1/radius, 1/m; 0 for straights)
+
+
+
+## Define Constants
+
+- g = 9.81 m/s²
+- Normal force: F_normal = mcar \* g + 0.5 \* rho \* clt \* afrcar \* v² = 7141.68 + 1.891 \* v² N
+- Drag force: F_drag = 0.5 \* rho \* cx \* afrcar \* v² = 0.61 \* v² N
+
+
+
+## Interpolate Engine Torque
+
+- Linearly interpolate EngNm vs EngRpm to get T_engine(RPM)
+- T_engine(RPM) ≈ \[200 Nm at 0 rpm, 300 Nm at 3000 rpm, 430 Nm at 7000 rpm, 380 Nm at 10000 rpm\]
+
+
+
+## Maximum Speed Calculation
+
+### 4.1: Cornering Speed (Curves)
+
+- Lateral acceleration: v² \* κ ≤ gripy \* F_normal / mcar
+- v² \* κ ≤ 1.40 \* (7141.68 + 1.891 \* v²) / 728
+- v² ≤ 13.73 / (κ - 0.01373) for κ &gt; 0.01373
+- v_corner = sqrt(13.73 / (κ - 0.01373)) if κ &gt; 0.01373
+
+### 4.2: Traction-Limited Speed (Straights)
+
+- Wheel RPM = Engine RPM / r_gear
+- v = (Engine RPM \* 2 \* π \* rtyre) / (60 \* r_gear) = Engine RPM \* 0.03351 / r_gear
+- Engine RPM = v \* r_gear \* 29.841
+- F_tractive = T_engine(RPM) \* r_gear \* reff / rtyre
+- F_grip = gripx \* F_normal = 1.15 \* (7141.68 + 1.891 \* v²)
+- Solve: F_tractive = F_drag = 0.61 \* v², with F_tractive ≤ F_grip
+- For highest gear (4.0):
+  - At v = 83.5 m/s, RPM ≈ 9551, T_engine ≈ 382 Nm
+  - F_tractive = (382 \* 4.0 \* 0.95) / 0.32 ≈ 4536.25 N
+  - F_drag = 0.61 \* 83.5² ≈ 4250.43 N
+  - F_grip ≈ 21360.3 N (&gt; F_tractive)
+- Max traction speed ≈ 82.39 m/s (296.6 km/h)
+
+### 4.3: Max Speed per Segment
+
+- For each segment:
+  - If κ = 0, v_max = 82.39 m/s
+  - Else, v_max = min(v_corner, 82.39)
+- Maximum speed across all segments = 82.39 m/s = 296.6 km/h
+
+
+
+## Step 5: Minimum Lap Time Calculation
+
+- Time per segment: t_i = length / v_max = 10 / v_max
+- For straights (κ = 0): v_max = 83.5 m/s, t_i ≈ 0.1198 s
+- For corners: Compute v_corner for each κ
+  - Example: κ = 0.035, v_corner = sqrt(13.73 / (0.035 - 0.01373)) ≈ 25.41 m/s, t_i ≈ 0.3937 s
+- Estimate average speed:
+  - Assume 50% straights (v = 83.5 m/s), 50% corners (v_avg ≈ 30 m/s)
+  - v_avg ≈ (0.5 \* 83.5 + 0.5 \* 30) = 56.75 m/s
+- Lap time = total length / v_avg = 6950 / 56.75 ≈ 121.054 s
+
+## Final Results
+
+- **Maximum Speed**: 296.6 km/h
+- **Minimum Lap Time**: 121.054 s

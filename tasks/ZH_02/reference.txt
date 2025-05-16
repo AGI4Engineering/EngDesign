@@ -1,0 +1,3 @@
+Sutton, K., and Graves, R. A., “A General Stagnation-Point Convective-Heating Equation for Arbitrary Gas Mixtures,” NASA TR R-376, 1971.
+
+

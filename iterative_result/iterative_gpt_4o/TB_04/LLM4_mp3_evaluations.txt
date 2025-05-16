@@ -1,0 +1,20 @@
+Attempt 1:
+{'metrics': {'dc_gain_db': -222.238, 'ugf_mhz': 0.0, 'cmrr_db': 4.682, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 2:
+{'metrics': {'dc_gain_db': -254.522, 'ugf_mhz': 0.0, 'cmrr_db': -6.021, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 3:
+{'metrics': {'dc_gain_db': -225.127, 'ugf_mhz': 0.0, 'cmrr_db': -6.021, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 4:
+{'metrics': {'dc_gain_db': -221.171, 'ugf_mhz': 0.0, 'cmrr_db': -6.021, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 5:
+{'metrics': {'dc_gain_db': -218.967, 'ugf_mhz': 0.0, 'cmrr_db': -6.021, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 6:
+{'metrics': {'dc_gain_db': -222.436, 'ugf_mhz': 0.0, 'cmrr_db': -6.021, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 7:
+{'metrics': {'dc_gain_db': -228.424, 'ugf_mhz': 0.0, 'cmrr_db': -6.021, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 8:
+{'metrics': {'dc_gain_db': -198.984, 'ugf_mhz': 0.0, 'cmrr_db': 11.479, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 9:
+{'metrics': {'dc_gain_db': -239.707, 'ugf_mhz': 0.0, 'cmrr_db': -6.021, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}
+Attempt 10:
+{'metrics': {'dc_gain_db': -215.505, 'ugf_mhz': 0.0, 'cmrr_db': -6.021, 'icmr_v': 0.0}, 'sub_scores': {'dc_gain': 0, 'ugf': 0, 'cmrr': 0, 'icmr': 0, 'netlist': 0}, 'score': 0, 'passed': False}

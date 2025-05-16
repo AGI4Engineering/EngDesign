@@ -1,0 +1,7 @@
+## Rubric for Evaluating Controller Design Response
+
+Stability: 40 points
+- Settling time: 30 points
+- Overshoot: 30 points
+
+

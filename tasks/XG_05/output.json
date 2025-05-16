@@ -1,0 +1,7 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step",
+  "theta": "The value of theta",
+  "tau": "The value of tau",
+  "num": "The numerator of the transfer function of the controller",
+  "den": "The denominator of the transfer function of the controller"
+}

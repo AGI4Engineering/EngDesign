@@ -1,0 +1,1 @@
+ spectre  input.scs  +escchars +log ../psf/spectre.out  -format psfxl -raw ../psf   +aps +lqtimeout 900 -maxw 5 -maxn 5 -env ade  -ahdllibdir /home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB +logstatus  

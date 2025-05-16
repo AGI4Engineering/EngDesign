@@ -1,0 +1,14 @@
+Attempt 1:
+{'Start position correct': True, 'Hit Goal A': True, 'Hit Goal B': True, 'Number of collisions with static obstacles': 2, 'Number of collisions with walking pedestrians': 0, 'Over Speed limit': False}
+Attempt 2:
+{'error': 'list index out of range'}
+Attempt 3:
+{'error': 'list index out of range'}
+Attempt 4:
+{'error': 'list index out of range'}
+Attempt 5:
+{'error': 'list index out of range'}
+Attempt 6:
+{'error': 'list index out of range'}
+Attempt 7:
+{'Start position correct': True, 'Hit Goal A': True, 'Hit Goal B': True, 'Number of collisions with static obstacles': 0, 'Number of collisions with walking pedestrians': 0, 'Over Speed limit': False}

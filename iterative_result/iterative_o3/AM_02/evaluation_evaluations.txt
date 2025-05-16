@@ -1,0 +1,2 @@
+Attempt 1:
+{'robot1: Start position correct': True, 'robot1: End position correct': True, 'robot1: Number of collisions with static obstacles': 0, 'robot1: Number of collisions with walking pedestrians': 0, 'robot1: Over Speed limit': False, 'robot2: Start position correct': True, 'robot2: End position correct': True, 'robot2: Number of collisions with static obstacles': 0, 'robot2: Number of collisions with walking pedestrians': 0, 'robot2: Over Speed limit': False}

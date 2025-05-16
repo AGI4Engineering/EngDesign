@@ -1,0 +1,10 @@
+Begin Incremental Netlisting Feb 24 14:29:40 2023
+WARNING (OSSHNL-225): The design variable 'cmrr_sim', used in the last
+netlisting session in the current
+run directory is not used in this netlisting
+session. The netlist(s) generated
+in the last netlisting session cannot be
+reused for incremental netlisting.
+Therefore re-netlisting the design.
+
+End netlisting Feb 24 14:29:41 2023

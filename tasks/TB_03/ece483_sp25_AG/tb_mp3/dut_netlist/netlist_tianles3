@@ -1,0 +1,17 @@
+// Library name: MP3
+// Cell name: ota
+// View name: schematic
+subckt ota VDD VSS ibp10u vin vip vout
+    N3 (ibp10u ibp10u VSS VSS) tsmc18dN w=30.015u l=3.015u as=1.35068e-11 ad=1.35068e-11 ps=60.93u pd=60.93u m=1 region=sat
+    N2 (net7 ibp10u VSS VSS) tsmc18dN w=480.015u l=3.015u as=2.16007e-10 ad=2.16007e-10 ps=960.93u pd=960.93u m=1 region=sat
+    N5 (vout vin net7 net7) tsmc18dN w=40u l=0.18u as=100.0e-9 ad=100.0e-9 ps=560.0e-9 pd=560.0e-9 m=1 region=sat
+    N4 (net8 vip net7 net7) tsmc18dN w=40u l=0.18u as=100.0e-9 ad=100.0e-9 ps=560.0e-9 pd=560.0e-9 m=1 region=sat
+    P1 (net8 net8 VDD VDD) tsmc18dP w=80u l=0.18u as=250.0e-9 ad=250.0e-9 ps=860.0e-9 pd=860.0e-9 m=1 region=sat
+    P0 (vout net8 VDD VDD) tsmc18dP w=80u l=0.18u as=250.0e-9 ad=250.0e-9 ps=860.0e-9 pd=860.0e-9 m=1 region=sat
+ends ota
+// End of subcircuit definition.
+
+// Library name: MP3
+// Cell name: dut
+// View name: schematic
+I16 (net1 net2 net6 net4 net3 net5) ota

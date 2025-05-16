@@ -1,0 +1,2 @@
+Attempt 1:
+{'A_correct': True, 'B_correct': True, 'rms_correct': True, 'peak_correct': True, 'attenuation_correct': True, 'rms': 0.011653775522415026, 'peak': 0.029084236529024577, 'attenuation': 0.39634670571388697}

@@ -1,0 +1,20 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "tb_mp4_test"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/home/andrewn7/cadence/simulation/ece483_sp23/tb_mp4_test/maestro/results/maestro/ExplorerRun.0/1/ece483_sp23_tb_mp4_test_1/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "ece483_sp23/tb_mp4_test/schematic" "tb_mp4_test" )
+( "ece483_sp23/fc_ota/schematic" "fc_ota" )
+ )
+( "tb_mp4_test" "ihnl/cds1/map" )
+( "fc_ota" "ihnl/cds2/map" )
+ )

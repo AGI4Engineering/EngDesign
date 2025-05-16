@@ -1,0 +1,18 @@
+## Task Description
+
+Design domain is bounded by following vertices (-1,-1), (1,-1), (1,1), (-1,1). 
+A sharp pre-crack is present in the domain, along the line (0,0) to (0,1). 
+Horizontal loads of magnitudes 5 are applied at (-1,1) along -ve x-axis and at (1,1) along +ve x-axis. Loads are uniformly distributed over small lengths 0.1 along y-directions. 
+Solid material parameters are Young's modulus, E = 70000, and Poisson's ratio, nu = 0.3. Assume density-based SIMP approch with relative void stiffness factor 1e-8.
+Lx = 2 and Ly = 2 denotes the domain lengths in x- and y-directions. The filter radius is R = 0.05*max(Lx,Ly), and the filter exponent is 3.
+Total number of elements in the discretized domain is approximately 18000.
+
+
+---
+
+### Task
+
+Your task is to:
+- Design a structure that has minimum value of maximum stress such that volume fraction does not exceed 0.25.
+- Given the optimized design, output the corresponding maximum stress, named s_hat, and also its volume fraction, named vf, in numerical numbers. Note that vf is in the range of [0,1].  
+- Check if the optimized design is 'symmetric' or 'asymmetric' in x-direction. Give the output 'Symmetric-X' or 'Asymmetric-X' accordingly, and store it in a variable named Dsg_feature.

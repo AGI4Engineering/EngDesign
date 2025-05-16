@@ -1,0 +1,18 @@
+## Task Description
+In this task, you are required to design a battery module for electric vehicle applications using the data from a Lithium-Ferrous-Phosphate (LFP) cell characterized at multiple temperatures. The battery must support a 100 A fast-charge for up to 20 minutes, and the resulting temperature rise in each cell should stay within specified limits. You will also design and parameterize a cooling system (with a parallel channel configuration) so that the maximum temperature gradient across the module and the pressure drop of the coolant remain within their respective constraints.
+
+### Task 1
+The given HPPC data uses a 40 A pulse, but your final design must handle a continuous charge rate of 100 A, so that you need to specify the following parameters of battery module to satisfy this need:
+- numCells_p, the number of cells in the parallel set.
+- numCells_s, the number of series connected parallel set.
+
+### Task 2
+Your second task is to determine the desired parameters for the cooling plate. As a result, the cooling plate you designed must keep the battery within reasonable temperatures during its operation. Below are the detailed requirements:
+- The maximum rise in cell temperature must be lower than or equal to 10 degree Celsius.
+- The maximum temperature gradient within a module must not exceed 5 degree Celsius.
+- The maximum acceptable pressure drop for the module cooling system must be less than 20kPa.
+
+The design parameters for the cooling plate you need to specify includes:
+- NumChannel, the number of cooling channels.
+- Flowrate, the applicable coolant flow-rate.
+- ChannelDia, the channel diameter, typically < 0.01.

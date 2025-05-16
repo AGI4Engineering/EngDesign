@@ -1,0 +1,72 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x563a0e0b9d90 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x563a0e0b9f40 .scope module, "target_sequence_detector" "target_sequence_detector" 3 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "resetn";
+    .port_info 2 /INPUT 5 "init";
+    .port_info 3 /INPUT 1 "din";
+    .port_info 4 /OUTPUT 1 "seen";
+P_0x563a0e0ba0d0 .param/l "TARGET_WIDTH" 0 3 2, +C4<00000000000000000000000000000101>;
+o0x7f823f971018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563a0e0bbba0_0 .net "clk", 0 0, o0x7f823f971018;  0 drivers
+o0x7f823f971048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563a0e1051a0_0 .net "din", 0 0, o0x7f823f971048;  0 drivers
+o0x7f823f971078 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x563a0e105260_0 .net "init", 4 0, o0x7f823f971078;  0 drivers
+o0x7f823f9710a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x563a0e105350_0 .net "resetn", 0 0, o0x7f823f9710a8;  0 drivers
+v0x563a0e105410_0 .var "seen", 0 0;
+v0x563a0e105520_0 .var "shift_reg", 4 0;
+v0x563a0e105600_0 .var "target_reg", 4 0;
+E_0x563a0e0f3f90 .event posedge, v0x563a0e0bbba0_0;
+    .scope S_0x563a0e0b9f40;
+T_0 ;
+    %wait E_0x563a0e0f3f90;
+    %load/vec4 v0x563a0e105350_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %load/vec4 v0x563a0e105260_0;
+    %assign/vec4 v0x563a0e105600_0, 0;
+    %pushi/vec4 0, 0, 5;
+    %assign/vec4 v0x563a0e105520_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x563a0e105410_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x563a0e105520_0;
+    %parti/s 4, 0, 2;
+    %load/vec4 v0x563a0e1051a0_0;
+    %concat/vec4; draw_concat_vec4
+    %assign/vec4 v0x563a0e105520_0, 0;
+    %load/vec4 v0x563a0e105520_0;
+    %load/vec4 v0x563a0e105600_0;
+    %cmp/e;
+    %jmp/0xz  T_0.2, 4;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x563a0e105410_0, 0;
+    %jmp T_0.3;
+T_0.2 ;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x563a0e105410_0, 0;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "user_fifo.sv";

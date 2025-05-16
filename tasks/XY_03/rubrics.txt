@@ -1,0 +1,9 @@
+## Evaluation Rubric
+
+- Correct number of counter bits: 30 points
+- Accurate division ratio calculation: 25 points
+- Correct digit selection bits and positions: 25 points
+- Maximum delay calculation accuracy: 10 points
+- Correct flicker assessment: 10 points
+
+Total: 100 points

@@ -1,0 +1,20 @@
+Attempt 1:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}
+Attempt 2:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}
+Attempt 3:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}
+Attempt 4:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}
+Attempt 5:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}
+Attempt 6:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}
+Attempt 7:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}
+Attempt 8:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}
+Attempt 9:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}
+Attempt 10:
+{'error': 'one or more metrics missing', 'metrics': {'dc_gain_db': -117.12, 'ugf_mhz': 0.0, 'pm_deg': None, 'icmr_v': 0.0, 'io_err_mv': 524.422, 'idc_ua': 195.4}, 'score': 0, 'passed': False}

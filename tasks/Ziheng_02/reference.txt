@@ -1,0 +1,1 @@
+Weng, H., Hunt, B., Schultz, J., & Todes, M. (2018). Modern Robotics: Mechanics, Planning, and Control – Code Library [Computer software]. Northwestern University. https://github.com/NxRLab/ModernRobotics

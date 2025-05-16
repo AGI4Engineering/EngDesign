@@ -1,0 +1,12 @@
+Attempt 1:
+{'metrics': {'dc_gain_vv': 0.409, 'bw_mrads': 1287.21, 'vout_mv': 0.119}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 2:
+{'metrics': {'dc_gain_vv': 3.887, 'bw_mrads': 68.376, 'vout_mv': 0.469}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 3:
+{'metrics': {'dc_gain_vv': 3.666, 'bw_mrads': 86.471, 'vout_mv': 0.87}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 4:
+{'metrics': {'dc_gain_vv': 4.205, 'bw_mrads': 115.181, 'vout_mv': 0.596}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 5:
+{'metrics': {'dc_gain_vv': 3.526, 'bw_mrads': 75.226, 'vout_mv': 0.722}, 'sub_scores': {'dc_gain': 0, 'bandwidth': 35, 'vout': 0}, 'score': 35, 'passed': False}
+Attempt 6:
+{'metrics': {'dc_gain_vv': 4.96, 'bw_mrads': 76.913, 'vout_mv': 0.781}, 'sub_scores': {'dc_gain': 30, 'bandwidth': 35, 'vout': 0}, 'score': 65, 'passed': True}

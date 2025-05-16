@@ -1,0 +1,7 @@
+The evaluation script performs the following steps after the LLM generates an HLS design:
+	1.	The LLM-generated response is passed to Vitis HLS for synthesis and simulation.
+	2.	Vitis HLS produces a report containing performance and resource utilization metrics.
+	3.	The report is parsed into a structured JSON format, and relevant metrics are extracted.
+    4. A final score is then computed based on a predefined rubric, returning an instruction and a numerical evaluation for the given HLS design.
+
+The final insturction will give the guidance for LLM in the next potential generation if there are bugs in the generated design. 

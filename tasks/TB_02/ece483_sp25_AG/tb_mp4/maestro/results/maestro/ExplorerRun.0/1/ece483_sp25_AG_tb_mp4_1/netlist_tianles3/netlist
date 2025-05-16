@@ -1,0 +1,26 @@
+
+// Library name: MP4
+// Cell name: fc_ota
+// View name: schematic
+subckt fc_ota vout ibn10u VDD vin vip VSS
+M1 (vin vip VSS VSS) tsmc18dN w=600u l=1.8u
+M2 (vout vin VSS VSS) tsmc18dN w=600u l=1.8u
+M3 (vout vip VSS VSS) tsmc18dN w=600u l=1.8u
+M4 (vip ibn10u VSS VSS) tsmc18dN w=70.02u l=3u
+M5 (vout ibn10u VSS VSS) tsmc18dP w=180u l=1.8u
+M6 (vin ibn10u VDD VDD) tsmc18dP w=180u l=1.8u
+ends fc_ota
+// Top-level instantiation
+
+
+// Library name: ece483_sp23
+// Cell name: tb_mp4
+// View name: schematic
+VSTB (vout vin) vsource dc=0 type=dc
+V1 (VDD VSS) vsource dc=VDD type=dc
+V0 (VSS 0) vsource dc=VSS type=dc
+I2 (ibn10u VSS) isource dc=10u type=dc
+C0 (vout VSS) capacitor c=CL
+V2 (vip VSS) vsource dc=VCM type=pulse val0=VCM - vstep/2 val1=VCM + vstep/2 \
+         period=1 delay=t_step rise=1n fall=1n
+__ECE483_SP23_FC (vout ibn10u VDD vin vip VSS) fc_ota

@@ -1,0 +1,72 @@
+## Task Description
+In this task, you are required to design four Savitzky–Golay (SG) filters using different weighting strategies. SG filters are digital FIR lowpass filters that operate by performing a moving least-squares polynomial fit on the input data samples within a specified window. They are widely used to smooth or differentiate signal data while reducing noise and preserving the underlying shape of the signal. The key to implementing an SG filter is to approximate its cutoff frequency using predefined characteristic parameters and to capture the relationship between the filter’s characteristics and its frequency response.
+
+### Task 1
+Your first task is to derive an analytical expression that relates the cutoff frequency $F_{-3dB}$ to the SG filter characteristic parameters $(m,n_h)$ and a sample rate $F_s$. The analytical expression (1) is given by $F_{-3dB} = \frac{F_s}{b_0(n_h+0.5)/(m+b_1)-(b_2+b_3*m)/(n_h+0.5)}$. This expression is obtained via least-squares fitting. You need to determine the unknown coefficients $(b_0,b_1,b_2,b_3)$ in this formula under the following predefined parameters for an SG filter with no weighting:
+- filter polynomial order $m = 6$
+- half-width interval $n_h = 50$
+Then the following requirement must be satisfied: 
+- the estimated cutoff frequency $F_{-3dB}$: $abs(F_{-3dB}/F_s - 0.023) <= 0.003$
+It is crucial to verify that the $F_{-3dB}$ value calculated using your derived analytical expression meets this requirement, as it is essential for the subsequent tasks.
+
+### Task 2
+Your second task is to design SG filters with four weighting strategies. The first step in this task is to obtain a wider half-magnitude interval $n_{hW}$, which is defined by the analytical expression (2): $n_{hW} = round(\frac{c_0 + c_1 * m + c_2 * m^2}{F_{-3dB}/F_s} - 1)$, where the cutoff frequency is obtained from Task 1. The MATLAB code examples below outline the construction of weighted SG filters with three different weighting strategies. They also provide the implementation for the unweighted SG filter and the metrics for evaluating filter performance.
+
+#### MATLAB code for designing a SG filter with squared Hann weighting:
+<code_block>
+flW = 2*nhW+1;
+weightsSqHann = hann(flW+2).^2;
+weightsSqHann([1 end]) = [];
+[~,gSGwSqHann] = sgolay(m,flW,weightsSqHann);
+gSGwSqHann = gSGwSqHann(:,1);
+HSGwSqHann = freqz(gSGwSqHann,1,NDFT,Fs);
+</code_block>
+
+#### MATLAB code for designing a SG filter with optimal weighting:
+<code_block>
+Tn = toeplitz([2 -1 zeros(1,flW-2)]);
+v = ones(flW,1);
+weightsOptimal = Tn\v;
+[~,gSGwOptimal] = sgolay(m,flW,weightsOptimal);
+gSGwOptimal = gSGwOptimal(:,1);
+HSGwOptimal = freqz(gSGwOptimal,1,NDFT,Fs);
+</code_block>
+
+#### MATLAB code for designing a SG filter with triangular weighting:
+<code_block>
+weightsTriang = triang(flW);
+[~,gSGwTriang] = sgolay(m,flW,weightsTriang);
+gSGwTriang = gSGwTriang(:,1);
+HSGwTriang = freqz(gSGwTriang,1,NDFT,Fs);
+</code_block>
+
+#### MATLAB code for designing a SG filter with no weighting:
+<code_block>
+[~,gSGwNone] = sgolay(m,flW);
+gSGwNone = gSGwNone(:,1);
+HSGwNone = freqz(gSGwNone,1,NDFT,Fs);
+</code_block>
+
+#### MATLAB code for measuring the performance of SG filter with four weighting strategies, metrics are output vs. input noise ratios, r, and smoothness parameter values, s:
+<code_block>
+rSGwNone = gSGwNone'*gSGwNone;
+sSGwNone = diff([0;gSGwNone;0]);
+sSGwNone = sum(abs(sSGwNone).^2)/2;
+
+rSGwSqHann = gSGwSqHann'*gSGwSqHann;
+sSGwSqHann = diff([0;gSGwSqHann;0]);
+sSGwSqHann = sum(abs(sSGwSqHann).^2)/2;
+
+rSGwTriang = gSGwTriang'*gSGwTriang;
+sSGwTriang = diff([0;gSGwTriang;0]); 
+sSGwTriang = sum(abs(sSGwTriang).^2)/2;
+
+rSGwOptimal = gSGwOptimal'*gSGwOptimal;
+sSGwOptimal = diff([0;gSGwOptimal;0]); 
+sSGwOptimal = sum(abs(sSGwOptimal).^2)/2;
+</code_block>
+
+Similar to Task 1, your objective in Task 2 is to derive the unknown coefficients (c_0, c_1, c_2) for the expression (2) such that the following requirements are satisfied:
+- half-magnitude interval $n_{hW}$: > n_h
+- sSGwOptimal < sSGwTriang < sSGwSqHann < sSGwNone < -70 (dB)
+- rSGwNone < rSGwOptimal < rSGwTriang < rSGwSqHann < -26 (dB)

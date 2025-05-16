@@ -1,0 +1,129 @@
+HEADER
+"PSFversion" "1.00"
+"Log Generator" "drlLog rev. 1.0"
+"Log Time Stamp" "Fri Apr 25 15:25:08 2025"
+"psfversion" "1.4.0"
+"simulator" "spectre"
+"version" "21.1.0.058"
+"date" "3:25:08 PM, Fri Apr 25, 2025"
+"design" "// Generated for: spectre"
+"signalNameType" "spectre"
+"simMode" "APS"
+"measdgt" 0
+"ingold" 2
+"sst2usecolon" 0
+TYPE
+"analysisInst" STRUCT(
+"analysisType" STRING *
+"dataFile" STRING *
+"format" STRING *
+"parent" STRING *
+"sweepVariable" ARRAY ( * ) STRING *
+"description" STRING *
+)
+VALUE
+"stb-stb" "analysisInst" (
+"stb"
+"stb.stb"
+"PSF"
+""
+("freq")
+"Stability Analysis `stb': freq = (1 Hz -> 2 GHz)"
+) PROP(
+"data_type" "swept_scalar"
+)
+
+"stb-margin.stb" "analysisInst" (
+"margin.stb"
+"stb.margin.stb"
+"PSF"
+""
+()
+"Stability Analysis `stb': freq = (1 Hz -> 2 GHz)"
+) PROP(
+"data_type" "scalar"
+)
+
+"dcOp-dc" "analysisInst" (
+"dc"
+"dcOp.dc"
+"PSF"
+""
+()
+"DC Analysis `dcOp'"
+) PROP(
+"data_type" "scalar"
+)
+
+"dcOpInfo-info" "analysisInst" (
+"info"
+"dcOpInfo.info"
+"PSF"
+""
+()
+"Circuit Information"
+) PROP(
+"data_type" "struct"
+)
+
+"modelParameter-info" "analysisInst" (
+"info"
+"modelParameter.info"
+"PSF"
+""
+()
+"Circuit Information"
+) PROP(
+"data_type" "struct"
+)
+
+"element-info" "analysisInst" (
+"info"
+"element.info"
+"PSF"
+""
+()
+"Circuit Information"
+) PROP(
+"data_type" "struct"
+)
+
+"outputParameter-info" "analysisInst" (
+"info"
+"outputParameter.info"
+"PSF"
+""
+()
+"Circuit Information"
+) PROP(
+"data_type" "struct"
+)
+
+"designParamVals-info" "analysisInst" (
+"info"
+"designParamVals.info"
+"PSF"
+""
+()
+"Circuit Information"
+) PROP(
+"data_type" "struct"
+)
+
+"primitives-info.primitives" "analysisInst" (
+"info.primitives"
+"primitives.info.primitives"
+"PSF"
+""
+()
+"Circuit Information"
+)
+"subckts-info.subckts" "analysisInst" (
+"info.subckts"
+"subckts.info.subckts"
+"PSF"
+""
+()
+"Circuit Information"
+)
+END

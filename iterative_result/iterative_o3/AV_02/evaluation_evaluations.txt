@@ -1,0 +1,2 @@
+Attempt 1:
+{'order': 2.0, 'numerator coefficients': [1.0, -1.8595529718, 1.0], 'denominator coefficients': [1.0, -1.8427635011, 0.9801], 'passband below target attenuation appropriate': np.True_, 'passband above target attenuation appropriate': np.True_, 'target frequency attenuation appropriate': np.True_, 'order value reasonable': True, 'order and coefficient are properly related': True}

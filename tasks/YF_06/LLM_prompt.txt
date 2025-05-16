@@ -1,0 +1,32 @@
+## Task Description
+In this task, you are required to determine a suitable thickness t (in mm) for a 3D rectangular steel plate of dimensions 1000×500×t mm, loaded by a uniform transverse pressure and with all four side faces fixed. The evaluation will be performed via MATLAB’s PDE Toolbox.
+You are given the following fixed parameters:
+
+Fixed parameters:
+Geometry:
+   - Length L=1000 mm
+   - Width W=500 mm
+   - Thickness t mm (design variable)
+
+- Material properties:
+   - Young’s modulus: 210,000 MPa
+   - Poisson’s ratio: 0.3
+   - Density 7850kg/m^3
+- boundary condition
+   All four side faces (the faces at X=0, X=L, Y=0, Y=W) are fixed.
+- loading   
+   Uniform pressure p= 2 N/mm² on the top face (Z=t).
+
+Performance criterion:
+The maximum nodal displacement must satisfy δ max < 0.5 mm
+The score depends on the ratio of the maximum measured deflection to the allowable threshold. If that ratio falls between seventy percent and ninety percent, the structure earns the full 100 points. If the ratio is below seventy percent, partial credit is awarded in direct proportion to how close it is to seventy-percent (with zero displacement scoring zero and seventy-percent scoring 100). If the ratio lies between ninety percent and one hundred percent, points are deducted in proportion to how far it exceeds ninety percent (dropping from 100 at ninety percent down to zero at the full threshold). Any ratio below zero or above one hundred percent results in a score of zero.
+---
+
+### Task
+
+Your task is to:
+- a numerical value of plate thickness t (in mm) that ensures 1.0 mm under the given load and boundary conditions.
+- justify your choice of t, considering the plate’s bending stiffness, the applied pressure, and the geometric proportions. You need to compute the result
+
+You do **not** need to evaluate the angle yourself. The simulation and evaluation will be done separately.
+

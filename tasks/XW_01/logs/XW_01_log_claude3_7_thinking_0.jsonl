@@ -1,0 +1,1 @@
+{'completion_tokens': 0, 'response': "OpenAI API call failed: 'ThinkingBlock' object has no attribute 'text'", 'passed': False, 'evaluation_result': {'read': 'the function is not executable'}, 'score': 0}

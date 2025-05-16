@@ -1,0 +1,45 @@
+You are a hardware‐design expert. Write synthesizable SystemVerilog for a one‐cycle bubble‐sort module with parameterizable BITWIDTH, according to the following spec:
+
+1. Parameterization  
+   - parameter BITWIDTH = 8;  
+
+2. Ports : module NEEDS to be called model
+module model #(
+    parameter BITWIDTH = 8
+) (
+    input  logic [BITWIDTH-1:0]       din,     // unsigned input word
+    input  logic                      sortit,  // start new sort when asserted
+    input  logic                      clk,      // clock
+    input  logic                      resetn,  // synchronous, active‐low reset
+    output logic [8*BITWIDTH+1-1:0]   dout      // concatenated sorted vector + valid bit
+);
+
+Behavior
+
+Data capture: While sortit == 0, register incoming din words into an internal memory of depth 8. Ignore din when sortit == 1.
+
+Sort trigger: When sortit goes high, perform an 8‐element bubble sort in one clock cycle on the stored data. The result is a concatenated bitstream of the 8 sorted words in descending order (largest in LSBs, smallest in MSBs).
+
+Output:
+
+While sortit == 0, dout = 0.
+
+On sortit == 1, dout presents the sorted vector:
+
+Bits [8*BITWIDTH-1:7*BITWIDTH] = smallest element
+
+…
+
+Bits [BITWIDTH-1:0] = largest element
+
+Optionally include a valid flag as the MSB of dout (making the total width 8*BITWIDTH+1).
+
+Reset: On resetn == 0, clear memory and drive dout = 0.
+
+Implementation notes
+
+The sort must complete in one clock cycle when sortit is asserted (i.e., fully unrolled compare‐and‐swap network).
+
+Use generate‐for loops or explicit wiring to build the bubble‐sort network.
+
+Please produce clean, commented, synthesizable SystemVerilog that meets this specification.```

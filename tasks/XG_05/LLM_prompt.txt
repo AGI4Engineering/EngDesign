@@ -1,0 +1,12 @@
+## Task Description
+In this task, you are required to design a feedback controller to regulate the temperature of a chemical reactor using a heat exchanger system. The reactor, modeled as a stirred tank, is shown in the accompanying figure. A liquid stream enters the tank from the top inlet and is continuously mixed. To maintain the liquid at a desired constant temperature, the amount of steam supplied to the heat exchanger (located at the bottom of the tank) must be adjusted. This is achieved by modulating the control valve that governs steam flow. Your objective is to design a controller that ensures the reactor temperature remains stable and responds effectively to disturbances and setpoint changes.
+
+### Task 1
+Your first task is to derive a first-order with delay transfer function $G(s) = exp(-theta*s)/(1+tau*s)$ to model the dynamics of the stirred tank. The second figure shows a measured step response of the stirred tank, with $t_1 = 23$ s and $t_2 = 36$ s. The values of $t_1$ and $t_2$ are the times where the step response reaches 28.3% and 63.2% of its final value, respectively. Please determine the value of $\theta$ and $\tau$ from the step response figure using the given information. Then the transfer function will be $G(s) = exp(-theta*s)/(1+tau*s)$.
+
+### Task 2
+Your second task is to design a feedback controller to regulate the temperature of the stirred tank using the model you derived in Task 1 that satisfies the following requirements:
+- Gain margin: >= 7 dB
+- Phase margin: >= 60 degrees
+- Overshoot: <= 10% (for a step reference input)
+- Settling time: <= 150 s (for a step reference input)

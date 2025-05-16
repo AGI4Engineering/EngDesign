@@ -1,0 +1,9 @@
+# Evaluation Rubric for Tetris Block ROM Analysis
+
+## Pattern Extraction (70 points)
+- Correctly extracts the bit pattern for the specified tetromino and rotation: 70 points
+
+## Visual Representation (30 points)
+- Accurately converts the bit pattern to a visual representation: 30 points
+
+## Total: 100 pointswe

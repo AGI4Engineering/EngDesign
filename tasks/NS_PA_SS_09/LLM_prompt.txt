@@ -1,0 +1,31 @@
+You are a hardware‐design expert. Write synthesizable SystemVerilog for a parameterized Gray‐to‐binary converter that maps an N-bit Gray code value to its binary index, according to the following spec:
+
+1. Parameterization  
+   - parameter WIDTH = 8;  
+
+2. Ports  
+```verilog
+module model #(
+    parameter WIDTH = 8
+) (
+    input  logic [WIDTH-1:0] gray,  // N-bit Gray code input
+    output logic [WIDTH-1:0] bin    // N-bit binary index output
+);
+Behavior
+
+Combinational conversion:
+
+bin[WIDTH-1] = gray[WIDTH-1];
+
+For i from WIDTH-2 down to 0:
+bin[i] = bin[i+1] ^ gray[i];
+
+No clock or reset—purely combinational logic.
+
+Implementation notes
+
+You may use a generate–for loop or bitwise reduction to implement the XOR cascade.
+
+Ensure fully synthesizable, zero-latency logic.
+
+Please produce clean, commented, synthesizable SystemVerilog that meets this specification.

@@ -1,0 +1,8 @@
+## Rubric for Evaluating Controller Design Response
+
+Assess how well the returned controller meets the design requirements.
+
+| Criterion | Points | Description |
+|----------|--------|-------------|
+| Correct identification of a parameter to tune | 20 | The tuned parameter can achieve the target performace. |
+| Correctly idenitify a parameter that cannot be tuned to achieve the target performance | 10 | Although the model did not find the correct parameter to improve the performance, it is able to correctly identify parameters that cannot achieve the performance goal |

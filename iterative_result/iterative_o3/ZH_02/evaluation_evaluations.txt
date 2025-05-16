@@ -1,0 +1,6 @@
+Attempt 1:
+{'r': 0.6, 'q_max_W_per_cm2': 6747791.538502094, 'Q_J_per_m2': 2124165868.9466226, 'a_max_mps2': 12.863690943094909, 'passed': False}
+Attempt 2:
+{'r': 2.6, 'q_max_W_per_cm2': 3241534.203965787, 'Q_J_per_m2': 113121259.2930154, 'a_max_mps2': 241.5515299314489, 'passed': False}
+Attempt 3:
+{'r': 2.8, 'q_max_W_per_cm2': 3123620.517710194, 'Q_J_per_m2': 97538228.67612045, 'a_max_mps2': 280.1426027607335, 'passed': True}

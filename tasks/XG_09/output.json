@@ -1,0 +1,11 @@
+{
+  "reasoning": "Detailed reasoning process to accomplish the task, please solve all the tasks step by step",
+  "sx": "parameter for the membership function Ix",
+  "sy": "parameter for the membership function Iy",
+  "wa": "parameter for the membership function Iout",
+  "wb": "parameter for the membership function Iout",
+  "wc": "parameter for the membership function Iout",
+  "ba": "parameter for the membership function Iout",
+  "bb": "parameter for the membership function Iout",
+  "bc": "parameter for the membership function Iout"
+}

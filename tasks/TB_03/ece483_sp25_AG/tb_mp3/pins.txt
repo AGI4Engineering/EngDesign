@@ -1,0 +1,1 @@
+VDD VSS ibp10u vin vip vout

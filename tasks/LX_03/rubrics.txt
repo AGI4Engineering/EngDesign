@@ -1,0 +1,10 @@
+## Evaluation Rubric
+-  p1 correct: 4 points
+-  p2 correct: 4 points
+-  ts correct: 4 points
+-  N correct:  4 points
+-  pm correct: 4 points
+-  DC gain correct: 20 points
+-  bottom out correct: 20 points
+-  critically damped correct: 20 points
+-  settling time correct:  20 points

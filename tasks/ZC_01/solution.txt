@@ -1,0 +1,4 @@
+## Required Current: 
+The following K provided a satisfactory response with requirement 1 and requirement 2: 
+
+K = [-5.8317   -7.7889   -2.5977    6.2328]

@@ -1,0 +1,20 @@
+Attempt 1:
+{'bandwidth_hz': inf, 'bandwidth_passed': False, 'gain_margin_db': -inf, 'phase_margin_deg': -inf, 'margins_passed': False}
+Attempt 2:
+{'bandwidth_hz': inf, 'bandwidth_passed': False, 'gain_margin_db': -inf, 'phase_margin_deg': -inf, 'margins_passed': False}
+Attempt 3:
+{'bandwidth_hz': inf, 'bandwidth_passed': False, 'gain_margin_db': -inf, 'phase_margin_deg': -inf, 'margins_passed': False}
+Attempt 4:
+{'bandwidth_hz': 368.3679037323925, 'bandwidth_passed': False, 'gain_margin_db': 1.7444363991431828, 'phase_margin_deg': 28.60933133287388, 'margins_passed': False}
+Attempt 5:
+{'bandwidth_hz': inf, 'bandwidth_passed': False, 'gain_margin_db': -inf, 'phase_margin_deg': -inf, 'margins_passed': False}
+Attempt 6:
+{'bandwidth_hz': inf, 'bandwidth_passed': False, 'gain_margin_db': -inf, 'phase_margin_deg': -inf, 'margins_passed': False}
+Attempt 7:
+{'bandwidth_hz': 0.0, 'bandwidth_passed': False, 'gain_margin_db': 3.8992909080951903, 'phase_margin_deg': 90.19803800603076, 'margins_passed': True}
+Attempt 8:
+{'bandwidth_hz': 0.0, 'bandwidth_passed': False, 'gain_margin_db': 9913.377328213195, 'phase_margin_deg': 90.00014631005682, 'margins_passed': True}
+Attempt 9:
+{'bandwidth_hz': 0.37811863002312146, 'bandwidth_passed': False, 'gain_margin_db': 3.187609571647531, 'phase_margin_deg': 45.0702547041526, 'margins_passed': False}
+Attempt 10:
+{'bandwidth_hz': inf, 'bandwidth_passed': False, 'gain_margin_db': -inf, 'phase_margin_deg': -inf, 'margins_passed': False}
