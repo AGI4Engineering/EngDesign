@@ -2,6 +2,11 @@ import numpy as np
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
+# Clear module cache
+if "solution" in sys.modules:
+    del sys.modules["solution"]
+
 from solution import golden_read,golden_write,golden_create
 from solution import SuperBlock, FileSystemImage, Inode, DirEntry, Optional, List, Dict
 

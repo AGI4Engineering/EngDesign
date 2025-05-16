@@ -139,9 +139,6 @@ def load_evaluator(evaluator_path: str):
         # Get the evaluate function
         evaluate_fn = evaluator.evaluate_llm_response
         
-        # Remove the directory from sys.path to avoid conflicts
-        sys.path.pop(0)
-        
         return evaluate_fn
     except Exception as e:
         print(f"Error loading evaluator: {str(e)}")
@@ -239,7 +236,7 @@ def main():
                  if os.path.isdir(os.path.join(args.task_dir, f))]
     
     # If you only need to run specific tasks
-    #subfolders = ["RK_01"]
+    #subfolders = ["AB_01"]
 
 
     for subfolder in subfolders:
