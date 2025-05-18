@@ -1,6 +1,7 @@
 import argparse
 import sys
 import os
+import subprocess
 import base64
 import json
 from openai import OpenAI
@@ -10,11 +11,10 @@ import instructor
 from pydantic import BaseModel
 
 
-# Load key from .env
 api_key = "your_openai_api_key"
 
 if not api_key:
-    raise ValueError("OPENAI_API_KEY is not set. Check your .env file.")
+    raise ValueError("api_key is not set. Please edit the top of evaluation/eval_openai_llm_new.py.")
 
 # client = OpenAI(api_key=api_key)
 client = instructor.from_openai(OpenAI(api_key=api_key), mode=instructor.Mode.JSON_O1)
@@ -230,18 +230,37 @@ def main():
     parser.add_argument('--reasoning_effort', type=str, default='medium', help='Reasoning effort to use (default: medium)')
     parser.add_argument('--k', type=int, default=3, help='Number of trials to run (default: 3)')
     parser.add_argument('--task_dir', type=str, required=True, help='Directory containing task folders')
+    parser.add_argument('--only_task', type=str, help='If set, only run this specific task')
+    parser.add_argument('--task_list', nargs='*', help='List of specific tasks to run (if empty, all tasks will run)')
     args = parser.parse_args()
     
-    subfolders = [f for f in os.listdir(args.task_dir) 
-                 if os.path.isdir(os.path.join(args.task_dir, f))]
-    
-    # If you only need to run specific tasks
-    #subfolders = ["AB_01"]
+    if args.only_task:
+        # Subprocess mode: only run a single specified task
+        task_path = os.path.abspath(os.path.join(args.task_dir, args.only_task))
+        run_task_k_times(task_path=task_path, k=args.k, model=args.model, reasoning_effort=args.reasoning_effort)
+        return
+
+    if args.task_list:
+        subfolders = args.task_list
+    else:
+        subfolders = [f for f in os.listdir(args.task_dir)
+                    if os.path.isdir(os.path.join(args.task_dir, f))]
 
 
     for subfolder in subfolders:
         task_path = os.path.abspath(os.path.join(args.task_dir, subfolder))
-        run_task_k_times(task_path=task_path, k=args.k, model=args.model, reasoning_effort=args.reasoning_effort)
+        if not os.path.exists(task_path):
+            print(f"Task folder '{subfolder}' not found in {args.task_dir}")
+            continue
+
+        subprocess.run([
+            sys.executable, __file__,
+            "--model", args.model,
+            "--reasoning_effort", args.reasoning_effort,
+            "--k", str(args.k),
+            "--task_dir", args.task_dir,
+            "--only_task", subfolder
+        ])
 
 if __name__ == "__main__":
     main()

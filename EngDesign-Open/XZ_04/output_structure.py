@@ -18,16 +18,18 @@ class ConfigFile(BaseModel):
     nodes_explored: int = Field(..., description="Number of nodes explored during the search")
     
     class Config:
-        schema_extra = {
-            "example": {
-                "trajectory": [
-                    {"time": 0.0, "x": 0.0, "y": 0.0, "z": 0.0, "velocity": 0.0, "acceleration": 0.0},
-                    {"time": 10.0, "x": 19.0, "y": 24.0, "z": 0.0, "velocity": 0.0, "acceleration": 0.0}
-                ],
-                "path_length": 30.61,
-                "travel_time": 25.5,
-                "nodes_explored": 1245
-            }
+        json_schema_extra = {
+            "examples": [
+                {
+                    "trajectory": [
+                        {"time": 0.0, "x": 0.0, "y": 0.0, "z": 0.0, "velocity": 0.0, "acceleration": 0.0},
+                        {"time": 10.0, "x": 19.0, "y": 24.0, "z": 0.0, "velocity": 0.0, "acceleration": 0.0}
+                    ],
+                    "path_length": 30.61,
+                    "travel_time": 25.5,
+                    "nodes_explored": 1245
+                }
+            ]
         }
 
 

@@ -196,7 +196,7 @@ def run_simulation():
     """
     try:
         # Path to Webots executable
-        webots_path = "C:\\Program Files\\Webots\\msys64\\mingw64\\bin\\webotsw.exe"
+        webots_path = "/usr/local/webots/webots"
         world_path = os.path.join(os.getcwd(), "worlds", "construction_site.wbt")
         
         # Command to run Webots in batch mode
