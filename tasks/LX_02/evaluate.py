@@ -1,5 +1,5 @@
 import numpy as np
-import matlab.engine
+from oct2py import Oct2Py
 import os
 import sys
 
@@ -10,12 +10,12 @@ sys.path.append(
 
 def evaluate_llm_response(llm_response):
     try:
-        # Start MATLAB engine
+        # Start Octave engine
         confidence = 100
-        eng = matlab.engine.start_matlab()
+        oc = Oct2Py()
         # Add the path containing evaluate_controller.m
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        eng.addpath(current_dir)
+        oc.addpath(current_dir)
         # Get controller coefficients from LLM response
         a11 = llm_response.config.a11
         a12 = llm_response.config.a12
@@ -31,13 +31,17 @@ def evaluate_llm_response(llm_response):
         s2 = llm_response.config.s2
         s3 = llm_response.config.s3
         s4 = llm_response.config.s4
-        # Run MATLAB evaluation
-        passed, details, score = eng.evaluate_controller(
-            a11, a12, a21, a22, b11, b21, k1, k2, l1, l2, s1, s2, s3, s4, nargout=3
+        # Run Octave evaluation
+        passed, details, score = oc.evaluate_controller(
+            a11, a12, a21, a22, b11, b21, k1, k2, l1, l2, s1, s2, s3, s4, nout=3
         )
-        # Convert MATLAB struct to Python dict
-        details = {key: details[key] for key in details.keys()}
-        eng.quit()
+        # Convert Octave struct to Python dict
+        # Oct2Py 会自动转换，但我们可以确保它是字典
+        if hasattr(details, '_fields'):
+            details = {key: getattr(details, key) for key in details._fields}
+        elif not isinstance(details, dict):
+            details = dict(details)
+        oc.exit()
         return passed, details, score, confidence
     except Exception as e:
         return False, {"error": str(e)}, None, None

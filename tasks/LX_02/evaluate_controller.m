@@ -1,4 +1,7 @@
 function [passed, details, score] = evaluate_controller(a11, a12, a21, a22, b11, b21, k1, k2, l1, l2, s1, s2, s3, s4)
+% add for Octave
+details = struct();
+
 A = [0 1; 2 0];
 B = [0; -2];
 K = [-2 -1];
@@ -41,7 +44,11 @@ for i = 1 : 4
         details.Stability = [details.Stability, 'i.c.(', num2str(i), ') is wrong    '];
     end
 end
-details.Stability = details.Stability(1 : end - 4);
+
+if length(details.Stability) >= 4
+    details.Stability = details.Stability(1 : end - 4);
+end
+
 if score == 100
     passed = true;
 else

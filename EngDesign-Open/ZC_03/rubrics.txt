@@ -1,0 +1,8 @@
+## Evaluation Rubric
+
+Bar_alpha equals 1 and receives 25 points.
+Underline alpha equals 1 and receives 25 points.
+Bar beta equals 1 and receives 25 points.
+Underline beta equals 0.5 and receives 25 points.
+
+The LLM is considered to have passed the test if and only if its score is equal to 100.

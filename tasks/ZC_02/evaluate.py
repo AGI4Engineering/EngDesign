@@ -1,5 +1,5 @@
 import numpy as np
-import matlab.engine
+from oct2py import Oct2Py
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -7,23 +7,23 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 
 def evaluate_llm_response(llm_response):
     try:
-            # Start MATLAB engine
+        # Start Octave engine
         confidence = 100
-        eng = matlab.engine.start_matlab()
+        oc = Oct2Py()
         # Add the path containing verifyalpha.m
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        eng.addpath(current_dir)
+        oc.addpath(current_dir)
 
         # Get controller coefficients from LLM response
-        alpha = matlab.double(llm_response.config.alpha)
+        alpha = llm_response.config.alpha
 
-        # Run MATLAB evaluation
-        passed, details, score = eng.verifyalpha(alpha, nargout=3)
+        # Run Octave evaluation
+        passed, details, score = oc.verifyalpha(alpha, nout=3)
 
-        # Convert MATLAB struct to Python dict
+        # Convert Octave struct to Python dict
         details = {key: details[key] for key in details.keys()}
 
-        eng.quit()
+        oc.exit()
         return passed, details, score, confidence
 
     except Exception as e:

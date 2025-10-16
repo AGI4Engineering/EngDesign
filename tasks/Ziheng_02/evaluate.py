@@ -1,8 +1,8 @@
-import matlab.engine
+from oct2py import Oct2Py
 import os
 def evaluate_llm_response(llm_response):
      """
-     1) Launch MATLAB, run evaluate_controller.m to compute:
+     1) Launch Octave, run evaluate_robot.m to compute:
           poles, tr, GM, PM
      2) Pull those variables back into Python
      3) Apply the rubric:
@@ -17,22 +17,17 @@ def evaluate_llm_response(llm_response):
           confidence (int, always 100)
      """
      try:
-          # 1) Start MATLAB engine and add current folder
-          eng = matlab.engine.start_matlab()
+          # 1) Start Octave engine and add current folder
+          oc = Oct2Py()
           # Get the directory where this evaluate.py file is located
           current_dir = os.path.dirname(os.path.abspath(__file__))
-          eng.addpath(current_dir)
-          # If the MATLAB function is in a different directory, add that too
-          # For example, if it's in a 'matlab' subdirectory:
-          matlab_dir = os.path.join(current_dir, 'matlab')
-          if os.path.exists(matlab_dir):
-              eng.addpath(matlab_dir)
+          oc.addpath(current_dir)
 
-          theta = matlab.double(llm_response.config.theta)
+          theta = llm_response.config.theta
 
-          passed, details, score = eng.evaluate_robot(theta, nargout=3)
+          passed, details, score = oc.evaluate_robot(theta, nout=3)
 
-          eng.quit()
+          oc.exit()
 
 
 

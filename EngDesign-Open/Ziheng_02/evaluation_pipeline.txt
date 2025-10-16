@@ -1,0 +1,2 @@
+A script would be implemented to evaluate:
+The position and the orientation of frame 1, based on the theta list that the LLM gives.

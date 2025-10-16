@@ -2,16 +2,16 @@
 
 **EngDesign** is a benchmark of 101 structured engineering‑design tasks spanning multiple domains. This repository supports our NeurIPS Datasets & Benchmarks track submission, "Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs."
 
-Of these 101 tasks, 48 rely on proprietary scientific softwares (e.g., MATLAB or Cadence) and may not run on every system. We provide the complete input datasets and evaluation scripts for these tasks as well —— simply follow the detailed setup instructions to configure the required environments and run them.
+Of these 101 tasks, 34 rely on proprietary scientific softwares (e.g., MATLAB or Cadence) and may not run on every system. We provide the complete input datasets and evaluation scripts for these tasks as well —— simply follow the detailed setup instructions to configure the required environments and run them.
 
-The remaining 53 tasks have no license restrictions and can be evaluated using our hand‑authored scripts. To remove licensing barriers, we’ve extracted these into **EngDesign-Open**, a standalone subset whose repository includes evaluation scripts for all 53 tasks without any proprietary dependencies.
+The remaining 67 tasks have no license restrictions and can be evaluated using our hand‑authored scripts. To remove licensing barriers, we’ve extracted these into **EngDesign-Open**, a standalone subset whose repository includes evaluation scripts for all 67 tasks without any proprietary dependencies.
 
 Our evaluation framework currently integrates with twelve LLM variants: GPT‑4o, o1, o3, o3‑high, o4‑mini, o4‑mini‑high, Gemini‑2.0‑flash, Gemini‑2.5‑pro‑preview‑05‑06, DeepSeek‑Chat, DeepSeek‑Reasoner, Claude‑3‑7‑Sonnet, and Claude‑3‑7‑Sonnet (Extended Reasoning Mode).
 
 ---
 ## 🚀 Run EngDesign-Open
 
-EngDesign-Open contains **all 53 tasks without license restrictions**. You can run them by following these steps:
+EngDesign-Open contains **all 67 tasks without license restrictions**. You can run them by following these steps:
 
 ### 1. Install and Log in to Docker
 

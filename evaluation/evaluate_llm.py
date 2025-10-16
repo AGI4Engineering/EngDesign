@@ -61,7 +61,7 @@ def extract_prompt(prompt_path: str) -> str:
     Extract the prompt from the LLM_prompt.txt file.
     """
     try:
-        with open(prompt_path, "r") as f:
+        with open(prompt_path, "r",  encoding='utf-8') as f:
             prompt = f.read()
         return prompt.strip()
     except FileNotFoundError:
@@ -327,18 +327,24 @@ def run_task_k_times(task_path: str, k=3, model="gpt-4o", reasoning_effort="medi
             "evaluation_result": detailed_result,
             "score": score,
         }
-        # Convert log_entry to be JSON serializable
+        # Convert log_entry to be JSON serializable           
         def convert_to_serializable(obj):
-            if hasattr(obj, "item"):  # Handle NumPy types
-                return obj.item()
-            elif hasattr(obj, "__dict__"):  # Handle custom objects
-                return {k: convert_to_serializable(v) for k, v in obj.__dict__.items()}
-            elif isinstance(obj, dict):
-                return {k: convert_to_serializable(v) for k, v in obj.items()}
+            if isinstance(obj, (int, float, str, bool, type(None))):
+                return obj
             elif isinstance(obj, (list, tuple)):
                 return [convert_to_serializable(item) for item in obj]
-            elif isinstance(obj, (int, float, str, bool, type(None))):
-                return obj
+            elif isinstance(obj, dict):
+                return {k: convert_to_serializable(v) for k, v in obj.items()}
+            elif hasattr(obj, "item") and callable(getattr(obj, "item")):  # Handle NumPy types
+                try:
+                    return obj.item()
+                except ValueError:
+                    return obj.tolist()
+            elif hasattr(obj, "__dict__") or hasattr(obj, "_asdict"):  # Handle custom objects
+                if hasattr(obj, "_asdict") and callable(obj._asdict):
+                    return convert_to_serializable(obj._asdict())
+                else:
+                    return {k: convert_to_serializable(v) for k, v in obj.__dict__.items()}
             else:
                 return str(obj)  # Convert any other types to string
                 
